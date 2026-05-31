@@ -46,7 +46,7 @@ def get_data(feed):
     attempt = 0
     while not bl_res:
 
-        sleep_time = np.random.randint(2, 6)
+        sleep_time = np.random.randint(0, 2)
         time.sleep(sleep_time)
         url = f'https://global.flashscore.ninja/2/x/feed/{feed}'
 
@@ -74,6 +74,27 @@ def get_data(feed):
             data_list[-1].update({key: value})
 
     return data_list
+
+
+
+
+def get_response(url_):
+    """
+        Возвращает ответ от сервера по url. Используется для получения http или json с flashscore api
+        :param url_: Url для запроса
+        :return: Response object
+    """
+    response_ = None
+    bl_ = True
+    while bl_:
+        sleep_time = np.random.randint(0, 2)
+        time.sleep(sleep_time)
+        try:
+            response_ = requests.get(url_, headers={"x-fsign": "SW9D1eZo"})
+            bl_ = False
+        except:
+            pass
+    return response_
 
 
 
@@ -278,27 +299,6 @@ def fetch_opening_odds():
         df.to_excel('opening_adds_' + filename + '.xlsx', index=False)
 
 
-
-
-
-
-def get_response(url_):
-    """
-        Возвращает ответ от сервера по url. Используется для получения http или json с flashscore api
-        :param url_: Url для запроса
-        :return: Response object
-    """
-    response_ = None
-    bl_ = True
-    while bl_:
-        sleep_time = np.random.randint(2, 6)
-        time.sleep(sleep_time)
-        try:
-            response_ = requests.get(url_, headers={"x-fsign": "SW9D1eZo"})
-            bl_ = False
-        except:
-            pass
-    return response_
 
 
 
