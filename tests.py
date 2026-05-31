@@ -11,7 +11,69 @@ from psycopg2.extras import execute_values
 from datetime import datetime
 
 
-from parsing_functions import get_data, get_response, load_data
+
+def get_data(feed):
+    """
+    Получает данные с Flashscore API и парсит их из кастомного формата.
+    :param feed: Идентификатор данных
+    :return: list[dict]: Список словарей с данными
+    """
+
+    bl_res = False
+    response = None
+    max_attempts = 20
+    attempt = 0
+    while not bl_res:
+
+        sleep_time = np.random.randint(0, 2)
+        time.sleep(sleep_time)
+        url = f'https://global.flashscore.ninja/2/x/feed/{feed}'
+
+        try:
+            response = requests.get(url=url, headers={"x-fsign": "SW9D1eZo"})
+            bl_res = True
+        except:
+            if attempt > max_attempts:
+                print('что-то не так, проверьте подключение или впн')
+            attempt += 1
+            # print('произошла ошибка, но все збс')
+
+
+    data = response.text.split('¬')
+
+    data_list = [{}]
+
+    for item in data:
+        key = item.split('÷')[0]
+        value = item.split('÷')[-1]
+
+        if '~' in key:
+            data_list.append({key: value})
+        else:
+            data_list[-1].update({key: value})
+
+    return data_list
+
+
+
+
+def get_response(url_):
+    """
+        Возвращает ответ от сервера по url. Используется для получения http или json с flashscore api
+        :param url_: Url для запроса
+        :return: Response object
+    """
+    response_ = None
+    bl_ = True
+    while bl_:
+        sleep_time = np.random.randint(0, 2)
+        time.sleep(sleep_time)
+        try:
+            response_ = requests.get(url_, headers={"x-fsign": "SW9D1eZo"})
+            bl_ = False
+        except:
+            pass
+    return response_
 
 # CREATE TABLE regions (
 # region_id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
@@ -436,8 +498,11 @@ def initialize_matches():
                                  el.get('KX'), el.get('KY'),
                                  'completed', None, el.get('KF')]
 
-                        match[2] = teams[match[2]]
-                        match[3] = teams[match[3]]
+                        try: # если вместо имен команд у нас None, то просто пропускаем этот матч
+                            match[2] = teams[match[2]]
+                            match[3] = teams[match[3]]
+                        except KeyError:
+                            continue
                         for ind in [4, 5]: # если счет представляет собой '' '', то заменяем значения на None
                             if match[ind] == '':
                                 match[ind] = None
@@ -459,6 +524,7 @@ def initialize_matches():
 
 def main():
 
+    # на примере загруженных матчей нужно будет научиться определять сезон.ждщшг8н6
     # для initialize_matches нужно будет написать update_matches для быстрого обновления таблицы matches
 
 
