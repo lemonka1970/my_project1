@@ -528,6 +528,9 @@ def build_season_team_relations():
             cur.close()
             conn.close()
 
+    except Exception:
+        raise
+
 
 
 
