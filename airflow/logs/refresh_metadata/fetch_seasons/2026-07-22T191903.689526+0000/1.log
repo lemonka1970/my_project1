@@ -1,0 +1,22 @@
+[2026-07-22 19:20:04,692] {taskinstance.py:1037} INFO - Dependencies all met for <TaskInstance: refresh_metadata.fetch_seasons manual__2026-07-22T19:19:03.689526+00:00 [queued]>
+[2026-07-22 19:20:04,721] {taskinstance.py:1037} INFO - Dependencies all met for <TaskInstance: refresh_metadata.fetch_seasons manual__2026-07-22T19:19:03.689526+00:00 [queued]>
+[2026-07-22 19:20:04,723] {taskinstance.py:1243} INFO - 
+--------------------------------------------------------------------------------
+[2026-07-22 19:20:04,725] {taskinstance.py:1244} INFO - Starting attempt 1 of 6
+[2026-07-22 19:20:04,726] {taskinstance.py:1245} INFO - 
+--------------------------------------------------------------------------------
+[2026-07-22 19:20:04,759] {taskinstance.py:1264} INFO - Executing <Task(PythonOperator): fetch_seasons> on 2026-07-22 19:19:03.689526+00:00
+[2026-07-22 19:20:04,778] {standard_task_runner.py:52} INFO - Started process 426 to run task
+[2026-07-22 19:20:04,784] {standard_task_runner.py:76} INFO - Running: ['***', 'tasks', 'run', 'refresh_metadata', 'fetch_seasons', 'manual__2026-07-22T19:19:03.689526+00:00', '--job-id', '21', '--raw', '--subdir', 'DAGS_FOLDER/dag_refresh_metadata.py', '--cfg-path', '/tmp/tmpj2bwnhbl', '--error-file', '/tmp/tmpdbuuwt84']
+[2026-07-22 19:20:04,787] {standard_task_runner.py:77} INFO - Job 21: Subtask fetch_seasons
+[2026-07-22 19:20:04,933] {logging_mixin.py:109} INFO - Running <TaskInstance: refresh_metadata.fetch_seasons manual__2026-07-22T19:19:03.689526+00:00 [running]> on host 7d22ada1f6f7
+[2026-07-22 19:20:05,045] {taskinstance.py:1431} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=refresh_metadata
+AIRFLOW_CTX_TASK_ID=fetch_seasons
+AIRFLOW_CTX_EXECUTION_DATE=2026-07-22T19:19:03.689526+00:00
+AIRFLOW_CTX_DAG_RUN_ID=manual__2026-07-22T19:19:03.689526+00:00
+[2026-07-22 19:27:17,659] {python.py:175} INFO - Done. Returned value was: None
+[2026-07-22 19:27:17,679] {taskinstance.py:1282} INFO - Marking task as SUCCESS. dag_id=refresh_metadata, task_id=fetch_seasons, execution_date=20260722T191903, start_date=20260722T192004, end_date=20260722T192717
+[2026-07-22 19:27:17,744] {local_task_job.py:154} INFO - Task exited with return code 0
+[2026-07-22 19:27:17,799] {local_task_job.py:264} INFO - 1 downstream tasks scheduled from follow-on schedule check

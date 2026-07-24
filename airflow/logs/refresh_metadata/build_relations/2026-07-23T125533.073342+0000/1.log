@@ -1,0 +1,22 @@
+[2026-07-23 14:24:04,179] {taskinstance.py:1037} INFO - Dependencies all met for <TaskInstance: refresh_metadata.build_relations manual__2026-07-23T12:55:33.073342+00:00 [queued]>
+[2026-07-23 14:24:04,196] {taskinstance.py:1037} INFO - Dependencies all met for <TaskInstance: refresh_metadata.build_relations manual__2026-07-23T12:55:33.073342+00:00 [queued]>
+[2026-07-23 14:24:04,198] {taskinstance.py:1243} INFO - 
+--------------------------------------------------------------------------------
+[2026-07-23 14:24:04,200] {taskinstance.py:1244} INFO - Starting attempt 1 of 6
+[2026-07-23 14:24:04,202] {taskinstance.py:1245} INFO - 
+--------------------------------------------------------------------------------
+[2026-07-23 14:24:04,218] {taskinstance.py:1264} INFO - Executing <Task(PythonOperator): build_relations> on 2026-07-23 12:55:33.073342+00:00
+[2026-07-23 14:24:04,231] {standard_task_runner.py:52} INFO - Started process 4123 to run task
+[2026-07-23 14:24:04,235] {standard_task_runner.py:76} INFO - Running: ['***', 'tasks', 'run', 'refresh_metadata', 'build_relations', 'manual__2026-07-23T12:55:33.073342+00:00', '--job-id', '58', '--raw', '--subdir', 'DAGS_FOLDER/dag_refresh_metadata.py', '--cfg-path', '/tmp/tmpzmvxhx41', '--error-file', '/tmp/tmph7wyjq_q']
+[2026-07-23 14:24:04,237] {standard_task_runner.py:77} INFO - Job 58: Subtask build_relations
+[2026-07-23 14:24:04,331] {logging_mixin.py:109} INFO - Running <TaskInstance: refresh_metadata.build_relations manual__2026-07-23T12:55:33.073342+00:00 [running]> on host 31a76f83581f
+[2026-07-23 14:24:04,403] {taskinstance.py:1431} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=refresh_metadata
+AIRFLOW_CTX_TASK_ID=build_relations
+AIRFLOW_CTX_EXECUTION_DATE=2026-07-23T12:55:33.073342+00:00
+AIRFLOW_CTX_DAG_RUN_ID=manual__2026-07-23T12:55:33.073342+00:00
+[2026-07-23 15:46:15,269] {python.py:175} INFO - Done. Returned value was: None
+[2026-07-23 15:46:15,286] {taskinstance.py:1282} INFO - Marking task as SUCCESS. dag_id=refresh_metadata, task_id=build_relations, execution_date=20260723T125533, start_date=20260723T142404, end_date=20260723T154615
+[2026-07-23 15:46:15,330] {local_task_job.py:154} INFO - Task exited with return code 0
+[2026-07-23 15:46:15,368] {local_task_job.py:264} INFO - 0 downstream tasks scheduled from follow-on schedule check

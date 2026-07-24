@@ -1,0 +1,22 @@
+[2026-07-22 19:11:32,445] {taskinstance.py:1037} INFO - Dependencies all met for <TaskInstance: initialize_database.initialize_database manual__2026-07-22T19:11:28.387476+00:00 [queued]>
+[2026-07-22 19:11:32,469] {taskinstance.py:1037} INFO - Dependencies all met for <TaskInstance: initialize_database.initialize_database manual__2026-07-22T19:11:28.387476+00:00 [queued]>
+[2026-07-22 19:11:32,471] {taskinstance.py:1243} INFO - 
+--------------------------------------------------------------------------------
+[2026-07-22 19:11:32,473] {taskinstance.py:1244} INFO - Starting attempt 1 of 4
+[2026-07-22 19:11:32,475] {taskinstance.py:1245} INFO - 
+--------------------------------------------------------------------------------
+[2026-07-22 19:11:32,505] {taskinstance.py:1264} INFO - Executing <Task(PythonOperator): initialize_database> on 2026-07-22 19:11:28.387476+00:00
+[2026-07-22 19:11:32,529] {standard_task_runner.py:52} INFO - Started process 116 to run task
+[2026-07-22 19:11:32,541] {standard_task_runner.py:76} INFO - Running: ['***', 'tasks', 'run', 'initialize_database', 'initialize_database', 'manual__2026-07-22T19:11:28.387476+00:00', '--job-id', '15', '--raw', '--subdir', 'DAGS_FOLDER/dag_initialize_database.py', '--cfg-path', '/tmp/tmpv9qb1seg', '--error-file', '/tmp/tmppcpr0e9f']
+[2026-07-22 19:11:32,549] {standard_task_runner.py:77} INFO - Job 15: Subtask initialize_database
+[2026-07-22 19:11:32,739] {logging_mixin.py:109} INFO - Running <TaskInstance: initialize_database.initialize_database manual__2026-07-22T19:11:28.387476+00:00 [running]> on host 7d22ada1f6f7
+[2026-07-22 19:11:32,906] {taskinstance.py:1431} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=initialize_database
+AIRFLOW_CTX_TASK_ID=initialize_database
+AIRFLOW_CTX_EXECUTION_DATE=2026-07-22T19:11:28.387476+00:00
+AIRFLOW_CTX_DAG_RUN_ID=manual__2026-07-22T19:11:28.387476+00:00
+[2026-07-22 19:11:33,205] {python.py:175} INFO - Done. Returned value was: None
+[2026-07-22 19:11:33,248] {taskinstance.py:1282} INFO - Marking task as SUCCESS. dag_id=initialize_database, task_id=initialize_database, execution_date=20260722T191128, start_date=20260722T191132, end_date=20260722T191133
+[2026-07-22 19:11:33,332] {local_task_job.py:154} INFO - Task exited with return code 0
+[2026-07-22 19:11:33,386] {local_task_job.py:264} INFO - 0 downstream tasks scheduled from follow-on schedule check

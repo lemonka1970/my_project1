@@ -1,0 +1,48 @@
+[2026-07-24T17:15:40.183+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-07-24T17:15:40.252+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: update_matches.update_matches scheduled__2026-07-23T00:00:00+00:00 [queued]>
+[2026-07-24T17:15:40.273+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: update_matches.update_matches scheduled__2026-07-23T00:00:00+00:00 [queued]>
+[2026-07-24T17:15:40.275+0000] {taskinstance.py:2306} INFO - Starting attempt 2 of 6
+[2026-07-24T17:15:40.302+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): update_matches> on 2026-07-23 00:00:00+00:00
+[2026-07-24T17:15:40.327+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:62: DeprecationWarning: This process (pid=324) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2026-07-24T17:15:40.330+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'update_matches', 'update_matches', 'scheduled__2026-07-23T00:00:00+00:00', '--job-id', '72', '--raw', '--subdir', 'DAGS_FOLDER/dag_update_matches.py', '--cfg-path', '/tmp/tmpoh_e_j_9']
+[2026-07-24T17:15:40.332+0000] {standard_task_runner.py:64} INFO - Started process 326 to run task
+[2026-07-24T17:15:40.334+0000] {standard_task_runner.py:91} INFO - Job 72: Subtask update_matches
+[2026-07-24T17:15:40.448+0000] {task_command.py:426} INFO - Running <TaskInstance: update_matches.update_matches scheduled__2026-07-23T00:00:00+00:00 [running]> on host 4df7437f7cbe
+[2026-07-24T17:15:40.623+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='update_matches' AIRFLOW_CTX_TASK_ID='update_matches' AIRFLOW_CTX_EXECUTION_DATE='2026-07-23T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-07-23T00:00:00+00:00'
+[2026-07-24T17:15:40.631+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-07-24T17:15:40.645+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-07-24T17:15:40.648+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 401, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/src/parsing.py", line 537, in update_matches
+    cur.execute("""
+psycopg2.errors.UndefinedColumn: column "region_id" does not exist
+LINE 5:                     WHERE region_id = 33
+                                  ^
+HINT:  Perhaps you meant to reference the column "season_team_relations.season_id" or the column "seasons.season_id".
+
+[2026-07-24T17:15:40.677+0000] {taskinstance.py:1206} INFO - Marking task as UP_FOR_RETRY. dag_id=update_matches, task_id=update_matches, run_id=scheduled__2026-07-23T00:00:00+00:00, execution_date=20260723T000000, start_date=20260724T171540, end_date=20260724T171540
+[2026-07-24T17:15:40.701+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 72 for task update_matches (column "region_id" does not exist
+LINE 5:                     WHERE region_id = 33
+                                  ^
+HINT:  Perhaps you meant to reference the column "season_team_relations.season_id" or the column "seasons.season_id".
+; 326)
+[2026-07-24T17:15:40.753+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 1
+[2026-07-24T17:15:40.784+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-07-24T17:15:40.788+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
