@@ -1,23 +1,17 @@
-import json
-import requests
+
 
 import pandas as pd
 import numpy as np
-from pandas import read_excel, concat
-import time
-import psycopg2
-from psycopg2.extras import execute_values
+
 
 from datetime import datetime
 from itertools import combinations
-from dotenv import load_dotenv
-import os
 
-from src.flahscore_client import get_data, get_response
-from src.database import get_connection
+from src.flahscore import get_data, get_response
+from src.connections import get_connection
+from psycopg2.extras import execute_values
 
 
-load_dotenv()
 
 
 
@@ -52,7 +46,7 @@ def fetch_regions():
                 regions.add((el.get('ZB'), el.get('ZY')))
 
 
-    with get_connection() as conn:
+    with get_connection as conn:
         with conn.cursor() as cur:
             execute_values(cur, query, list(regions))
 
@@ -239,7 +233,7 @@ def fetch_teams():
             SELECT tournament_id, tournament_stage_id
             FROM seasons
             """)
-            season_feeds = [f'to_{el[0]}_{el[1]}_1' for el in cur.fetchall()]
+            season_feeds = [f'to_{tournament_Id}_{tournament_stage_Id}_1' for tournament_Id, tournament_stage_Id in cur.fetchall()]
 
             # собираем все команды, игравшие в наших лигах
             teams = set()
@@ -286,7 +280,8 @@ def build_season_team_relations():
             INSERT INTO season_team_relations (season_id, team_id, count_matches)
             VALUES %s
             ON CONFLICT (season_id, team_id)
-            DO NOTHING
+            DO UPDATE SET
+            count_matches = EXCLUDED.count_matches
             """
 
             # собираем id и feed всех сезонов
@@ -297,10 +292,26 @@ def build_season_team_relations():
             seasons = [[season_id, f'to_{tournament_id}_{tournament_stage_id}_1']
                        for season_id, tournament_id, tournament_stage_id in cur.fetchall()]
 
-            # уже обработанные сезоны
+            # уже обработанные сезоны, кроме двух последних
             cur.execute("""
-            SELECT DISTINCT season_id
-            FROM season_team_relations
+            WITH unique_seasons AS (
+                SELECT DISTINCT season_id
+                FROM season_team_relations
+            ),
+            seasons_q AS (
+                SELECT
+                    s.season_id,
+                    s.league_id,
+                    ROW_NUMBER() OVER (
+                        PARTITION BY s.league_id
+                        ORDER BY s.start_date DESC
+                    ) AS num
+                FROM unique_seasons us
+                JOIN seasons s USING (season_id)
+            )
+            SELECT season_id
+            FROM seasons_q
+            WHERE num > 2;
             """)
             old_season_ids = set(season_id for season_id in cur.fetchall())
 

@@ -2,7 +2,7 @@ from airflow import DAG
 from airflow.operators.python import PythonOperator
 
 from datetime import datetime, timedelta
-from src.database import (initialize_database)
+from src.connections import (initialize_database)
 
 default_args = {
     'start_date': datetime(2020, 1, 1),
