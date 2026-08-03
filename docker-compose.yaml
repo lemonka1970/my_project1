@@ -303,6 +303,87 @@ services:
         condition: service_healthy
     restart: unless-stopped
 
+  fetch-regions-consumer:
+    build: .
+    container_name: fetch_regions_consumer
+    command: python -m src.consumers.postgres.fetch_regions
+    environment:
+      KAFKA_BOOTSTRAP_SERVERS: kafka:9092
+      WAREHOUSE_POSTGRES_CONN: postgresql://postgres:postgres@warehouse-postgres:5432/postgres
+    volumes:
+      - ./src:/opt/airflow/src
+    depends_on:
+      kafka:
+        condition: service_healthy
+      warehouse-postgres:
+        condition: service_healthy
+    restart: unless-stopped
+
+  fetch-leagues-consumer:
+    build: .
+    container_name: fetch_leagues_consumer
+    command: python -m src.consumers.postgres.fetch_leagues
+    environment:
+      KAFKA_BOOTSTRAP_SERVERS: kafka:9092
+      WAREHOUSE_POSTGRES_CONN: postgresql://postgres:postgres@warehouse-postgres:5432/postgres
+    volumes:
+      - ./src:/opt/airflow/src
+    depends_on:
+      kafka:
+        condition: service_healthy
+      warehouse-postgres:
+        condition: service_healthy
+    restart: unless-stopped
+
+  fetch-current-seasons-consumer:
+    build: .
+    container_name: fetch_current_seasons_consumer
+    command: python -m src.consumers.postgres.fetch_current_seasons
+    environment:
+      KAFKA_BOOTSTRAP_SERVERS: kafka:9092
+      WAREHOUSE_POSTGRES_CONN: postgresql://postgres:postgres@warehouse-postgres:5432/postgres
+    volumes:
+      - ./src:/opt/airflow/src
+    depends_on:
+      kafka:
+        condition: service_healthy
+      warehouse-postgres:
+        condition: service_healthy
+    restart: unless-stopped
+
+  fetch-seasons-consumer:
+    build: .
+    container_name: fetch_seasons_consumer
+    command: python -m src.consumers.postgres.fetch_seasons
+    environment:
+      KAFKA_BOOTSTRAP_SERVERS: kafka:9092
+      WAREHOUSE_POSTGRES_CONN: postgresql://postgres:postgres@warehouse-postgres:5432/postgres
+    volumes:
+      - ./src:/opt/airflow/src
+    depends_on:
+      kafka:
+        condition: service_healthy
+      warehouse-postgres:
+        condition: service_healthy
+    restart: unless-stopped
+
+
+  fetch-teams-consumer:
+    build: .
+    container_name: fetch_teams_consumer
+    command: python -m src.consumers.postgres.fetch_teams
+    environment:
+      KAFKA_BOOTSTRAP_SERVERS: kafka:9092
+      WAREHOUSE_POSTGRES_CONN: postgresql://postgres:postgres@warehouse-postgres:5432/postgres
+    volumes:
+      - ./src:/opt/airflow/src
+    depends_on:
+      kafka:
+        condition: service_healthy
+      warehouse-postgres:
+        condition: service_healthy
+    restart: unless-stopped
+
 volumes:
   airflow-db-volume:
   postgres-warehouse-volume:

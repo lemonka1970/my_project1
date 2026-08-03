@@ -1,12 +1,16 @@
 from connections import get_producer, get_consumer, get_connection
 from flahscore import get_data, get_response
-from datetime import datetime, timedelta
 
+import pandas as pd
+from datetime import datetime, timedelta
 import json
 from itertools import combinations
 
 
-def produce_scoreboard():
+def produce_scoreboards():
+    """
+    публикуем табло flashscore по датам
+    """
 
     
     producer = get_producer()
@@ -26,7 +30,7 @@ def produce_scoreboard():
             date = current_date + timedelta(days=day)
             payload = json.dumps({
                 'date': str(date), 
-                'data': data_json
+                'scoreboard': data_json
                 }).encode('utf-8')
 
             producer.produce(
@@ -41,6 +45,9 @@ def produce_scoreboard():
 
 
 def produce_past_seasons():
+    """
+    публикуем все предыдущие сезоны для каждой текущей
+    """
 
     producer = get_producer()
 
@@ -48,8 +55,9 @@ def produce_past_seasons():
 
     try:
 
-
         with conn.cursor() as cur:
+
+            
             cur.execute("""
                 SELECT DISTINCT tournament_id, tournament_stage_id
                 FROM seasons
@@ -71,9 +79,11 @@ def produce_past_seasons():
                     continue
 
                 payload = json.dumps({
-                    'feed_season': f'to_{tournament_id}_{tournament_stage_id}_1',
-                    'seasons': seasons
+                    'tounament_id': tournament_id,
+                    'tournament_stage_id': tournament_stage_id,
+                    'past_seasons': seasons
                     }).encode('utf-8')
+                
                 producer.produce(
                     topic='past_seasons',
                     value=payload
@@ -88,6 +98,9 @@ def produce_past_seasons():
 
 
 def produce_standings():
+    """
+    публикуем json-ы турнирных таблиц для каждого сезона
+    """
 
     producer = get_producer()
     conn = get_connection()
@@ -126,7 +139,10 @@ def produce_standings():
 
 
 
-def produce_match_event_ids():
+def produce_initializetion_matches():
+    """
+    для каждой лиги публикуем все игры
+    """
 
     producer = get_producer()
     conn = get_connection()
@@ -134,60 +150,84 @@ def produce_match_event_ids():
     try:
         with conn.cursor() as cur:
 
+            # получаем id всех регионов
             cur.execute("""
-                SELECT league_id
-                FROM leagues
+            SELECT region_id
+            FROM regions
             """)
-            leagues = [league_id[0] for league_id in cur.fetchall()]
+            region_ids = cur.fetchall()
+            region_ids = [id_[0] for id_ in region_ids]
 
 
-            for league_id in leagues:
+            region_ids = [33]
 
+
+            for region_id in region_ids:
+                print(region_id)
+
+
+                # словарь {лига: id лиги}
                 cur.execute("""
-                    SELECT DISTINCT flashscore_team_url
-                    FROM teams
-                    JOIN season_team_relations USING(team_id)
-                    JOIN seasons USING(season_id)
-                    WHERE league_id = %s
-                """, (league_id, ))
-
-                team_urls = [team_url[0] for team_url in cur.fetchall()]
-
-                match_feeds = set()
-
-                for url_team_1, url_team_2 in combinations(team_urls, 2):
-                    url_team_1 = url_team_1[6:-1].replace('/', '-')
-                    url_team_2 = url_team_2[6:-1].replace('/', '-')
-
-                    url = f'https://www.flashscore.com/match/football/{url_team_1}/{url_team_2}/?'
-                    response = get_response(url)
+                    SELECT league_id
+                    FROM leagues
+                    WHERE region_id = %s
+                    """, (region_id,))
+                leagues = [league_id[0] for league_id in cur.fetchall()]
+                # print(leagues)
 
 
-                    # максимально топорно достаем feed игры
-                    data = response.text.split('<script>\n    ')
-                    feed_match = None
-                    for el in data:
-                        if 'window.environment = {"event_id_c":' in el:
-                            feed_match = el[36:44]
-                            break
-                    if feed_match is None:
-                        continue
+                for league_id in leagues:
 
-                    match_feeds.add(feed_match)
+                    
 
-                if not match_feeds:
-                    continue
+                    # для каждой лиги получаем список url-ов игравших в нем команд
+                    cur.execute("""
+                        SELECT DISTINCT flashscore_team_url
+                        FROM teams
+                        JOIN season_team_relations USING(team_id)
+                        JOIN seasons USING(season_id)
+                        WHERE league_id = %s
+                        """, (league_id,))
+                    team_urls = [url[0] for url in cur.fetchall()]
 
-                payload = json.dumps({
-                    'league_id': league_id,
-                    'match_event_ids': list(match_feeds)
-                    }).encode('utf-8')
-                
-                producer.produce(
-                    topic='match_event_ids',
-                    value=payload
-                )
-        
+
+                    # для каждой комбинации команд находим feed их последней очной игры
+                    for url_team_1, url_team_2 in combinations(team_urls, 2):
+                        url_team_1 = url_team_1[6:-1].replace('/', '-')
+                        url_team_2 = url_team_2[6:-1].replace('/', '-')
+
+                        url = f'https://www.flashscore.com/match/football/{url_team_1}/{url_team_2}/?'
+                        response = get_response(url)
+
+
+                        # максимально простым способом достаем feed игры
+                        data = response.text.split('<script>\n    ')
+                        feed_match = None
+                        for el in data:
+                            if 'window.environment = {"event_id_c":' in el:
+                                feed_match = el[36:44]
+                                break
+                        if feed_match is None:
+                            continue
+
+
+                        # print(feed_match)
+                        h2h = get_data('df_hh_1_' + feed_match)
+
+                        payload = json.dumps({
+                            'league_id': league_id,
+                            'team_1': url_team_1,
+                            'team_2': url_team_2,
+                            'h2h': h2h
+                        })
+
+                        producer.produce(
+                            topic='initialize_matches',
+                            value=payload
+                        )
+
+
+                    
     finally:
         conn.close()
         producer.flush()
@@ -195,11 +235,126 @@ def produce_match_event_ids():
 
 
 
-# def produce_h2h_matches():
+def produce_updeting_matches():
 
-#     producer = get_producer()
-#     consumer = get_consumer('producer_h2h')
-#     conn = get_connection()
+    conn = get_connection()
+    producer = get_producer()
 
-#     try:
+    try:
+
+        with conn.cursor() as cur:
         
+
+            # проходимся отдельно по каждой лиге
+            cur.execute("""
+            SELECT region_id
+            FROM regions
+            """)
+            region_ids = [el[0] for el in cur.fetchall()]
+            region_ids = [33]
+
+            for region_id in region_ids:
+
+                # собираем все команды и отношения команд с сезонами
+                cur.execute("""
+                    SELECT season_id, team_id
+                    FROM season_team_relations
+                    JOIN seasons USING(season_id)
+                    WHERE region_id = %s
+                    """, (region_id,))
+                df_relations = pd.DataFrame(cur.fetchall(), columns=['season_id', 'team_id'])
+
+                cur.execute("""
+                    SELECT DISTINCT team_id, flashscore_team_url
+                    FROM teams
+                    JOIN season_team_relations USING(team_id)
+                    JOIN seasons USING(season_id)
+                    WHERE region_id = %s
+                    """, (region_id, ))
+                df_teams = pd.DataFrame(cur.fetchall(), columns=['team_id', 'flashscore_team_url'])
+
+
+                # берем текущий и предыдущий сезоны каждой лиги
+                cur.execute("""
+                    WITH cur_seasons AS (
+                        SELECT
+                            region_id,
+                            league_id,
+                            season_id,
+                            ROW_NUMBER() OVER (
+                                PARTITION BY league_id
+                                ORDER BY start_date DESC
+                            ) AS season_num
+                        FROM seasons
+                        JOIN leagues USING(league_id)
+                    )
+                    SELECT league_id, season_id, season_num
+                    FROM cur_seasons
+                    WHERE region_id = %s
+                        AND season_num IN (1, 2)
+                    """, (region_id, ))
+                df_last_seasons = pd.DataFrame(
+                    cur.fetchall(),
+                    columns=['league_id', 'season_id', 'season_num']
+                )
+
+                
+
+                # для каждой лиги собираем все url-ы команд текущего и предыдущего сезонов
+                for league_id in set(df_last_seasons['league_id']):
+
+                    league_seasons = df_last_seasons[
+                        df_last_seasons['league_id'] == league_id
+                    ]
+
+                    season_ids = league_seasons['season_id'].tolist()
+
+
+                    team_ids = list(df_relations[df_relations['season_id'].isin(season_ids)]['team_id'])
+                    team_urls = list(df_teams[df_teams['team_id'].isin(team_ids)]['flashscore_team_url'])
+                    if not team_urls:
+                        continue
+
+                    # формируем пары и находим feed их последней очной встречи
+                    url_pairs = []
+                    for i in range(0, len(team_urls), 2):
+                        url_pairs.append((team_urls[i], team_urls[(i + 1) % len(team_urls)]))
+
+                    for pair in url_pairs:
+                        url_team_1 = pair[0][6:-1].replace('/', '-')
+                        url_team_2 = pair[1][6:-1].replace('/', '-')
+
+                        url = f'https://www.flashscore.com/match/football/{url_team_1}/{url_team_2}/?'
+                        response = get_response(url)
+
+
+                        # максимально простым способом достаем feed игры
+                        data = response.text.split('<script>\n    ')
+                        feed_match = None
+                        for el in data:
+                            if 'window.environment = {"event_id_c":' in el:
+                                feed_match = el[36:44]
+                                break
+                        if feed_match is None:
+                            continue
+
+
+                        h2h = get_data('df_hh_1_' + feed_match)
+
+                        payload = json.dumps({
+                            'league_id': league_id,
+                            'team_1': url_team_1,
+                            'team_2': url_team_2,
+                            'h2h': h2h
+                        })
+
+                        producer.produce(
+                            topic='update_matches',
+                            value=payload
+                        )
+
+                        
+
+    finally:
+        conn.close()
+        producer.flush()

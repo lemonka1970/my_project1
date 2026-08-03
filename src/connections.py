@@ -145,6 +145,8 @@ def initialize_database():
             )
             """)
 
+
+
             cur.execute("""
             CREATE INDEX IF NOT EXISTS idx_matches_time
             ON matches(time);

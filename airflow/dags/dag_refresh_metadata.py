@@ -2,47 +2,29 @@ from airflow import DAG
 from airflow.operators.python import PythonOperator
 
 from datetime import datetime, timedelta
-from src.parsing import (fetch_regions, fetch_leagues, fetch_seasons,
-                                   fetch_teams, build_season_team_relations)
+from src.producers import produce_scoreboards, produce_past_seasons
 
 default_args = {
     'start_date': datetime(2026, 1, 1),
-    'retries': 5,
-    'retry_delay': timedelta(minutes=1)
+    'retries': 3,
+    'retry_delay': timedelta(minutes=2)
 }
 
 with DAG(
-    dag_id = 'refresh_metadata',
+    dag_id = 'refresh_matadata',
     schedule_interval = '@weekly',
     catchup = False,
-    default_args=default_args
+    default_args = default_args
 ) as dag:
 
-    regions = PythonOperator(
-        task_id = 'fetch_regions',
-        python_callable = fetch_regions
+    scoreboards = PythonOperator(
+        task_id = 'produce_scoreboards',
+        python_callable = produce_scoreboards
     )
 
-    leagues = PythonOperator(
-        task_id = 'fetch_leagues',
-        python_callable = fetch_leagues
+    past_seasons = PythonOperator(
+        task_id = 'produce_past_seasons',
+        python_callable = produce_past_seasons
     )
 
-    seasons = PythonOperator(
-        task_id = 'fetch_seasons',
-        python_callable = fetch_seasons
-    )
-
-    teams = PythonOperator(
-        task_id = 'fetch_teams',
-        python_callable = fetch_teams
-    )
-
-    relations = PythonOperator(
-        task_id = 'build_relations',
-        python_callable = build_season_team_relations
-    )
-
-    regions >> leagues >> seasons >> teams >> relations
-
-
+    [scoreboards, past_seasons]
