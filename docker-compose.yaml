@@ -269,47 +269,19 @@ services:
       "
 
   # ─────────────────────────── Consumers ───────────────────────────
-  s3-raw-consumer:
-    build: .
-    container_name: s3_raw_consumer
-    command: python -m src.consumers.s3_raw_consumer
-    environment:
-      KAFKA_BOOTSTRAP_SERVERS: kafka:9092
-      MINIO_ENDPOINT: minio:9000
-      MINIO_ACCESS_KEY: minioadmin
-      MINIO_SECRET_KEY: minioadmin123
-    volumes:
-      - ./src:/opt/airflow/src
-    depends_on:
-      kafka:
-        condition: service_healthy
-      minio:
-        condition: service_healthy
-    restart: unless-stopped
-
-  postgres-loader-consumer:
-    build: .
-    container_name: postgres_loader_consumer
-    command: python -m src.consumers.postgres_loader
-    environment:
-      KAFKA_BOOTSTRAP_SERVERS: kafka:9092
-      WAREHOUSE_POSTGRES_CONN: postgresql://postgres:postgres@warehouse-postgres:5432/postgres
-    volumes:
-      - ./src:/opt/airflow/src
-    depends_on:
-      kafka:
-        condition: service_healthy
-      warehouse-postgres:
-        condition: service_healthy
-    restart: unless-stopped
 
   fetch-regions-consumer:
     build: .
     container_name: fetch_regions_consumer
     command: python -m src.consumers.postgres.fetch_regions
     environment:
-      KAFKA_BOOTSTRAP_SERVERS: kafka:9092
-      WAREHOUSE_POSTGRES_CONN: postgresql://postgres:postgres@warehouse-postgres:5432/postgres
+      KAFKA_BOOTSTRAP_SERVERS: ${KAFKA_BOOTSTRAP_SERVERS}
+      POSTGRES_HOST: ${POSTGRES_HOST}
+      POSTGRES_PORT: ${POSTGRES_PORT}
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+
     volumes:
       - ./src:/opt/airflow/src
     depends_on:
@@ -324,8 +296,12 @@ services:
     container_name: fetch_leagues_consumer
     command: python -m src.consumers.postgres.fetch_leagues
     environment:
-      KAFKA_BOOTSTRAP_SERVERS: kafka:9092
-      WAREHOUSE_POSTGRES_CONN: postgresql://postgres:postgres@warehouse-postgres:5432/postgres
+      KAFKA_BOOTSTRAP_SERVERS: ${KAFKA_BOOTSTRAP_SERVERS}
+      POSTGRES_HOST: ${POSTGRES_HOST}
+      POSTGRES_PORT: ${POSTGRES_PORT}
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
     volumes:
       - ./src:/opt/airflow/src
     depends_on:
@@ -340,8 +316,12 @@ services:
     container_name: fetch_current_seasons_consumer
     command: python -m src.consumers.postgres.fetch_current_seasons
     environment:
-      KAFKA_BOOTSTRAP_SERVERS: kafka:9092
-      WAREHOUSE_POSTGRES_CONN: postgresql://postgres:postgres@warehouse-postgres:5432/postgres
+      KAFKA_BOOTSTRAP_SERVERS: ${KAFKA_BOOTSTRAP_SERVERS}
+      POSTGRES_HOST: ${POSTGRES_HOST}
+      POSTGRES_PORT: ${POSTGRES_PORT}
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
     volumes:
       - ./src:/opt/airflow/src
     depends_on:
@@ -356,8 +336,12 @@ services:
     container_name: fetch_seasons_consumer
     command: python -m src.consumers.postgres.fetch_seasons
     environment:
-      KAFKA_BOOTSTRAP_SERVERS: kafka:9092
-      WAREHOUSE_POSTGRES_CONN: postgresql://postgres:postgres@warehouse-postgres:5432/postgres
+      KAFKA_BOOTSTRAP_SERVERS: ${KAFKA_BOOTSTRAP_SERVERS}
+      POSTGRES_HOST: ${POSTGRES_HOST}
+      POSTGRES_PORT: ${POSTGRES_PORT}
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
     volumes:
       - ./src:/opt/airflow/src
     depends_on:
@@ -373,14 +357,66 @@ services:
     container_name: fetch_teams_consumer
     command: python -m src.consumers.postgres.fetch_teams
     environment:
-      KAFKA_BOOTSTRAP_SERVERS: kafka:9092
-      WAREHOUSE_POSTGRES_CONN: postgresql://postgres:postgres@warehouse-postgres:5432/postgres
+      KAFKA_BOOTSTRAP_SERVERS: ${KAFKA_BOOTSTRAP_SERVERS}
+      POSTGRES_HOST: ${POSTGRES_HOST}
+      POSTGRES_PORT: ${POSTGRES_PORT}
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
     volumes:
       - ./src:/opt/airflow/src
     depends_on:
       kafka:
         condition: service_healthy
       warehouse-postgres:
+        condition: service_healthy
+    restart: unless-stopped
+
+  save-scoreboards:
+    build: .
+    container_name: save-scoreboards
+    command: python -m src.consumers.s3.save_scoreboards
+    environment:
+      KAFKA_BOOTSTRAP_SERVERS: ${KAFKA_BOOTSTRAP_SERVERS}
+      S3_ENDPOINTS: ${S3_ENDPOINTS}
+      S3_ACCES_KEY: ${S3_ACCES_KEY}
+      S3_SECRET_KEY: ${S3_SECRET_KEY}
+    volumes:
+      - ./src:/opt/airflow/src
+    depends_on:
+      kafka:
+        condition: service_healthy
+    restart: unless-stopped
+
+  save-past-seasons:
+    build: .
+    container_name: save-past_seasons
+    command: python -m src.consumers.s3.save_past_seasons
+    environment:
+      KAFKA_BOOTSTRAP_SERVERS: ${KAFKA_BOOTSTRAP_SERVERS}
+      S3_ENDPOINTS: ${S3_ENDPOINTS}
+      S3_ACCES_KEY: ${S3_ACCES_KEY}
+      S3_SECRET_KEY: ${S3_SECRET_KEY}
+    volumes:
+      - ./src:/opt/airflow/src
+    depends_on:
+      kafka:
+        condition: service_healthy
+    restart: unless-stopped
+
+  save-standings:
+    build: .
+    container_name: save-standings
+    command: python -m src.consumers.s3.save_standings
+    environment:
+      KAFKA_BOOTSTRAP_SERVERS: ${KAFKA_BOOTSTRAP_SERVERS}
+      S3_ENDPOINTS: ${S3_ENDPOINTS}
+      S3_ACCES_KEY: ${S3_ACCES_KEY}
+      S3_SECRET_KEY: ${S3_SECRET_KEY}
+    volumes:
+      - ./src:/opt/airflow/src
+    depends_on:
+      kafka:
         condition: service_healthy
     restart: unless-stopped
 

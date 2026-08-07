@@ -7,8 +7,8 @@ import numpy as np
 from datetime import datetime
 from itertools import combinations
 
-from src.flahscore import get_data, get_response
-from src.connections import get_connection
+from flahscore import get_data, get_response
+from connections import get_connection
 from psycopg2.extras import execute_values
 
 
@@ -707,11 +707,9 @@ def update_matches():
 
 def main():
 
-    
+    x = 9
 
-    build_season_team_relations()
-
-
+            
 
 
 

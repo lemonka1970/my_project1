@@ -2,7 +2,7 @@ from airflow import DAG
 from airflow.operators.python import PythonOperator
 
 from datetime import datetime, timedelta
-from src.producers import produce_scoreboards, produce_past_seasons
+from src.producers import produce_scoreboards, produce_past_seasons, produce_standings
 
 default_args = {
     'start_date': datetime(2026, 1, 1),
@@ -27,4 +27,9 @@ with DAG(
         python_callable = produce_past_seasons
     )
 
-    [scoreboards, past_seasons]
+    standings = PythonOperator(
+        task_id = 'produce_standings',
+        python_callable = produce_standings
+    )
+
+    scoreboards >> [past_seasons, standings]

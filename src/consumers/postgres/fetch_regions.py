@@ -34,16 +34,19 @@ def fetch_regions():
                 continue
 
             payload = json.loads(msg.value().decode('utf-8'))
-            data = payload.get('scoreboard', [])
+            el = payload.get('scoreboard', [])
+            if el:
+                el = el[0]
+                
             regions = set()
 
 
             # выделяем из него регионы и готовим к загрузке
-            for el in data:
-                if el.get('~ZA') and el.get('ZB'):
-                    # ZB: flashscore_region_id
-                    # ZY: region_name
-                    regions.add((el.get('ZB'), el.get('ZY')))
+            if el.get('~ZA') and el.get('ZB'):
+                regions.add((
+                    el.get('ZB'), # flashscore_region_id
+                    el.get('ZY') # region_name
+                    ))
 
             if not regions:
                 continue

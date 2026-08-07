@@ -1,0 +1,14 @@
+[2026-08-04T18:58:51.464+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-08-04T18:58:51.615+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: refresh_matadata.produce_standings manual__2026-08-04T18:57:29.130852+00:00 [queued]>
+[2026-08-04T18:58:51.677+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: refresh_matadata.produce_standings manual__2026-08-04T18:57:29.130852+00:00 [queued]>
+[2026-08-04T18:58:51.689+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 4
+[2026-08-04T18:58:51.816+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): produce_standings> on 2026-08-04 18:57:29.130852+00:00
+[2026-08-04T18:58:51.962+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:62: DeprecationWarning: This process (pid=151) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2026-08-04T18:58:51.971+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'refresh_matadata', 'produce_standings', 'manual__2026-08-04T18:57:29.130852+00:00', '--job-id', '105', '--raw', '--subdir', 'DAGS_FOLDER/dag_refresh_metadata.py', '--cfg-path', '/tmp/tmpq3d9yi2o']
+[2026-08-04T18:58:52.031+0000] {standard_task_runner.py:91} INFO - Job 105: Subtask produce_standings
+[2026-08-04T18:58:52.016+0000] {standard_task_runner.py:64} INFO - Started process 160 to run task
+[2026-08-04T18:58:52.567+0000] {task_command.py:426} INFO - Running <TaskInstance: refresh_matadata.produce_standings manual__2026-08-04T18:57:29.130852+00:00 [running]> on host 1af6226c7474
+[2026-08-04T18:58:53.518+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='refresh_matadata' AIRFLOW_CTX_TASK_ID='produce_standings' AIRFLOW_CTX_EXECUTION_DATE='2026-08-04T18:57:29.130852+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-08-04T18:57:29.130852+00:00'
+[2026-08-04T18:58:53.523+0000] {taskinstance.py:430} INFO - ::endgroup::

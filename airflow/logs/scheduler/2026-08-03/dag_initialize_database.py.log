@@ -1,0 +1,105 @@
+[2026-08-03T20:37:46.879+0000] {processor.py:161} INFO - Started process (PID=78) to work on /opt/airflow/dags/dag_initialize_database.py
+[2026-08-03T20:37:46.893+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_initialize_database.py for tasks to queue
+[2026-08-03T20:37:46.910+0000] {logging_mixin.py:188} INFO - [2026-08-03T20:37:46.909+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_initialize_database.py
+[2026-08-03T20:37:51.438+0000] {processor.py:840} INFO - DAG(s) 'initialize_database' retrieved from /opt/airflow/dags/dag_initialize_database.py
+[2026-08-03T20:37:53.632+0000] {logging_mixin.py:188} INFO - [2026-08-03T20:37:53.631+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-08-03T20:37:53.682+0000] {logging_mixin.py:188} INFO - [2026-08-03T20:37:53.681+0000] {dag.py:3947} INFO - Setting next_dagrun for initialize_database to None, run_after=None
+[2026-08-03T20:37:53.804+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_initialize_database.py took 7.000 seconds
+[2026-08-03T20:39:15.830+0000] {processor.py:161} INFO - Started process (PID=170) to work on /opt/airflow/dags/dag_initialize_database.py
+[2026-08-03T20:39:15.847+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_initialize_database.py for tasks to queue
+[2026-08-03T20:39:15.853+0000] {logging_mixin.py:188} INFO - [2026-08-03T20:39:15.852+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_initialize_database.py
+[2026-08-03T20:39:17.972+0000] {processor.py:840} INFO - DAG(s) 'initialize_database' retrieved from /opt/airflow/dags/dag_initialize_database.py
+[2026-08-03T20:39:18.191+0000] {logging_mixin.py:188} INFO - [2026-08-03T20:39:18.191+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-08-03T20:39:18.549+0000] {logging_mixin.py:188} INFO - [2026-08-03T20:39:18.547+0000] {dag.py:3947} INFO - Setting next_dagrun for initialize_database to None, run_after=None
+[2026-08-03T20:39:18.836+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_initialize_database.py took 3.109 seconds
+[2026-08-03T20:39:54.470+0000] {processor.py:161} INFO - Started process (PID=218) to work on /opt/airflow/dags/dag_initialize_database.py
+[2026-08-03T20:39:54.480+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_initialize_database.py for tasks to queue
+[2026-08-03T20:39:54.492+0000] {logging_mixin.py:188} INFO - [2026-08-03T20:39:54.490+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_initialize_database.py
+[2026-08-03T20:39:56.586+0000] {processor.py:840} INFO - DAG(s) 'initialize_database' retrieved from /opt/airflow/dags/dag_initialize_database.py
+[2026-08-03T20:39:56.742+0000] {logging_mixin.py:188} INFO - [2026-08-03T20:39:56.741+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-08-03T20:39:56.851+0000] {logging_mixin.py:188} INFO - [2026-08-03T20:39:56.850+0000] {dag.py:3947} INFO - Setting next_dagrun for initialize_database to None, run_after=None
+[2026-08-03T20:39:56.944+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_initialize_database.py took 2.503 seconds
+[2026-08-03T20:40:29.963+0000] {processor.py:161} INFO - Started process (PID=277) to work on /opt/airflow/dags/dag_initialize_database.py
+[2026-08-03T20:40:29.967+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_initialize_database.py for tasks to queue
+[2026-08-03T20:40:29.971+0000] {logging_mixin.py:188} INFO - [2026-08-03T20:40:29.970+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_initialize_database.py
+[2026-08-03T20:40:30.805+0000] {processor.py:840} INFO - DAG(s) 'initialize_database' retrieved from /opt/airflow/dags/dag_initialize_database.py
+[2026-08-03T20:40:30.873+0000] {logging_mixin.py:188} INFO - [2026-08-03T20:40:30.872+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-08-03T20:40:30.941+0000] {logging_mixin.py:188} INFO - [2026-08-03T20:40:30.940+0000] {dag.py:3947} INFO - Setting next_dagrun for initialize_database to None, run_after=None
+[2026-08-03T20:40:31.049+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_initialize_database.py took 1.121 seconds
+[2026-08-03T20:41:01.992+0000] {processor.py:161} INFO - Started process (PID=345) to work on /opt/airflow/dags/dag_initialize_database.py
+[2026-08-03T20:41:02.001+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_initialize_database.py for tasks to queue
+[2026-08-03T20:41:02.005+0000] {logging_mixin.py:188} INFO - [2026-08-03T20:41:02.004+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_initialize_database.py
+[2026-08-03T20:41:03.493+0000] {processor.py:840} INFO - DAG(s) 'initialize_database' retrieved from /opt/airflow/dags/dag_initialize_database.py
+[2026-08-03T20:41:03.710+0000] {logging_mixin.py:188} INFO - [2026-08-03T20:41:03.709+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-08-03T20:41:04.073+0000] {logging_mixin.py:188} INFO - [2026-08-03T20:41:04.073+0000] {dag.py:3947} INFO - Setting next_dagrun for initialize_database to None, run_after=None
+[2026-08-03T20:41:04.337+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_initialize_database.py took 2.365 seconds
+[2026-08-03T20:41:35.280+0000] {processor.py:161} INFO - Started process (PID=417) to work on /opt/airflow/dags/dag_initialize_database.py
+[2026-08-03T20:41:35.305+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_initialize_database.py for tasks to queue
+[2026-08-03T20:41:35.321+0000] {logging_mixin.py:188} INFO - [2026-08-03T20:41:35.320+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_initialize_database.py
+[2026-08-03T20:41:37.032+0000] {processor.py:840} INFO - DAG(s) 'initialize_database' retrieved from /opt/airflow/dags/dag_initialize_database.py
+[2026-08-03T20:41:37.304+0000] {logging_mixin.py:188} INFO - [2026-08-03T20:41:37.304+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-08-03T20:41:37.478+0000] {logging_mixin.py:188} INFO - [2026-08-03T20:41:37.454+0000] {dag.py:3947} INFO - Setting next_dagrun for initialize_database to None, run_after=None
+[2026-08-03T20:41:37.596+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_initialize_database.py took 2.386 seconds
+[2026-08-03T20:42:22.982+0000] {processor.py:161} INFO - Started process (PID=489) to work on /opt/airflow/dags/dag_initialize_database.py
+[2026-08-03T20:42:23.018+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_initialize_database.py for tasks to queue
+[2026-08-03T20:42:23.030+0000] {logging_mixin.py:188} INFO - [2026-08-03T20:42:23.029+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_initialize_database.py
+[2026-08-03T20:42:25.302+0000] {processor.py:840} INFO - DAG(s) 'initialize_database' retrieved from /opt/airflow/dags/dag_initialize_database.py
+[2026-08-03T20:42:25.748+0000] {logging_mixin.py:188} INFO - [2026-08-03T20:42:25.747+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-08-03T20:42:25.991+0000] {logging_mixin.py:188} INFO - [2026-08-03T20:42:25.990+0000] {dag.py:3947} INFO - Setting next_dagrun for initialize_database to None, run_after=None
+[2026-08-03T20:42:26.599+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_initialize_database.py took 3.742 seconds
+[2026-08-03T20:43:20.087+0000] {processor.py:161} INFO - Started process (PID=568) to work on /opt/airflow/dags/dag_initialize_database.py
+[2026-08-03T20:43:20.098+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_initialize_database.py for tasks to queue
+[2026-08-03T20:43:20.125+0000] {logging_mixin.py:188} INFO - [2026-08-03T20:43:20.109+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_initialize_database.py
+[2026-08-03T20:43:21.426+0000] {processor.py:840} INFO - DAG(s) 'initialize_database' retrieved from /opt/airflow/dags/dag_initialize_database.py
+[2026-08-03T20:43:21.718+0000] {logging_mixin.py:188} INFO - [2026-08-03T20:43:21.717+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-08-03T20:43:21.785+0000] {logging_mixin.py:188} INFO - [2026-08-03T20:43:21.784+0000] {dag.py:3947} INFO - Setting next_dagrun for initialize_database to None, run_after=None
+[2026-08-03T20:43:21.870+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_initialize_database.py took 1.846 seconds
+[2026-08-03T20:43:53.227+0000] {processor.py:161} INFO - Started process (PID=622) to work on /opt/airflow/dags/dag_initialize_database.py
+[2026-08-03T20:43:53.238+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_initialize_database.py for tasks to queue
+[2026-08-03T20:43:53.251+0000] {logging_mixin.py:188} INFO - [2026-08-03T20:43:53.250+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_initialize_database.py
+[2026-08-03T20:43:54.123+0000] {processor.py:840} INFO - DAG(s) 'initialize_database' retrieved from /opt/airflow/dags/dag_initialize_database.py
+[2026-08-03T20:43:54.338+0000] {logging_mixin.py:188} INFO - [2026-08-03T20:43:54.337+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-08-03T20:43:54.416+0000] {logging_mixin.py:188} INFO - [2026-08-03T20:43:54.415+0000] {dag.py:3947} INFO - Setting next_dagrun for initialize_database to None, run_after=None
+[2026-08-03T20:43:54.544+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_initialize_database.py took 1.368 seconds
+[2026-08-03T20:44:29.044+0000] {processor.py:161} INFO - Started process (PID=676) to work on /opt/airflow/dags/dag_initialize_database.py
+[2026-08-03T20:44:29.053+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_initialize_database.py for tasks to queue
+[2026-08-03T20:44:29.057+0000] {logging_mixin.py:188} INFO - [2026-08-03T20:44:29.056+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_initialize_database.py
+[2026-08-03T20:44:31.339+0000] {processor.py:840} INFO - DAG(s) 'initialize_database' retrieved from /opt/airflow/dags/dag_initialize_database.py
+[2026-08-03T20:44:31.727+0000] {logging_mixin.py:188} INFO - [2026-08-03T20:44:31.726+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-08-03T20:44:31.955+0000] {logging_mixin.py:188} INFO - [2026-08-03T20:44:31.954+0000] {dag.py:3947} INFO - Setting next_dagrun for initialize_database to None, run_after=None
+[2026-08-03T20:44:32.058+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_initialize_database.py took 3.112 seconds
+[2026-08-03T20:45:03.916+0000] {processor.py:161} INFO - Started process (PID=737) to work on /opt/airflow/dags/dag_initialize_database.py
+[2026-08-03T20:45:03.941+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_initialize_database.py for tasks to queue
+[2026-08-03T20:45:04.029+0000] {logging_mixin.py:188} INFO - [2026-08-03T20:45:03.991+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_initialize_database.py
+[2026-08-03T20:45:07.426+0000] {processor.py:840} INFO - DAG(s) 'initialize_database' retrieved from /opt/airflow/dags/dag_initialize_database.py
+[2026-08-03T20:45:07.507+0000] {logging_mixin.py:188} INFO - [2026-08-03T20:45:07.506+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-08-03T20:45:07.547+0000] {logging_mixin.py:188} INFO - [2026-08-03T20:45:07.546+0000] {dag.py:3947} INFO - Setting next_dagrun for initialize_database to None, run_after=None
+[2026-08-03T20:45:07.606+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_initialize_database.py took 3.804 seconds
+[2026-08-03T20:45:46.640+0000] {processor.py:161} INFO - Started process (PID=803) to work on /opt/airflow/dags/dag_initialize_database.py
+[2026-08-03T20:45:46.647+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_initialize_database.py for tasks to queue
+[2026-08-03T20:45:46.666+0000] {logging_mixin.py:188} INFO - [2026-08-03T20:45:46.664+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_initialize_database.py
+[2026-08-03T20:45:48.060+0000] {processor.py:840} INFO - DAG(s) 'initialize_database' retrieved from /opt/airflow/dags/dag_initialize_database.py
+[2026-08-03T20:45:48.151+0000] {logging_mixin.py:188} INFO - [2026-08-03T20:45:48.150+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-08-03T20:45:48.218+0000] {logging_mixin.py:188} INFO - [2026-08-03T20:45:48.218+0000] {dag.py:3947} INFO - Setting next_dagrun for initialize_database to None, run_after=None
+[2026-08-03T20:45:48.374+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_initialize_database.py took 1.766 seconds
+[2026-08-03T20:46:21.749+0000] {processor.py:161} INFO - Started process (PID=865) to work on /opt/airflow/dags/dag_initialize_database.py
+[2026-08-03T20:46:21.754+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_initialize_database.py for tasks to queue
+[2026-08-03T20:46:21.757+0000] {logging_mixin.py:188} INFO - [2026-08-03T20:46:21.756+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_initialize_database.py
+[2026-08-03T20:46:23.227+0000] {processor.py:840} INFO - DAG(s) 'initialize_database' retrieved from /opt/airflow/dags/dag_initialize_database.py
+[2026-08-03T20:46:23.345+0000] {logging_mixin.py:188} INFO - [2026-08-03T20:46:23.343+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-08-03T20:46:23.433+0000] {logging_mixin.py:188} INFO - [2026-08-03T20:46:23.432+0000] {dag.py:3947} INFO - Setting next_dagrun for initialize_database to None, run_after=None
+[2026-08-03T20:46:23.776+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_initialize_database.py took 2.047 seconds
+[2026-08-03T20:46:57.143+0000] {processor.py:161} INFO - Started process (PID=932) to work on /opt/airflow/dags/dag_initialize_database.py
+[2026-08-03T20:46:57.153+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_initialize_database.py for tasks to queue
+[2026-08-03T20:46:57.157+0000] {logging_mixin.py:188} INFO - [2026-08-03T20:46:57.156+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_initialize_database.py
+[2026-08-03T20:46:57.916+0000] {processor.py:840} INFO - DAG(s) 'initialize_database' retrieved from /opt/airflow/dags/dag_initialize_database.py
+[2026-08-03T20:46:57.983+0000] {logging_mixin.py:188} INFO - [2026-08-03T20:46:57.982+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-08-03T20:46:58.073+0000] {logging_mixin.py:188} INFO - [2026-08-03T20:46:58.072+0000] {dag.py:3947} INFO - Setting next_dagrun for initialize_database to None, run_after=None
+[2026-08-03T20:46:58.148+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_initialize_database.py took 1.062 seconds
+[2026-08-03T20:47:35.313+0000] {processor.py:161} INFO - Started process (PID=1002) to work on /opt/airflow/dags/dag_initialize_database.py
+[2026-08-03T20:47:35.318+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_initialize_database.py for tasks to queue
+[2026-08-03T20:47:35.324+0000] {logging_mixin.py:188} INFO - [2026-08-03T20:47:35.323+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_initialize_database.py
+[2026-08-03T20:47:36.029+0000] {processor.py:840} INFO - DAG(s) 'initialize_database' retrieved from /opt/airflow/dags/dag_initialize_database.py
+[2026-08-03T20:47:36.079+0000] {logging_mixin.py:188} INFO - [2026-08-03T20:47:36.078+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-08-03T20:47:36.114+0000] {logging_mixin.py:188} INFO - [2026-08-03T20:47:36.114+0000] {dag.py:3947} INFO - Setting next_dagrun for initialize_database to None, run_after=None
+[2026-08-03T20:47:36.163+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_initialize_database.py took 0.873 seconds

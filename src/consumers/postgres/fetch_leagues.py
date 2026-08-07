@@ -50,30 +50,30 @@ def fetch_leagues():
                 continue
 
             payloads = json.loads(msg.value().decode('utf-8'))
-            data = payloads.get('scoreboard', [])
-
+            el = payloads.get('scoreboard', [])
+            if el:
+                el = el[0]
             
             leagues = set()
 
             # вылавлинваем из json наши лиги
             # и тоговим данные к загрузке в postgres
-            for el in data:
-                if el.get('~ZA'):
+            if el.get('~ZA'):
 
-                    row = [el.get(key) for key in keys]
-                    row[5] = row[5].split(': ')[1]
+                row = [el.get(key) for key in keys]
+                row[5] = row[5].split(': ')[1]
 
-                    # на случай, если какого-то региона у нас не оказалось
-                    while True:
-                        row[6] = regions.get(int(row[6]))
-                        if row[6] is not None:
-                            break
+                # на случай, если какого-то региона у нас не оказалось
+                while True:
+                    row[6] = regions.get(int(row[6]))
+                    if row[6] is not None:
+                        break
 
-                        time.sleep(10)
-                        regions = get_regions()
+                    time.sleep(10)
+                    regions = get_regions()
 
 
-                    leagues.add(tuple(row))
+                leagues.add(tuple(row))
                 
 
             with get_connection() as conn:

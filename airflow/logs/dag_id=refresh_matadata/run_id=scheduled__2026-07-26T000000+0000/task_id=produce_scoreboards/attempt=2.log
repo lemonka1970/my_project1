@@ -1,0 +1,40 @@
+[2026-08-04T07:53:55.335+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-08-04T07:53:55.554+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: refresh_matadata.produce_scoreboards scheduled__2026-07-26T00:00:00+00:00 [queued]>
+[2026-08-04T07:53:55.634+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: refresh_matadata.produce_scoreboards scheduled__2026-07-26T00:00:00+00:00 [queued]>
+[2026-08-04T07:53:55.640+0000] {taskinstance.py:2306} INFO - Starting attempt 2 of 4
+[2026-08-04T07:53:55.851+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): produce_scoreboards> on 2026-07-26 00:00:00+00:00
+[2026-08-04T07:53:56.014+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'refresh_matadata', 'produce_scoreboards', 'scheduled__2026-07-26T00:00:00+00:00', '--job-id', '83', '--raw', '--subdir', 'DAGS_FOLDER/dag_refresh_metadata.py', '--cfg-path', '/tmp/tmpb2wsfhpf']
+[2026-08-04T07:53:56.024+0000] {standard_task_runner.py:91} INFO - Job 83: Subtask produce_scoreboards
+[2026-08-04T07:53:55.995+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:62: DeprecationWarning: This process (pid=124) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2026-08-04T07:53:56.034+0000] {standard_task_runner.py:64} INFO - Started process 146 to run task
+[2026-08-04T07:53:56.293+0000] {task_command.py:426} INFO - Running <TaskInstance: refresh_matadata.produce_scoreboards scheduled__2026-07-26T00:00:00+00:00 [running]> on host ab41198cb485
+[2026-08-04T07:53:56.641+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='refresh_matadata' AIRFLOW_CTX_TASK_ID='produce_scoreboards' AIRFLOW_CTX_EXECUTION_DATE='2026-07-26T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-07-26T00:00:00+00:00'
+[2026-08-04T07:53:56.651+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-08-04T07:54:13.347+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-08-04T07:54:13.363+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 401, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/src/producers.py", line 36, in produce_scoreboards
+    producer.produce(
+cimpl.KafkaException: KafkaError{code=MSG_SIZE_TOO_LARGE,val=10,str="Unable to produce message: Broker: Message size too large"}
+[2026-08-04T07:54:13.689+0000] {taskinstance.py:1206} INFO - Marking task as UP_FOR_RETRY. dag_id=refresh_matadata, task_id=produce_scoreboards, run_id=scheduled__2026-07-26T00:00:00+00:00, execution_date=20260726T000000, start_date=20260804T075355, end_date=20260804T075413
+[2026-08-04T07:54:13.730+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 83 for task produce_scoreboards (KafkaError{code=MSG_SIZE_TOO_LARGE,val=10,str="Unable to produce message: Broker: Message size too large"}; 146)
+[2026-08-04T07:54:13.826+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 1
+[2026-08-04T07:54:13.961+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-08-04T07:54:13.988+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

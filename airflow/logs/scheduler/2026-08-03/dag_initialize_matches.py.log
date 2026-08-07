@@ -1,0 +1,91 @@
+[2026-08-03T20:37:54.151+0000] {processor.py:161} INFO - Started process (PID=88) to work on /opt/airflow/dags/dag_initialize_matches.py
+[2026-08-03T20:37:54.186+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_initialize_matches.py for tasks to queue
+[2026-08-03T20:37:54.228+0000] {logging_mixin.py:188} INFO - [2026-08-03T20:37:54.226+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_initialize_matches.py
+[2026-08-03T20:38:07.685+0000] {processor.py:840} INFO - DAG(s) 'initialize_matches' retrieved from /opt/airflow/dags/dag_initialize_matches.py
+[2026-08-03T20:38:09.484+0000] {logging_mixin.py:188} INFO - [2026-08-03T20:38:09.475+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-08-03T20:38:09.656+0000] {logging_mixin.py:188} INFO - [2026-08-03T20:38:09.655+0000] {dag.py:3947} INFO - Setting next_dagrun for initialize_matches to None, run_after=None
+[2026-08-03T20:38:09.796+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_initialize_matches.py took 15.706 seconds
+[2026-08-03T20:39:33.067+0000] {processor.py:161} INFO - Started process (PID=179) to work on /opt/airflow/dags/dag_initialize_matches.py
+[2026-08-03T20:39:33.074+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_initialize_matches.py for tasks to queue
+[2026-08-03T20:39:33.104+0000] {logging_mixin.py:188} INFO - [2026-08-03T20:39:33.088+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_initialize_matches.py
+[2026-08-03T20:39:42.049+0000] {processor.py:840} INFO - DAG(s) 'initialize_matches' retrieved from /opt/airflow/dags/dag_initialize_matches.py
+[2026-08-03T20:39:42.222+0000] {logging_mixin.py:188} INFO - [2026-08-03T20:39:42.221+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-08-03T20:39:42.271+0000] {logging_mixin.py:188} INFO - [2026-08-03T20:39:42.270+0000] {dag.py:3947} INFO - Setting next_dagrun for initialize_matches to None, run_after=None
+[2026-08-03T20:39:42.441+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_initialize_matches.py took 9.443 seconds
+[2026-08-03T20:40:15.686+0000] {processor.py:161} INFO - Started process (PID=256) to work on /opt/airflow/dags/dag_initialize_matches.py
+[2026-08-03T20:40:15.706+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_initialize_matches.py for tasks to queue
+[2026-08-03T20:40:15.714+0000] {logging_mixin.py:188} INFO - [2026-08-03T20:40:15.713+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_initialize_matches.py
+[2026-08-03T20:40:20.509+0000] {processor.py:840} INFO - DAG(s) 'initialize_matches' retrieved from /opt/airflow/dags/dag_initialize_matches.py
+[2026-08-03T20:40:20.766+0000] {logging_mixin.py:188} INFO - [2026-08-03T20:40:20.761+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-08-03T20:40:20.993+0000] {logging_mixin.py:188} INFO - [2026-08-03T20:40:20.992+0000] {dag.py:3947} INFO - Setting next_dagrun for initialize_matches to None, run_after=None
+[2026-08-03T20:40:21.181+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_initialize_matches.py took 5.561 seconds
+[2026-08-03T20:40:52.557+0000] {processor.py:161} INFO - Started process (PID=323) to work on /opt/airflow/dags/dag_initialize_matches.py
+[2026-08-03T20:40:52.565+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_initialize_matches.py for tasks to queue
+[2026-08-03T20:40:52.578+0000] {logging_mixin.py:188} INFO - [2026-08-03T20:40:52.577+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_initialize_matches.py
+[2026-08-03T20:40:56.850+0000] {processor.py:840} INFO - DAG(s) 'initialize_matches' retrieved from /opt/airflow/dags/dag_initialize_matches.py
+[2026-08-03T20:40:56.890+0000] {logging_mixin.py:188} INFO - [2026-08-03T20:40:56.888+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-08-03T20:40:56.933+0000] {logging_mixin.py:188} INFO - [2026-08-03T20:40:56.932+0000] {dag.py:3947} INFO - Setting next_dagrun for initialize_matches to None, run_after=None
+[2026-08-03T20:40:57.022+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_initialize_matches.py took 4.498 seconds
+[2026-08-03T20:41:27.320+0000] {processor.py:161} INFO - Started process (PID=398) to work on /opt/airflow/dags/dag_initialize_matches.py
+[2026-08-03T20:41:27.326+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_initialize_matches.py for tasks to queue
+[2026-08-03T20:41:27.329+0000] {logging_mixin.py:188} INFO - [2026-08-03T20:41:27.328+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_initialize_matches.py
+[2026-08-03T20:41:29.604+0000] {processor.py:840} INFO - DAG(s) 'initialize_matches' retrieved from /opt/airflow/dags/dag_initialize_matches.py
+[2026-08-03T20:41:29.646+0000] {logging_mixin.py:188} INFO - [2026-08-03T20:41:29.645+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-08-03T20:41:29.673+0000] {logging_mixin.py:188} INFO - [2026-08-03T20:41:29.672+0000] {dag.py:3947} INFO - Setting next_dagrun for initialize_matches to None, run_after=None
+[2026-08-03T20:41:29.716+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_initialize_matches.py took 2.416 seconds
+[2026-08-03T20:42:04.857+0000] {processor.py:161} INFO - Started process (PID=470) to work on /opt/airflow/dags/dag_initialize_matches.py
+[2026-08-03T20:42:04.875+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_initialize_matches.py for tasks to queue
+[2026-08-03T20:42:04.908+0000] {logging_mixin.py:188} INFO - [2026-08-03T20:42:04.899+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_initialize_matches.py
+[2026-08-03T20:42:12.964+0000] {processor.py:840} INFO - DAG(s) 'initialize_matches' retrieved from /opt/airflow/dags/dag_initialize_matches.py
+[2026-08-03T20:42:13.131+0000] {logging_mixin.py:188} INFO - [2026-08-03T20:42:13.128+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-08-03T20:42:13.205+0000] {logging_mixin.py:188} INFO - [2026-08-03T20:42:13.204+0000] {dag.py:3947} INFO - Setting next_dagrun for initialize_matches to None, run_after=None
+[2026-08-03T20:42:13.689+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_initialize_matches.py took 8.852 seconds
+[2026-08-03T20:43:00.182+0000] {processor.py:161} INFO - Started process (PID=534) to work on /opt/airflow/dags/dag_initialize_matches.py
+[2026-08-03T20:43:00.198+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_initialize_matches.py for tasks to queue
+[2026-08-03T20:43:00.266+0000] {logging_mixin.py:188} INFO - [2026-08-03T20:43:00.215+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_initialize_matches.py
+[2026-08-03T20:43:07.704+0000] {processor.py:840} INFO - DAG(s) 'initialize_matches' retrieved from /opt/airflow/dags/dag_initialize_matches.py
+[2026-08-03T20:43:07.783+0000] {logging_mixin.py:188} INFO - [2026-08-03T20:43:07.782+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-08-03T20:43:07.873+0000] {logging_mixin.py:188} INFO - [2026-08-03T20:43:07.871+0000] {dag.py:3947} INFO - Setting next_dagrun for initialize_matches to None, run_after=None
+[2026-08-03T20:43:08.057+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_initialize_matches.py took 7.951 seconds
+[2026-08-03T20:43:38.658+0000] {processor.py:161} INFO - Started process (PID=606) to work on /opt/airflow/dags/dag_initialize_matches.py
+[2026-08-03T20:43:38.664+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_initialize_matches.py for tasks to queue
+[2026-08-03T20:43:38.672+0000] {logging_mixin.py:188} INFO - [2026-08-03T20:43:38.671+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_initialize_matches.py
+[2026-08-03T20:43:45.322+0000] {processor.py:840} INFO - DAG(s) 'initialize_matches' retrieved from /opt/airflow/dags/dag_initialize_matches.py
+[2026-08-03T20:43:45.639+0000] {logging_mixin.py:188} INFO - [2026-08-03T20:43:45.638+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-08-03T20:43:45.718+0000] {logging_mixin.py:188} INFO - [2026-08-03T20:43:45.711+0000] {dag.py:3947} INFO - Setting next_dagrun for initialize_matches to None, run_after=None
+[2026-08-03T20:43:45.972+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_initialize_matches.py took 7.341 seconds
+[2026-08-03T20:44:32.456+0000] {processor.py:161} INFO - Started process (PID=679) to work on /opt/airflow/dags/dag_initialize_matches.py
+[2026-08-03T20:44:32.461+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_initialize_matches.py for tasks to queue
+[2026-08-03T20:44:32.465+0000] {logging_mixin.py:188} INFO - [2026-08-03T20:44:32.464+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_initialize_matches.py
+[2026-08-03T20:44:37.031+0000] {processor.py:840} INFO - DAG(s) 'initialize_matches' retrieved from /opt/airflow/dags/dag_initialize_matches.py
+[2026-08-03T20:44:37.409+0000] {logging_mixin.py:188} INFO - [2026-08-03T20:44:37.380+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-08-03T20:44:37.534+0000] {logging_mixin.py:188} INFO - [2026-08-03T20:44:37.533+0000] {dag.py:3947} INFO - Setting next_dagrun for initialize_matches to None, run_after=None
+[2026-08-03T20:44:37.688+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_initialize_matches.py took 5.254 seconds
+[2026-08-03T20:45:14.063+0000] {processor.py:161} INFO - Started process (PID=750) to work on /opt/airflow/dags/dag_initialize_matches.py
+[2026-08-03T20:45:14.079+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_initialize_matches.py for tasks to queue
+[2026-08-03T20:45:14.083+0000] {logging_mixin.py:188} INFO - [2026-08-03T20:45:14.082+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_initialize_matches.py
+[2026-08-03T20:45:19.706+0000] {processor.py:840} INFO - DAG(s) 'initialize_matches' retrieved from /opt/airflow/dags/dag_initialize_matches.py
+[2026-08-03T20:45:19.850+0000] {logging_mixin.py:188} INFO - [2026-08-03T20:45:19.849+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-08-03T20:45:19.983+0000] {logging_mixin.py:188} INFO - [2026-08-03T20:45:19.978+0000] {dag.py:3947} INFO - Setting next_dagrun for initialize_matches to None, run_after=None
+[2026-08-03T20:45:20.370+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_initialize_matches.py took 6.326 seconds
+[2026-08-03T20:45:59.510+0000] {processor.py:161} INFO - Started process (PID=833) to work on /opt/airflow/dags/dag_initialize_matches.py
+[2026-08-03T20:45:59.521+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_initialize_matches.py for tasks to queue
+[2026-08-03T20:45:59.527+0000] {logging_mixin.py:188} INFO - [2026-08-03T20:45:59.525+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_initialize_matches.py
+[2026-08-03T20:46:07.205+0000] {processor.py:840} INFO - DAG(s) 'initialize_matches' retrieved from /opt/airflow/dags/dag_initialize_matches.py
+[2026-08-03T20:46:07.477+0000] {logging_mixin.py:188} INFO - [2026-08-03T20:46:07.475+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-08-03T20:46:07.626+0000] {logging_mixin.py:188} INFO - [2026-08-03T20:46:07.626+0000] {dag.py:3947} INFO - Setting next_dagrun for initialize_matches to None, run_after=None
+[2026-08-03T20:46:07.829+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_initialize_matches.py took 8.375 seconds
+[2026-08-03T20:46:42.686+0000] {processor.py:161} INFO - Started process (PID=910) to work on /opt/airflow/dags/dag_initialize_matches.py
+[2026-08-03T20:46:42.695+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_initialize_matches.py for tasks to queue
+[2026-08-03T20:46:42.702+0000] {logging_mixin.py:188} INFO - [2026-08-03T20:46:42.698+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_initialize_matches.py
+[2026-08-03T20:46:48.379+0000] {processor.py:840} INFO - DAG(s) 'initialize_matches' retrieved from /opt/airflow/dags/dag_initialize_matches.py
+[2026-08-03T20:46:48.500+0000] {logging_mixin.py:188} INFO - [2026-08-03T20:46:48.484+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-08-03T20:46:48.586+0000] {logging_mixin.py:188} INFO - [2026-08-03T20:46:48.586+0000] {dag.py:3947} INFO - Setting next_dagrun for initialize_matches to None, run_after=None
+[2026-08-03T20:46:48.677+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_initialize_matches.py took 6.055 seconds
+[2026-08-03T20:47:20.000+0000] {processor.py:161} INFO - Started process (PID=985) to work on /opt/airflow/dags/dag_initialize_matches.py
+[2026-08-03T20:47:20.010+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_initialize_matches.py for tasks to queue
+[2026-08-03T20:47:20.016+0000] {logging_mixin.py:188} INFO - [2026-08-03T20:47:20.015+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_initialize_matches.py
+[2026-08-03T20:47:25.983+0000] {processor.py:840} INFO - DAG(s) 'initialize_matches' retrieved from /opt/airflow/dags/dag_initialize_matches.py
+[2026-08-03T20:47:26.173+0000] {logging_mixin.py:188} INFO - [2026-08-03T20:47:26.172+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-08-03T20:47:26.378+0000] {logging_mixin.py:188} INFO - [2026-08-03T20:47:26.377+0000] {dag.py:3947} INFO - Setting next_dagrun for initialize_matches to None, run_after=None
+[2026-08-03T20:47:26.475+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_initialize_matches.py took 6.630 seconds

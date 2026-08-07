@@ -43,30 +43,31 @@ def fetch_current_seasons():
                 continue
 
             payload = json.loads(msg.value().decode('utf-8'))
-            data = payload.get('scoreboard')
+            el = payload.get('scoreboard', [])
+            if el:
+                el = el[0]
             current_seasons = set()
 
-            for el in data:
-                if '~ZA' in el.keys():
-                    
-                    row = [
-                        el.get('ZE'), # tournament_id
-                        el.get('ZC'), #  tournament_stage_id
-                        0, 0, # dates
-                        True, # is_current
-                        el.get('ZEE') # flashscore_league_feed
-                        ]
-                    
-                    while True:
-                        row[5] = leagues.get(row[5])
-                        if row[5] is not None:
-                            break
+            if '~ZA' in el.keys():
+                
+                row = [
+                    el.get('ZE'), # tournament_id
+                    el.get('ZC'), #  tournament_stage_id
+                    0, 0, # dates
+                    True, # is_current
+                    el.get('ZEE') # flashscore_league_feed
+                    ]
+                
+                while True:
+                    row[5] = leagues.get(row[5])
+                    if row[5] is not None:
+                        break
 
-                        time.sleep(10)
-                        leagues = get_leagues()
+                    time.sleep(10)
+                    leagues = get_leagues()
 
 
-                    current_seasons.add(tuple(row))
+                current_seasons.add(tuple(row))
 
             with get_connection() as conn:
                 with conn.cursor() as cur:

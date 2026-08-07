@@ -1,5 +1,5 @@
-from connections import get_producer, get_consumer, get_connection
-from flahscore import get_data, get_response
+from src.connections import get_producer, get_consumer, get_connection
+from src.flahscore import get_data, get_response
 
 import pandas as pd
 from datetime import datetime, timedelta
@@ -28,15 +28,35 @@ def produce_scoreboards():
                 continue
 
             date = current_date + timedelta(days=day)
-            payload = json.dumps({
-                'date': str(date), 
-                'scoreboard': data_json
-                }).encode('utf-8')
 
-            producer.produce(
-                topic = 'scoreboards', 
-                value = payload
-                )
+            groups = []
+            current_groups = []
+            # делим матчи по лигам
+            for el in data_json:
+
+                if el.get('~ZA'):
+                    if current_groups:
+                        groups.append(current_groups)
+
+                        current_groups = [el]
+                else:
+                    current_groups.append(el)
+
+            if current_groups:
+                groups.append(current_groups)
+
+            # каждую группу бубликуем
+            for group in groups:
+
+                payload = json.dumps({
+                    'date': str(date), 
+                    'scoreboard': group
+                    }).encode('utf-8')
+
+                producer.produce(
+                    topic = 'scoreboards', 
+                    value = payload
+                    )
 
         
     finally:
@@ -78,6 +98,7 @@ def produce_past_seasons():
                 if not seasons:
                     continue
 
+                    
                 payload = json.dumps({
                     'tounament_id': tournament_id,
                     'tournament_stage_id': tournament_stage_id,
