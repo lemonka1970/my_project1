@@ -495,7 +495,7 @@ def initialize_matches():
                                 # print(match)
                                 region_matches.add(tuple(match))
 
-                print(len(region_matches), end='\n\n')
+                # print(len(region_matches), end='\n\n')
                 execute_values(cur, query, list(region_matches))
         conn.commit()
 
@@ -707,7 +707,14 @@ def update_matches():
 
 def main():
 
-    x = 9
+    feed_match = 'QXeSipJE'
+
+    h2h = get_data('df_hh_1_' + feed_match)
+    
+    # заглядываем только в первые 2 блока (последние игры домашней и гостевой команд)
+    for el in h2h[:104]:
+        if '~KC' in el:
+            print(el)
 
             
 

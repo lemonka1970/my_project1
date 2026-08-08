@@ -6,9 +6,9 @@ import io
 
 
 
-def save_past_seasons():
+def save_matches():
 
-    consumer = get_consumer('save_past_seasons')
+    consumer = get_consumer('save_matches')
     client = get_client()
 
     try:
@@ -22,18 +22,18 @@ def save_past_seasons():
                 continue
 
             payload = json.loads(msg.value().decode('utf-8'))
-            tournament_id = payload.get('tournament_id')
-            tournament_stage_id = payload.get('tournament_stage_id')
-            past_seasons = payload.get('past_seasons')
+            url_team_1 = payload.get('url_team_1')
+            url_team_2 = payload.get('url_team_2')
+            h2h = payload.get('h2h')
 
-            object_name = f'past_seasons/{tournament_id}/{tournament_stage_id}'
-            past_seasons = json.dumps(past_seasons).encode('utf-8')
+            object_name = f'matches/{url_team_1}/{url_team_2}'
+            h2h = json.dumps(h2h).encode('utf-8')
 
             client.put_object(
                 bucket_name = 'football-row',
                 object_name = object_name,
-                data = io.BytesIO(past_seasons),
-                lendth = len(past_seasons)
+                data = io.BytesIO(h2h),
+                length = len(h2h)
             )
 
     finally:
@@ -43,4 +43,4 @@ def save_past_seasons():
 
 
 if __name__ == '__main__':
-    save_past_seasons()
+    save_matches()

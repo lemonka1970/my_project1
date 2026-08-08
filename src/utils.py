@@ -128,33 +128,48 @@ def initialize_database():
 
 
 
-
-
-def get_leagues():
+def get_league_names():
+    # словарь league_name: league_id
     with get_connection() as conn:
         with conn.cursor() as cur:
             cur.execute("""
                 SELECT league_id, flashscore_league_feed
                 FROM leagues
                 """)
-            return {el[1]: el[0] for el in cur.fetchall()}
+            return {league_name: league_id for league_id, league_name in cur.fetchall()}
+
+
+
+def get_leagues():
+    # словарь flashscore_league_feed: league_id
+
+    with get_connection() as conn:
+        with conn.cursor() as cur:
+            cur.execute("""
+                SELECT league_id, flashscore_league_feed
+                FROM leagues
+                """)
+            return {flashscore_league_feed: league_id for league_id, flashscore_league_feed in cur.fetchall()}
 
         
 
 def get_regions():
-        with get_connection() as conn:
-            with conn.cursor() as cur:
-                
-                cur.execute("""
-                SELECT region_id, flashscore_region_id
-                FROM regions
-                """)
-                return {flashscore_region_id: region_id 
-                            for region_id, flashscore_region_id 
-                            in cur.fetchall()}
+    # словарь flashscore_region_id: region_id 
+    with get_connection() as conn:
+        with conn.cursor() as cur:
+            
+            cur.execute("""
+            SELECT region_id, flashscore_region_id
+            FROM regions
+            """)
+            return {flashscore_region_id: region_id 
+                        for region_id, flashscore_region_id 
+                        in cur.fetchall()}
 
 
 def get_league_ids():
+    # словарь (tounament_id, tounament_stage_id): league_id
+
     with get_connection() as conn:
          with conn.cursor() as cur:
             cur.execute("""
@@ -164,3 +179,18 @@ def get_league_ids():
             """)
             return {(tounament_id, tounament_stage_id): league_id
                     for tounament_id, tounament_stage_id, league_id in cur.fetchall()}
+
+
+def get_teams(league_id):
+    # словарь {команда: id команды} для конкретной лиги
+
+    with get_connection() as conn:
+        with conn.cursor() as cur:
+            cur.execute("""
+                SELECT team_id, team_name
+                FROM teams
+                JOIN season_team_relations USING(team_id)
+                JOIN seasons USING(season_id)
+                WHERE league_id = %s
+                """, (league_id,))
+            return {team_name: team_id for team_id, team_name in cur.fetcall()}

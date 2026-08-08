@@ -27,15 +27,15 @@ def save_scoreboards():
 
             if scoreboard[0].get('~ZA'):
                 full_name_league = scoreboard[0].get('~ZA')
-                object_name = f'scoreboargs/{date}/{full_name_league}'
+                object_name = f'scoreboards/{date}/{full_name_league}'
 
                 scoreboard = json.dumps(scoreboard).encode('utf-8')
 
                 client.put_object(
                     bucket_name = 'football-row',
                     object_name = object_name,
-                    data = io.BinaryIO(scoreboard),
-                    len = len(scoreboard)
+                    data = io.BytesIO(scoreboard),
+                    lendth = len(scoreboard)
                 )
 
     finally:

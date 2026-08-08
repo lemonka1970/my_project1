@@ -32,8 +32,8 @@ def save_standings():
             client.put_object(
                 bucket_name = 'football-row',
                 object_name = object_name,
-                data = io.BinaryIO(standings),
-                len = len(standings)
+                data = io.BytesIO(standings),
+                length = len(standings)
             )
 
     finally:
