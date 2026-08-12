@@ -1,0 +1,46 @@
+[2026-08-08T09:02:55.844+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-08-08T09:02:56.042+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: update_matches.update_matches scheduled__2026-08-07T00:00:00+00:00 [queued]>
+[2026-08-08T09:02:56.073+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: update_matches.update_matches scheduled__2026-08-07T00:00:00+00:00 [queued]>
+[2026-08-08T09:02:56.082+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 6
+[2026-08-08T09:02:56.151+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): update_matches> on 2026-08-07 00:00:00+00:00
+[2026-08-08T09:02:56.221+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:62: DeprecationWarning: This process (pid=89) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2026-08-08T09:02:56.233+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'update_matches', 'update_matches', 'scheduled__2026-08-07T00:00:00+00:00', '--job-id', '112', '--raw', '--subdir', 'DAGS_FOLDER/dag_update_matches.py', '--cfg-path', '/tmp/tmpu7_9f3pi']
+[2026-08-08T09:02:56.248+0000] {standard_task_runner.py:91} INFO - Job 112: Subtask update_matches
+[2026-08-08T09:02:56.248+0000] {standard_task_runner.py:64} INFO - Started process 100 to run task
+[2026-08-08T09:02:56.466+0000] {task_command.py:426} INFO - Running <TaskInstance: update_matches.update_matches scheduled__2026-08-07T00:00:00+00:00 [running]> on host 4313187789cb
+[2026-08-08T09:02:57.033+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='update_matches' AIRFLOW_CTX_TASK_ID='update_matches' AIRFLOW_CTX_EXECUTION_DATE='2026-08-07T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-08-07T00:00:00+00:00'
+[2026-08-08T09:02:57.042+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-08-08T09:02:57.105+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-08-08T09:02:57.111+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 401, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/src/producers.py", line 268, in produce_updeting_matches
+    cur.execute("""
+psycopg2.errors.SyntaxError: syntax error at or near "ORDER"
+LINE 7:                                 ORDER BY start_date DESC
+                                        ^
+
+[2026-08-08T09:02:57.193+0000] {taskinstance.py:1206} INFO - Marking task as UP_FOR_RETRY. dag_id=update_matches, task_id=update_matches, run_id=scheduled__2026-08-07T00:00:00+00:00, execution_date=20260807T000000, start_date=20260808T090256, end_date=20260808T090257
+[2026-08-08T09:02:57.283+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 112 for task update_matches (syntax error at or near "ORDER"
+LINE 7:                                 ORDER BY start_date DESC
+                                        ^
+; 100)
+[2026-08-08T09:02:57.428+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 1
+[2026-08-08T09:02:57.556+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-08-08T09:02:57.596+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

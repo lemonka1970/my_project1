@@ -2,7 +2,7 @@ from airflow import DAG
 from airflow.operators.python import PythonOperator
 
 from datetime import datetime, timedelta
-from src.parsing import (initialize_matches)
+from src.producers import produce_initializetion_matches
 
 default_args = {
     'start_date': datetime(2020, 1, 1),
@@ -19,5 +19,5 @@ with DAG(
 
     initialize_matches = PythonOperator(
         task_id='initialize_matches',
-        python_callable=initialize_matches
+        python_callable=produce_initializetion_matches
     )

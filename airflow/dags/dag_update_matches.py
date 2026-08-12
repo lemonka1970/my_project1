@@ -2,7 +2,8 @@ from airflow import DAG
 from airflow.operators.python import PythonOperator
 
 from datetime import datetime, timedelta
-from src.parsing import (fetch_seasons, update_matches)
+from src.producers import produce_scoreboards, produce_past_seasons
+from src.producers import produce_updeting_matches
 
 
 default_args = {
@@ -14,19 +15,24 @@ default_args = {
 
 with DAG(
     dag_id = 'update_matches',
-    schedule_interval = '@daily',
+    schedule_interval = None,
     catchup = False,
     default_args = default_args
 )as dag:
 
-    seasons = PythonOperator(
-        task_id = 'fetch_seasons',
-        python_callable = fetch_seasons
+    scoreboard = PythonOperator(
+        task_id = 'produce_scoreboard',
+        python_callable = produce_scoreboards
+    )
+
+    past_seasons = PythonOperator(
+        task_id = 'past_seasons',
+        python_callable = produce_past_seasons
     )
 
     matches = PythonOperator(
         task_id = 'update_matches',
-        python_callable = update_matches
+        python_callable = produce_updeting_matches
     )
 
-    seasons >> matches
+    scoreboard >> past_seasons >> matches

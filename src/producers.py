@@ -1,5 +1,5 @@
 from src.connections import get_producer, get_connection
-from src.flahscore import get_data, get_response
+from src.flahscore import get_data, get_response, get_feed_last_match
 
 import pandas as pd
 from datetime import datetime, timedelta
@@ -101,7 +101,7 @@ def produce_past_seasons():
 
                     
                 payload = json.dumps({
-                    'tounament_id': tournament_id,
+                    'tournament_id': tournament_id,
                     'tournament_stage_id': tournament_stage_id,
                     'past_seasons': seasons
                     }).encode('utf-8')
@@ -143,7 +143,8 @@ def produce_standings():
                     continue
 
                 payload = json.dumps({
-                        'feed_season': feed,
+                        'tournament_id': tournament_id,
+                        'tournament_stage_id': tournament_stage_id,
                         'standings': standings
                     }).encode('utf-8')
 
@@ -198,17 +199,7 @@ def produce_initializetion_matches():
                     url_team_1 = url_team_1[6:-1].replace('/', '-')
                     url_team_2 = url_team_2[6:-1].replace('/', '-')
 
-                    url = f'https://www.flashscore.com/match/football/{url_team_1}/{url_team_2}/?'
-                    response = get_response(url)
-
-
-                    # максимально простым способом достаем feed игры
-                    data = response.text.split('<script>\n    ')
-                    feed_match = None
-                    for el in data:
-                        if 'window.environment = {"event_id_c":' in el:
-                            feed_match = el[36:44]
-                            break
+                    feed_match = get_feed_last_match(url_team_1, url_team_2)
                     if feed_match is None:
                         continue
 
@@ -217,7 +208,7 @@ def produce_initializetion_matches():
                     h2h = get_data('df_hh_1_' + feed_match)
 
                     payload = json.dumps({
-                        'league_id': league_id,
+                        'league_id': league_id, 
                         'url_team_1': url_team_1,
                         'url_team_2': url_team_2,
                         'h2h': h2h
@@ -270,7 +261,7 @@ def produce_updeting_matches():
                         SELECT
                             flashscore_team_url, 
                             ROW_NUMBER() OVER(
-                                PARTITION BY league_id,
+                                PARTITION BY league_id
                                 ORDER BY start_date DESC
                             ) AS num_season
                         FROM teams
@@ -300,17 +291,8 @@ def produce_updeting_matches():
                     url_team_1 = pair[0][6:-1].replace('/', '-')
                     url_team_2 = pair[1][6:-1].replace('/', '-')
 
-                    url = f'https://www.flashscore.com/match/football/{url_team_1}/{url_team_2}/?'
-                    response = get_response(url)
+                    feed_match = get_feed_last_match(url_team_1, url_team_2)
 
-
-                    # максимально простым способом достаем feed игры
-                    data = response.text.split('<script>\n    ')
-                    feed_match = None
-                    for el in data:
-                        if 'window.environment = {"event_id_c":' in el:
-                            feed_match = el[36:44]
-                            break
                     if feed_match is None:
                         continue
 
@@ -335,3 +317,12 @@ def produce_updeting_matches():
     finally:
         conn.close()
         producer.flush()
+
+
+
+
+def main() :
+    c = 0
+
+if __name__ == '__main__':
+    main()

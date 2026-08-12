@@ -2,7 +2,7 @@ from airflow import DAG
 from airflow.operators.python import PythonOperator
 
 from datetime import datetime, timedelta
-from src.connections import (initialize_database)
+from src.database.initializetion import (initialize_database)
 
 default_args = {
     'start_date': datetime(2020, 1, 1),
@@ -16,6 +16,8 @@ with DAG(
     catchup=False,
     default_args=default_args
 ) as dag:
+
+
     initialize_database = PythonOperator(
         task_id = 'initialize_database',
         python_callable = initialize_database

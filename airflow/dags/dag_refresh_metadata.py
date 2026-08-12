@@ -12,7 +12,7 @@ default_args = {
 
 with DAG(
     dag_id = 'refresh_matadata',
-    schedule_interval = '@weekly',
+    schedule_interval = None,
     catchup = False,
     default_args = default_args
 ) as dag:

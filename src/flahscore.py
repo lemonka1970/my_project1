@@ -69,6 +69,28 @@ def get_response(url_):
             pass
     return response_
 
+
+
+def get_feed_last_match(url_team_1, url_team_2):
+
+    url = f'https://www.flashscore.com/match/football/{url_team_1}/{url_team_2}/?'
+    response = get_response(url)
+
+
+    # максимально простым способом достаем feed игры
+    data = response.text.split('<script>\n    ')
+    feed_match = None
+    for el in data:
+        if 'window.environment = {"event_id_c":' in el:
+            feed_match = el[36:44]
+            break
+    if feed_match is None:
+        return None
+
+    return feed_match
+
+
+
 def main():
 
     c = 0

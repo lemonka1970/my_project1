@@ -1,9 +1,10 @@
-from src.connections import get_connection, get_consumer
-from src.utils import get_leagues
+from src.connections import get_consumer
+from src.database.queries import get_league_id_by_flashscore_feed
+from src.database.inserts import insert_seasons
+from src.preparing import prepare_current_seasons
 
 import time
 import json
-from psycopg2.extras import execute_values
 
 
 
@@ -19,18 +20,8 @@ def fetch_current_seasons():
     consumer = get_consumer('fetch_current_seasons')
     consumer.subscribe(['scoreboards'])
 
-    query = """
-    INSERT INTO seasons (tournament_id, tournament_stage_id, start_date, end_date, is_current, league_id)
-    VALUES %s
-    ON CONFLICT (tournament_id, tournament_stage_id)
-    DO UPDATE SET
-    is_current = EXCLUDED.is_current
-    """
-
     try:
-        leagues = get_leagues()
-
-
+        leagues = get_league_id_by_flashscore_feed()
 
         while True:
             # достаем message
@@ -43,35 +34,10 @@ def fetch_current_seasons():
                 continue
 
             payload = json.loads(msg.value().decode('utf-8'))
-            el = payload.get('scoreboard', [])
-            if el:
-                el = el[0]
-            current_seasons = set()
 
-            if '~ZA' in el.keys():
-                
-                row = [
-                    el.get('ZE'), # tournament_id
-                    el.get('ZC'), #  tournament_stage_id
-                    0, 0, # dates
-                    True, # is_current
-                    el.get('ZEE') # flashscore_league_feed
-                    ]
-                
-                while True:
-                    row[5] = leagues.get(row[5])
-                    if row[5] is not None:
-                        break
+            current_seasons = prepare_current_seasons(payload, leagues)
 
-                    time.sleep(10)
-                    leagues = get_leagues()
-
-
-                current_seasons.add(tuple(row))
-
-            with get_connection() as conn:
-                with conn.cursor() as cur:
-                    execute_values(cur, query, list(current_seasons))
+            insert_seasons(current_seasons)
 
             consumer.commit()
 

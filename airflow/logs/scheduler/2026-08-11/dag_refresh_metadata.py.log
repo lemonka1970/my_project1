@@ -1,0 +1,11 @@
+[2026-08-11T17:27:15.179+0000] {processor.py:161} INFO - Started process (PID=62) to work on /opt/airflow/dags/dag_refresh_metadata.py
+[2026-08-11T17:27:15.209+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_refresh_metadata.py for tasks to queue
+[2026-08-11T17:27:15.239+0000] {logging_mixin.py:188} INFO - [2026-08-11T17:27:15.237+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_refresh_metadata.py
+[2026-08-11T17:27:30.264+0000] {processor.py:840} INFO - DAG(s) 'refresh_matadata' retrieved from /opt/airflow/dags/dag_refresh_metadata.py
+[2026-08-11T17:27:33.223+0000] {logging_mixin.py:188} INFO - [2026-08-11T17:27:33.222+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-08-11T17:27:33.483+0000] {logging_mixin.py:188} INFO - [2026-08-11T17:27:33.473+0000] {dag.py:3947} INFO - Setting next_dagrun for refresh_matadata to None, run_after=None
+[2026-08-11T17:27:33.824+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_refresh_metadata.py took 18.765 seconds
+[2026-08-11T17:27:34.372+0000] {processor.py:161} INFO - Started process (PID=72) to work on /opt/airflow/dags/dag_refresh_metadata.py
+[2026-08-11T17:27:34.379+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_refresh_metadata.py for tasks to queue
+[2026-08-11T17:27:34.396+0000] {logging_mixin.py:188} INFO - [2026-08-11T17:27:34.393+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_refresh_metadata.py
+[2026-08-11T17:27:47.993+0000] {logging_mixin.py:188} INFO - [2026-08-11T17:27:47.993+0000] {process_utils.py:263} INFO - Waiting up to 5 seconds for processes to exit...
