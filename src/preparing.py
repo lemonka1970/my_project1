@@ -1,9 +1,8 @@
 from src.database.queries import get_region_id_by_flashscore_id, get_league_id_by_flashscore_feed
 from src.database.queries import get_league_id_by_tournaments, get_team_id_by_feed
 from src.database.queries import get_season_id_by_tournamnts, get_league_id_by_name
-from src.database.queries import resolve_with_retry
+from src.utils import resolve
 
-import time
 from datetime import datetime
 
 
@@ -52,8 +51,10 @@ def prepare_leagues(payload, regions):
         row = [scoreboard.get(key) for key in keys]
         row[5] = row[5].split(': ')[1]
 
-        # на случай, если какого-то региона у нас не оказалось
-        row[6], regions = resolve_with_retry(regions, row[6], get_region_id_by_flashscore_id())
+        # на случай, если какого-то региона у нас не оказалось весь msg у нас идет обратно с None
+        row[6], regions = resolve(regions, row[6], get_region_id_by_flashscore_id)
+        if row[6] is None:
+            return None, regions
 
         leagues.add(tuple(row))
 
@@ -78,7 +79,9 @@ def prepare_current_seasons(payload, leagues):
             scoreboard.get('ZEE') # flashscore_league_feed
             ]
 
-        row[5], leagues = resolve_with_retry(leagues, row[5], get_league_id_by_flashscore_feed())
+        row[5], leagues = resolve(leagues, row[5], get_league_id_by_flashscore_feed)
+        if row[5] is None:
+            return None, leagues
 
         current_seasons.add(tuple(row))
 
@@ -97,9 +100,11 @@ def prepare_seasons(payload, league_ids):
     tournament_stage_id = payload.get('tournament_stage_id')
 
     # если эту лигу еще не успелли обработать
-    league_id, league_ids = resolve_with_retry(league_ids, 
-                                               (tournament_id, tournament_stage_id), 
-                                               get_league_id_by_tournaments())
+    league_id, league_ids = resolve(league_ids, 
+                                    (tournament_id, tournament_stage_id), 
+                                    lambda: get_league_id_by_tournaments(current_seasons=True))
+    if league_id is None:
+        return None, league_ids
 
 
     current_row = [tournament_id,
@@ -155,22 +160,28 @@ def prepare_relations(payload, old_season_tournaments, seasons):
     tournaments = (payload.get('tournament_id'), payload.get('tournament_stage_id'))
     standings = payload.get('standings')
 
-    league_id = get_league_id_by_tournaments().get(tournaments)
+    
+    if tournaments in old_season_tournaments:
+        return set(), seasons
+    season_id, seasons = resolve(seasons, tournaments, 
+                                get_season_id_by_tournamnts)
+    league_id, league_ids = resolve(league_ids, tournaments, 
+                                    lambda: get_league_id_by_tournaments(current_seasons=False))
+    if season_id is None or league_id is None:
+        return None, seasons
     teams = get_team_id_by_feed(league_id)
 
-    if tournaments in old_season_tournaments:
-        return None
-
     relations = set()
-
-    season_id, seasons = resolve_with_retry(seasons, tournaments, get_season_id_by_tournamnts())
 
 
     for el in standings:
         team_feed = el.get('TI')
         team_id = None
 
-        team_id, teams = resolve_with_retry(teams, team_feed, get_team_id_by_feed())
+        team_id, teams = resolve(teams, team_feed, 
+                                 lambda: get_team_id_by_feed(league_id))
+        if team_id is None:
+            return None, seasons
 
         relations.add((
             season_id,
@@ -178,7 +189,7 @@ def prepare_relations(payload, old_season_tournaments, seasons):
             el.get('TP')
             ))
 
-    return relations, seasons, teams
+    return relations, seasons
 
 
 
@@ -190,7 +201,7 @@ def parsing_initializetion_matches(payload):
 
     
     teams = get_team_id_by_feed(league_id)
-    league_names = get_league_id_by_name(league_id)
+    league_names = get_league_id_by_name()
     league_matches = set()
 
 
@@ -205,7 +216,8 @@ def parsing_initializetion_matches(payload):
             if '~KA' in el.keys():
                 break
 
-        
+            kh, kf = el.get('KH'), el.get('KF')
+            league_full_name = kh + ': ' + kf if kh and kf else None
             match = [
                 el.get('~KC'), # time
                 el.get('KP'), # flashscore_match_feed
@@ -217,7 +229,7 @@ def parsing_initializetion_matches(payload):
                 el.get('KY'), # away_penalties
                 'completed', # status
                 None, # season_id
-                el.get('KF') # league_name
+                league_full_name # league_name
                 ] 
 
             if match[0] is not None:
@@ -241,6 +253,8 @@ def parsing_initializetion_matches(payload):
     return league_matches
 
 
+
+
 def parsing_updating_matches(payload):
 
     league_id = payload.get('league_id')
@@ -248,14 +262,16 @@ def parsing_updating_matches(payload):
     h2h = payload.get('h2h')
 
     teams = get_team_id_by_feed(league_id)
-    league_names = get_league_id_by_name(league_id)
+    league_names = get_league_id_by_name()
     matches = set()
 
 
     # заглядываем только в первые 2 блока (последние игры домашней и гостевой команд)
     for el in h2h[:104]:
         if '~KC' in el:
-            print(el)
+
+            kh, kf = el.get('KH'), el.get('KF')
+            league_full_name = kh + ': ' + kf if kh and kf else None
             match = [
                 el.get('~KC'), # time
                 el.get('KP'), # flashscore_match_feed
@@ -267,7 +283,7 @@ def parsing_updating_matches(payload):
                 el.get('KY'), # away_penalties
                 'completed', # status
                 season_id, # season_id
-                el.get('KF') # league_name
+                league_full_name # full_league_name
             ]
 
             if match[0] is not None:
@@ -289,3 +305,5 @@ def parsing_updating_matches(payload):
             matches.add(tuple(match))
 
     return matches, league_names
+
+

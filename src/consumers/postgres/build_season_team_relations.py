@@ -2,6 +2,7 @@ from src.connections import get_consumer
 from src.database.queries import get_old_seasons_in_relations, get_season_id_by_tournamnts
 from src.database.inserts import insert_relations
 from src.preparing import prepare_relations
+from src.utils import handle_retry
 
 import json
 import time
@@ -25,12 +26,19 @@ def build_season_team_relations():
                 print(msg.error())
                 continue
 
-            payload = json.loads(msg.value().decode('utf-8'))
+            massege = json.loads(msg.value().decode('utf-8'))
+            payload = massege.get('payload')
 
             relations, seasons = prepare_relations(payload, old_season_tournaments, seasons)
 
+            if relations is None:
+                handle_retry(massege, 'standings')
+                consumer.commit()
+                continue
 
-            insert_relations(relations)
+            if relations:
+                insert_relations(relations)
+            consumer.commit()
 
     finally:
         consumer.close()

@@ -1,12 +1,9 @@
 from src.connections import get_consumer
 from src.database.inserts import insert_matches
-from src.database.queries import get_league_id_by_name
 from src.preparing import parsing_updating_matches
 
 
 import json
-from psycopg2.extras import execute_values
-from datetime import datetime
 
 
 def fetch_updating_matches():
@@ -29,7 +26,8 @@ def fetch_updating_matches():
                 print(msg.error())
                 continue
 
-            payload = json.loads(msg.value().decode('utf-8'))
+            massege = json.loads(msg.value().decode('utf-8'))
+            payload = massege.get('payload')
             
             matches = parsing_updating_matches(payload)
 

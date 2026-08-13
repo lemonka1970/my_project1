@@ -28,9 +28,12 @@ def fetch_teams():
                 print(msg.error())
                 continue
 
-            payload = json.loads(msg.value().decode('utf-8'))
+            massege = json.loads(msg.value().decode('utf-8'))
+            payload = massege.get('payload')
 
             teams = parsing_teams(payload)
+            if not teams:
+                continue
 
             insert_teams(teams)
             consumer.commit()

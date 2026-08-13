@@ -1,0 +1,49 @@
+[2026-08-13T13:28:30.529+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-08-13T13:28:30.618+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: refresh_matadata.produce_standings manual__2026-08-08T18:50:50.167918+00:00 [queued]>
+[2026-08-13T13:28:30.654+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: refresh_matadata.produce_standings manual__2026-08-08T18:50:50.167918+00:00 [queued]>
+[2026-08-13T13:28:30.657+0000] {taskinstance.py:2306} INFO - Starting attempt 3 of 4
+[2026-08-13T13:28:30.692+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): produce_standings> on 2026-08-08 18:50:50.167918+00:00
+[2026-08-13T13:28:30.727+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:62: DeprecationWarning: This process (pid=181) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2026-08-13T13:28:30.730+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'refresh_matadata', 'produce_standings', 'manual__2026-08-08T18:50:50.167918+00:00', '--job-id', '133', '--raw', '--subdir', 'DAGS_FOLDER/dag_refresh_metadata.py', '--cfg-path', '/tmp/tmp6o6nk66l']
+[2026-08-13T13:28:30.733+0000] {standard_task_runner.py:64} INFO - Started process 189 to run task
+[2026-08-13T13:28:30.734+0000] {standard_task_runner.py:91} INFO - Job 133: Subtask produce_standings
+[2026-08-13T13:28:30.903+0000] {task_command.py:426} INFO - Running <TaskInstance: refresh_matadata.produce_standings manual__2026-08-08T18:50:50.167918+00:00 [running]> on host 202f540b7203
+[2026-08-13T13:28:31.229+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='refresh_matadata' AIRFLOW_CTX_TASK_ID='produce_standings' AIRFLOW_CTX_EXECUTION_DATE='2026-08-08T18:50:50.167918+00:00' AIRFLOW_CTX_TRY_NUMBER='3' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-08-08T18:50:50.167918+00:00'
+[2026-08-13T13:28:31.234+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-08-13T13:28:35.270+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-08-13T13:28:35.275+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 401, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/src/producers.py", line 128, in produce_standings
+    conn = get_connection()
+           ^^^^^^^^^^^^^^^^
+  File "/opt/airflow/src/connections.py", line 15, in get_connection
+    return psycopg2.connect(
+           ^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.OperationalError: could not translate host name "warehous-postgres" to address: No address associated with hostname
+
+[2026-08-13T13:28:35.330+0000] {taskinstance.py:1206} INFO - Marking task as UP_FOR_RETRY. dag_id=refresh_matadata, task_id=produce_standings, run_id=manual__2026-08-08T18:50:50.167918+00:00, execution_date=20260808T185050, start_date=20260813T132830, end_date=20260813T132835
+[2026-08-13T13:28:35.412+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 133 for task produce_standings (could not translate host name "warehous-postgres" to address: No address associated with hostname
+; 189)
+[2026-08-13T13:28:35.548+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 1
+[2026-08-13T13:28:35.637+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-08-13T13:28:35.649+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

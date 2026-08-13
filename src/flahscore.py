@@ -92,7 +92,6 @@ def get_feed_last_match(url_team_1, url_team_2):
 
 
 def main():
-
     c = 0
 
 if __name__ == '__main__':

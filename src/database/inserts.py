@@ -42,7 +42,7 @@ RELATIONS_INSERT_QUERY = """
     VALUES %s
     ON CONFLICT (season_id, team_id)
     DO UPDATE SET
-    count_matches = EXLUDED.count_matches
+    count_matches = EXCLUDED.count_matches
     """
 
 MATCHES_INSERT_QUERY = """

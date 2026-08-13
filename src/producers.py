@@ -1,11 +1,10 @@
 from src.connections import get_producer, get_connection
 from src.flahscore import get_data, get_response, get_feed_last_match
+from src.utils import create_retry_massege
 
-import pandas as pd
 from datetime import datetime, timedelta
 import json
 from itertools import combinations
-
 
 def produce_scoreboards():
     """
@@ -49,14 +48,16 @@ def produce_scoreboards():
             # каждую группу публикуем
             for group in groups:
 
-                payload = json.dumps({
+                payload = {
                     'date': str(date), 
                     'scoreboard': group
-                    }).encode('utf-8')
+                    }
+
+                massege = create_retry_massege(payload)
 
                 producer.produce(
                     topic = 'scoreboards', 
-                    value = payload
+                    value = massege
                     )
 
         
@@ -100,15 +101,17 @@ def produce_past_seasons():
                     continue
 
                     
-                payload = json.dumps({
+                payload = {
                     'tournament_id': tournament_id,
                     'tournament_stage_id': tournament_stage_id,
                     'past_seasons': seasons
-                    }).encode('utf-8')
+                    }
+
+                massege = create_retry_massege(payload)
                 
                 producer.produce(
                     topic='past_seasons',
-                    value=payload
+                    value=massege
                     )
 
     finally:
@@ -142,15 +145,17 @@ def produce_standings():
                 if not standings:
                     continue
 
-                payload = json.dumps({
+                payload = {
                         'tournament_id': tournament_id,
                         'tournament_stage_id': tournament_stage_id,
                         'standings': standings
-                    }).encode('utf-8')
+                    }
+
+                massege = create_retry_massege(payload)
 
                 producer.produce(
                     topic='standings',
-                    value=payload
+                    value=massege
                 )
 
     finally:
@@ -207,16 +212,18 @@ def produce_initializetion_matches():
                     # print(feed_match)
                     h2h = get_data('df_hh_1_' + feed_match)
 
-                    payload = json.dumps({
+                    payload = {
                         'league_id': league_id, 
                         'url_team_1': url_team_1,
                         'url_team_2': url_team_2,
                         'h2h': h2h
-                    })
+                    }
+
+                    massege = create_retry_massege(payload)
 
                     producer.produce(
                         topic='initialize_matches',
-                        value=payload
+                        value=massege
                     )
 
 
@@ -299,17 +306,19 @@ def produce_updeting_matches():
 
                     h2h = get_data('df_hh_1_' + feed_match)
 
-                    payload = json.dumps({
+                    payload = {
                         'league_id': league_id,
                         'season_id': season_id,
                         'url_team_1': url_team_1,
                         'url_team_2': url_team_2,
                         'h2h': h2h
-                    })
+                    }
+
+                    massege = create_retry_massege(payload)
 
                     producer.produce(
                         topic='update_matches',
-                        value=payload
+                        value=massege
                     )
 
                         
@@ -323,6 +332,7 @@ def produce_updeting_matches():
 
 def main() :
     c = 0
+   
 
 if __name__ == '__main__':
     main()

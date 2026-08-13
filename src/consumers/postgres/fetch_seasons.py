@@ -3,6 +3,8 @@ from src.database.queries import get_league_id_by_tournaments
 from src.database.inserts import insert_seasons
 from src.preparing import prepare_seasons
 
+from src.utils import handle_retry
+
 import json
 
 
@@ -21,7 +23,8 @@ def fetch_seasons():
 
     try:
         # league_ids возвращает id лиги по (tournament_id, tournament_stage_id) текущего сезона
-        league_ids = get_league_id_by_tournaments() 
+        any_current_seasons = True
+        league_ids = get_league_id_by_tournaments(any_current_seasons) 
 
 
 
@@ -35,9 +38,15 @@ def fetch_seasons():
                 print(msg.error())
                 continue
 
-            payload = json.loads(msg.value().decode('utf-8'))
+            massege = json.loads(msg.value().decode('utf-8'))
+            payload = massege.get('payload')
             
-            seasons = prepare_seasons(payload, league_ids)
+            seasons, league_ids = prepare_seasons(payload, league_ids)
+
+            if seasons is None:
+                handle_retry(massege, 'past_seasons')
+                consumer.commit()
+                continue
 
             insert_seasons(seasons)
             

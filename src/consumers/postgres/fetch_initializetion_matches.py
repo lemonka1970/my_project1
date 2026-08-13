@@ -1,6 +1,5 @@
 from src.connections import get_consumer
 from src.database.inserts import insert_matches
-from src.database.queries import get_league_id_by_name
 from src.preparing import parsing_initializetion_matches
 
 import json
@@ -24,7 +23,8 @@ def fetch_initializetion_matches():
                 print(msg.error())
                 continue
 
-            payload = json.loads(msg.value().decode('utf-8'))
+            massege = json.loads(msg.value().decode('utf-8'))
+            payload = massege.get('payload')
 
             league_matches = parsing_initializetion_matches(payload)
 

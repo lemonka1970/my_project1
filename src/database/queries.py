@@ -18,21 +18,16 @@ def get_region_id_by_flashscore_id():
                         in cur.fetchall()}
 
 
-def get_league_id_by_name(league_id):
-    # словарь league_name: league_id, для нужного региона
+def get_league_id_by_name():
+    # словарь full_league_name: league_id, для нужного региона
     with get_connection() as conn:
         with conn.cursor() as cur:
             cur.execute("""
-                WITH current_region AS (
-                    SELECT region_id
-                    FROM leagues
-                    WHERE league_id = %s
-                    )
-                SELECT league_id, league_name
+                SELECT CONCAT(region_name, ': ', league_name), league_id
                 FROM leagues
-                JOIN current_region USING(region_id)
-                """, (league_id, ))
-            return {league_name: league_id for league_id, league_name in cur.fetchall()}
+                JOIN regions USING(region_id)
+                """)
+            return {full_league_name: league_id for full_league_name, league_id in cur.fetchall()}
 
 
 
@@ -53,16 +48,22 @@ def get_league_id_by_flashscore_feed():
 
 
 
-def get_league_id_by_tournaments():
+def get_league_id_by_tournaments(current_seasons: bool):
     # словарь (tounament_id, tounament_stage_id): league_id
+
+    if current_seasons:
+        condition = """
+                    WHERE is_current = True AND start_date = 0
+                    """
+    else:
+        condition = ""
 
     with get_connection() as conn:
          with conn.cursor() as cur:
             cur.execute("""
                 SELECT tournament_id, tournament_stage_id, league_id
                 FROM seasons
-                WHERE is_current = True AND start_date = 0
-            """)
+            """ + condition)
             return {(tounament_id, tounament_stage_id): league_id
                     for tounament_id, tounament_stage_id, league_id in cur.fetchall()}
 
@@ -131,20 +132,4 @@ def get_old_seasons_in_relations():
                        for tournament_id, tournament_stage_id 
                        in cur.fetchall())
 
-
-
-def resolve_with_retry(cache: dict, key, refresh_func, sleep_time=10, max_attemps=None):
-    attemps = 0
-
-    while True:
-        result = cache.get(key)
-        if result is not None:
-            return result, cache
-
-        if max_attemps and attemps > max_attemps:
-            raise
-
-        time.sleep(sleep_time)
-        cache = refresh_func()
-        attemps += 1
 

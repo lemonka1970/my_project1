@@ -27,7 +27,11 @@ def fetch_regions():
                 print(msg.error())
                 continue
 
-            payload = json.loads(msg.value().decode('utf-8'))
+            massege = json.loads(msg.value().decode('utf-8'))
+            payload = massege.get('payload', [])
+
+            if not payload:
+                continue
 
             # парсим scoreboard на регионы
             regions = parsing_regions(payload)

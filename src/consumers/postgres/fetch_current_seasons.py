@@ -2,6 +2,7 @@ from src.connections import get_consumer
 from src.database.queries import get_league_id_by_flashscore_feed
 from src.database.inserts import insert_seasons
 from src.preparing import prepare_current_seasons
+from src.utils import handle_retry
 
 import time
 import json
@@ -33,9 +34,15 @@ def fetch_current_seasons():
                 print(msg.error())
                 continue
 
-            payload = json.loads(msg.value().decode('utf-8'))
+            massege = json.loads(msg.value().decode('utf-8'))
+            payload = massege.get('payload')
 
-            current_seasons = prepare_current_seasons(payload, leagues)
+            current_seasons, leagues = prepare_current_seasons(payload, leagues)
+
+            if current_seasons is None:
+                handle_retry(massege, 'scoreboard')
+                consumer.commit()
+                continue
 
             insert_seasons(current_seasons)
 
