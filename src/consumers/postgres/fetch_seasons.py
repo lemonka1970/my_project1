@@ -23,8 +23,7 @@ def fetch_seasons():
 
     try:
         # league_ids возвращает id лиги по (tournament_id, tournament_stage_id) текущего сезона
-        any_current_seasons = True
-        league_ids = get_league_id_by_tournaments(any_current_seasons) 
+        league_ids = get_league_id_by_tournaments(only_with_dates_resolved=True)  
 
 
 

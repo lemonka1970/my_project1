@@ -1,5 +1,5 @@
 from src.connections import get_consumer
-from src.database.queries import get_old_seasons_in_relations, get_season_id_by_tournamnts
+from src.database.queries import get_old_seasons_in_relations, get_season_id_by_tournamnts, get_league_id_by_tournaments
 from src.database.inserts import insert_relations
 from src.preparing import prepare_relations
 from src.utils import handle_retry
@@ -15,6 +15,7 @@ def build_season_team_relations():
 
     try:
         old_season_tournaments = get_old_seasons_in_relations()
+        league_ids = get_league_id_by_tournaments(only_with_dates_resolved=False)
         seasons = get_season_id_by_tournamnts()
 
         while True:
@@ -29,7 +30,7 @@ def build_season_team_relations():
             massege = json.loads(msg.value().decode('utf-8'))
             payload = massege.get('payload')
 
-            relations, seasons = prepare_relations(payload, old_season_tournaments, seasons)
+            relations, seasons, league_ids = prepare_relations(payload, old_season_tournaments, seasons, league_ids)
 
             if relations is None:
                 handle_retry(massege, 'standings')

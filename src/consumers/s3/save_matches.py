@@ -9,6 +9,8 @@ import io
 def save_matches():
 
     consumer = get_consumer('save_matches')
+    consumer.subscribe(['update_matches'])
+
     client = get_client()
 
     try:
@@ -21,7 +23,9 @@ def save_matches():
                 print(msg.error())
                 continue
 
-            payload = json.loads(msg.value().decode('utf-8'))
+            message = json.loads(msg.value().decode('utf-8'))
+            payload = message.get('payload')
+
             url_team_1 = payload.get('url_team_1')
             url_team_2 = payload.get('url_team_2')
             h2h = payload.get('h2h')

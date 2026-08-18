@@ -1,6 +1,17 @@
 import requests
-import numpy as np
+import logging
 import time
+import math
+
+logger = logging.getLogger("my_project.flashscore")
+
+HEADERS = {"x-fsign": "SW9D1eZo"}
+
+
+def sleep_with_backoff(attempt: int):
+    spleep_time = math.ceil(attempt / 4)
+    time.sleep(spleep_time)
+
 
 
 
@@ -11,25 +22,25 @@ def get_data(feed):
     :return: list[dict]: Список словарей с данными
     """
 
-    bl_res = False
     response = None
     max_attempts = 20
-    attempt = 0
-    while not bl_res:
+    attempt = 1
 
-        sleep_time = np.random.randint(0, 2)
-        time.sleep(sleep_time)
-        url = f'https://global.flashscore.ninja/2/x/feed/{feed}'
+    url = f'https://global.flashscore.ninja/2/x/feed/{feed}'
 
+    while True:
+
+        sleep_with_backoff(attempt)
         try:
-            response = requests.get(url=url, headers={"x-fsign": "SW9D1eZo"})
+            response = requests.get(url=url, headers=HEADERS, timeout=10)
             response.raise_for_status()
-            bl_res = True
-        except:
+            break
+        except requests.RequestException as e:
+            logger.warning("get_data: попытка %d/%d для url=%s не удалась", attempt, max_attempts, url)
             if attempt > max_attempts:
-                print('что-то не так, проверьте подключение или впн')
+                logger.error("get_data: url=%s не доступен %s", url, e)
+                return []
             attempt += 1
-            # print('произошла ошибка, но все збс')
 
 
     data = response.text.split('¬')
@@ -57,15 +68,21 @@ def get_response(url_):
         :return: Response object
     """
     response_ = None
-    bl_ = True
-    while bl_:
-        sleep_time = np.random.randint(0, 2)
-        time.sleep(sleep_time)
+    max_attempts = 20
+    attempts = 1
+    while True:
+
+        sleep_with_backoff(attempts)
         try:
-            response_ = requests.get(url_, headers={"x-fsign": "SW9D1eZo"})
+            response_ = requests.get(url_, headers=HEADERS, timeout=10)
             response_.raise_for_status()
-            bl_ = False
-        except:
+            break
+        except requests.RequestException as e:
+            logger.warning("get_response: попытка %d/%d для url=%s не удалась", attempts, max_attempts, url_)
+            if attempts > max_attempts:
+                logger.error("get_response: url:%s не доступен %s", url_, e)
+                return None
+            attempts += 1
             pass
     return response_
 
@@ -75,6 +92,9 @@ def get_feed_last_match(url_team_1, url_team_2):
 
     url = f'https://www.flashscore.com/match/football/{url_team_1}/{url_team_2}/?'
     response = get_response(url)
+    if not response:
+        logger.error("get_feed_last_match: страница для %s не была получена", url)
+        return None
 
 
     # максимально простым способом достаем feed игры
@@ -82,9 +102,11 @@ def get_feed_last_match(url_team_1, url_team_2):
     feed_match = None
     for el in data:
         if 'window.environment = {"event_id_c":' in el:
-            feed_match = el[36:44]
+            el = el.split('window.environment = {"event_id_c":"')[1]
+            feed_match = el[:8]
             break
     if feed_match is None:
+        logger.error("get_feed_last_match: не был найден feed для %s", url)
         return None
 
     return feed_match
@@ -93,6 +115,7 @@ def get_feed_last_match(url_team_1, url_team_2):
 
 def main():
     c = 0
+    
 
 if __name__ == '__main__':
     main()

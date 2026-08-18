@@ -9,6 +9,8 @@ import io
 def save_scoreboards():
 
     consumer = get_consumer('save_scoreboards')
+    consumer.subscribe(['scoreboards'])
+
     client = get_client()
 
     try:
@@ -21,7 +23,9 @@ def save_scoreboards():
                 print(msg.error())
                 continue
 
-            payload = json.loads(msg.value().decode('utf-8'))
+            message = json.loads(msg.value().decode('utf-8'))
+            payload = message.get('payload')
+            
             date = payload.get('date')
             scoreboard = payload.get('scoreboards')
 

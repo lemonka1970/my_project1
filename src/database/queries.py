@@ -1,6 +1,5 @@
 from src.connections import get_connection
 
-import time
 
         
 
@@ -48,17 +47,17 @@ def get_league_id_by_flashscore_feed():
 
 
 
-def get_league_id_by_tournaments(current_seasons: bool):
+def get_league_id_by_tournaments(only_with_dates_resolved: bool):
     # словарь (tounament_id, tounament_stage_id): league_id
 
-    if current_seasons:
+    if only_with_dates_resolved:
         condition = """
                     WHERE is_current = True AND start_date = 0
                     """
     else:
         condition = ""
 
-    with get_connection() as conn:
+    with get_connection() as conn: 
          with conn.cursor() as cur:
             cur.execute("""
                 SELECT tournament_id, tournament_stage_id, league_id

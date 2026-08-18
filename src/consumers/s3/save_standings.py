@@ -9,6 +9,8 @@ import io
 def save_standings():
 
     consumer = get_consumer('save_standings')
+    consumer.subscribe(['standings'])
+
     client = get_client()
 
     try:
@@ -21,11 +23,14 @@ def save_standings():
                 print(msg.error())
                 continue
 
-            payload = json.loads(msg.value().decode('utf-8'))
-            feed_season = payload.get('feed_season')
+            message = json.loads(msg.value().decode('utf-8'))
+            payload = message.get('payload')
+            
+            tournament_id = payload.get('tournament_id')
+            tournament_stage_id = payload.get('tournament_stage_id')
             standings = payload.get('standings')
 
-            object_name = f'standings/{feed_season}'
+            object_name = f'standings/{tournament_id}/{tournament_stage_id}'
 
             standings = json.dumps(standings).encode('utf-8')
 

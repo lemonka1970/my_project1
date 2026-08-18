@@ -9,6 +9,8 @@ import io
 def save_past_seasons():
 
     consumer = get_consumer('save_past_seasons')
+    consumer.subscribe(['past_seasons'])
+
     client = get_client()
 
     try:
@@ -21,7 +23,9 @@ def save_past_seasons():
                 print(msg.error())
                 continue
 
-            payload = json.loads(msg.value().decode('utf-8'))
+            message = json.loads(msg.value().decode('utf-8'))
+            payload = message.get('payload')
+
             tournament_id = payload.get('tournament_id')
             tournament_stage_id = payload.get('tournament_stage_id')
             past_seasons = payload.get('past_seasons')
@@ -33,7 +37,7 @@ def save_past_seasons():
                 bucket_name = 'football-row',
                 object_name = object_name,
                 data = io.BytesIO(past_seasons),
-                lendth = len(past_seasons)
+                length = len(past_seasons)
             )
 
     finally:

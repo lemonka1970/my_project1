@@ -102,7 +102,7 @@ def prepare_seasons(payload, league_ids):
     # если эту лигу еще не успелли обработать
     league_id, league_ids = resolve(league_ids, 
                                     (tournament_id, tournament_stage_id), 
-                                    lambda: get_league_id_by_tournaments(current_seasons=True))
+                                    lambda: get_league_id_by_tournaments(only_with_dates_resolved=True))
     if league_id is None:
         return None, league_ids
 
@@ -155,7 +155,7 @@ def parsing_teams(payload):
 
 
 
-def prepare_relations(payload, old_season_tournaments, seasons):
+def prepare_relations(payload, old_season_tournaments, seasons, league_ids):
 
     tournaments = (payload.get('tournament_id'), payload.get('tournament_stage_id'))
     standings = payload.get('standings')
@@ -166,7 +166,7 @@ def prepare_relations(payload, old_season_tournaments, seasons):
     season_id, seasons = resolve(seasons, tournaments, 
                                 get_season_id_by_tournamnts)
     league_id, league_ids = resolve(league_ids, tournaments, 
-                                    lambda: get_league_id_by_tournaments(current_seasons=False))
+                                    lambda: get_league_id_by_tournaments(only_with_dates_resolved=False))
     if season_id is None or league_id is None:
         return None, seasons
     teams = get_team_id_by_feed(league_id)
@@ -174,7 +174,7 @@ def prepare_relations(payload, old_season_tournaments, seasons):
     relations = set()
 
 
-    for el in standings:
+    for el in standings: 
         team_feed = el.get('TI')
         team_id = None
 
@@ -189,7 +189,7 @@ def prepare_relations(payload, old_season_tournaments, seasons):
             el.get('TP')
             ))
 
-    return relations, seasons
+    return relations, seasons, league_ids
 
 
 
