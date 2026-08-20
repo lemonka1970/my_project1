@@ -1,8 +1,31 @@
 from src.connections import get_consumer
 from src.database.inserts import insert_teams
-from src.preparing import parsing_teams
 
 import json
+import logging
+logger = logging.getLogger(__name__)
+
+
+
+
+
+
+
+def parsing_teams(payload):
+
+    standings = payload.get('standings', [])
+    
+    teams = set()
+
+    for el in standings:
+        if el.get('~TR'):
+            teams.add((
+                el.get('TN'), # team_name
+                el.get('TI'), # flashscore_team_feed
+                el.get('TIU') # flashscore_team_url
+                ))
+
+    return teams
 
 
 
@@ -10,7 +33,7 @@ import json
 
 def fetch_teams():
     """
-    
+    собираем команды по всем сезонам
     """
     
     consumer = get_consumer('fetch_teams')
@@ -25,17 +48,17 @@ def fetch_teams():
             if msg is None:
                 continue
             if msg.error():
-                print(msg.error())
+                logger.error("fetch_teams: %s", msg.error())
                 continue
 
-            massege = json.loads(msg.value().decode('utf-8'))
-            payload = massege.get('payload')
+            payload = json.loads(msg.value().decode('utf-8'))
+            if payload == 'message_finally':
+                break
 
             teams = parsing_teams(payload)
-            if not teams:
-                continue
 
-            insert_teams(teams)
+            if teams:
+                insert_teams(teams)
             consumer.commit()
 
     finally:

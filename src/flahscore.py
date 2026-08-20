@@ -3,7 +3,7 @@ import logging
 import time
 import math
 
-logger = logging.getLogger("my_project.flashscore")
+logger = logging.getLogger(__name__)
 
 HEADERS = {"x-fsign": "SW9D1eZo"}
 
@@ -39,7 +39,7 @@ def get_data(feed):
             logger.warning("get_data: попытка %d/%d для url=%s не удалась", attempt, max_attempts, url)
             if attempt > max_attempts:
                 logger.error("get_data: url=%s не доступен %s", url, e)
-                return []
+                return None
             attempt += 1
 
 
@@ -61,7 +61,7 @@ def get_data(feed):
 
 
 
-def get_response(url_):
+def get_response(_url):
     """
         Возвращает ответ от сервера по url. Используется для получения http или json с flashscore api
         :param url_: Url для запроса
@@ -74,13 +74,13 @@ def get_response(url_):
 
         sleep_with_backoff(attempts)
         try:
-            response_ = requests.get(url_, headers=HEADERS, timeout=10)
+            response_ = requests.get(_url, headers=HEADERS, timeout=10)
             response_.raise_for_status()
             break
         except requests.RequestException as e:
-            logger.warning("get_response: попытка %d/%d для url=%s не удалась", attempts, max_attempts, url_)
+            logger.warning("get_response: попытка %d/%d для url=%s не удалась", attempts, max_attempts, _url)
             if attempts > max_attempts:
-                logger.error("get_response: url:%s не доступен %s", url_, e)
+                logger.error("get_response: url:%s не доступен %s", _url, e)
                 return None
             attempts += 1
             pass

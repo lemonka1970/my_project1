@@ -1,6 +1,8 @@
 from src.connections import get_connection
 
 from psycopg2.extras import execute_values
+import logging
+logger = logging.getLogger('my_project.src.database.inserts.py')
 
 REGIONS_INSERT_QUERY = """
     INSERT INTO regions (flashscore_region_id, region_name)
@@ -59,10 +61,13 @@ MATCHES_INSERT_QUERY = """
 
 
 def execute_insert(query, data):
+    try:
+        with get_connection() as conn:
+            with conn.cursor() as cur:
+                execute_values(cur, query, list(data))
+    except Exception as e:
+        logger.error("execute_insert failed: query=%s, len_data=%d, error=%s", query, len(data), exc_info=True)
 
-    with get_connection() as conn:
-        with conn.cursor() as cur:
-            execute_values(cur, query, list(data))
 
 
 

@@ -17,6 +17,8 @@ def get_region_id_by_flashscore_id():
                         in cur.fetchall()}
 
 
+
+
 def get_league_id_by_name():
     # словарь full_league_name: league_id, для нужного региона
     with get_connection() as conn:
@@ -83,21 +85,19 @@ def get_season_id_by_tournamnts():
 
 
 
-def get_team_id_by_feed(league_id):
+def get_team_id_by_feed(league_id, cur):
     # словарь {команда: id команды} для конкретной лиги
 
-    with get_connection() as conn:
-        with conn.cursor() as cur:
-            cur.execute("""
-                SELECT team_id, flashscore_team_feed
-                FROM teams
-                JOIN season_team_relations USING(team_id)
-                JOIN seasons USING(season_id)
-                WHERE league_id = %s
-                """, (league_id,))
-            return {flashscore_team_feed: team_id 
-                    for team_id, flashscore_team_feed 
-                    in cur.fetchall()}
+    cur.execute("""
+        SELECT team_id, flashscore_team_feed
+        FROM teams
+        JOIN season_team_relations USING(team_id)
+        JOIN seasons USING(season_id)
+        WHERE league_id = %s
+        """, (league_id,))
+    return {flashscore_team_feed: team_id 
+            for team_id, flashscore_team_feed 
+            in cur.fetchall()}
 
 
 

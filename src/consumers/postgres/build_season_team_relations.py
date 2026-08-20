@@ -1,11 +1,46 @@
-from src.connections import get_consumer
-from src.database.queries import get_old_seasons_in_relations, get_season_id_by_tournamnts, get_league_id_by_tournaments
+from src.connections import get_consumer, get_connection
+from src.database.queries import get_old_seasons_in_relations, get_team_id_by_feed
+from src.database.queries import get_season_id_by_tournamnts, get_league_id_by_tournaments
 from src.database.inserts import insert_relations
-from src.preparing import prepare_relations
-from src.utils import handle_retry
+
 
 import json
-import time
+import logging
+logger = logging.getLogger(__name__)
+
+
+
+
+def prepare_relations(payload, old_season_tournaments, seasons, leagues, cur):
+
+    tournaments = (payload.get('tournament_id'), payload.get('tournament_stage_id'))
+    standings = payload.get('standings')
+
+    if tournaments in old_season_tournaments:
+        return None
+    
+    season_id = seasons.get(tournaments)
+    league_id = leagues.get(tournaments)
+    
+
+    relations = set()
+
+
+    for el in standings: 
+        teams = get_team_id_by_feed(league_id, cur)
+        team_feed = el.get('TI')
+        team_id = teams.get(team_feed)
+
+        relations.add((
+            season_id,
+            team_id,
+            el.get('TP')
+            ))
+
+    return relations
+
+
+
 
 
 def build_season_team_relations():
@@ -15,31 +50,30 @@ def build_season_team_relations():
 
     try:
         old_season_tournaments = get_old_seasons_in_relations()
-        league_ids = get_league_id_by_tournaments(only_with_dates_resolved=False)
+        leagues = get_league_id_by_tournaments(only_with_dates_resolved=False)
         seasons = get_season_id_by_tournamnts()
 
-        while True:
-            msg = consumer.poll(1.0)
+        with get_connection() as conn:
+            with conn.cursor() as cur:
 
-            if msg is None:
-                continue
-            if msg.error():
-                print(msg.error())
-                continue
+                while True:
+                    msg = consumer.poll(1.0)
 
-            massege = json.loads(msg.value().decode('utf-8'))
-            payload = massege.get('payload')
+                    if msg is None:
+                        continue
+                    if msg.error():
+                        logger.error("build_season_team_relatioins: %s", msg.error())
+                        continue
 
-            relations, seasons, league_ids = prepare_relations(payload, old_season_tournaments, seasons, league_ids)
+                    payload = json.loads(msg.value().decode('utf-8'))
+                    if payload == 'message_finally':
+                        break
 
-            if relations is None:
-                handle_retry(massege, 'standings')
-                consumer.commit()
-                continue
+                    relations = prepare_relations(payload, old_season_tournaments, seasons, leagues, cur)
 
-            if relations:
-                insert_relations(relations)
-            consumer.commit()
+                    if relations:
+                        insert_relations(relations)
+                    consumer.commit()
 
     finally:
         consumer.close()

@@ -1,12 +1,37 @@
 from src.connections import get_consumer
 from src.database.queries import get_league_id_by_flashscore_feed
 from src.database.inserts import insert_seasons
-from src.preparing import prepare_current_seasons
-from src.utils import handle_retry
 
-import time
 import json
+import logging
+logger = logging.getLogger(__name__)
 
+
+
+
+
+
+def prepare_current_seasons(payload, leagues):
+
+    scoreboard = payload.get('scoreboard', [])
+    if scoreboard:
+        scoreboard = scoreboard[0]
+    else:
+        return None
+
+    if scoreboard.get('~ZA'):
+        
+        row = [
+            scoreboard.get('ZE'), # tournament_id
+            scoreboard.get('ZC'), #  tournament_stage_id
+            0, 0, # dates
+            True, # is_current
+            scoreboard.get('ZEE') # flashscore_league_feed
+            ]
+
+        row[5] = leagues.get(row[5])
+
+    return row
 
 
 
@@ -31,20 +56,17 @@ def fetch_current_seasons():
             if msg is None:
                 continue
             if msg.error():
-                print(msg.error())
+                logger.error('fetch_current_league: %s', msg.error())
                 continue
 
-            massege = json.loads(msg.value().decode('utf-8'))
-            payload = massege.get('payload')
+            payload = json.loads(msg.value().decode('utf-8'))
+            if payload == 'message_finally':
+                break
 
-            current_seasons, leagues = prepare_current_seasons(payload, leagues)
-
-            if current_seasons is None:
-                handle_retry(massege, 'scoreboard')
-                consumer.commit()
-                continue
-
-            insert_seasons(current_seasons)
+            current_seasons = prepare_current_seasons(payload, leagues)
+            
+            if current_seasons:
+                insert_seasons(current_seasons)
 
             consumer.commit()
 

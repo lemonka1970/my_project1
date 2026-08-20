@@ -3,17 +3,6 @@ from datetime import datetime, timezone, timedelta
 from src.connections import get_producer
 
 
-def create_retry_massege(payload, retry_count=0, time_started_at=None):
-    # формируем massege с метаданными
-    if time_started_at is None:
-        time_started_at = datetime.now(timezone.utc)
-
-    return json.dumps({
-        'payload': payload,
-        'retry_count': retry_count,
-        'time_started_at': str(time_started_at)
-    }).encode('utf-8')
-
 
 
 def resolve(cache: dict, key, refresh_func):

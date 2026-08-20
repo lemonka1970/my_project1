@@ -1,9 +1,7 @@
 from src.connections import get_producer, get_connection
 from src.flahscore import get_data, get_response, get_feed_last_match
-from src.utils import create_retry_massege
 
 from datetime import datetime, timedelta
-import json
 from itertools import combinations
 
 def produce_scoreboards():
@@ -48,20 +46,23 @@ def produce_scoreboards():
             # каждую группу публикуем
             for group in groups:
 
-                payload = {
-                    'date': str(date), 
-                    'scoreboard': group
-                    }
+                if group:
+                    payload = {
+                        'date': str(date), 
+                        'scoreboard': group
+                        }
 
-                massege = create_retry_massege(payload)
-
-                producer.produce(
-                    topic = 'scoreboards', 
-                    value = massege
-                    )
+                    producer.produce(
+                        topic = 'scoreboards', 
+                        value = payload
+                        )
 
         
     finally:
+        producer.produce(
+            topic='scoreboards',
+            value='message_finally'
+        )
         producer.flush()
 
 
@@ -91,6 +92,9 @@ def produce_past_seasons():
                 url = f'https://2.ds.lsapp.eu/pq_graphql?_hash=lph&tournamentId={tournament_id}&tournamentStageId={tournament_stage_id}&projectId=2'
                 response = get_response(url)
 
+                if response is None:
+                    continue
+
                 seasons = (
                     response.json()
                     .get('data', {})
@@ -106,17 +110,20 @@ def produce_past_seasons():
                     'tournament_stage_id': tournament_stage_id,
                     'past_seasons': seasons
                     }
-
-                massege = create_retry_massege(payload)
                 
                 producer.produce(
                     topic='past_seasons',
-                    value=massege
+                    value=payload
                     )
 
     finally:
-        conn.close()
+        producer.produce(
+            topic='past_seasons',
+            value='message_finally'
+        )
         producer.flush()
+        conn.close()
+
 
 
 
@@ -151,16 +158,19 @@ def produce_standings():
                         'standings': standings
                     }
 
-                massege = create_retry_massege(payload)
-
                 producer.produce(
                     topic='standings',
-                    value=massege
+                    value=payload
                 )
 
     finally:
-        conn.close()
+        producer.produce(
+            topic='standings',
+        value='message_finally'
+        )
         producer.flush()
+        conn.close()
+
 
 
 
@@ -211,6 +221,8 @@ def produce_initializetion_matches():
 
                     # print(feed_match)
                     h2h = get_data('df_hh_1_' + feed_match)
+                    if h2h is None:
+                        continue
 
                     payload = {
                         'league_id': league_id, 
@@ -219,18 +231,22 @@ def produce_initializetion_matches():
                         'h2h': h2h
                     }
 
-                    massege = create_retry_massege(payload)
-
                     producer.produce(
                         topic='initialize_matches',
-                        value=massege
+                        value=payload
                     )
 
+                    
 
                     
     finally:
-        conn.close()
+        producer.produce(
+            topic='initialize_matches',
+            value='message_finally'
+        )
         producer.flush()
+        conn.close()
+
 
 
 
@@ -256,34 +272,22 @@ def produce_updeting_matches():
                 SELECT league_id 
                 FROM leagues
             """)
-            leagues = [league_id for league_id in cur.fetchall()]
+            leagues = [league_id[0] for league_id in cur.fetchall()]
 
             
             
             for league_id in leagues:
 
-                # для каждой лиги собираем все url-ы команд текущего и предыдущего сезонов
+                # для каждой лиги собираем все url-ы команд текущего сезона
                 cur.execute("""
-                    WITH teams_last_seasons AS(
-                        SELECT
-                            flashscore_team_url, 
-                            ROW_NUMBER() OVER(
-                                PARTITION BY league_id
-                                ORDER BY start_date DESC
-                            ) AS num_season
-                        FROM teams
-                        JOIN season_team_relations USING(team_id)
-                        JOIN seasons USING(season_id)
-                        WHERE league_id = %s
-                    )
-
                     SELECT flashscore_team_url
-                    FROM teams_last_seasons
-                    WHERE num_season IN (1, 2)
+                    FROM teams
+                    JOIN season_team_relations USING(team_id)
+                    JOIN seasons USING(season_id)
+                    WHERE is_current = True AND league_id = %s
                 """, (league_id,))
                 team_urls = [url[0] for url in cur.fetchall()]
 
-                
                 if not team_urls:
                     continue
 
@@ -299,12 +303,13 @@ def produce_updeting_matches():
                     url_team_2 = pair[1][6:-1].replace('/', '-')
 
                     feed_match = get_feed_last_match(url_team_1, url_team_2)
-
                     if feed_match is None:
                         continue
 
 
                     h2h = get_data('df_hh_1_' + feed_match)
+                    if h2h is None:
+                        continue
 
                     payload = {
                         'league_id': league_id,
@@ -314,18 +319,20 @@ def produce_updeting_matches():
                         'h2h': h2h
                     }
 
-                    massege = create_retry_massege(payload)
-
                     producer.produce(
                         topic='update_matches',
-                        value=massege
+                        value=payload
                     )
 
-                        
 
     finally:
-        conn.close()
+        producer.produce(
+            topic='update_matches',
+            value='message_finally'
+        )
         producer.flush()
+        conn.close()
+
 
 
 
