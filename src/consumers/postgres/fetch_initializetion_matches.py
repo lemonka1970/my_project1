@@ -1,4 +1,4 @@
-from src.connections import get_consumer, get_connection
+from src.kafka_fn import get_consumer
 from src.database.inserts import insert_matches
 from src.database.queries import get_team_id_by_feed, get_league_id_by_name
 import json
@@ -10,13 +10,12 @@ logger = logging.getLogger(__name__)
 
 
 
-def parsing_initializetion_matches(payload, leagues, cur):
+def parsing_initializetion_matches(payload, leagues, teams):
 
-    league_id = payload.get('league_id')
     h2h = payload.get('h2h')
-
+    # ВАЖНО: не вынимаем извне лигу, так как внутри json все последние матчи команд, 
+    # в том числе проходившие в рамках других лиг
     
-    teams = get_team_id_by_feed(league_id, cur)
     league_matches = set()
 
 
@@ -79,30 +78,42 @@ def fetch_initializetion_matches():
 
     try:
         leagues = get_league_id_by_name()
+        if not leagues:
+            logger.error("fetch_initializetion_matches: dict leagues is enpty")
+            raise
+        teams = None
+        current_league_id = None
 
-        with get_connection() as conn:
-            with conn.cursor() as cur:
+        while True:
+            # достаем и проверяем message
+            msg = consumer.poll(1.0)
 
-                while True:
-                    # достаем и проверяем message
-                    msg = consumer.poll(1.0)
+            if msg is None:
+                continue
+            if msg.error():
+                logger.error("initializetion_matches: %s", msg.error())
+                continue
 
-                    if msg is None:
-                        continue
-                    if msg.error():
-                        logger.error("initializetion_matches: %s", msg.error())
-                        continue
+            payload = json.loads(msg.value().decode('utf-8'))
+            if payload == 'message_finally':
+                break
 
-                    payload = json.loads(msg.value().decode('utf-8'))
-                    if payload == 'message_finally':
-                        break
+            # держим словарь teams актуальным для текущей лиги
+            league_id = payload.get('league_id')
+            if league_id != current_league_id:
+                current_league_id = league_id
+                teams = get_team_id_by_feed(current_league_id)
 
-                    league_matches = parsing_initializetion_matches(payload, leagues, cur)
+                if not teams:
+                    logger.error("fetch_initializetion_matches: dict teams is empty")
+                    continue
+
+            league_matches = parsing_initializetion_matches(payload, leagues, teams)
 
 
-                    if league_matches:
-                        insert_matches(league_matches)
-                    consumer.commit()
+            if league_matches:
+                insert_matches(league_matches)
+            consumer.commit()
 
     finally:
         consumer.close()

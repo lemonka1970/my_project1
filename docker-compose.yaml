@@ -187,6 +187,7 @@ services:
   warehouse-postgres:
     image: postgres:14
     environment:
+      POSTGRES_HOST: $(POSTGRES_HOST)
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
       POSTGRES_DB: postgres

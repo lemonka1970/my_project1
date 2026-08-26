@@ -7,7 +7,7 @@ from src.database.initializetion import (initialize_database)
 default_args = {
     'start_date': datetime(2020, 1, 1),
     'retries': 3,
-    'retry_delay': timedelta(minutes=1)
+    'retry_delay': timedelta(seconds=5)
 }
 
 with DAG(

@@ -1,0 +1,215 @@
+[2026-08-25T19:36:52.027+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-08-25T19:36:52.133+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: refresh_matadata.fetch_regions manual__2026-08-25T19:35:53.685993+00:00 [queued]>
+[2026-08-25T19:36:52.162+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: refresh_matadata.fetch_regions manual__2026-08-25T19:35:53.685993+00:00 [queued]>
+[2026-08-25T19:36:52.166+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 4
+[2026-08-25T19:36:52.208+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): fetch_regions> on 2026-08-25 19:35:53.685993+00:00
+[2026-08-25T19:36:52.237+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:62: DeprecationWarning: This process (pid=265) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2026-08-25T19:36:52.251+0000] {standard_task_runner.py:64} INFO - Started process 274 to run task
+[2026-08-25T19:36:52.247+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'refresh_matadata', 'fetch_regions', 'manual__2026-08-25T19:35:53.685993+00:00', '--job-id', '205', '--raw', '--subdir', 'DAGS_FOLDER/dag_refresh_metadata.py', '--cfg-path', '/tmp/tmp2gq9p7hu']
+[2026-08-25T19:36:52.259+0000] {standard_task_runner.py:91} INFO - Job 205: Subtask fetch_regions
+[2026-08-25T19:36:52.402+0000] {task_command.py:426} INFO - Running <TaskInstance: refresh_matadata.fetch_regions manual__2026-08-25T19:35:53.685993+00:00 [running]> on host d92bf8217fab
+[2026-08-25T19:36:52.633+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='refresh_matadata' AIRFLOW_CTX_TASK_ID='fetch_regions' AIRFLOW_CTX_EXECUTION_DATE='2026-08-25T19:35:53.685993+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-08-25T19:35:53.685993+00:00'
+[2026-08-25T19:36:52.639+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-08-25T19:36:55.811+0000] {inserts.py:73} ERROR - execute_insert failed: query=
+    INSERT INTO regions (flashscore_region_id, region_name)
+    VALUES %s
+    ON CONFLICT (flashscore_region_id)
+    DO NOTHING
+    , len_data=1
+Traceback (most recent call last):
+  File "/opt/airflow/src/database/inserts.py", line 68, in execute_insert
+    execute_values(cur, query, list(data))
+  File "/home/airflow/.local/lib/python3.12/site-packages/psycopg2/extras.py", line 1293, in execute_values
+    template = b'(' + b','.join([b'%s'] * len(page[0])) + b')'
+                                          ^^^^^^^^^^^^
+TypeError: object of type 'NoneType' has no len()
+[2026-08-25T19:36:55.986+0000] {inserts.py:73} ERROR - execute_insert failed: query=
+    INSERT INTO regions (flashscore_region_id, region_name)
+    VALUES %s
+    ON CONFLICT (flashscore_region_id)
+    DO NOTHING
+    , len_data=1
+Traceback (most recent call last):
+  File "/opt/airflow/src/database/inserts.py", line 68, in execute_insert
+    execute_values(cur, query, list(data))
+  File "/home/airflow/.local/lib/python3.12/site-packages/psycopg2/extras.py", line 1293, in execute_values
+    template = b'(' + b','.join([b'%s'] * len(page[0])) + b')'
+                                          ^^^^^^^^^^^^
+TypeError: object of type 'NoneType' has no len()
+[2026-08-25T19:36:56.142+0000] {inserts.py:73} ERROR - execute_insert failed: query=
+    INSERT INTO regions (flashscore_region_id, region_name)
+    VALUES %s
+    ON CONFLICT (flashscore_region_id)
+    DO NOTHING
+    , len_data=1
+Traceback (most recent call last):
+  File "/opt/airflow/src/database/inserts.py", line 68, in execute_insert
+    execute_values(cur, query, list(data))
+  File "/home/airflow/.local/lib/python3.12/site-packages/psycopg2/extras.py", line 1293, in execute_values
+    template = b'(' + b','.join([b'%s'] * len(page[0])) + b')'
+                                          ^^^^^^^^^^^^
+TypeError: object of type 'NoneType' has no len()
+[2026-08-25T19:36:56.257+0000] {inserts.py:73} ERROR - execute_insert failed: query=
+    INSERT INTO regions (flashscore_region_id, region_name)
+    VALUES %s
+    ON CONFLICT (flashscore_region_id)
+    DO NOTHING
+    , len_data=1
+Traceback (most recent call last):
+  File "/opt/airflow/src/database/inserts.py", line 68, in execute_insert
+    execute_values(cur, query, list(data))
+  File "/home/airflow/.local/lib/python3.12/site-packages/psycopg2/extras.py", line 1293, in execute_values
+    template = b'(' + b','.join([b'%s'] * len(page[0])) + b')'
+                                          ^^^^^^^^^^^^
+TypeError: object of type 'NoneType' has no len()
+[2026-08-25T19:36:56.574+0000] {inserts.py:73} ERROR - execute_insert failed: query=
+    INSERT INTO regions (flashscore_region_id, region_name)
+    VALUES %s
+    ON CONFLICT (flashscore_region_id)
+    DO NOTHING
+    , len_data=1
+Traceback (most recent call last):
+  File "/opt/airflow/src/database/inserts.py", line 68, in execute_insert
+    execute_values(cur, query, list(data))
+  File "/home/airflow/.local/lib/python3.12/site-packages/psycopg2/extras.py", line 1293, in execute_values
+    template = b'(' + b','.join([b'%s'] * len(page[0])) + b')'
+                                          ^^^^^^^^^^^^
+TypeError: object of type 'NoneType' has no len()
+[2026-08-25T19:36:57.110+0000] {inserts.py:73} ERROR - execute_insert failed: query=
+    INSERT INTO regions (flashscore_region_id, region_name)
+    VALUES %s
+    ON CONFLICT (flashscore_region_id)
+    DO NOTHING
+    , len_data=1
+Traceback (most recent call last):
+  File "/opt/airflow/src/database/inserts.py", line 68, in execute_insert
+    execute_values(cur, query, list(data))
+  File "/home/airflow/.local/lib/python3.12/site-packages/psycopg2/extras.py", line 1293, in execute_values
+    template = b'(' + b','.join([b'%s'] * len(page[0])) + b')'
+                                          ^^^^^^^^^^^^
+TypeError: object of type 'NoneType' has no len()
+[2026-08-25T19:36:57.530+0000] {inserts.py:73} ERROR - execute_insert failed: query=
+    INSERT INTO regions (flashscore_region_id, region_name)
+    VALUES %s
+    ON CONFLICT (flashscore_region_id)
+    DO NOTHING
+    , len_data=1
+Traceback (most recent call last):
+  File "/opt/airflow/src/database/inserts.py", line 68, in execute_insert
+    execute_values(cur, query, list(data))
+  File "/home/airflow/.local/lib/python3.12/site-packages/psycopg2/extras.py", line 1293, in execute_values
+    template = b'(' + b','.join([b'%s'] * len(page[0])) + b')'
+                                          ^^^^^^^^^^^^
+TypeError: object of type 'NoneType' has no len()
+[2026-08-25T19:36:57.652+0000] {inserts.py:73} ERROR - execute_insert failed: query=
+    INSERT INTO regions (flashscore_region_id, region_name)
+    VALUES %s
+    ON CONFLICT (flashscore_region_id)
+    DO NOTHING
+    , len_data=1
+Traceback (most recent call last):
+  File "/opt/airflow/src/database/inserts.py", line 68, in execute_insert
+    execute_values(cur, query, list(data))
+  File "/home/airflow/.local/lib/python3.12/site-packages/psycopg2/extras.py", line 1293, in execute_values
+    template = b'(' + b','.join([b'%s'] * len(page[0])) + b')'
+                                          ^^^^^^^^^^^^
+TypeError: object of type 'NoneType' has no len()
+[2026-08-25T19:36:57.771+0000] {inserts.py:73} ERROR - execute_insert failed: query=
+    INSERT INTO regions (flashscore_region_id, region_name)
+    VALUES %s
+    ON CONFLICT (flashscore_region_id)
+    DO NOTHING
+    , len_data=1
+Traceback (most recent call last):
+  File "/opt/airflow/src/database/inserts.py", line 68, in execute_insert
+    execute_values(cur, query, list(data))
+  File "/home/airflow/.local/lib/python3.12/site-packages/psycopg2/extras.py", line 1293, in execute_values
+    template = b'(' + b','.join([b'%s'] * len(page[0])) + b')'
+                                          ^^^^^^^^^^^^
+TypeError: object of type 'NoneType' has no len()
+[2026-08-25T19:36:57.922+0000] {inserts.py:73} ERROR - execute_insert failed: query=
+    INSERT INTO regions (flashscore_region_id, region_name)
+    VALUES %s
+    ON CONFLICT (flashscore_region_id)
+    DO NOTHING
+    , len_data=1
+Traceback (most recent call last):
+  File "/opt/airflow/src/database/inserts.py", line 68, in execute_insert
+    execute_values(cur, query, list(data))
+  File "/home/airflow/.local/lib/python3.12/site-packages/psycopg2/extras.py", line 1293, in execute_values
+    template = b'(' + b','.join([b'%s'] * len(page[0])) + b')'
+                                          ^^^^^^^^^^^^
+TypeError: object of type 'NoneType' has no len()
+[2026-08-25T19:36:58.034+0000] {inserts.py:73} ERROR - execute_insert failed: query=
+    INSERT INTO regions (flashscore_region_id, region_name)
+    VALUES %s
+    ON CONFLICT (flashscore_region_id)
+    DO NOTHING
+    , len_data=1
+Traceback (most recent call last):
+  File "/opt/airflow/src/database/inserts.py", line 68, in execute_insert
+    execute_values(cur, query, list(data))
+  File "/home/airflow/.local/lib/python3.12/site-packages/psycopg2/extras.py", line 1293, in execute_values
+    template = b'(' + b','.join([b'%s'] * len(page[0])) + b')'
+                                          ^^^^^^^^^^^^
+TypeError: object of type 'NoneType' has no len()
+[2026-08-25T19:36:58.348+0000] {inserts.py:73} ERROR - execute_insert failed: query=
+    INSERT INTO regions (flashscore_region_id, region_name)
+    VALUES %s
+    ON CONFLICT (flashscore_region_id)
+    DO NOTHING
+    , len_data=1
+Traceback (most recent call last):
+  File "/opt/airflow/src/database/inserts.py", line 68, in execute_insert
+    execute_values(cur, query, list(data))
+  File "/home/airflow/.local/lib/python3.12/site-packages/psycopg2/extras.py", line 1293, in execute_values
+    template = b'(' + b','.join([b'%s'] * len(page[0])) + b')'
+                                          ^^^^^^^^^^^^
+TypeError: object of type 'NoneType' has no len()
+[2026-08-25T19:36:59.203+0000] {inserts.py:73} ERROR - execute_insert failed: query=
+    INSERT INTO regions (flashscore_region_id, region_name)
+    VALUES %s
+    ON CONFLICT (flashscore_region_id)
+    DO NOTHING
+    , len_data=1
+Traceback (most recent call last):
+  File "/opt/airflow/src/database/inserts.py", line 68, in execute_insert
+    execute_values(cur, query, list(data))
+  File "/home/airflow/.local/lib/python3.12/site-packages/psycopg2/extras.py", line 1293, in execute_values
+    template = b'(' + b','.join([b'%s'] * len(page[0])) + b')'
+                                          ^^^^^^^^^^^^
+TypeError: object of type 'NoneType' has no len()
+[2026-08-25T19:36:59.799+0000] {inserts.py:73} ERROR - execute_insert failed: query=
+    INSERT INTO regions (flashscore_region_id, region_name)
+    VALUES %s
+    ON CONFLICT (flashscore_region_id)
+    DO NOTHING
+    , len_data=1
+Traceback (most recent call last):
+  File "/opt/airflow/src/database/inserts.py", line 68, in execute_insert
+    execute_values(cur, query, list(data))
+  File "/home/airflow/.local/lib/python3.12/site-packages/psycopg2/extras.py", line 1293, in execute_values
+    template = b'(' + b','.join([b'%s'] * len(page[0])) + b')'
+                                          ^^^^^^^^^^^^
+TypeError: object of type 'NoneType' has no len()
+[2026-08-25T19:36:59.961+0000] {inserts.py:73} ERROR - execute_insert failed: query=
+    INSERT INTO regions (flashscore_region_id, region_name)
+    VALUES %s
+    ON CONFLICT (flashscore_region_id)
+    DO NOTHING
+    , len_data=1
+Traceback (most recent call last):
+  File "/opt/airflow/src/database/inserts.py", line 68, in execute_insert
+    execute_values(cur, query, list(data))
+  File "/home/airflow/.local/lib/python3.12/site-packages/psycopg2/extras.py", line 1293, in execute_values
+    template = b'(' + b','.join([b'%s'] * len(page[0])) + b')'
+                                          ^^^^^^^^^^^^
+TypeError: object of type 'NoneType' has no len()
+[2026-08-25T19:37:01.020+0000] {python.py:237} INFO - Done. Returned value was: None
+[2026-08-25T19:37:01.023+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-08-25T19:37:01.047+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=refresh_matadata, task_id=fetch_regions, run_id=manual__2026-08-25T19:35:53.685993+00:00, execution_date=20260825T193553, start_date=20260825T193652, end_date=20260825T193701
+[2026-08-25T19:37:01.109+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 0
+[2026-08-25T19:37:01.162+0000] {taskinstance.py:3503} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-08-25T19:37:01.167+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

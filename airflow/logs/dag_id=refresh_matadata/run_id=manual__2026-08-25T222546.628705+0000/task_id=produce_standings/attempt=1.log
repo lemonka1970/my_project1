@@ -1,0 +1,31 @@
+[2026-08-26T07:33:48.865+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-08-26T07:33:48.923+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: refresh_matadata.produce_standings manual__2026-08-25T22:25:46.628705+00:00 [queued]>
+[2026-08-26T07:33:48.939+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: refresh_matadata.produce_standings manual__2026-08-25T22:25:46.628705+00:00 [queued]>
+[2026-08-26T07:33:48.941+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 4
+[2026-08-26T07:33:48.966+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): produce_standings> on 2026-08-25 22:25:46.628705+00:00
+[2026-08-26T07:33:48.989+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:62: DeprecationWarning: This process (pid=323) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2026-08-26T07:33:48.990+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'refresh_matadata', 'produce_standings', 'manual__2026-08-25T22:25:46.628705+00:00', '--job-id', '262', '--raw', '--subdir', 'DAGS_FOLDER/dag_refresh_metadata.py', '--cfg-path', '/tmp/tmpao73cfk8']
+[2026-08-26T07:33:48.995+0000] {standard_task_runner.py:64} INFO - Started process 332 to run task
+[2026-08-26T07:33:48.997+0000] {standard_task_runner.py:91} INFO - Job 262: Subtask produce_standings
+[2026-08-26T07:33:49.106+0000] {task_command.py:426} INFO - Running <TaskInstance: refresh_matadata.produce_standings manual__2026-08-25T22:25:46.628705+00:00 [running]> on host 0abd36909b62
+[2026-08-26T07:33:49.470+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='refresh_matadata' AIRFLOW_CTX_TASK_ID='produce_standings' AIRFLOW_CTX_EXECUTION_DATE='2026-08-25T22:25:46.628705+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-08-25T22:25:46.628705+00:00'
+[2026-08-26T07:33:49.479+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-08-26T07:34:30.480+0000] {flahscore.py:39} WARNING - get_data: попытка 1/20 для url=https://global.flashscore.ninja/2/x/feed/to_r7dnFNTB_U5CAioR7_1 не удалась
+[2026-08-26T07:34:41.496+0000] {flahscore.py:39} WARNING - get_data: попытка 2/20 для url=https://global.flashscore.ninja/2/x/feed/to_r7dnFNTB_U5CAioR7_1 не удалась
+[2026-08-26T07:35:24.235+0000] {flahscore.py:39} WARNING - get_data: попытка 1/20 для url=https://global.flashscore.ninja/2/x/feed/to_pQ5159Bk_Au3G3i7f_1 не удалась
+[2026-08-26T07:35:35.271+0000] {flahscore.py:39} WARNING - get_data: попытка 2/20 для url=https://global.flashscore.ninja/2/x/feed/to_pQ5159Bk_Au3G3i7f_1 не удалась
+[2026-08-26T07:35:50.609+0000] {flahscore.py:39} WARNING - get_data: попытка 1/20 для url=https://global.flashscore.ninja/2/x/feed/to_Q33DvwNh_fLOje0Gk_1 не удалась
+[2026-08-26T07:36:01.633+0000] {flahscore.py:39} WARNING - get_data: попытка 2/20 для url=https://global.flashscore.ninja/2/x/feed/to_Q33DvwNh_fLOje0Gk_1 не удалась
+[2026-08-26T07:36:19.292+0000] {flahscore.py:39} WARNING - get_data: попытка 1/20 для url=https://global.flashscore.ninja/2/x/feed/to_WbZiXHJS_hOTIX9k7_1 не удалась
+[2026-08-26T07:36:26.416+0000] {flahscore.py:39} WARNING - get_data: попытка 2/20 для url=https://global.flashscore.ninja/2/x/feed/to_WbZiXHJS_hOTIX9k7_1 не удалась
+[2026-08-26T07:36:35.844+0000] {flahscore.py:39} WARNING - get_data: попытка 3/20 для url=https://global.flashscore.ninja/2/x/feed/to_WbZiXHJS_hOTIX9k7_1 не удалась
+[2026-08-26T07:36:46.857+0000] {flahscore.py:39} WARNING - get_data: попытка 4/20 для url=https://global.flashscore.ninja/2/x/feed/to_WbZiXHJS_hOTIX9k7_1 не удалась
+[2026-08-26T07:37:33.253+0000] {flahscore.py:39} WARNING - get_data: попытка 1/20 для url=https://global.flashscore.ninja/2/x/feed/to_AJJghTe0_ANMJGhFf_1 не удалась
+[2026-08-26T09:02:45.033+0000] {python.py:237} INFO - Done. Returned value was: None
+[2026-08-26T09:02:45.066+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-08-26T09:02:45.170+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=refresh_matadata, task_id=produce_standings, run_id=manual__2026-08-25T22:25:46.628705+00:00, execution_date=20260825T222546, start_date=20260826T073348, end_date=20260826T090245
+[2026-08-26T09:02:45.422+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 0
+[2026-08-26T09:02:45.547+0000] {taskinstance.py:3503} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-08-26T09:02:45.551+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

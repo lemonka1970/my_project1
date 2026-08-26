@@ -1,13 +1,14 @@
-from src.connections import get_connection
+from src.database.postgres_conn import db_pool
 
 
         
 
 def get_region_id_by_flashscore_id():
     # словарь flashscore_region_id: region_id 
-    with get_connection() as conn:
+    conn = db_pool.getconn()
+
+    try:
         with conn.cursor() as cur:
-            
             cur.execute("""
             SELECT region_id, flashscore_region_id
             FROM regions
@@ -15,13 +16,16 @@ def get_region_id_by_flashscore_id():
             return {flashscore_region_id: region_id 
                         for region_id, flashscore_region_id 
                         in cur.fetchall()}
-
+    finally:
+        db_pool.putconn(conn)
 
 
 
 def get_league_id_by_name():
     # словарь full_league_name: league_id, для нужного региона
-    with get_connection() as conn:
+    conn = db_pool.getconn()
+
+    try:
         with conn.cursor() as cur:
             cur.execute("""
                 SELECT CONCAT(region_name, ': ', league_name), league_id
@@ -29,6 +33,8 @@ def get_league_id_by_name():
                 JOIN regions USING(region_id)
                 """)
             return {full_league_name: league_id for full_league_name, league_id in cur.fetchall()}
+    finally:
+        db_pool.putconn(conn)
 
 
 
@@ -37,75 +43,96 @@ def get_league_id_by_name():
 
 def get_league_id_by_flashscore_feed():
     # словарь flashscore_league_feed: league_id
+    conn = db_pool.getconn()
 
-    with get_connection() as conn:
+    try:
         with conn.cursor() as cur:
             cur.execute("""
                 SELECT league_id, flashscore_league_feed
                 FROM leagues
                 """)
             return {flashscore_league_feed: league_id for league_id, flashscore_league_feed in cur.fetchall()}
+    finally:
+        db_pool.putconn(conn)
 
 
 
 
-def get_league_id_by_tournaments(only_with_dates_resolved: bool):
+def get_league_id_by_tournaments(with_dates_resolved: bool):
     # словарь (tounament_id, tounament_stage_id): league_id
 
-    if only_with_dates_resolved:
+    if with_dates_resolved:
+        condition = ""
+    else:
         condition = """
+
                     WHERE is_current = True AND start_date = 0
                     """
-    else:
-        condition = ""
 
-    with get_connection() as conn: 
-         with conn.cursor() as cur:
+    conn = db_pool.getconn()
+
+    try:
+        with conn.cursor() as cur:
             cur.execute("""
                 SELECT tournament_id, tournament_stage_id, league_id
                 FROM seasons
             """ + condition)
             return {(tounament_id, tounament_stage_id): league_id
                     for tounament_id, tounament_stage_id, league_id in cur.fetchall()}
+    finally:
+        db_pool.putconn(conn)
+
+
+    
+
 
 
 def get_season_id_by_tournamnts():
     # словарь (tounament_id, tounament_stage_id): season_id
+    conn = db_pool.getconn()
 
-    with get_connection() as conn:
+    try:
         with conn.cursor() as cur:
             cur.execute("""
                 SELECT tournament_id, tournament_stage_id, season_id
                 FROM seasons
                 """)
-            return {(tournament_id, tournament_stage_id): season_id 
+            _dict = {(tournament_id, tournament_stage_id): season_id 
                     for tournament_id, tournament_stage_id, season_id 
                     in cur.fetchall()}
+    finally:
+        db_pool.putconn(conn)
 
 
 
 
-def get_team_id_by_feed(league_id, cur):
+def get_team_id_by_feed(league_id):
     # словарь {команда: id команды} для конкретной лиги
+    conn = db_pool.getconn()
 
-    cur.execute("""
-        SELECT team_id, flashscore_team_feed
-        FROM teams
-        JOIN season_team_relations USING(team_id)
-        JOIN seasons USING(season_id)
-        WHERE league_id = %s
-        """, (league_id,))
-    return {flashscore_team_feed: team_id 
-            for team_id, flashscore_team_feed 
-            in cur.fetchall()}
-
+    try:
+        with conn.cursor as cur:
+            cur.execute("""
+                SELECT team_id, flashscore_team_feed
+                FROM teams
+                JOIN season_team_relations USING(team_id)
+                JOIN seasons USING(season_id)
+                WHERE league_id = %s
+                """, (league_id,))
+            _dict = {flashscore_team_feed: team_id 
+                    for team_id, flashscore_team_feed 
+                    in cur.fetchall()}
+    finally:
+        db_pool.putconn(conn)
 
 
 
 def get_old_seasons_in_relations():
     # сет уже ранее обработанных сезонов в таблице sesason_team_relations
 
-    with get_connection() as conn:
+    conn = db_pool.getconn()
+
+    try:
         with conn.cursor() as cur:
             cur.execute("""
                 WITH unique_seasons AS (
@@ -127,8 +154,10 @@ def get_old_seasons_in_relations():
             FROM seasons_q
             WHERE num > 2;
                 """)
-            return set((tournament_id, tournament_stage_id)
-                       for tournament_id, tournament_stage_id 
-                       in cur.fetchall())
+            _set = set((tournament_id, tournament_stage_id)
+                        for tournament_id, tournament_stage_id 
+                        in cur.fetchall())
+    finally:
+        db_pool.putconn(conn)
 
 

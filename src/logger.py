@@ -1,6 +1,7 @@
 import logging
 import sys
 
+
 logger = logging.getLogger('my_project')
 logger.setLevel(logging.INFO)
 

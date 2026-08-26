@@ -1,7 +1,11 @@
-from src.connections import get_consumer, get_client
+from src.kafka_fn import get_consumer
+from src.database.minio_client import get_client
 
 import json
 import io
+
+import logging
+logger = logging.getLogger(__name__)
 
 
 
@@ -20,7 +24,7 @@ def save_matches():
             if msg is None:
                 continue
             if msg.error():
-                print(msg.error())
+                logger.error("save_matches: %s", msg.error())
                 continue
 
             message = json.loads(msg.value().decode('utf-8'))
@@ -39,6 +43,8 @@ def save_matches():
                 data = io.BytesIO(h2h),
                 length = len(h2h)
             )
+
+            consumer.commit()
 
     finally:
         consumer.close()

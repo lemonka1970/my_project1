@@ -1,4 +1,4 @@
-from src.connections import get_consumer
+from src.kafka_fn import get_consumer
 from src.database.queries import get_region_id_by_flashscore_id
 from src.database.inserts import insert_leagues
 
@@ -26,12 +26,15 @@ def prepare_leagues(payload, regions):
 
 
     scoreboard = payload.get('scoreboard', [])
-    if scoreboard:
-        scoreboard = scoreboard[0]
+    if not scoreboard:
+        logger.warning("prepare_leagues: scoreboards is empty")
+        return None
+    scoreboard = scoreboard[0]
 
 
     # вылавлинваем из json наши лиги
     # и готовим данные к загрузке в postgres
+    row = None
     if scoreboard.get('~ZA'):
 
         row = [scoreboard.get(key) for key in keys]
@@ -40,7 +43,11 @@ def prepare_leagues(payload, regions):
         except IndexError:
             logger.error("prepare_leagues: %s don't split by ':'", row[5])
             return None
-        row[6] = regions.get(row[6])
+        
+        region_id = regions.get(int(row[6]))
+        if region_id is None:
+            logger.warning("prepare_leagues: region %s not in regions", row[6])
+            return None
 
 
     return row
@@ -57,9 +64,13 @@ def fetch_leagues():
     
     consumer = get_consumer('fetch_leagues')
     consumer.subscribe(['scoreboards'])
+    leagues = set()
 
     try:
         regions = get_region_id_by_flashscore_id()
+        if not regions:
+            logger.warning("fetch_leagues: dict regions is empty")
+            raise
 
         while True:
             # достаем наш json
@@ -75,16 +86,18 @@ def fetch_leagues():
             if payload == 'message_finally':
                 break
 
-            leagues = prepare_leagues(payload, regions) 
+            row = prepare_leagues(payload, regions) 
 
-            if leagues:
-                insert_leagues(leagues)
+            if row:
+                leagues.add(tuple(row))
 
             consumer.commit()
 
 
     finally:
         consumer.close()  
+        if leagues:
+            insert_leagues(leagues)
 
 
 

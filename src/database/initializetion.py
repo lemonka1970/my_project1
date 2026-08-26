@@ -1,4 +1,4 @@
-from src.connections import get_connection
+from src.database.postgres_conn import db_pool
 
 
 
@@ -7,24 +7,8 @@ def initialize_database():
     Инициализирует базу данных и таблицы
     """
 
-    # conn = get_connection()
-    # conn.autocommit = True
-    # cur = conn.cursor()
-    #
-    # cur.execute("""
-    # SELECT 1 FROM pg_database WHERE datname = %s
-    # """, ('football_core', ))
-    #
-    # if cur.fetchone() is None:
-    #     cur.execute("""
-    #     CREATE DATABASE football_core
-    #     """)
-    #
-    # cur.close()
-    # conn.close()
 
-
-    conn = get_connection()
+    conn = db_pool.getconn()
     try:
         with conn.cursor() as cur:
             
@@ -125,4 +109,5 @@ def initialize_database():
 
     finally:
         conn.close()
+        db_pool.putconn(conn)
 

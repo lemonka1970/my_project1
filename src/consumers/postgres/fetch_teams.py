@@ -1,4 +1,4 @@
-from src.connections import get_consumer
+from src.kafka_fn import get_consumer
 from src.database.inserts import insert_teams
 
 import json
@@ -13,7 +13,7 @@ logger = logging.getLogger(__name__)
 
 def parsing_teams(payload):
 
-    standings = payload.get('standings', [])
+    standings = payload.get('standings')
     
     teams = set()
 

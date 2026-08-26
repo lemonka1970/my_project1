@@ -1,6 +1,5 @@
-from src.connections import get_consumer
+from src.kafka_fn import get_consumer
 from src.database.inserts import insert_regions
-from src.preparing import parsing_regions
 
 import json
 import logging
@@ -13,22 +12,23 @@ logger = logging.getLogger(__name__)
 
 
 def parsing_regions(payload):
-    regions = set()
+
 
     scoreboard = payload.get('scoreboard', [])
-    if scoreboard:
-        scoreboard = scoreboard[0]
-    else:
+    if not scoreboard:
+        logger.warning("parsing_regions: scoreboards is empty")
         return None
-        
+    scoreboard = scoreboard[0]
+
+    row = None
     # выделяем из него регионы и готовим к загрузке
     if scoreboard.get('~ZA') and scoreboard.get('ZB'):
-        regions.add((
+        row = [
             scoreboard.get('ZB'), # flashscore_region_id
             scoreboard.get('ZY') # region_name
-            ))
+        ]
         
-    return regions
+    return row
 
 
 
@@ -41,6 +41,8 @@ def fetch_regions():
 
     consumer = get_consumer('fetch_region')
     consumer.subscribe(['scoreboards'])
+    regions = set()
+
 
     try:
         while True:
@@ -60,17 +62,20 @@ def fetch_regions():
                 break
 
             # парсим scoreboard на регионы
-            regions = parsing_regions(payload)
+            row = parsing_regions(payload)
             
-            if regions:
-                insert_regions(regions)
+            if row:
+                regions.add(tuple(row))
 
             consumer.commit()
 
 
     finally:
         consumer.close()
+        if regions:
+            insert_regions(regions)
 
 
 if __name__ == '__main__':
     fetch_regions()
+

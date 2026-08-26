@@ -1,4 +1,4 @@
-from src.connections import get_consumer
+from src.kafka_fn import get_consumer
 from src.database.queries import get_league_id_by_flashscore_feed
 from src.database.inserts import insert_seasons
 
@@ -14,11 +14,13 @@ logger = logging.getLogger(__name__)
 def prepare_current_seasons(payload, leagues):
 
     scoreboard = payload.get('scoreboard', [])
-    if scoreboard:
-        scoreboard = scoreboard[0]
-    else:
+    if not scoreboard:
+        logger.warning("prepare_current_seasons: scoreboards is empty")
         return None
+    scoreboard = scoreboard[0]
 
+    row = None
+    # мало ли, что может оказаться первым
     if scoreboard.get('~ZA'):
         
         row = [
@@ -29,7 +31,12 @@ def prepare_current_seasons(payload, leagues):
             scoreboard.get('ZEE') # flashscore_league_feed
             ]
 
-        row[5] = leagues.get(row[5])
+        league_id = leagues.get(row[5])
+        if league_id is None:
+            logger.warning("prepare_current_seasons: league %s not in leagues", row[5])
+            return None
+        
+        row[5] = league_id
 
     return row
 
@@ -45,9 +52,13 @@ def fetch_current_seasons():
 
     consumer = get_consumer('fetch_current_seasons')
     consumer.subscribe(['scoreboards'])
+    current_seasons = set()
 
     try:
         leagues = get_league_id_by_flashscore_feed()
+        if not leagues:
+            logger.error("fetch_current_leagues: dict leagues is empty")
+            raise
 
         while True:
             # достаем message
@@ -63,15 +74,17 @@ def fetch_current_seasons():
             if payload == 'message_finally':
                 break
 
-            current_seasons = prepare_current_seasons(payload, leagues)
+            row = prepare_current_seasons(payload, leagues)
             
-            if current_seasons:
-                insert_seasons(current_seasons)
+            if row:
+                current_seasons.add(tuple(row))
 
             consumer.commit()
 
     finally:
         consumer.close()
+        if current_seasons:
+            insert_seasons(current_seasons)
 
 
 

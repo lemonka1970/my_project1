@@ -1,4 +1,4 @@
-from src.connections import get_consumer, get_connection
+from src.kafka_fn import get_consumer
 from src.database.inserts import insert_matches
 from src.database.queries import get_team_id_by_feed, get_league_id_by_name
 
@@ -11,13 +11,13 @@ logger = logging.getLogger('__name__')
 
 
 
-def parsing_updating_matches(payload, leagues, cur):
+def parsing_updating_matches(payload, leagues, teams):
 
-    league_id = payload.get('league_id')
     season_id = payload.get('season_id')
     h2h = payload.get('h2h')
+    # ВАЖНО: не вынимаем извне лигу, так как внутри json все последние матчи команд, 
+    # в том числе проходившие в рамках других лиг
 
-    teams = get_team_id_by_feed(league_id, cur)
     matches = set()
 
 
@@ -76,30 +76,42 @@ def fetch_updating_matches():
 
     try:
         leagues = get_league_id_by_name()
+        if not leagues: 
+            logger.error("fetch_updating_matches: dict leagues is empty")
+            raise
+        teams = None
+        current_league_id = None
 
-        with get_connection() as conn:
-            with conn.cursor() as cur:
+        while True:
 
-                while True:
+            # достаем и проверяем message
+            msg = consumer.poll(1.0)
 
-                    # достаем и проверяем message
-                    msg = consumer.poll(1.0)
+            if msg is None:
+                continue
+            if msg.error():
+                logger.error("updating_matches: %s", msg.error())
+                continue
 
-                    if msg is None:
-                        continue
-                    if msg.error():
-                        logger.error("updating_matches: %s", msg.error())
-                        continue
+            payload = json.loads(msg.value().decode('utf-8'))
+            if payload == 'message_finally':
+                break
 
-                    payload = json.loads(msg.value().decode('utf-8'))
-                    if payload == 'message_finally':
-                        break
-                    
-                    matches = parsing_updating_matches(payload, leagues, cur)
+            # держим словарь teams в актуальном состоянии
+            league_id = payload.get('league_id')
+            if league_id != current_league_id:
+                current_league_id = league_id
+                teams = get_team_id_by_feed(current_league_id)
 
-                    if matches:
-                        insert_matches(matches)
-                    consumer.commit()
+                if not teams:
+                    logger.error("fetch_updating_matches: dict teams is empty")
+                    continue
+            
+            matches = parsing_updating_matches(payload, leagues, teams)
+
+            if matches:
+                insert_matches(matches)
+            consumer.commit()
 
     finally:
         consumer.close()

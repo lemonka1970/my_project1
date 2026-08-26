@@ -1,4 +1,4 @@
-from src.connections import get_consumer
+from src.kafka_fn import get_consumer
 from src.database.queries import get_league_id_by_tournaments
 from src.database.inserts import insert_seasons
 
@@ -22,6 +22,9 @@ def prepare_seasons(payload, league_ids):
     tournament_stage_id = payload.get('tournament_stage_id')
 
     league_id = league_ids.get((tournament_id, tournament_stage_id))
+    if league_id is None:
+        logger.warning("prepare_seasons: league (%s, %s) is not in league_ids", tournament_id, tournament_stage_id)
+        return None
 
 
     current_row = [tournament_id,
@@ -69,7 +72,10 @@ def fetch_seasons():
 
     try:
         # league_ids возвращает id лиги по (tournament_id, tournament_stage_id) текущего сезона
-        league_ids = get_league_id_by_tournaments(only_with_dates_resolved=True)  
+        league_ids = get_league_id_by_tournaments(with_dates_resolved=False) 
+        if not league_ids:
+            logger.error("fetch_seasons: dict league_ids is empty") 
+            raise
 
         while True:
             # получаем message

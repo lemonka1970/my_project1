@@ -1,0 +1,41 @@
+[2026-08-26T09:03:16.205+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-08-26T09:03:16.238+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: refresh_matadata.build_season_team_relations manual__2026-08-25T22:25:46.628705+00:00 [queued]>
+[2026-08-26T09:03:16.252+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: refresh_matadata.build_season_team_relations manual__2026-08-25T22:25:46.628705+00:00 [queued]>
+[2026-08-26T09:03:16.254+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 4
+[2026-08-26T09:03:16.275+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): build_season_team_relations> on 2026-08-25 22:25:46.628705+00:00
+[2026-08-26T09:03:16.293+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:62: DeprecationWarning: This process (pid=2531) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2026-08-26T09:03:16.297+0000] {standard_task_runner.py:64} INFO - Started process 2533 to run task
+[2026-08-26T09:03:16.295+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'refresh_matadata', 'build_season_team_relations', 'manual__2026-08-25T22:25:46.628705+00:00', '--job-id', '264', '--raw', '--subdir', 'DAGS_FOLDER/dag_refresh_metadata.py', '--cfg-path', '/tmp/tmpogqdkclg']
+[2026-08-26T09:03:16.300+0000] {standard_task_runner.py:91} INFO - Job 264: Subtask build_season_team_relations
+[2026-08-26T09:03:16.370+0000] {task_command.py:426} INFO - Running <TaskInstance: refresh_matadata.build_season_team_relations manual__2026-08-25T22:25:46.628705+00:00 [running]> on host 0abd36909b62
+[2026-08-26T09:03:16.498+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='refresh_matadata' AIRFLOW_CTX_TASK_ID='build_season_team_relations' AIRFLOW_CTX_EXECUTION_DATE='2026-08-25T22:25:46.628705+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-08-25T22:25:46.628705+00:00'
+[2026-08-26T09:03:16.504+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-08-26T09:03:16.523+0000] {build_season_team_relations.py:56} ERROR - buil_season_team_relations: list old_season_tournaments is empty
+[2026-08-26T09:03:19.529+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-08-26T09:03:19.531+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 401, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/src/consumers/postgres/build_season_team_relations.py", line 57, in build_season_team_relations
+    raise
+RuntimeError: No active exception to reraise
+[2026-08-26T09:03:19.557+0000] {taskinstance.py:1206} INFO - Marking task as UP_FOR_RETRY. dag_id=refresh_matadata, task_id=build_season_team_relations, run_id=manual__2026-08-25T22:25:46.628705+00:00, execution_date=20260825T222546, start_date=20260826T090316, end_date=20260826T090319
+[2026-08-26T09:03:19.579+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 264 for task build_season_team_relations (No active exception to reraise; 2533)
+[2026-08-26T09:03:19.617+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 1
+[2026-08-26T09:03:19.640+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-08-26T09:03:19.643+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
