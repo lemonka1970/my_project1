@@ -5,6 +5,9 @@ from dotenv import load_dotenv
 import os
 load_dotenv()
 
+import logging
+logger = logging.getLogger(__name__)
+
 def create_topics():
     admin = AdminClient({
         'bootstrap.servers': os.getenv('KAFKA_BOOTSTRAP_SERVERS')
@@ -18,7 +21,14 @@ def create_topics():
         NewTopic("update_matches", num_partitions=1, replication_factor=1)
     ]
 
-    admin.create_topics(topics)
+    futures = admin.create_topics(topics)
+
+    for topic, future in futures.items():
+        try:
+            future.result()
+        except Exception as e:
+            logger.error("create_topics: error creating topic '%s': %s", topic, e)
+            raise
 
 
 def get_producer():

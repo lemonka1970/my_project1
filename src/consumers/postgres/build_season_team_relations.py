@@ -52,9 +52,6 @@ def build_season_team_relations():
 
     try:
         old_season_tournaments = get_old_seasons_in_relations()
-        if not old_season_tournaments:
-            logger.error("buil_season_team_relations: list old_season_tournaments is empty")
-            raise
         current_league_id = None
         teams = None 
 

@@ -97,7 +97,7 @@ def get_season_id_by_tournamnts():
                 SELECT tournament_id, tournament_stage_id, season_id
                 FROM seasons
                 """)
-            _dict = {(tournament_id, tournament_stage_id): season_id 
+            return {(tournament_id, tournament_stage_id): season_id 
                     for tournament_id, tournament_stage_id, season_id 
                     in cur.fetchall()}
     finally:
@@ -111,7 +111,7 @@ def get_team_id_by_feed(league_id):
     conn = db_pool.getconn()
 
     try:
-        with conn.cursor as cur:
+        with conn.cursor() as cur:
             cur.execute("""
                 SELECT team_id, flashscore_team_feed
                 FROM teams
@@ -119,7 +119,7 @@ def get_team_id_by_feed(league_id):
                 JOIN seasons USING(season_id)
                 WHERE league_id = %s
                 """, (league_id,))
-            _dict = {flashscore_team_feed: team_id 
+            return {flashscore_team_feed: team_id 
                     for team_id, flashscore_team_feed 
                     in cur.fetchall()}
     finally:
@@ -154,7 +154,7 @@ def get_old_seasons_in_relations():
             FROM seasons_q
             WHERE num > 2;
                 """)
-            _set = set((tournament_id, tournament_stage_id)
+            return set((tournament_id, tournament_stage_id)
                         for tournament_id, tournament_stage_id 
                         in cur.fetchall())
     finally:

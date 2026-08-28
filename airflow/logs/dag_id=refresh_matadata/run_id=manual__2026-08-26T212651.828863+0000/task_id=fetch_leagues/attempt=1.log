@@ -1,0 +1,30 @@
+[2026-08-26T21:28:03.271+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-08-26T21:28:03.326+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: refresh_matadata.fetch_leagues manual__2026-08-26T21:26:51.828863+00:00 [queued]>
+[2026-08-26T21:28:03.346+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: refresh_matadata.fetch_leagues manual__2026-08-26T21:26:51.828863+00:00 [queued]>
+[2026-08-26T21:28:03.361+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 4
+[2026-08-26T21:28:03.390+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): fetch_leagues> on 2026-08-26 21:26:51.828863+00:00
+[2026-08-26T21:28:03.418+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:62: DeprecationWarning: This process (pid=1007) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2026-08-26T21:28:03.423+0000] {standard_task_runner.py:64} INFO - Started process 1009 to run task
+[2026-08-26T21:28:03.420+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'refresh_matadata', 'fetch_leagues', 'manual__2026-08-26T21:26:51.828863+00:00', '--job-id', '275', '--raw', '--subdir', 'DAGS_FOLDER/dag_refresh_metadata.py', '--cfg-path', '/tmp/tmpsqrpjx72']
+[2026-08-26T21:28:03.425+0000] {standard_task_runner.py:91} INFO - Job 275: Subtask fetch_leagues
+[2026-08-26T21:28:03.548+0000] {task_command.py:426} INFO - Running <TaskInstance: refresh_matadata.fetch_leagues manual__2026-08-26T21:26:51.828863+00:00 [running]> on host 5a34ce421189
+[2026-08-26T21:28:03.746+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='refresh_matadata' AIRFLOW_CTX_TASK_ID='fetch_leagues' AIRFLOW_CTX_EXECUTION_DATE='2026-08-26T21:26:51.828863+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-08-26T21:26:51.828863+00:00'
+[2026-08-26T21:28:03.752+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-08-26T21:28:10.784+0000] {inserts.py:73} ERROR - execute_insert failed: len_data=602, error: insert or update on table "leagues" violates foreign key constraint "leagues_region_id_fkey"
+DETAIL:  Key (region_id)=(167) is not present in table "regions".
+Traceback (most recent call last):
+  File "/opt/airflow/src/database/inserts.py", line 68, in execute_insert
+    execute_values(cur, query, list(data))
+  File "/home/airflow/.local/lib/python3.12/site-packages/psycopg2/extras.py", line 1299, in execute_values
+    cur.execute(b''.join(parts))
+psycopg2.errors.ForeignKeyViolation: insert or update on table "leagues" violates foreign key constraint "leagues_region_id_fkey"
+DETAIL:  Key (region_id)=(167) is not present in table "regions".
+
+[2026-08-26T21:28:10.799+0000] {python.py:237} INFO - Done. Returned value was: None
+[2026-08-26T21:28:10.801+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-08-26T21:28:10.819+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=refresh_matadata, task_id=fetch_leagues, run_id=manual__2026-08-26T21:26:51.828863+00:00, execution_date=20260826T212651, start_date=20260826T212803, end_date=20260826T212810
+[2026-08-26T21:28:10.891+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 0
+[2026-08-26T21:28:10.959+0000] {taskinstance.py:3503} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-08-26T21:28:10.965+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
