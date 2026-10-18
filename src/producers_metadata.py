@@ -1,11 +1,19 @@
-from src.kafka_fn import get_producer
+from src.kafka_fn import get_producer, num_partitions_past_seasons, num_partitions_standings
 from src.database.postgres_conn import db_pool
 from src.flahscore import get_data, get_response
 
 from datetime import datetime, timedelta
 import json
 
+import logging
+logger = logging.getLogger(__name__)
 
+# будем загружать данные только по интеересующим нам лигам
+from dotenv import load_dotenv
+import os
+import ast
+load_dotenv()
+current_league_urls = ast.literal_eval(os.getenv('CURRENT_LEAGUE_URLS'))
 
 
 
@@ -70,7 +78,6 @@ def produce_scoreboards():
 
 
 
-
 def produce_past_seasons():
     """
     публикуем все предыдущие сезоны для каждой текущей
@@ -88,8 +95,10 @@ def produce_past_seasons():
             cur.execute("""
                 SELECT DISTINCT league_id, tournament_id, tournament_stage_id
                 FROM seasons
+                JOIN leagues USING(league_id)
                 WHERE is_current = True
-            """)
+                AND league_url IN %s
+            """, (current_league_urls,))
 
             for league_id, tournament_id, tournament_stage_id in cur.fetchall():
 
@@ -118,17 +127,19 @@ def produce_past_seasons():
                 
                 producer.produce(
                     topic='past_seasons',
-                    value=json.dumps(payload).encode('utf-8')
+                    value=json.dumps(payload).encode('utf-8'),
+                    key=str(league_id)
                     )
 
     finally:
-        producer.produce(
-            topic='past_seasons',
-            value=json.dumps('message_finally').encode('utf-8')
-        )
+        for num_partitions in range(num_partitions_past_seasons):
+            producer.produce(
+                topic='past_seasons',
+                value=json.dumps('message_finally').encode('utf-8'),
+                partition=num_partitions
+            )
         producer.flush()
         db_pool.putconn(conn)
-
 
 
 
@@ -148,9 +159,12 @@ def produce_standings():
             cur.execute("""
                 SELECT DISTINCT league_id, season_id, tournament_id, tournament_stage_id
                 FROM seasons
-            """)
+                JOIN leagues USING(league_id)
+                WHERE league_url IN %s
+            """, (current_league_urls,))
 
             for league_id, season_id, tournament_id, tournament_stage_id in cur.fetchall():
+                logger.info('season_id: %s', (season_id,))
 
                 feed = f'to_{tournament_id}_{tournament_stage_id}_1'
                 standings = get_data(feed)
@@ -168,15 +182,18 @@ def produce_standings():
 
                 producer.produce(
                     topic='standings',
-                    value=json.dumps(payload).encode('utf-8')
+                    value=json.dumps(payload).encode('utf-8'),
+                    key=str(league_id)
                 )
 
 
     finally:
-        producer.produce(
-            topic='standings',
-            value=json.dumps('message_finally').encode('utf-8')
-        )
+        for num_partition in range(num_partitions_standings):
+            producer.produce(
+                topic='standings',
+                value=json.dumps('message_finally').encode('utf-8'),
+                partition=num_partition
+            )
         producer.flush()
         db_pool.putconn(conn)
 

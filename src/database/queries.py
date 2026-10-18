@@ -58,16 +58,8 @@ def get_league_id_by_flashscore_feed():
 
 
 
-def get_league_id_by_tournaments(with_dates_resolved: bool):
+def get_league_id_by_tournaments():
     # словарь (tounament_id, tounament_stage_id): league_id
-
-    if with_dates_resolved:
-        condition = ""
-    else:
-        condition = """
-
-                    WHERE is_current = True AND start_date = 0
-                    """
 
     conn = db_pool.getconn()
 
@@ -76,7 +68,8 @@ def get_league_id_by_tournaments(with_dates_resolved: bool):
             cur.execute("""
                 SELECT tournament_id, tournament_stage_id, league_id
                 FROM seasons
-            """ + condition)
+                WHERE is_current = True
+            """)
             return {(tounament_id, tounament_stage_id): league_id
                     for tounament_id, tounament_stage_id, league_id in cur.fetchall()}
     finally:
@@ -106,8 +99,8 @@ def get_season_id_by_tournamnts():
 
 
 
-def get_team_id_by_feed(league_id):
-    # словарь {команда: id команды} для конкретной лиги
+def get_team_id_by_feed():
+    # словарь {команда: id команды}
     conn = db_pool.getconn()
 
     try:
@@ -115,10 +108,7 @@ def get_team_id_by_feed(league_id):
             cur.execute("""
                 SELECT team_id, flashscore_team_feed
                 FROM teams
-                JOIN season_team_relations USING(team_id)
-                JOIN seasons USING(season_id)
-                WHERE league_id = %s
-                """, (league_id,))
+                """)
             return {flashscore_team_feed: team_id 
                     for team_id, flashscore_team_feed 
                     in cur.fetchall()}

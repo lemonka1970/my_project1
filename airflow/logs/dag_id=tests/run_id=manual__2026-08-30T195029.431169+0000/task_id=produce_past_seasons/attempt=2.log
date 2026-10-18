@@ -1,0 +1,128 @@
+[2026-08-30T20:11:53.709+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-08-30T20:11:53.815+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: tests.produce_past_seasons manual__2026-08-30T19:50:29.431169+00:00 [queued]>
+[2026-08-30T20:11:53.856+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: tests.produce_past_seasons manual__2026-08-30T19:50:29.431169+00:00 [queued]>
+[2026-08-30T20:11:53.859+0000] {taskinstance.py:2306} INFO - Starting attempt 2 of 4
+[2026-08-30T20:11:53.936+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): produce_past_seasons> on 2026-08-30 19:50:29.431169+00:00
+[2026-08-30T20:11:53.967+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:62: DeprecationWarning: This process (pid=611) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2026-08-30T20:11:53.971+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'tests', 'produce_past_seasons', 'manual__2026-08-30T19:50:29.431169+00:00', '--job-id', '320', '--raw', '--subdir', 'DAGS_FOLDER/dag_tests.py', '--cfg-path', '/tmp/tmp8s2hteu9']
+[2026-08-30T20:11:53.978+0000] {standard_task_runner.py:64} INFO - Started process 613 to run task
+[2026-08-30T20:11:53.981+0000] {standard_task_runner.py:91} INFO - Job 320: Subtask produce_past_seasons
+[2026-08-30T20:11:54.165+0000] {task_command.py:426} INFO - Running <TaskInstance: tests.produce_past_seasons manual__2026-08-30T19:50:29.431169+00:00 [running]> on host b7a9d31fa646
+[2026-08-30T20:11:54.417+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='tests' AIRFLOW_CTX_TASK_ID='produce_past_seasons' AIRFLOW_CTX_EXECUTION_DATE='2026-08-30T19:50:29.431169+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-08-30T19:50:29.431169+00:00'
+[2026-08-30T20:11:54.423+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-08-30T20:20:33.800+0000] {flahscore.py:81} WARNING - get_response: попытка 1/20 для url=https://2.ds.lsapp.eu/pq_graphql?_hash=lph&tournamentId=0&tournamentStageId=rRswryIG&projectId=2 не удалась
+[2026-08-30T20:20:35.171+0000] {flahscore.py:81} WARNING - get_response: попытка 2/20 для url=https://2.ds.lsapp.eu/pq_graphql?_hash=lph&tournamentId=0&tournamentStageId=rRswryIG&projectId=2 не удалась
+[2026-08-30T20:20:36.516+0000] {flahscore.py:81} WARNING - get_response: попытка 3/20 для url=https://2.ds.lsapp.eu/pq_graphql?_hash=lph&tournamentId=0&tournamentStageId=rRswryIG&projectId=2 не удалась
+[2026-08-30T20:20:37.863+0000] {flahscore.py:81} WARNING - get_response: попытка 4/20 для url=https://2.ds.lsapp.eu/pq_graphql?_hash=lph&tournamentId=0&tournamentStageId=rRswryIG&projectId=2 не удалась
+[2026-08-30T20:20:40.253+0000] {flahscore.py:81} WARNING - get_response: попытка 5/20 для url=https://2.ds.lsapp.eu/pq_graphql?_hash=lph&tournamentId=0&tournamentStageId=rRswryIG&projectId=2 не удалась
+[2026-08-30T20:20:42.683+0000] {flahscore.py:81} WARNING - get_response: попытка 6/20 для url=https://2.ds.lsapp.eu/pq_graphql?_hash=lph&tournamentId=0&tournamentStageId=rRswryIG&projectId=2 не удалась
+[2026-08-30T20:20:45.143+0000] {flahscore.py:81} WARNING - get_response: попытка 7/20 для url=https://2.ds.lsapp.eu/pq_graphql?_hash=lph&tournamentId=0&tournamentStageId=rRswryIG&projectId=2 не удалась
+[2026-08-30T20:20:47.552+0000] {flahscore.py:81} WARNING - get_response: попытка 8/20 для url=https://2.ds.lsapp.eu/pq_graphql?_hash=lph&tournamentId=0&tournamentStageId=rRswryIG&projectId=2 не удалась
+[2026-08-30T20:20:50.901+0000] {flahscore.py:81} WARNING - get_response: попытка 9/20 для url=https://2.ds.lsapp.eu/pq_graphql?_hash=lph&tournamentId=0&tournamentStageId=rRswryIG&projectId=2 не удалась
+[2026-08-30T20:20:54.260+0000] {flahscore.py:81} WARNING - get_response: попытка 10/20 для url=https://2.ds.lsapp.eu/pq_graphql?_hash=lph&tournamentId=0&tournamentStageId=rRswryIG&projectId=2 не удалась
+[2026-08-30T20:20:57.688+0000] {flahscore.py:81} WARNING - get_response: попытка 11/20 для url=https://2.ds.lsapp.eu/pq_graphql?_hash=lph&tournamentId=0&tournamentStageId=rRswryIG&projectId=2 не удалась
+[2026-08-30T20:21:01.027+0000] {flahscore.py:81} WARNING - get_response: попытка 12/20 для url=https://2.ds.lsapp.eu/pq_graphql?_hash=lph&tournamentId=0&tournamentStageId=rRswryIG&projectId=2 не удалась
+[2026-08-30T20:21:05.429+0000] {flahscore.py:81} WARNING - get_response: попытка 13/20 для url=https://2.ds.lsapp.eu/pq_graphql?_hash=lph&tournamentId=0&tournamentStageId=rRswryIG&projectId=2 не удалась
+[2026-08-30T20:21:09.789+0000] {flahscore.py:81} WARNING - get_response: попытка 14/20 для url=https://2.ds.lsapp.eu/pq_graphql?_hash=lph&tournamentId=0&tournamentStageId=rRswryIG&projectId=2 не удалась
+[2026-08-30T20:21:14.283+0000] {flahscore.py:81} WARNING - get_response: попытка 15/20 для url=https://2.ds.lsapp.eu/pq_graphql?_hash=lph&tournamentId=0&tournamentStageId=rRswryIG&projectId=2 не удалась
+[2026-08-30T20:21:18.818+0000] {flahscore.py:81} WARNING - get_response: попытка 16/20 для url=https://2.ds.lsapp.eu/pq_graphql?_hash=lph&tournamentId=0&tournamentStageId=rRswryIG&projectId=2 не удалась
+[2026-08-30T20:21:24.260+0000] {flahscore.py:81} WARNING - get_response: попытка 17/20 для url=https://2.ds.lsapp.eu/pq_graphql?_hash=lph&tournamentId=0&tournamentStageId=rRswryIG&projectId=2 не удалась
+[2026-08-30T20:21:29.633+0000] {flahscore.py:81} WARNING - get_response: попытка 18/20 для url=https://2.ds.lsapp.eu/pq_graphql?_hash=lph&tournamentId=0&tournamentStageId=rRswryIG&projectId=2 не удалась
+[2026-08-30T20:21:35.091+0000] {flahscore.py:81} WARNING - get_response: попытка 19/20 для url=https://2.ds.lsapp.eu/pq_graphql?_hash=lph&tournamentId=0&tournamentStageId=rRswryIG&projectId=2 не удалась
+[2026-08-30T20:21:40.520+0000] {flahscore.py:81} WARNING - get_response: попытка 20/20 для url=https://2.ds.lsapp.eu/pq_graphql?_hash=lph&tournamentId=0&tournamentStageId=rRswryIG&projectId=2 не удалась
+[2026-08-30T20:21:46.929+0000] {flahscore.py:81} WARNING - get_response: попытка 21/20 для url=https://2.ds.lsapp.eu/pq_graphql?_hash=lph&tournamentId=0&tournamentStageId=rRswryIG&projectId=2 не удалась
+[2026-08-30T20:21:46.931+0000] {flahscore.py:83} ERROR - get_response: url:https://2.ds.lsapp.eu/pq_graphql?_hash=lph&tournamentId=0&tournamentStageId=rRswryIG&projectId=2 не доступен 400 Client Error: Bad Request. for url: https://2.ds.lsapp.eu/pq_graphql?_hash=lph&tournamentId=0&tournamentStageId=rRswryIG&projectId=2
+[2026-08-30T20:24:10.075+0000] {flahscore.py:81} WARNING - get_response: попытка 1/20 для url=https://2.ds.lsapp.eu/pq_graphql?_hash=lph&tournamentId=0&tournamentStageId=U3iTWJUr&projectId=2 не удалась
+[2026-08-30T20:24:11.437+0000] {flahscore.py:81} WARNING - get_response: попытка 2/20 для url=https://2.ds.lsapp.eu/pq_graphql?_hash=lph&tournamentId=0&tournamentStageId=U3iTWJUr&projectId=2 не удалась
+[2026-08-30T20:24:12.829+0000] {flahscore.py:81} WARNING - get_response: попытка 3/20 для url=https://2.ds.lsapp.eu/pq_graphql?_hash=lph&tournamentId=0&tournamentStageId=U3iTWJUr&projectId=2 не удалась
+[2026-08-30T20:24:14.176+0000] {flahscore.py:81} WARNING - get_response: попытка 4/20 для url=https://2.ds.lsapp.eu/pq_graphql?_hash=lph&tournamentId=0&tournamentStageId=U3iTWJUr&projectId=2 не удалась
+[2026-08-30T20:24:16.515+0000] {flahscore.py:81} WARNING - get_response: попытка 5/20 для url=https://2.ds.lsapp.eu/pq_graphql?_hash=lph&tournamentId=0&tournamentStageId=U3iTWJUr&projectId=2 не удалась
+[2026-08-30T20:24:18.871+0000] {flahscore.py:81} WARNING - get_response: попытка 6/20 для url=https://2.ds.lsapp.eu/pq_graphql?_hash=lph&tournamentId=0&tournamentStageId=U3iTWJUr&projectId=2 не удалась
+[2026-08-30T20:24:21.231+0000] {flahscore.py:81} WARNING - get_response: попытка 7/20 для url=https://2.ds.lsapp.eu/pq_graphql?_hash=lph&tournamentId=0&tournamentStageId=U3iTWJUr&projectId=2 не удалась
+[2026-08-30T20:24:23.605+0000] {flahscore.py:81} WARNING - get_response: попытка 8/20 для url=https://2.ds.lsapp.eu/pq_graphql?_hash=lph&tournamentId=0&tournamentStageId=U3iTWJUr&projectId=2 не удалась
+[2026-08-30T20:24:27.005+0000] {flahscore.py:81} WARNING - get_response: попытка 9/20 для url=https://2.ds.lsapp.eu/pq_graphql?_hash=lph&tournamentId=0&tournamentStageId=U3iTWJUr&projectId=2 не удалась
+[2026-08-30T20:24:30.371+0000] {flahscore.py:81} WARNING - get_response: попытка 10/20 для url=https://2.ds.lsapp.eu/pq_graphql?_hash=lph&tournamentId=0&tournamentStageId=U3iTWJUr&projectId=2 не удалась
+[2026-08-30T20:24:33.723+0000] {flahscore.py:81} WARNING - get_response: попытка 11/20 для url=https://2.ds.lsapp.eu/pq_graphql?_hash=lph&tournamentId=0&tournamentStageId=U3iTWJUr&projectId=2 не удалась
+[2026-08-30T20:24:37.089+0000] {flahscore.py:81} WARNING - get_response: попытка 12/20 для url=https://2.ds.lsapp.eu/pq_graphql?_hash=lph&tournamentId=0&tournamentStageId=U3iTWJUr&projectId=2 не удалась
+[2026-08-30T20:24:41.455+0000] {flahscore.py:81} WARNING - get_response: попытка 13/20 для url=https://2.ds.lsapp.eu/pq_graphql?_hash=lph&tournamentId=0&tournamentStageId=U3iTWJUr&projectId=2 не удалась
+[2026-08-30T20:24:45.809+0000] {flahscore.py:81} WARNING - get_response: попытка 14/20 для url=https://2.ds.lsapp.eu/pq_graphql?_hash=lph&tournamentId=0&tournamentStageId=U3iTWJUr&projectId=2 не удалась
+[2026-08-30T20:24:50.178+0000] {flahscore.py:81} WARNING - get_response: попытка 15/20 для url=https://2.ds.lsapp.eu/pq_graphql?_hash=lph&tournamentId=0&tournamentStageId=U3iTWJUr&projectId=2 не удалась
+[2026-08-30T20:24:54.533+0000] {flahscore.py:81} WARNING - get_response: попытка 16/20 для url=https://2.ds.lsapp.eu/pq_graphql?_hash=lph&tournamentId=0&tournamentStageId=U3iTWJUr&projectId=2 не удалась
+[2026-08-30T20:24:59.961+0000] {flahscore.py:81} WARNING - get_response: попытка 17/20 для url=https://2.ds.lsapp.eu/pq_graphql?_hash=lph&tournamentId=0&tournamentStageId=U3iTWJUr&projectId=2 не удалась
+[2026-08-30T20:25:05.415+0000] {flahscore.py:81} WARNING - get_response: попытка 18/20 для url=https://2.ds.lsapp.eu/pq_graphql?_hash=lph&tournamentId=0&tournamentStageId=U3iTWJUr&projectId=2 не удалась
+[2026-08-30T20:25:10.934+0000] {flahscore.py:81} WARNING - get_response: попытка 19/20 для url=https://2.ds.lsapp.eu/pq_graphql?_hash=lph&tournamentId=0&tournamentStageId=U3iTWJUr&projectId=2 не удалась
+[2026-08-30T20:25:16.297+0000] {flahscore.py:81} WARNING - get_response: попытка 20/20 для url=https://2.ds.lsapp.eu/pq_graphql?_hash=lph&tournamentId=0&tournamentStageId=U3iTWJUr&projectId=2 не удалась
+[2026-08-30T20:25:22.708+0000] {flahscore.py:81} WARNING - get_response: попытка 21/20 для url=https://2.ds.lsapp.eu/pq_graphql?_hash=lph&tournamentId=0&tournamentStageId=U3iTWJUr&projectId=2 не удалась
+[2026-08-30T20:25:22.714+0000] {flahscore.py:83} ERROR - get_response: url:https://2.ds.lsapp.eu/pq_graphql?_hash=lph&tournamentId=0&tournamentStageId=U3iTWJUr&projectId=2 не доступен 400 Client Error: Bad Request. for url: https://2.ds.lsapp.eu/pq_graphql?_hash=lph&tournamentId=0&tournamentStageId=U3iTWJUr&projectId=2
+[2026-08-30T20:25:56.430+0000] {flahscore.py:81} WARNING - get_response: попытка 1/20 для url=https://2.ds.lsapp.eu/pq_graphql?_hash=lph&tournamentId=0&tournamentStageId=K4p7Drcd&projectId=2 не удалась
+[2026-08-30T20:25:57.777+0000] {flahscore.py:81} WARNING - get_response: попытка 2/20 для url=https://2.ds.lsapp.eu/pq_graphql?_hash=lph&tournamentId=0&tournamentStageId=K4p7Drcd&projectId=2 не удалась
+[2026-08-30T20:25:59.209+0000] {flahscore.py:81} WARNING - get_response: попытка 3/20 для url=https://2.ds.lsapp.eu/pq_graphql?_hash=lph&tournamentId=0&tournamentStageId=K4p7Drcd&projectId=2 не удалась
+[2026-08-30T20:26:00.570+0000] {flahscore.py:81} WARNING - get_response: попытка 4/20 для url=https://2.ds.lsapp.eu/pq_graphql?_hash=lph&tournamentId=0&tournamentStageId=K4p7Drcd&projectId=2 не удалась
+[2026-08-30T20:26:02.997+0000] {flahscore.py:81} WARNING - get_response: попытка 5/20 для url=https://2.ds.lsapp.eu/pq_graphql?_hash=lph&tournamentId=0&tournamentStageId=K4p7Drcd&projectId=2 не удалась
+[2026-08-30T20:26:05.415+0000] {flahscore.py:81} WARNING - get_response: попытка 6/20 для url=https://2.ds.lsapp.eu/pq_graphql?_hash=lph&tournamentId=0&tournamentStageId=K4p7Drcd&projectId=2 не удалась
+[2026-08-30T20:26:07.862+0000] {flahscore.py:81} WARNING - get_response: попытка 7/20 для url=https://2.ds.lsapp.eu/pq_graphql?_hash=lph&tournamentId=0&tournamentStageId=K4p7Drcd&projectId=2 не удалась
+[2026-08-30T20:26:10.241+0000] {flahscore.py:81} WARNING - get_response: попытка 8/20 для url=https://2.ds.lsapp.eu/pq_graphql?_hash=lph&tournamentId=0&tournamentStageId=K4p7Drcd&projectId=2 не удалась
+[2026-08-30T20:26:13.596+0000] {flahscore.py:81} WARNING - get_response: попытка 9/20 для url=https://2.ds.lsapp.eu/pq_graphql?_hash=lph&tournamentId=0&tournamentStageId=K4p7Drcd&projectId=2 не удалась
+[2026-08-30T20:26:16.958+0000] {flahscore.py:81} WARNING - get_response: попытка 10/20 для url=https://2.ds.lsapp.eu/pq_graphql?_hash=lph&tournamentId=0&tournamentStageId=K4p7Drcd&projectId=2 не удалась
+[2026-08-30T20:26:20.341+0000] {flahscore.py:81} WARNING - get_response: попытка 11/20 для url=https://2.ds.lsapp.eu/pq_graphql?_hash=lph&tournamentId=0&tournamentStageId=K4p7Drcd&projectId=2 не удалась
+[2026-08-30T20:26:23.718+0000] {flahscore.py:81} WARNING - get_response: попытка 12/20 для url=https://2.ds.lsapp.eu/pq_graphql?_hash=lph&tournamentId=0&tournamentStageId=K4p7Drcd&projectId=2 не удалась
+[2026-08-30T20:26:28.135+0000] {flahscore.py:81} WARNING - get_response: попытка 13/20 для url=https://2.ds.lsapp.eu/pq_graphql?_hash=lph&tournamentId=0&tournamentStageId=K4p7Drcd&projectId=2 не удалась
+[2026-08-30T20:26:32.584+0000] {flahscore.py:81} WARNING - get_response: попытка 14/20 для url=https://2.ds.lsapp.eu/pq_graphql?_hash=lph&tournamentId=0&tournamentStageId=K4p7Drcd&projectId=2 не удалась
+[2026-08-30T20:26:36.956+0000] {flahscore.py:81} WARNING - get_response: попытка 15/20 для url=https://2.ds.lsapp.eu/pq_graphql?_hash=lph&tournamentId=0&tournamentStageId=K4p7Drcd&projectId=2 не удалась
+[2026-08-30T20:26:41.368+0000] {flahscore.py:81} WARNING - get_response: попытка 16/20 для url=https://2.ds.lsapp.eu/pq_graphql?_hash=lph&tournamentId=0&tournamentStageId=K4p7Drcd&projectId=2 не удалась
+[2026-08-30T20:26:46.806+0000] {flahscore.py:81} WARNING - get_response: попытка 17/20 для url=https://2.ds.lsapp.eu/pq_graphql?_hash=lph&tournamentId=0&tournamentStageId=K4p7Drcd&projectId=2 не удалась
+[2026-08-30T20:26:52.157+0000] {flahscore.py:81} WARNING - get_response: попытка 18/20 для url=https://2.ds.lsapp.eu/pq_graphql?_hash=lph&tournamentId=0&tournamentStageId=K4p7Drcd&projectId=2 не удалась
+[2026-08-30T20:26:57.521+0000] {flahscore.py:81} WARNING - get_response: попытка 19/20 для url=https://2.ds.lsapp.eu/pq_graphql?_hash=lph&tournamentId=0&tournamentStageId=K4p7Drcd&projectId=2 не удалась
+[2026-08-30T20:27:02.925+0000] {flahscore.py:81} WARNING - get_response: попытка 20/20 для url=https://2.ds.lsapp.eu/pq_graphql?_hash=lph&tournamentId=0&tournamentStageId=K4p7Drcd&projectId=2 не удалась
+[2026-08-30T20:27:09.264+0000] {flahscore.py:81} WARNING - get_response: попытка 21/20 для url=https://2.ds.lsapp.eu/pq_graphql?_hash=lph&tournamentId=0&tournamentStageId=K4p7Drcd&projectId=2 не удалась
+[2026-08-30T20:27:09.266+0000] {flahscore.py:83} ERROR - get_response: url:https://2.ds.lsapp.eu/pq_graphql?_hash=lph&tournamentId=0&tournamentStageId=K4p7Drcd&projectId=2 не доступен 400 Client Error: Bad Request. for url: https://2.ds.lsapp.eu/pq_graphql?_hash=lph&tournamentId=0&tournamentStageId=K4p7Drcd&projectId=2
+[2026-08-30T20:28:11.087+0000] {flahscore.py:81} WARNING - get_response: попытка 1/20 для url=https://2.ds.lsapp.eu/pq_graphql?_hash=lph&tournamentId=0&tournamentStageId=jqeQc4eS&projectId=2 не удалась
+[2026-08-30T20:28:12.487+0000] {flahscore.py:81} WARNING - get_response: попытка 2/20 для url=https://2.ds.lsapp.eu/pq_graphql?_hash=lph&tournamentId=0&tournamentStageId=jqeQc4eS&projectId=2 не удалась
+[2026-08-30T20:28:13.844+0000] {flahscore.py:81} WARNING - get_response: попытка 3/20 для url=https://2.ds.lsapp.eu/pq_graphql?_hash=lph&tournamentId=0&tournamentStageId=jqeQc4eS&projectId=2 не удалась
+[2026-08-30T20:28:15.207+0000] {flahscore.py:81} WARNING - get_response: попытка 4/20 для url=https://2.ds.lsapp.eu/pq_graphql?_hash=lph&tournamentId=0&tournamentStageId=jqeQc4eS&projectId=2 не удалась
+[2026-08-30T20:28:17.585+0000] {flahscore.py:81} WARNING - get_response: попытка 5/20 для url=https://2.ds.lsapp.eu/pq_graphql?_hash=lph&tournamentId=0&tournamentStageId=jqeQc4eS&projectId=2 не удалась
+[2026-08-30T20:28:20.123+0000] {flahscore.py:81} WARNING - get_response: попытка 6/20 для url=https://2.ds.lsapp.eu/pq_graphql?_hash=lph&tournamentId=0&tournamentStageId=jqeQc4eS&projectId=2 не удалась
+[2026-08-30T20:28:22.495+0000] {flahscore.py:81} WARNING - get_response: попытка 7/20 для url=https://2.ds.lsapp.eu/pq_graphql?_hash=lph&tournamentId=0&tournamentStageId=jqeQc4eS&projectId=2 не удалась
+[2026-08-30T20:28:24.878+0000] {flahscore.py:81} WARNING - get_response: попытка 8/20 для url=https://2.ds.lsapp.eu/pq_graphql?_hash=lph&tournamentId=0&tournamentStageId=jqeQc4eS&projectId=2 не удалась
+[2026-08-30T20:28:28.249+0000] {flahscore.py:81} WARNING - get_response: попытка 9/20 для url=https://2.ds.lsapp.eu/pq_graphql?_hash=lph&tournamentId=0&tournamentStageId=jqeQc4eS&projectId=2 не удалась
+[2026-08-30T20:28:31.704+0000] {flahscore.py:81} WARNING - get_response: попытка 10/20 для url=https://2.ds.lsapp.eu/pq_graphql?_hash=lph&tournamentId=0&tournamentStageId=jqeQc4eS&projectId=2 не удалась
+[2026-08-30T20:28:35.110+0000] {flahscore.py:81} WARNING - get_response: попытка 11/20 для url=https://2.ds.lsapp.eu/pq_graphql?_hash=lph&tournamentId=0&tournamentStageId=jqeQc4eS&projectId=2 не удалась
+[2026-08-30T20:28:38.469+0000] {flahscore.py:81} WARNING - get_response: попытка 12/20 для url=https://2.ds.lsapp.eu/pq_graphql?_hash=lph&tournamentId=0&tournamentStageId=jqeQc4eS&projectId=2 не удалась
+[2026-08-30T20:28:42.849+0000] {flahscore.py:81} WARNING - get_response: попытка 13/20 для url=https://2.ds.lsapp.eu/pq_graphql?_hash=lph&tournamentId=0&tournamentStageId=jqeQc4eS&projectId=2 не удалась
+[2026-08-30T20:28:47.187+0000] {flahscore.py:81} WARNING - get_response: попытка 14/20 для url=https://2.ds.lsapp.eu/pq_graphql?_hash=lph&tournamentId=0&tournamentStageId=jqeQc4eS&projectId=2 не удалась
+[2026-08-30T20:28:51.617+0000] {flahscore.py:81} WARNING - get_response: попытка 15/20 для url=https://2.ds.lsapp.eu/pq_graphql?_hash=lph&tournamentId=0&tournamentStageId=jqeQc4eS&projectId=2 не удалась
+[2026-08-30T20:28:55.990+0000] {flahscore.py:81} WARNING - get_response: попытка 16/20 для url=https://2.ds.lsapp.eu/pq_graphql?_hash=lph&tournamentId=0&tournamentStageId=jqeQc4eS&projectId=2 не удалась
+[2026-08-30T20:29:01.408+0000] {flahscore.py:81} WARNING - get_response: попытка 17/20 для url=https://2.ds.lsapp.eu/pq_graphql?_hash=lph&tournamentId=0&tournamentStageId=jqeQc4eS&projectId=2 не удалась
+[2026-08-30T20:29:06.767+0000] {flahscore.py:81} WARNING - get_response: попытка 18/20 для url=https://2.ds.lsapp.eu/pq_graphql?_hash=lph&tournamentId=0&tournamentStageId=jqeQc4eS&projectId=2 не удалась
+[2026-08-30T20:29:12.129+0000] {flahscore.py:81} WARNING - get_response: попытка 19/20 для url=https://2.ds.lsapp.eu/pq_graphql?_hash=lph&tournamentId=0&tournamentStageId=jqeQc4eS&projectId=2 не удалась
+[2026-08-30T20:29:17.506+0000] {flahscore.py:81} WARNING - get_response: попытка 20/20 для url=https://2.ds.lsapp.eu/pq_graphql?_hash=lph&tournamentId=0&tournamentStageId=jqeQc4eS&projectId=2 не удалась
+[2026-08-30T20:29:23.951+0000] {flahscore.py:81} WARNING - get_response: попытка 21/20 для url=https://2.ds.lsapp.eu/pq_graphql?_hash=lph&tournamentId=0&tournamentStageId=jqeQc4eS&projectId=2 не удалась
+[2026-08-30T20:29:23.958+0000] {flahscore.py:83} ERROR - get_response: url:https://2.ds.lsapp.eu/pq_graphql?_hash=lph&tournamentId=0&tournamentStageId=jqeQc4eS&projectId=2 не доступен 400 Client Error: Bad Request. for url: https://2.ds.lsapp.eu/pq_graphql?_hash=lph&tournamentId=0&tournamentStageId=jqeQc4eS&projectId=2
+[2026-08-30T20:32:42.876+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-08-30T20:32:42.915+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 401, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/src/producers_metadata.py", line 126, in produce_past_seasons
+    for num_partitions in num_partitions_past_seasons:
+TypeError: 'int' object is not iterable
+[2026-08-30T20:32:43.071+0000] {taskinstance.py:1206} INFO - Marking task as UP_FOR_RETRY. dag_id=tests, task_id=produce_past_seasons, run_id=manual__2026-08-30T19:50:29.431169+00:00, execution_date=20260830T195029, start_date=20260830T201153, end_date=20260830T203243
+[2026-08-30T20:32:43.159+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 320 for task produce_past_seasons ('int' object is not iterable; 613)
+[2026-08-30T20:32:43.309+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 1
+[2026-08-30T20:32:43.577+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-08-30T20:32:43.604+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

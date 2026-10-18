@@ -1,0 +1,276 @@
+[2026-08-29T20:44:42.659+0000] {processor.py:161} INFO - Started process (PID=51) to work on /opt/airflow/dags/dag_tests.py
+[2026-08-29T20:44:42.662+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_tests.py for tasks to queue
+[2026-08-29T20:44:42.669+0000] {logging_mixin.py:188} INFO - [2026-08-29T20:44:42.668+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_tests.py
+[2026-08-29T20:44:43.094+0000] {processor.py:840} INFO - DAG(s) 'tests' retrieved from /opt/airflow/dags/dag_tests.py
+[2026-08-29T20:44:43.706+0000] {logging_mixin.py:188} INFO - [2026-08-29T20:44:43.703+0000] {override.py:1858} INFO - Created Permission View: can edit on DAG:tests
+[2026-08-29T20:44:43.758+0000] {logging_mixin.py:188} INFO - [2026-08-29T20:44:43.756+0000] {override.py:1858} INFO - Created Permission View: can delete on DAG:tests
+[2026-08-29T20:44:43.784+0000] {logging_mixin.py:188} INFO - [2026-08-29T20:44:43.783+0000] {override.py:1858} INFO - Created Permission View: can read on DAG:tests
+[2026-08-29T20:44:43.787+0000] {logging_mixin.py:188} INFO - [2026-08-29T20:44:43.786+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-08-29T20:44:43.836+0000] {logging_mixin.py:188} INFO - [2026-08-29T20:44:43.836+0000] {dag.py:3111} INFO - Creating ORM DAG for tests
+[2026-08-29T20:44:43.840+0000] {logging_mixin.py:188} INFO - [2026-08-29T20:44:43.840+0000] {dag.py:3947} INFO - Setting next_dagrun for tests to None, run_after=None
+[2026-08-29T20:44:43.901+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_tests.py took 1.254 seconds
+[2026-08-29T20:45:14.271+0000] {processor.py:161} INFO - Started process (PID=121) to work on /opt/airflow/dags/dag_tests.py
+[2026-08-29T20:45:14.287+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_tests.py for tasks to queue
+[2026-08-29T20:45:14.303+0000] {logging_mixin.py:188} INFO - [2026-08-29T20:45:14.299+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_tests.py
+[2026-08-29T20:45:15.310+0000] {processor.py:840} INFO - DAG(s) 'tests' retrieved from /opt/airflow/dags/dag_tests.py
+[2026-08-29T20:45:15.395+0000] {logging_mixin.py:188} INFO - [2026-08-29T20:45:15.394+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-08-29T20:45:15.438+0000] {logging_mixin.py:188} INFO - [2026-08-29T20:45:15.437+0000] {dag.py:3947} INFO - Setting next_dagrun for tests to None, run_after=None
+[2026-08-29T20:45:15.556+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_tests.py took 1.297 seconds
+[2026-08-29T20:45:46.363+0000] {processor.py:161} INFO - Started process (PID=186) to work on /opt/airflow/dags/dag_tests.py
+[2026-08-29T20:45:46.365+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_tests.py for tasks to queue
+[2026-08-29T20:45:46.370+0000] {logging_mixin.py:188} INFO - [2026-08-29T20:45:46.370+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_tests.py
+[2026-08-29T20:45:46.851+0000] {processor.py:840} INFO - DAG(s) 'tests' retrieved from /opt/airflow/dags/dag_tests.py
+[2026-08-29T20:45:46.914+0000] {logging_mixin.py:188} INFO - [2026-08-29T20:45:46.913+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-08-29T20:45:46.966+0000] {logging_mixin.py:188} INFO - [2026-08-29T20:45:46.965+0000] {dag.py:3947} INFO - Setting next_dagrun for tests to None, run_after=None
+[2026-08-29T20:45:47.029+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_tests.py took 0.676 seconds
+[2026-08-29T20:46:17.558+0000] {processor.py:161} INFO - Started process (PID=258) to work on /opt/airflow/dags/dag_tests.py
+[2026-08-29T20:46:17.585+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_tests.py for tasks to queue
+[2026-08-29T20:46:17.621+0000] {logging_mixin.py:188} INFO - [2026-08-29T20:46:17.610+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_tests.py
+[2026-08-29T20:46:18.067+0000] {processor.py:840} INFO - DAG(s) 'tests' retrieved from /opt/airflow/dags/dag_tests.py
+[2026-08-29T20:46:18.113+0000] {logging_mixin.py:188} INFO - [2026-08-29T20:46:18.112+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-08-29T20:46:18.144+0000] {logging_mixin.py:188} INFO - [2026-08-29T20:46:18.143+0000] {dag.py:3947} INFO - Setting next_dagrun for tests to None, run_after=None
+[2026-08-29T20:46:18.201+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_tests.py took 0.697 seconds
+[2026-08-29T20:46:48.661+0000] {processor.py:161} INFO - Started process (PID=327) to work on /opt/airflow/dags/dag_tests.py
+[2026-08-29T20:46:48.665+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_tests.py for tasks to queue
+[2026-08-29T20:46:48.671+0000] {logging_mixin.py:188} INFO - [2026-08-29T20:46:48.670+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_tests.py
+[2026-08-29T20:46:49.187+0000] {processor.py:840} INFO - DAG(s) 'tests' retrieved from /opt/airflow/dags/dag_tests.py
+[2026-08-29T20:46:49.287+0000] {logging_mixin.py:188} INFO - [2026-08-29T20:46:49.287+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-08-29T20:46:49.355+0000] {logging_mixin.py:188} INFO - [2026-08-29T20:46:49.355+0000] {dag.py:3947} INFO - Setting next_dagrun for tests to None, run_after=None
+[2026-08-29T20:46:49.461+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_tests.py took 0.815 seconds
+[2026-08-29T20:47:19.837+0000] {processor.py:161} INFO - Started process (PID=392) to work on /opt/airflow/dags/dag_tests.py
+[2026-08-29T20:47:19.844+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_tests.py for tasks to queue
+[2026-08-29T20:47:19.854+0000] {logging_mixin.py:188} INFO - [2026-08-29T20:47:19.851+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_tests.py
+[2026-08-29T20:47:20.136+0000] {processor.py:840} INFO - DAG(s) 'tests' retrieved from /opt/airflow/dags/dag_tests.py
+[2026-08-29T20:47:20.168+0000] {logging_mixin.py:188} INFO - [2026-08-29T20:47:20.168+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-08-29T20:47:20.189+0000] {logging_mixin.py:188} INFO - [2026-08-29T20:47:20.188+0000] {dag.py:3947} INFO - Setting next_dagrun for tests to None, run_after=None
+[2026-08-29T20:47:20.241+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_tests.py took 0.443 seconds
+[2026-08-29T20:47:50.784+0000] {processor.py:161} INFO - Started process (PID=463) to work on /opt/airflow/dags/dag_tests.py
+[2026-08-29T20:47:50.787+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_tests.py for tasks to queue
+[2026-08-29T20:47:50.791+0000] {logging_mixin.py:188} INFO - [2026-08-29T20:47:50.790+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_tests.py
+[2026-08-29T20:47:51.051+0000] {processor.py:840} INFO - DAG(s) 'tests' retrieved from /opt/airflow/dags/dag_tests.py
+[2026-08-29T20:47:51.089+0000] {logging_mixin.py:188} INFO - [2026-08-29T20:47:51.088+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-08-29T20:47:51.108+0000] {logging_mixin.py:188} INFO - [2026-08-29T20:47:51.107+0000] {dag.py:3947} INFO - Setting next_dagrun for tests to None, run_after=None
+[2026-08-29T20:47:51.140+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_tests.py took 0.365 seconds
+[2026-08-29T20:48:22.902+0000] {processor.py:161} INFO - Started process (PID=533) to work on /opt/airflow/dags/dag_tests.py
+[2026-08-29T20:48:22.905+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_tests.py for tasks to queue
+[2026-08-29T20:48:22.911+0000] {logging_mixin.py:188} INFO - [2026-08-29T20:48:22.910+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_tests.py
+[2026-08-29T20:48:26.656+0000] {processor.py:840} INFO - DAG(s) 'tests' retrieved from /opt/airflow/dags/dag_tests.py
+[2026-08-29T20:48:26.887+0000] {logging_mixin.py:188} INFO - [2026-08-29T20:48:26.886+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-08-29T20:48:26.993+0000] {logging_mixin.py:188} INFO - [2026-08-29T20:48:26.992+0000] {dag.py:3947} INFO - Setting next_dagrun for tests to None, run_after=None
+[2026-08-29T20:48:27.079+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_tests.py took 4.203 seconds
+[2026-08-29T20:49:14.767+0000] {processor.py:161} INFO - Started process (PID=606) to work on /opt/airflow/dags/dag_tests.py
+[2026-08-29T20:49:14.784+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_tests.py for tasks to queue
+[2026-08-29T20:49:14.807+0000] {logging_mixin.py:188} INFO - [2026-08-29T20:49:14.805+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_tests.py
+[2026-08-29T20:49:15.596+0000] {processor.py:840} INFO - DAG(s) 'tests' retrieved from /opt/airflow/dags/dag_tests.py
+[2026-08-29T20:49:15.660+0000] {logging_mixin.py:188} INFO - [2026-08-29T20:49:15.660+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-08-29T20:49:15.706+0000] {logging_mixin.py:188} INFO - [2026-08-29T20:49:15.705+0000] {dag.py:3947} INFO - Setting next_dagrun for tests to None, run_after=None
+[2026-08-29T20:49:15.784+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_tests.py took 1.056 seconds
+[2026-08-29T20:49:47.377+0000] {processor.py:161} INFO - Started process (PID=677) to work on /opt/airflow/dags/dag_tests.py
+[2026-08-29T20:49:47.396+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_tests.py for tasks to queue
+[2026-08-29T20:49:47.434+0000] {logging_mixin.py:188} INFO - [2026-08-29T20:49:47.417+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_tests.py
+[2026-08-29T20:49:48.285+0000] {processor.py:840} INFO - DAG(s) 'tests' retrieved from /opt/airflow/dags/dag_tests.py
+[2026-08-29T20:49:48.402+0000] {logging_mixin.py:188} INFO - [2026-08-29T20:49:48.398+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-08-29T20:49:48.490+0000] {logging_mixin.py:188} INFO - [2026-08-29T20:49:48.489+0000] {dag.py:3947} INFO - Setting next_dagrun for tests to None, run_after=None
+[2026-08-29T20:49:48.617+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_tests.py took 1.325 seconds
+[2026-08-29T20:50:19.827+0000] {processor.py:161} INFO - Started process (PID=748) to work on /opt/airflow/dags/dag_tests.py
+[2026-08-29T20:50:19.838+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_tests.py for tasks to queue
+[2026-08-29T20:50:19.870+0000] {logging_mixin.py:188} INFO - [2026-08-29T20:50:19.861+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_tests.py
+[2026-08-29T20:50:20.661+0000] {processor.py:840} INFO - DAG(s) 'tests' retrieved from /opt/airflow/dags/dag_tests.py
+[2026-08-29T20:50:20.995+0000] {logging_mixin.py:188} INFO - [2026-08-29T20:50:20.994+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-08-29T20:50:21.108+0000] {logging_mixin.py:188} INFO - [2026-08-29T20:50:21.107+0000] {dag.py:3947} INFO - Setting next_dagrun for tests to None, run_after=None
+[2026-08-29T20:50:21.281+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_tests.py took 1.536 seconds
+[2026-08-29T20:50:51.705+0000] {processor.py:161} INFO - Started process (PID=812) to work on /opt/airflow/dags/dag_tests.py
+[2026-08-29T20:50:51.717+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_tests.py for tasks to queue
+[2026-08-29T20:50:51.726+0000] {logging_mixin.py:188} INFO - [2026-08-29T20:50:51.725+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_tests.py
+[2026-08-29T20:50:52.345+0000] {processor.py:840} INFO - DAG(s) 'tests' retrieved from /opt/airflow/dags/dag_tests.py
+[2026-08-29T20:50:52.450+0000] {logging_mixin.py:188} INFO - [2026-08-29T20:50:52.448+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-08-29T20:50:52.545+0000] {logging_mixin.py:188} INFO - [2026-08-29T20:50:52.543+0000] {dag.py:3947} INFO - Setting next_dagrun for tests to None, run_after=None
+[2026-08-29T20:50:52.745+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_tests.py took 1.073 seconds
+[2026-08-29T20:51:23.190+0000] {processor.py:161} INFO - Started process (PID=884) to work on /opt/airflow/dags/dag_tests.py
+[2026-08-29T20:51:23.193+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_tests.py for tasks to queue
+[2026-08-29T20:51:23.200+0000] {logging_mixin.py:188} INFO - [2026-08-29T20:51:23.198+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_tests.py
+[2026-08-29T20:51:23.476+0000] {processor.py:840} INFO - DAG(s) 'tests' retrieved from /opt/airflow/dags/dag_tests.py
+[2026-08-29T20:51:23.551+0000] {logging_mixin.py:188} INFO - [2026-08-29T20:51:23.551+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-08-29T20:51:23.641+0000] {logging_mixin.py:188} INFO - [2026-08-29T20:51:23.641+0000] {dag.py:3947} INFO - Setting next_dagrun for tests to None, run_after=None
+[2026-08-29T20:51:23.745+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_tests.py took 0.570 seconds
+[2026-08-29T20:51:54.302+0000] {processor.py:161} INFO - Started process (PID=955) to work on /opt/airflow/dags/dag_tests.py
+[2026-08-29T20:51:54.325+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_tests.py for tasks to queue
+[2026-08-29T20:51:54.336+0000] {logging_mixin.py:188} INFO - [2026-08-29T20:51:54.334+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_tests.py
+[2026-08-29T20:51:54.932+0000] {processor.py:840} INFO - DAG(s) 'tests' retrieved from /opt/airflow/dags/dag_tests.py
+[2026-08-29T20:51:55.051+0000] {logging_mixin.py:188} INFO - [2026-08-29T20:51:55.050+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-08-29T20:51:55.121+0000] {logging_mixin.py:188} INFO - [2026-08-29T20:51:55.120+0000] {dag.py:3947} INFO - Setting next_dagrun for tests to None, run_after=None
+[2026-08-29T20:51:55.228+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_tests.py took 0.946 seconds
+[2026-08-29T20:52:26.971+0000] {processor.py:161} INFO - Started process (PID=1017) to work on /opt/airflow/dags/dag_tests.py
+[2026-08-29T20:52:26.982+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_tests.py for tasks to queue
+[2026-08-29T20:52:26.996+0000] {logging_mixin.py:188} INFO - [2026-08-29T20:52:26.994+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_tests.py
+[2026-08-29T20:52:27.774+0000] {processor.py:840} INFO - DAG(s) 'tests' retrieved from /opt/airflow/dags/dag_tests.py
+[2026-08-29T20:52:27.829+0000] {logging_mixin.py:188} INFO - [2026-08-29T20:52:27.829+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-08-29T20:52:27.868+0000] {logging_mixin.py:188} INFO - [2026-08-29T20:52:27.867+0000] {dag.py:3947} INFO - Setting next_dagrun for tests to None, run_after=None
+[2026-08-29T20:52:27.943+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_tests.py took 1.022 seconds
+[2026-08-29T20:53:03.101+0000] {processor.py:161} INFO - Started process (PID=1086) to work on /opt/airflow/dags/dag_tests.py
+[2026-08-29T20:53:03.105+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_tests.py for tasks to queue
+[2026-08-29T20:53:03.118+0000] {logging_mixin.py:188} INFO - [2026-08-29T20:53:03.115+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_tests.py
+[2026-08-29T20:53:03.902+0000] {processor.py:840} INFO - DAG(s) 'tests' retrieved from /opt/airflow/dags/dag_tests.py
+[2026-08-29T20:53:04.001+0000] {logging_mixin.py:188} INFO - [2026-08-29T20:53:04.000+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-08-29T20:53:04.127+0000] {logging_mixin.py:188} INFO - [2026-08-29T20:53:04.126+0000] {dag.py:3947} INFO - Setting next_dagrun for tests to None, run_after=None
+[2026-08-29T20:53:04.283+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_tests.py took 1.200 seconds
+[2026-08-29T20:53:37.341+0000] {processor.py:161} INFO - Started process (PID=1151) to work on /opt/airflow/dags/dag_tests.py
+[2026-08-29T20:53:37.363+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_tests.py for tasks to queue
+[2026-08-29T20:53:37.393+0000] {logging_mixin.py:188} INFO - [2026-08-29T20:53:37.381+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_tests.py
+[2026-08-29T20:53:38.198+0000] {processor.py:840} INFO - DAG(s) 'tests' retrieved from /opt/airflow/dags/dag_tests.py
+[2026-08-29T20:53:38.312+0000] {logging_mixin.py:188} INFO - [2026-08-29T20:53:38.311+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-08-29T20:53:38.400+0000] {logging_mixin.py:188} INFO - [2026-08-29T20:53:38.400+0000] {dag.py:3947} INFO - Setting next_dagrun for tests to None, run_after=None
+[2026-08-29T20:53:38.631+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_tests.py took 1.362 seconds
+[2026-08-29T20:54:09.346+0000] {processor.py:161} INFO - Started process (PID=1215) to work on /opt/airflow/dags/dag_tests.py
+[2026-08-29T20:54:09.353+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_tests.py for tasks to queue
+[2026-08-29T20:54:09.365+0000] {logging_mixin.py:188} INFO - [2026-08-29T20:54:09.363+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_tests.py
+[2026-08-29T20:54:10.479+0000] {processor.py:840} INFO - DAG(s) 'tests' retrieved from /opt/airflow/dags/dag_tests.py
+[2026-08-29T20:54:10.600+0000] {logging_mixin.py:188} INFO - [2026-08-29T20:54:10.598+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-08-29T20:54:10.674+0000] {logging_mixin.py:188} INFO - [2026-08-29T20:54:10.673+0000] {dag.py:3947} INFO - Setting next_dagrun for tests to None, run_after=None
+[2026-08-29T20:54:10.791+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_tests.py took 1.473 seconds
+[2026-08-29T20:54:41.181+0000] {processor.py:161} INFO - Started process (PID=1286) to work on /opt/airflow/dags/dag_tests.py
+[2026-08-29T20:54:41.185+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_tests.py for tasks to queue
+[2026-08-29T20:54:41.199+0000] {logging_mixin.py:188} INFO - [2026-08-29T20:54:41.198+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_tests.py
+[2026-08-29T20:54:42.228+0000] {processor.py:840} INFO - DAG(s) 'tests' retrieved from /opt/airflow/dags/dag_tests.py
+[2026-08-29T20:54:42.303+0000] {logging_mixin.py:188} INFO - [2026-08-29T20:54:42.302+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-08-29T20:54:42.347+0000] {logging_mixin.py:188} INFO - [2026-08-29T20:54:42.347+0000] {dag.py:3947} INFO - Setting next_dagrun for tests to None, run_after=None
+[2026-08-29T20:54:42.447+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_tests.py took 1.300 seconds
+[2026-08-29T20:55:14.972+0000] {processor.py:161} INFO - Started process (PID=1342) to work on /opt/airflow/dags/dag_tests.py
+[2026-08-29T20:55:14.999+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_tests.py for tasks to queue
+[2026-08-29T20:55:15.017+0000] {logging_mixin.py:188} INFO - [2026-08-29T20:55:15.016+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_tests.py
+[2026-08-29T20:55:15.645+0000] {processor.py:840} INFO - DAG(s) 'tests' retrieved from /opt/airflow/dags/dag_tests.py
+[2026-08-29T20:55:15.755+0000] {logging_mixin.py:188} INFO - [2026-08-29T20:55:15.754+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2026-08-29T20:55:15.835+0000] {logging_mixin.py:188} INFO - [2026-08-29T20:55:15.834+0000] {dag.py:3947} INFO - Setting next_dagrun for tests to None, run_after=None
+[2026-08-29T20:55:15.944+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_tests.py took 1.011 seconds
+[2026-08-29T20:55:33.608+0000] {processor.py:161} INFO - Started process (PID=1387) to work on /opt/airflow/dags/dag_tests.py
+[2026-08-29T20:55:33.611+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_tests.py for tasks to queue
+[2026-08-29T20:55:33.616+0000] {logging_mixin.py:188} INFO - [2026-08-29T20:55:33.615+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_tests.py
+[2026-08-29T20:55:34.055+0000] {logging_mixin.py:188} INFO - [2026-08-29T20:55:34.040+0000] {dagbag.py:355} ERROR - Failed to import: /opt/airflow/dags/dag_tests.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 351, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/dag_tests.py", line 45, in <module>
+    scoreboards >> regions >> fetch_leagues >> fetch_current_seasons
+    ~~~~~~~~~~~~~~~~~~~~~~~^^~~~~~~~~~~~~~~
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskmixin.py", line 104, in __rshift__
+    self.set_downstream(other)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskmixin.py", line 262, in set_downstream
+    self._set_relatives(task_or_task_list, upstream=False, edge_modifier=edge_modifier)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskmixin.py", line 214, in _set_relatives
+    task_object.update_relative(self, not upstream, edge_modifier=edge_modifier)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'function' object has no attribute 'update_relative'
+[2026-08-29T20:55:34.059+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/dag_tests.py
+[2026-08-29T20:55:34.113+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_tests.py took 0.516 seconds
+[2026-08-29T20:56:04.956+0000] {processor.py:161} INFO - Started process (PID=1457) to work on /opt/airflow/dags/dag_tests.py
+[2026-08-29T20:56:04.960+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_tests.py for tasks to queue
+[2026-08-29T20:56:04.978+0000] {logging_mixin.py:188} INFO - [2026-08-29T20:56:04.977+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_tests.py
+[2026-08-29T20:56:06.408+0000] {logging_mixin.py:188} INFO - [2026-08-29T20:56:06.318+0000] {dagbag.py:355} ERROR - Failed to import: /opt/airflow/dags/dag_tests.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 351, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/dag_tests.py", line 45, in <module>
+    scoreboards >> regions >> fetch_leagues >> fetch_current_seasons
+    ~~~~~~~~~~~~~~~~~~~~~~~^^~~~~~~~~~~~~~~
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskmixin.py", line 104, in __rshift__
+    self.set_downstream(other)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskmixin.py", line 262, in set_downstream
+    self._set_relatives(task_or_task_list, upstream=False, edge_modifier=edge_modifier)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskmixin.py", line 214, in _set_relatives
+    task_object.update_relative(self, not upstream, edge_modifier=edge_modifier)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'function' object has no attribute 'update_relative'
+[2026-08-29T20:56:06.428+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/dag_tests.py
+[2026-08-29T20:56:06.535+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_tests.py took 1.600 seconds
+[2026-08-29T20:56:37.041+0000] {processor.py:161} INFO - Started process (PID=1529) to work on /opt/airflow/dags/dag_tests.py
+[2026-08-29T20:56:37.046+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_tests.py for tasks to queue
+[2026-08-29T20:56:37.056+0000] {logging_mixin.py:188} INFO - [2026-08-29T20:56:37.055+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_tests.py
+[2026-08-29T20:56:37.628+0000] {logging_mixin.py:188} INFO - [2026-08-29T20:56:37.608+0000] {dagbag.py:355} ERROR - Failed to import: /opt/airflow/dags/dag_tests.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 351, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/dag_tests.py", line 45, in <module>
+    scoreboards >> regions >> fetch_leagues >> fetch_current_seasons
+    ~~~~~~~~~~~~~~~~~~~~~~~^^~~~~~~~~~~~~~~
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskmixin.py", line 104, in __rshift__
+    self.set_downstream(other)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskmixin.py", line 262, in set_downstream
+    self._set_relatives(task_or_task_list, upstream=False, edge_modifier=edge_modifier)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskmixin.py", line 214, in _set_relatives
+    task_object.update_relative(self, not upstream, edge_modifier=edge_modifier)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'function' object has no attribute 'update_relative'
+[2026-08-29T20:56:37.632+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/dag_tests.py
+[2026-08-29T20:56:37.696+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_tests.py took 0.678 seconds
+[2026-08-29T20:57:09.491+0000] {processor.py:161} INFO - Started process (PID=1578) to work on /opt/airflow/dags/dag_tests.py
+[2026-08-29T20:57:09.499+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_tests.py for tasks to queue
+[2026-08-29T20:57:09.514+0000] {logging_mixin.py:188} INFO - [2026-08-29T20:57:09.511+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_tests.py
+[2026-08-29T20:57:10.946+0000] {logging_mixin.py:188} INFO - [2026-08-29T20:57:10.922+0000] {dagbag.py:355} ERROR - Failed to import: /opt/airflow/dags/dag_tests.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 351, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/dag_tests.py", line 45, in <module>
+    scoreboards >> regions >> fetch_leagues >> fetch_current_seasons
+    ~~~~~~~~~~~~~~~~~~~~~~~^^~~~~~~~~~~~~~~
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskmixin.py", line 104, in __rshift__
+    self.set_downstream(other)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskmixin.py", line 262, in set_downstream
+    self._set_relatives(task_or_task_list, upstream=False, edge_modifier=edge_modifier)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskmixin.py", line 214, in _set_relatives
+    task_object.update_relative(self, not upstream, edge_modifier=edge_modifier)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'function' object has no attribute 'update_relative'
+[2026-08-29T20:57:10.952+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/dag_tests.py
+[2026-08-29T20:57:11.042+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_tests.py took 1.578 seconds
+[2026-08-29T20:57:42.259+0000] {processor.py:161} INFO - Started process (PID=1636) to work on /opt/airflow/dags/dag_tests.py
+[2026-08-29T20:57:42.301+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_tests.py for tasks to queue
+[2026-08-29T20:57:42.314+0000] {logging_mixin.py:188} INFO - [2026-08-29T20:57:42.313+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_tests.py
+[2026-08-29T20:57:43.544+0000] {logging_mixin.py:188} INFO - [2026-08-29T20:57:43.526+0000] {dagbag.py:355} ERROR - Failed to import: /opt/airflow/dags/dag_tests.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 351, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/dag_tests.py", line 45, in <module>
+    scoreboards >> regions >> fetch_leagues >> fetch_current_seasons
+    ~~~~~~~~~~~~~~~~~~~~~~~^^~~~~~~~~~~~~~~
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskmixin.py", line 104, in __rshift__
+    self.set_downstream(other)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskmixin.py", line 262, in set_downstream
+    self._set_relatives(task_or_task_list, upstream=False, edge_modifier=edge_modifier)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskmixin.py", line 214, in _set_relatives
+    task_object.update_relative(self, not upstream, edge_modifier=edge_modifier)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'function' object has no attribute 'update_relative'
+[2026-08-29T20:57:43.560+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/dag_tests.py
+[2026-08-29T20:57:43.722+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_tests.py took 1.563 seconds
+[2026-08-29T20:58:14.356+0000] {processor.py:161} INFO - Started process (PID=1700) to work on /opt/airflow/dags/dag_tests.py
+[2026-08-29T20:58:14.361+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_tests.py for tasks to queue
+[2026-08-29T20:58:14.365+0000] {logging_mixin.py:188} INFO - [2026-08-29T20:58:14.364+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_tests.py
+[2026-08-29T20:58:15.168+0000] {logging_mixin.py:188} INFO - [2026-08-29T20:58:15.109+0000] {dagbag.py:355} ERROR - Failed to import: /opt/airflow/dags/dag_tests.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 351, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/dag_tests.py", line 45, in <module>
+    scoreboards >> regions >> fetch_leagues >> fetch_current_seasons
+    ~~~~~~~~~~~~~~~~~~~~~~~^^~~~~~~~~~~~~~~
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskmixin.py", line 104, in __rshift__
+    self.set_downstream(other)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskmixin.py", line 262, in set_downstream
+    self._set_relatives(task_or_task_list, upstream=False, edge_modifier=edge_modifier)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskmixin.py", line 214, in _set_relatives
+    task_object.update_relative(self, not upstream, edge_modifier=edge_modifier)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'function' object has no attribute 'update_relative'
+[2026-08-29T20:58:15.179+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/dag_tests.py
+[2026-08-29T20:58:15.365+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_tests.py took 1.032 seconds

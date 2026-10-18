@@ -76,11 +76,13 @@ def fetch_updating_matches():
 
     try:
         leagues = get_league_id_by_name()
+        teams = get_team_id_by_feed()
         if not leagues: 
             logger.error("fetch_updating_matches: dict leagues is empty")
             raise
-        teams = None
-        current_league_id = None
+        if not teams:
+            logger.error('fetch_updating_matches: dict teams is empty')
+            raise
 
         while True:
 
@@ -94,18 +96,8 @@ def fetch_updating_matches():
                 continue
 
             payload = json.loads(msg.value().decode('utf-8'))
-            if payload == 'message_finally':
-                break
-
-            # держим словарь teams в актуальном состоянии
-            league_id = payload.get('league_id')
-            if league_id != current_league_id:
-                current_league_id = league_id
-                teams = get_team_id_by_feed(current_league_id)
-
-                if not teams:
-                    logger.error("fetch_updating_matches: dict teams is empty")
-                    continue
+            # if payload == 'message_finally':
+            #     break
             
             matches = parsing_updating_matches(payload, leagues, teams)
 

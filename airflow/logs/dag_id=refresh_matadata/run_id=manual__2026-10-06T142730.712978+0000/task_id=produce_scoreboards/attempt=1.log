@@ -1,0 +1,21 @@
+[2026-10-06T14:27:40.807+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-10-06T14:27:40.867+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: refresh_matadata.produce_scoreboards manual__2026-10-06T14:27:30.712978+00:00 [queued]>
+[2026-10-06T14:27:40.892+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: refresh_matadata.produce_scoreboards manual__2026-10-06T14:27:30.712978+00:00 [queued]>
+[2026-10-06T14:27:40.895+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 4
+[2026-10-06T14:27:40.927+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): produce_scoreboards> on 2026-10-06 14:27:30.712978+00:00
+[2026-10-06T14:27:40.953+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:62: DeprecationWarning: This process (pid=1177) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2026-10-06T14:27:40.956+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'refresh_matadata', 'produce_scoreboards', 'manual__2026-10-06T14:27:30.712978+00:00', '--job-id', '353', '--raw', '--subdir', 'DAGS_FOLDER/dag_refresh_metadata.py', '--cfg-path', '/tmp/tmpl6obo2hw']
+[2026-10-06T14:27:40.963+0000] {standard_task_runner.py:64} INFO - Started process 1186 to run task
+[2026-10-06T14:27:40.965+0000] {standard_task_runner.py:91} INFO - Job 353: Subtask produce_scoreboards
+[2026-10-06T14:27:41.067+0000] {task_command.py:426} INFO - Running <TaskInstance: refresh_matadata.produce_scoreboards manual__2026-10-06T14:27:30.712978+00:00 [running]> on host 5ee58e140597
+[2026-10-06T14:27:41.417+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='refresh_matadata' AIRFLOW_CTX_TASK_ID='produce_scoreboards' AIRFLOW_CTX_EXECUTION_DATE='2026-10-06T14:27:30.712978+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-10-06T14:27:30.712978+00:00'
+[2026-10-06T14:27:41.434+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-10-06T14:27:46.509+0000] {flahscore.py:39} WARNING - get_data: попытка 1/20 для url=https://global.flashscore.ninja/2/x/feed/f_1_-7_3_ru-kz_1 не удалась
+[2026-10-06T14:28:45.195+0000] {python.py:237} INFO - Done. Returned value was: None
+[2026-10-06T14:28:45.199+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-10-06T14:28:45.223+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=refresh_matadata, task_id=produce_scoreboards, run_id=manual__2026-10-06T14:27:30.712978+00:00, execution_date=20261006T142730, start_date=20261006T142740, end_date=20261006T142845
+[2026-10-06T14:28:45.323+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 0
+[2026-10-06T14:28:45.403+0000] {taskinstance.py:3503} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-10-06T14:28:45.411+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

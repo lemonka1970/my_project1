@@ -4,6 +4,15 @@ from src.flahscore import get_data, get_feed_last_match
 
 from itertools import combinations
 import json
+import logging
+
+logger = logging.getLogger(__name__)
+
+from dotenv import load_dotenv
+import os
+import ast
+load_dotenv()
+current_league_urls = ast.literal_eval(os.getenv('CURRENT_LEAGUE_URLS'))
 
 
 
@@ -21,7 +30,8 @@ def produce_initializetion_matches():
             cur.execute("""
                 SELECT league_id
                 FROM leagues
-                """)
+                WHERE league_url IN %s
+                """, (current_league_urls,))
             leagues = [league_id[0] for league_id in cur.fetchall()]
 
 
@@ -38,9 +48,14 @@ def produce_initializetion_matches():
                     """, (league_id,))
                 team_urls = [url[0] for url in cur.fetchall()]
 
+                logger.info("len team_urls: %s", len(team_urls))
+
 
                 # для каждой комбинации команд находим feed их последней очной игры
                 for url_team_1, url_team_2 in combinations(team_urls, 2):
+
+                    logger.info("Processing pair: %s and %s", url_team_1, url_team_2)
+
                     url_team_1 = url_team_1[6:-1].replace('/', '-')
                     url_team_2 = url_team_2[6:-1].replace('/', '-')
 
@@ -66,16 +81,19 @@ def produce_initializetion_matches():
                         value=json.dumps(payload).encode('utf-8')
                     )
 
-                    
+                logger.info("league %s processing finished", league_id)
+
+    except Exception as e:
+            logger.error('produce_updating_matches: %s', (e,))
 
                     
-    finally:
-        producer.produce(
-            topic='initialize_matches',
-            value=json.dumps('message_finally').encode('utf-8')
-        )
-        producer.flush()
-        db_pool.putconn(conn)
+    # finally:
+    #     producer.produce(
+    #         topic='initialize_matches',
+    #         value=json.dumps('message_finally').encode('utf-8')
+    #     )
+    #     producer.flush()
+    #     db_pool.putconn(conn)
 
 
 
@@ -94,14 +112,18 @@ def produce_updeting_matches():
             cur.execute("""
                 SELECT league_id, season_id
                 FROM seasons
+                JOIN leagues USING(league_id)
                 WHERE is_current = True
-            """)
+                AND league_url IN %s
+            """, (current_league_urls,))
             seasons = {league_id: season_id for league_id, season_id in cur.fetchall()}
 
             cur.execute("""
                 SELECT league_id 
                 FROM leagues
-            """)
+                JOIN leagues USING(league_id)
+                WHERE league_url IN %s
+            """, (current_league_urls,))
             leagues = [league_id[0] for league_id in cur.fetchall()]
 
             
@@ -153,15 +175,19 @@ def produce_updeting_matches():
                         topic='update_matches',
                         value=json.dumps(payload).encode('utf-8')
                     )
+                    producer.flush()
 
+    except Exception as e:
+        logger.error('produce_updating_matches: %s', (e,))
 
-    finally:
-        producer.produce(
-            topic='update_matches',
-            value=json.dumps('message_finally').encode('utf-8')
-        )
-        producer.flush()
-        db_pool.putconn(conn)
+    # finally:
+    #     producer.produce(
+    #         topic='update_matches',
+    #         value=json.dumps('message_finally').encode('utf-8')
+    #     )
+    #     producer.flush()
+    #     db_pool.putconn(conn)
+
 
 def main():
     c = 0

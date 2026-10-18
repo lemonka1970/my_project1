@@ -1,0 +1,82 @@
+[2026-09-02T14:59:50.732+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-09-02T14:59:50.850+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: tests.produce_standings manual__2026-09-01T19:58:38.475951+00:00 [queued]>
+[2026-09-02T14:59:50.874+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: tests.produce_standings manual__2026-09-01T19:58:38.475951+00:00 [queued]>
+[2026-09-02T14:59:50.877+0000] {taskinstance.py:2306} INFO - Starting attempt 2 of 4
+[2026-09-02T14:59:50.928+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): produce_standings> on 2026-09-01 19:58:38.475951+00:00
+[2026-09-02T14:59:50.955+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:62: DeprecationWarning: This process (pid=69) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2026-09-02T14:59:50.961+0000] {standard_task_runner.py:64} INFO - Started process 71 to run task
+[2026-09-02T14:59:50.958+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'tests', 'produce_standings', 'manual__2026-09-01T19:58:38.475951+00:00', '--job-id', '342', '--raw', '--subdir', 'DAGS_FOLDER/dag_tests.py', '--cfg-path', '/tmp/tmpe1ylbvpo']
+[2026-09-02T14:59:50.966+0000] {standard_task_runner.py:91} INFO - Job 342: Subtask produce_standings
+[2026-09-02T14:59:51.084+0000] {task_command.py:426} INFO - Running <TaskInstance: tests.produce_standings manual__2026-09-01T19:58:38.475951+00:00 [running]> on host eacfec9de684
+[2026-09-02T14:59:51.323+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='tests' AIRFLOW_CTX_TASK_ID='produce_standings' AIRFLOW_CTX_EXECUTION_DATE='2026-09-01T19:58:38.475951+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-09-01T19:58:38.475951+00:00'
+[2026-09-02T14:59:51.330+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-09-02T15:12:29.333+0000] {flahscore.py:39} WARNING - get_data: попытка 1/20 для url=https://global.flashscore.ninja/2/x/feed/to_jqwEhtA5_xzOmr6hU_1 не удалась
+[2026-09-02T15:12:46.551+0000] {flahscore.py:39} WARNING - get_data: попытка 1/20 для url=https://global.flashscore.ninja/2/x/feed/to_zcTCJmWa_vPJs547t_1 не удалась
+[2026-09-02T15:12:58.745+0000] {flahscore.py:39} WARNING - get_data: попытка 1/20 для url=https://global.flashscore.ninja/2/x/feed/to_zqIEaswj_nRRVYKmK_1 не удалась
+[2026-09-02T16:31:39.739+0000] {flahscore.py:39} WARNING - get_data: попытка 1/20 для url=https://global.flashscore.ninja/2/x/feed/to_tMeLShtg_UgWWLJTi_1 не удалась
+[2026-09-02T16:31:54.909+0000] {flahscore.py:39} WARNING - get_data: попытка 1/20 для url=https://global.flashscore.ninja/2/x/feed/to_2cNxEj0n_nsABFnLh_1 не удалась
+[2026-09-02T16:51:57.034+0000] {flahscore.py:39} WARNING - get_data: попытка 1/20 для url=https://global.flashscore.ninja/2/x/feed/to_MiobbX7Q_E9NFuemJ_1 не удалась
+[2026-09-02T16:52:25.099+0000] {flahscore.py:39} WARNING - get_data: попытка 1/20 для url=https://global.flashscore.ninja/2/x/feed/to_dlJbpU16_h4Kfpgbq_1 не удалась
+[2026-09-02T16:52:36.693+0000] {flahscore.py:39} WARNING - get_data: попытка 1/20 для url=https://global.flashscore.ninja/2/x/feed/to_KWg9MmWH_lzxtXMDD_1 не удалась
+[2026-09-02T17:02:29.471+0000] {flahscore.py:39} WARNING - get_data: попытка 1/20 для url=https://global.flashscore.ninja/2/x/feed/to_MPMNUctA_G2njWPuh_1 не удалась
+[2026-09-02T17:02:41.045+0000] {flahscore.py:39} WARNING - get_data: попытка 1/20 для url=https://global.flashscore.ninja/2/x/feed/to_IVJjMbMc_6e0vyOdh_1 не удалась
+[2026-09-02T17:05:27.246+0000] {flahscore.py:39} WARNING - get_data: попытка 1/20 для url=https://global.flashscore.ninja/2/x/feed/to_jiFZKoHi_tCxTzcUP_1 не удалась
+[2026-09-02T17:06:22.399+0000] {flahscore.py:39} WARNING - get_data: попытка 1/20 для url=https://global.flashscore.ninja/2/x/feed/to_4lc6eaYQ_zPVeoPSB_1 не удалась
+[2026-09-02T17:06:32.140+0000] {flahscore.py:39} WARNING - get_data: попытка 2/20 для url=https://global.flashscore.ninja/2/x/feed/to_4lc6eaYQ_zPVeoPSB_1 не удалась
+[2026-09-02T17:06:49.393+0000] {flahscore.py:39} WARNING - get_data: попытка 1/20 для url=https://global.flashscore.ninja/2/x/feed/to_EDjfmroe_p2MdKMkD_1 не удалась
+[2026-09-02T17:07:09.401+0000] {flahscore.py:39} WARNING - get_data: попытка 1/20 для url=https://global.flashscore.ninja/2/x/feed/to_WSEswaLf_Aw4xC2ks_1 не удалась
+[2026-09-02T17:07:23.013+0000] {flahscore.py:39} WARNING - get_data: попытка 1/20 для url=https://global.flashscore.ninja/2/x/feed/to_dlhQKbxP_4KEIEbUI_1 не удалась
+[2026-09-02T17:07:34.039+0000] {flahscore.py:39} WARNING - get_data: попытка 2/20 для url=https://global.flashscore.ninja/2/x/feed/to_dlhQKbxP_4KEIEbUI_1 не удалась
+[2026-09-02T17:07:50.700+0000] {flahscore.py:39} WARNING - get_data: попытка 1/20 для url=https://global.flashscore.ninja/2/x/feed/to_SAzPpoJl_Wxl7bfR4_1 не удалась
+[2026-09-02T17:08:01.623+0000] {flahscore.py:39} WARNING - get_data: попытка 2/20 для url=https://global.flashscore.ninja/2/x/feed/to_SAzPpoJl_Wxl7bfR4_1 не удалась
+[2026-09-02T17:08:11.858+0000] {flahscore.py:39} WARNING - get_data: попытка 3/20 для url=https://global.flashscore.ninja/2/x/feed/to_SAzPpoJl_Wxl7bfR4_1 не удалась
+[2026-09-02T17:08:22.875+0000] {flahscore.py:39} WARNING - get_data: попытка 4/20 для url=https://global.flashscore.ninja/2/x/feed/to_SAzPpoJl_Wxl7bfR4_1 не удалась
+[2026-09-02T17:09:11.718+0000] {flahscore.py:39} WARNING - get_data: попытка 1/20 для url=https://global.flashscore.ninja/2/x/feed/to_fa5FtAU7_COT6Fln3_1 не удалась
+[2026-09-02T17:09:20.675+0000] {flahscore.py:39} WARNING - get_data: попытка 2/20 для url=https://global.flashscore.ninja/2/x/feed/to_fa5FtAU7_COT6Fln3_1 не удалась
+[2026-09-02T17:09:31.707+0000] {flahscore.py:39} WARNING - get_data: попытка 3/20 для url=https://global.flashscore.ninja/2/x/feed/to_fa5FtAU7_COT6Fln3_1 не удалась
+[2026-09-02T17:09:50.616+0000] {flahscore.py:39} WARNING - get_data: попытка 4/20 для url=https://global.flashscore.ninja/2/x/feed/to_fa5FtAU7_COT6Fln3_1 не удалась
+[2026-09-02T17:09:58.943+0000] {flahscore.py:39} WARNING - get_data: попытка 5/20 для url=https://global.flashscore.ninja/2/x/feed/to_fa5FtAU7_COT6Fln3_1 не удалась
+[2026-09-02T17:10:16.827+0000] {flahscore.py:39} WARNING - get_data: попытка 1/20 для url=https://global.flashscore.ninja/2/x/feed/to_4lMiZOxA_xp9Jet4U_1 не удалась
+[2026-09-02T17:10:27.861+0000] {flahscore.py:39} WARNING - get_data: попытка 2/20 для url=https://global.flashscore.ninja/2/x/feed/to_4lMiZOxA_xp9Jet4U_1 не удалась
+[2026-09-02T17:10:48.023+0000] {flahscore.py:39} WARNING - get_data: попытка 1/20 для url=https://global.flashscore.ninja/2/x/feed/to_jcy5KPTs_MDNyDBvH_1 не удалась
+[2026-09-02T17:11:00.452+0000] {flahscore.py:39} WARNING - get_data: попытка 1/20 для url=https://global.flashscore.ninja/2/x/feed/to_lGsqIgBT_WStWN8QC_1 не удалась
+[2026-09-02T17:11:10.340+0000] {flahscore.py:39} WARNING - get_data: попытка 2/20 для url=https://global.flashscore.ninja/2/x/feed/to_lGsqIgBT_WStWN8QC_1 не удалась
+[2026-09-02T17:12:41.567+0000] {flahscore.py:39} WARNING - get_data: попытка 1/20 для url=https://global.flashscore.ninja/2/x/feed/to_ObKhcPDs_MecdNBRE_1 не удалась
+[2026-09-02T17:13:01.414+0000] {flahscore.py:39} WARNING - get_data: попытка 1/20 для url=https://global.flashscore.ninja/2/x/feed/to_4fc84QWA_48lxIywf_1 не удалась
+[2026-09-02T17:13:20.810+0000] {flahscore.py:39} WARNING - get_data: попытка 1/20 для url=https://global.flashscore.ninja/2/x/feed/to_40HzISpS_fPgRTgFm_1 не удалась
+[2026-09-02T17:13:31.837+0000] {flahscore.py:39} WARNING - get_data: попытка 2/20 для url=https://global.flashscore.ninja/2/x/feed/to_40HzISpS_fPgRTgFm_1 не удалась
+[2026-09-02T17:13:55.952+0000] {flahscore.py:39} WARNING - get_data: попытка 1/20 для url=https://global.flashscore.ninja/2/x/feed/to_nklLMFo9_hpyVr5os_1 не удалась
+[2026-09-02T17:14:51.341+0000] {flahscore.py:39} WARNING - get_data: попытка 1/20 для url=https://global.flashscore.ninja/2/x/feed/to_dQ9ALMSp_44xB6fHk_1 не удалась
+[2026-09-02T17:50:56.443+0000] {flahscore.py:39} WARNING - get_data: попытка 1/20 для url=https://global.flashscore.ninja/2/x/feed/to_QTraT8u1_EPCfS84g_1 не удалась
+[2026-09-02T17:51:07.478+0000] {flahscore.py:39} WARNING - get_data: попытка 2/20 для url=https://global.flashscore.ninja/2/x/feed/to_QTraT8u1_EPCfS84g_1 не удалась
+[2026-09-02T17:51:18.439+0000] {flahscore.py:39} WARNING - get_data: попытка 3/20 для url=https://global.flashscore.ninja/2/x/feed/to_QTraT8u1_EPCfS84g_1 не удалась
+[2026-09-02T17:51:25.504+0000] {flahscore.py:39} WARNING - get_data: попытка 4/20 для url=https://global.flashscore.ninja/2/x/feed/to_QTraT8u1_EPCfS84g_1 не удалась
+[2026-09-02T17:51:35.046+0000] {flahscore.py:39} WARNING - get_data: попытка 5/20 для url=https://global.flashscore.ninja/2/x/feed/to_QTraT8u1_EPCfS84g_1 не удалась
+[2026-09-02T17:51:47.136+0000] {flahscore.py:39} WARNING - get_data: попытка 6/20 для url=https://global.flashscore.ninja/2/x/feed/to_QTraT8u1_EPCfS84g_1 не удалась
+[2026-09-02T17:51:59.154+0000] {flahscore.py:39} WARNING - get_data: попытка 7/20 для url=https://global.flashscore.ninja/2/x/feed/to_QTraT8u1_EPCfS84g_1 не удалась
+[2026-09-02T17:52:27.826+0000] {flahscore.py:39} WARNING - get_data: попытка 1/20 для url=https://global.flashscore.ninja/2/x/feed/to_dhPILOQh_2ZofKlU6_1 не удалась
+[2026-09-02T17:52:38.846+0000] {flahscore.py:39} WARNING - get_data: попытка 2/20 для url=https://global.flashscore.ninja/2/x/feed/to_dhPILOQh_2ZofKlU6_1 не удалась
+[2026-09-02T17:52:58.154+0000] {flahscore.py:39} WARNING - get_data: попытка 1/20 для url=https://global.flashscore.ninja/2/x/feed/to_noKb2Ir4_pto5uUm4_1 не удалась
+[2026-09-02T17:53:25.638+0000] {flahscore.py:39} WARNING - get_data: попытка 1/20 для url=https://global.flashscore.ninja/2/x/feed/to_4jvpyZQc_v14houu4_1 не удалась
+[2026-09-02T17:54:25.858+0000] {flahscore.py:39} WARNING - get_data: попытка 1/20 для url=https://global.flashscore.ninja/2/x/feed/to_WdgdfFvn_f7Ud6Jbc_1 не удалась
+[2026-09-02T18:19:33.099+0000] {flahscore.py:39} WARNING - get_data: попытка 1/20 для url=https://global.flashscore.ninja/2/x/feed/to_xC0O4mib_hYDZIzSi_1 не удалась
+[2026-09-02T18:19:40.951+0000] {flahscore.py:39} WARNING - get_data: попытка 1/20 для url=https://global.flashscore.ninja/2/x/feed/to_WfD2x7tA_UFtIkbTB_1 не удалась
+[2026-09-02T18:35:20.639+0000] {flahscore.py:39} WARNING - get_data: попытка 1/20 для url=https://global.flashscore.ninja/2/x/feed/to_S0OuIp6T_x0V8GPK6_1 не удалась
+[2026-09-02T18:42:47.100+0000] {flahscore.py:39} WARNING - get_data: попытка 1/20 для url=https://global.flashscore.ninja/2/x/feed/to_CGiTHQGt_U1W2HuRl_1 не удалась
+[2026-09-02T18:43:00.234+0000] {flahscore.py:39} WARNING - get_data: попытка 1/20 для url=https://global.flashscore.ninja/2/x/feed/to_IFssRWp2_GxMt9Ita_1 не удалась
+[2026-09-02T18:43:11.305+0000] {flahscore.py:39} WARNING - get_data: попытка 2/20 для url=https://global.flashscore.ninja/2/x/feed/to_IFssRWp2_GxMt9Ita_1 не удалась
+[2026-09-02T18:43:17.948+0000] {flahscore.py:39} WARNING - get_data: попытка 3/20 для url=https://global.flashscore.ninja/2/x/feed/to_IFssRWp2_GxMt9Ita_1 не удалась
+[2026-09-02T18:43:28.989+0000] {flahscore.py:39} WARNING - get_data: попытка 4/20 для url=https://global.flashscore.ninja/2/x/feed/to_IFssRWp2_GxMt9Ita_1 не удалась
+[2026-09-02T18:43:41.111+0000] {flahscore.py:39} WARNING - get_data: попытка 5/20 для url=https://global.flashscore.ninja/2/x/feed/to_IFssRWp2_GxMt9Ita_1 не удалась
+[2026-09-02T18:43:52.922+0000] {flahscore.py:39} WARNING - get_data: попытка 6/20 для url=https://global.flashscore.ninja/2/x/feed/to_IFssRWp2_GxMt9Ita_1 не удалась
+[2026-09-02T18:44:04.978+0000] {flahscore.py:39} WARNING - get_data: попытка 7/20 для url=https://global.flashscore.ninja/2/x/feed/to_IFssRWp2_GxMt9Ita_1 не удалась
+[2026-09-02T18:44:17.001+0000] {flahscore.py:39} WARNING - get_data: попытка 8/20 для url=https://global.flashscore.ninja/2/x/feed/to_IFssRWp2_GxMt9Ita_1 не удалась
+[2026-09-02T18:44:30.020+0000] {flahscore.py:39} WARNING - get_data: попытка 9/20 для url=https://global.flashscore.ninja/2/x/feed/to_IFssRWp2_GxMt9Ita_1 не удалась
+[2026-09-02T18:44:50.076+0000] {flahscore.py:39} WARNING - get_data: попытка 1/20 для url=https://global.flashscore.ninja/2/x/feed/to_YomYD4Vb_M3JJ8445_1 не удалась
+[2026-09-02T18:45:31.674+0000] {flahscore.py:39} WARNING - get_data: попытка 1/20 для url=https://global.flashscore.ninja/2/x/feed/to_ANclQjWc_ImZV5vW8_1 не удалась
+[2026-09-02T18:45:46.577+0000] {flahscore.py:39} WARNING - get_data: попытка 1/20 для url=https://global.flashscore.ninja/2/x/feed/to_QcARYoMF_bDzGJ0Iq_1 не удалась
+[2026-09-02T18:45:59.041+0000] {flahscore.py:39} WARNING - get_data: попытка 2/20 для url=https://global.flashscore.ninja/2/x/feed/to_QcARYoMF_bDzGJ0Iq_1 не удалась
+[2026-09-02T18:47:18.892+0000] {flahscore.py:39} WARNING - get_data: попытка 1/20 для url=https://global.flashscore.ninja/2/x/feed/to_OU7NkrPb_YPGtYqPt_1 не удалась
+[2026-09-02T18:47:26.225+0000] {flahscore.py:39} WARNING - get_data: попытка 2/20 для url=https://global.flashscore.ninja/2/x/feed/to_OU7NkrPb_YPGtYqPt_1 не удалась

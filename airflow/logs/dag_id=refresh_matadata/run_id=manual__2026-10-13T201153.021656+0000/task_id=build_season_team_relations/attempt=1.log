@@ -1,0 +1,1107 @@
+[2026-10-13T20:17:05.002+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-10-13T20:17:05.050+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: refresh_matadata.build_season_team_relations manual__2026-10-13T20:11:53.021656+00:00 [queued]>
+[2026-10-13T20:17:05.070+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: refresh_matadata.build_season_team_relations manual__2026-10-13T20:11:53.021656+00:00 [queued]>
+[2026-10-13T20:17:05.073+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 4
+[2026-10-13T20:17:05.105+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): build_season_team_relations> on 2026-10-13 20:11:53.021656+00:00
+[2026-10-13T20:17:05.128+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:62: DeprecationWarning: This process (pid=274) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2026-10-13T20:17:05.133+0000] {standard_task_runner.py:64} INFO - Started process 276 to run task
+[2026-10-13T20:17:05.131+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'refresh_matadata', 'build_season_team_relations', 'manual__2026-10-13T20:11:53.021656+00:00', '--job-id', '531', '--raw', '--subdir', 'DAGS_FOLDER/dag_refresh_metadata.py', '--cfg-path', '/tmp/tmprrj96437']
+[2026-10-13T20:17:05.137+0000] {standard_task_runner.py:91} INFO - Job 531: Subtask build_season_team_relations
+[2026-10-13T20:17:05.228+0000] {task_command.py:426} INFO - Running <TaskInstance: refresh_matadata.build_season_team_relations manual__2026-10-13T20:11:53.021656+00:00 [running]> on host 15573e95703f
+[2026-10-13T20:17:05.534+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='refresh_matadata' AIRFLOW_CTX_TASK_ID='build_season_team_relations' AIRFLOW_CTX_EXECUTION_DATE='2026-10-13T20:11:53.021656+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-10-13T20:11:53.021656+00:00'
+[2026-10-13T20:17:05.545+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-10-13T20:17:08.628+0000] {inserts.py:70} INFO - inserting 20 rows
+[2026-10-13T20:17:08.634+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team 8O9qWgLK not in teams
+[2026-10-13T20:17:08.637+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team WvnQQbv8 not in teams
+[2026-10-13T20:17:08.639+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team QB65eHhq not in teams
+[2026-10-13T20:17:08.641+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team SfIqHZmh not in teams
+[2026-10-13T20:17:08.644+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team 2wF435De not in teams
+[2026-10-13T20:17:08.646+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team QXT4avNR not in teams
+[2026-10-13T20:17:08.649+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team lWRHb1sB not in teams
+[2026-10-13T20:17:08.652+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team Qq6xgOe1 not in teams
+[2026-10-13T20:17:08.656+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team zLHkfMel not in teams
+[2026-10-13T20:17:08.658+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team SEfOw1B7 not in teams
+[2026-10-13T20:17:08.661+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team 4Ww72pl8 not in teams
+[2026-10-13T20:17:08.664+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team rNxB143E not in teams
+[2026-10-13T20:17:08.667+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team jmtJarYQ not in teams
+[2026-10-13T20:17:08.670+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team f1dGuNte not in teams
+[2026-10-13T20:17:08.672+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team Cr2tnP3R not in teams
+[2026-10-13T20:17:08.674+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team AcdhEsmK not in teams
+[2026-10-13T20:17:08.676+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team roHggtBf not in teams
+[2026-10-13T20:17:08.678+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team SYjcD12Q not in teams
+[2026-10-13T20:17:08.680+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team W6clFNXD not in teams
+[2026-10-13T20:17:08.683+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team I396jveD not in teams
+[2026-10-13T20:17:08.686+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team dGwDt3Rl not in teams
+[2026-10-13T20:17:08.688+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team xpxF0OIK not in teams
+[2026-10-13T20:17:08.690+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team dUIoe2tr not in teams
+[2026-10-13T20:17:08.692+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team Eil8sqCr not in teams
+[2026-10-13T20:17:08.694+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team 4052iKu7 not in teams
+[2026-10-13T20:17:08.696+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team lOeKvsd1 not in teams
+[2026-10-13T20:17:08.700+0000] {inserts.py:70} INFO - inserting 18 rows
+[2026-10-13T20:17:08.705+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team zLHkfMel not in teams
+[2026-10-13T20:17:08.707+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team rNxB143E not in teams
+[2026-10-13T20:17:08.709+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team dGwDt3Rl not in teams
+[2026-10-13T20:17:08.711+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team lOeKvsd1 not in teams
+[2026-10-13T20:17:08.712+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team xpxF0OIK not in teams
+[2026-10-13T20:17:08.714+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team AcdhEsmK not in teams
+[2026-10-13T20:17:08.716+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team jmtJarYQ not in teams
+[2026-10-13T20:17:08.719+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team SEfOw1B7 not in teams
+[2026-10-13T20:17:08.721+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team dUIoe2tr not in teams
+[2026-10-13T20:17:08.722+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team 4Ww72pl8 not in teams
+[2026-10-13T20:17:08.724+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team f1dGuNte not in teams
+[2026-10-13T20:17:08.726+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team SYjcD12Q not in teams
+[2026-10-13T20:17:08.727+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team Eil8sqCr not in teams
+[2026-10-13T20:17:08.729+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team W6clFNXD not in teams
+[2026-10-13T20:17:08.731+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team roHggtBf not in teams
+[2026-10-13T20:17:08.733+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team Cr2tnP3R not in teams
+[2026-10-13T20:17:08.736+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team I396jveD not in teams
+[2026-10-13T20:17:08.738+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team 4052iKu7 not in teams
+[2026-10-13T20:17:08.740+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team QB65eHhq not in teams
+[2026-10-13T20:17:08.742+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team WvnQQbv8 not in teams
+[2026-10-13T20:17:08.744+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team SfIqHZmh not in teams
+[2026-10-13T20:17:08.746+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team 8O9qWgLK not in teams
+[2026-10-13T20:17:08.748+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team 2wF435De not in teams
+[2026-10-13T20:17:08.750+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team Qq6xgOe1 not in teams
+[2026-10-13T20:17:08.752+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team lWRHb1sB not in teams
+[2026-10-13T20:17:08.754+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team AuTDasS4 not in teams
+[2026-10-13T20:17:08.760+0000] {inserts.py:70} INFO - inserting 22 rows
+[2026-10-13T20:17:08.769+0000] {inserts.py:70} INFO - inserting 22 rows
+[2026-10-13T20:17:08.780+0000] {inserts.py:74} ERROR - execute_insert failed: len_data=22, error: insert or update on table "season_team_relations" violates foreign key constraint "season_team_relations_season_id_fkey"
+DETAIL:  Key (season_id)=(816) is not present in table "seasons".
+Traceback (most recent call last):
+  File "/opt/airflow/src/database/inserts.py", line 68, in execute_insert
+    execute_values(cur, query, list(data))
+  File "/home/airflow/.local/lib/python3.12/site-packages/psycopg2/extras.py", line 1299, in execute_values
+    cur.execute(b''.join(parts))
+psycopg2.errors.ForeignKeyViolation: insert or update on table "season_team_relations" violates foreign key constraint "season_team_relations_season_id_fkey"
+DETAIL:  Key (season_id)=(816) is not present in table "seasons".
+
+[2026-10-13T20:17:08.803+0000] {inserts.py:70} INFO - inserting 20 rows
+[2026-10-13T20:17:08.808+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team 88JjyHiA not in teams
+[2026-10-13T20:17:08.810+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team dWY6Y9zr not in teams
+[2026-10-13T20:17:08.812+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team vinuwjSQ not in teams
+[2026-10-13T20:17:08.814+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team Y5sGF857 not in teams
+[2026-10-13T20:17:08.817+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team vudJXTkl not in teams
+[2026-10-13T20:17:08.820+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team IPgeDw38 not in teams
+[2026-10-13T20:17:08.822+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team QmryvWCK not in teams
+[2026-10-13T20:17:08.825+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team nFG30cQH not in teams
+[2026-10-13T20:17:08.827+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team tGIU5Y1p not in teams
+[2026-10-13T20:17:08.829+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team rPhWvCcE not in teams
+[2026-10-13T20:17:08.831+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team S6Xv3lj1 not in teams
+[2026-10-13T20:17:08.833+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team MusLmn5f not in teams
+[2026-10-13T20:17:08.836+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team bNZOACTk not in teams
+[2026-10-13T20:17:08.837+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team UHbVkIde not in teams
+[2026-10-13T20:17:08.840+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team rJHaVYqp not in teams
+[2026-10-13T20:17:08.842+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team zaL44fyG not in teams
+[2026-10-13T20:17:08.844+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team 4QLusDEd not in teams
+[2026-10-13T20:17:08.846+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team EkbhGY5S not in teams
+[2026-10-13T20:17:08.848+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team 4CIh5uRh not in teams
+[2026-10-13T20:17:08.850+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team bctNAhTE not in teams
+[2026-10-13T20:17:08.852+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team n5q7wXwi not in teams
+[2026-10-13T20:17:08.854+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team 8Sq6TnGq not in teams
+[2026-10-13T20:17:08.856+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team Q3vBS6Vk not in teams
+[2026-10-13T20:17:08.858+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team GErEllh9 not in teams
+[2026-10-13T20:17:08.859+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team SK2VYVvc not in teams
+[2026-10-13T20:17:08.861+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team j7dIT8hd not in teams
+[2026-10-13T20:17:08.864+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team CCtJzVN9 not in teams
+[2026-10-13T20:17:08.866+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team CdbzZ8hM not in teams
+[2026-10-13T20:17:08.868+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team fyWNZlwG not in teams
+[2026-10-13T20:17:08.871+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team bamj5M2T not in teams
+[2026-10-13T20:17:08.877+0000] {inserts.py:74} ERROR - execute_insert failed: len_data=22, error: insert or update on table "season_team_relations" violates foreign key constraint "season_team_relations_season_id_fkey"
+DETAIL:  Key (season_id)=(823) is not present in table "seasons".
+Traceback (most recent call last):
+  File "/opt/airflow/src/database/inserts.py", line 68, in execute_insert
+    execute_values(cur, query, list(data))
+  File "/home/airflow/.local/lib/python3.12/site-packages/psycopg2/extras.py", line 1299, in execute_values
+    cur.execute(b''.join(parts))
+psycopg2.errors.ForeignKeyViolation: insert or update on table "season_team_relations" violates foreign key constraint "season_team_relations_season_id_fkey"
+DETAIL:  Key (season_id)=(823) is not present in table "seasons".
+
+[2026-10-13T20:17:08.886+0000] {inserts.py:70} INFO - inserting 22 rows
+[2026-10-13T20:17:08.893+0000] {inserts.py:74} ERROR - execute_insert failed: len_data=20, error: insert or update on table "season_team_relations" violates foreign key constraint "season_team_relations_season_id_fkey"
+DETAIL:  Key (season_id)=(824) is not present in table "seasons".
+Traceback (most recent call last):
+  File "/opt/airflow/src/database/inserts.py", line 68, in execute_insert
+    execute_values(cur, query, list(data))
+  File "/home/airflow/.local/lib/python3.12/site-packages/psycopg2/extras.py", line 1299, in execute_values
+    cur.execute(b''.join(parts))
+psycopg2.errors.ForeignKeyViolation: insert or update on table "season_team_relations" violates foreign key constraint "season_team_relations_season_id_fkey"
+DETAIL:  Key (season_id)=(824) is not present in table "seasons".
+
+[2026-10-13T20:17:08.898+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team lMtfAfk0 not in teams
+[2026-10-13T20:17:08.900+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team zqa9ZINp not in teams
+[2026-10-13T20:17:08.902+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team 27bLOvM3 not in teams
+[2026-10-13T20:17:08.904+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team 2yAFxbj3 not in teams
+[2026-10-13T20:17:08.906+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team rBwuCq38 not in teams
+[2026-10-13T20:17:08.907+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team hOiG83Vs not in teams
+[2026-10-13T20:17:08.909+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team YeJ5rtW6 not in teams
+[2026-10-13T20:17:08.911+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team CrNQ8wjF not in teams
+[2026-10-13T20:17:08.912+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team fF7FZEzp not in teams
+[2026-10-13T20:17:08.914+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team ppDypUPj not in teams
+[2026-10-13T20:17:08.916+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team hMfHFzqj not in teams
+[2026-10-13T20:17:08.918+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team 6PbLEfbd not in teams
+[2026-10-13T20:17:08.920+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team G20lDqNQ not in teams
+[2026-10-13T20:17:08.922+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team Ac5CGGTq not in teams
+[2026-10-13T20:17:08.924+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team vJ1uwdD5 not in teams
+[2026-10-13T20:17:08.926+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team vsvcjXbp not in teams
+[2026-10-13T20:17:08.930+0000] {inserts.py:70} INFO - inserting 22 rows
+[2026-10-13T20:17:08.937+0000] {inserts.py:70} INFO - inserting 22 rows
+[2026-10-13T20:17:08.943+0000] {inserts.py:70} INFO - inserting 22 rows
+[2026-10-13T20:17:08.949+0000] {inserts.py:74} ERROR - execute_insert failed: len_data=20, error: insert or update on table "season_team_relations" violates foreign key constraint "season_team_relations_season_id_fkey"
+DETAIL:  Key (season_id)=(802) is not present in table "seasons".
+Traceback (most recent call last):
+  File "/opt/airflow/src/database/inserts.py", line 68, in execute_insert
+    execute_values(cur, query, list(data))
+  File "/home/airflow/.local/lib/python3.12/site-packages/psycopg2/extras.py", line 1299, in execute_values
+    cur.execute(b''.join(parts))
+psycopg2.errors.ForeignKeyViolation: insert or update on table "season_team_relations" violates foreign key constraint "season_team_relations_season_id_fkey"
+DETAIL:  Key (season_id)=(802) is not present in table "seasons".
+
+[2026-10-13T20:17:08.956+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team rBwuCq38 not in teams
+[2026-10-13T20:17:08.959+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team 00ZuwKHc not in teams
+[2026-10-13T20:17:08.961+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team lMtfAfk0 not in teams
+[2026-10-13T20:17:08.963+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team hMfHFzqj not in teams
+[2026-10-13T20:17:08.965+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team zqa9ZINp not in teams
+[2026-10-13T20:17:08.967+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team h4Bab20o not in teams
+[2026-10-13T20:17:08.969+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team YeJ5rtW6 not in teams
+[2026-10-13T20:17:08.971+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team 2yAFxbj3 not in teams
+[2026-10-13T20:17:08.973+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team CrNQ8wjF not in teams
+[2026-10-13T20:17:08.975+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team 6PbLEfbd not in teams
+[2026-10-13T20:17:08.977+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team ryF7QBt9 not in teams
+[2026-10-13T20:17:08.979+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team G20lDqNQ not in teams
+[2026-10-13T20:17:08.982+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team ppDypUPj not in teams
+[2026-10-13T20:17:08.984+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team nLBV5Axg not in teams
+[2026-10-13T20:17:08.986+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team EPlozI1G not in teams
+[2026-10-13T20:17:08.989+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team hOiG83Vs not in teams
+[2026-10-13T20:17:08.994+0000] {inserts.py:74} ERROR - execute_insert failed: len_data=20, error: insert or update on table "season_team_relations" violates foreign key constraint "season_team_relations_season_id_fkey"
+DETAIL:  Key (season_id)=(819) is not present in table "seasons".
+Traceback (most recent call last):
+  File "/opt/airflow/src/database/inserts.py", line 68, in execute_insert
+    execute_values(cur, query, list(data))
+  File "/home/airflow/.local/lib/python3.12/site-packages/psycopg2/extras.py", line 1299, in execute_values
+    cur.execute(b''.join(parts))
+psycopg2.errors.ForeignKeyViolation: insert or update on table "season_team_relations" violates foreign key constraint "season_team_relations_season_id_fkey"
+DETAIL:  Key (season_id)=(819) is not present in table "seasons".
+
+[2026-10-13T20:17:09.004+0000] {inserts.py:70} INFO - inserting 20 rows
+[2026-10-13T20:17:09.011+0000] {inserts.py:74} ERROR - execute_insert failed: len_data=20, error: insert or update on table "season_team_relations" violates foreign key constraint "season_team_relations_season_id_fkey"
+DETAIL:  Key (season_id)=(813) is not present in table "seasons".
+Traceback (most recent call last):
+  File "/opt/airflow/src/database/inserts.py", line 68, in execute_insert
+    execute_values(cur, query, list(data))
+  File "/home/airflow/.local/lib/python3.12/site-packages/psycopg2/extras.py", line 1299, in execute_values
+    cur.execute(b''.join(parts))
+psycopg2.errors.ForeignKeyViolation: insert or update on table "season_team_relations" violates foreign key constraint "season_team_relations_season_id_fkey"
+DETAIL:  Key (season_id)=(813) is not present in table "seasons".
+
+[2026-10-13T20:17:09.022+0000] {inserts.py:70} INFO - inserting 22 rows
+[2026-10-13T20:17:09.030+0000] {inserts.py:74} ERROR - execute_insert failed: len_data=22, error: insert or update on table "season_team_relations" violates foreign key constraint "season_team_relations_season_id_fkey"
+DETAIL:  Key (season_id)=(798) is not present in table "seasons".
+Traceback (most recent call last):
+  File "/opt/airflow/src/database/inserts.py", line 68, in execute_insert
+    execute_values(cur, query, list(data))
+  File "/home/airflow/.local/lib/python3.12/site-packages/psycopg2/extras.py", line 1299, in execute_values
+    cur.execute(b''.join(parts))
+psycopg2.errors.ForeignKeyViolation: insert or update on table "season_team_relations" violates foreign key constraint "season_team_relations_season_id_fkey"
+DETAIL:  Key (season_id)=(798) is not present in table "seasons".
+
+[2026-10-13T20:17:09.044+0000] {inserts.py:74} ERROR - execute_insert failed: len_data=18, error: insert or update on table "season_team_relations" violates foreign key constraint "season_team_relations_season_id_fkey"
+DETAIL:  Key (season_id)=(790) is not present in table "seasons".
+Traceback (most recent call last):
+  File "/opt/airflow/src/database/inserts.py", line 68, in execute_insert
+    execute_values(cur, query, list(data))
+  File "/home/airflow/.local/lib/python3.12/site-packages/psycopg2/extras.py", line 1299, in execute_values
+    cur.execute(b''.join(parts))
+psycopg2.errors.ForeignKeyViolation: insert or update on table "season_team_relations" violates foreign key constraint "season_team_relations_season_id_fkey"
+DETAIL:  Key (season_id)=(790) is not present in table "seasons".
+
+[2026-10-13T20:17:09.063+0000] {inserts.py:70} INFO - inserting 22 rows
+[2026-10-13T20:17:09.076+0000] {inserts.py:70} INFO - inserting 22 rows
+[2026-10-13T20:17:09.090+0000] {inserts.py:74} ERROR - execute_insert failed: len_data=22, error: insert or update on table "season_team_relations" violates foreign key constraint "season_team_relations_season_id_fkey"
+DETAIL:  Key (season_id)=(822) is not present in table "seasons".
+Traceback (most recent call last):
+  File "/opt/airflow/src/database/inserts.py", line 68, in execute_insert
+    execute_values(cur, query, list(data))
+  File "/home/airflow/.local/lib/python3.12/site-packages/psycopg2/extras.py", line 1299, in execute_values
+    cur.execute(b''.join(parts))
+psycopg2.errors.ForeignKeyViolation: insert or update on table "season_team_relations" violates foreign key constraint "season_team_relations_season_id_fkey"
+DETAIL:  Key (season_id)=(822) is not present in table "seasons".
+
+[2026-10-13T20:17:09.096+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team 00ZuwKHc not in teams
+[2026-10-13T20:17:09.105+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team hMfHFzqj not in teams
+[2026-10-13T20:17:09.113+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team rBwuCq38 not in teams
+[2026-10-13T20:17:09.118+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team lMtfAfk0 not in teams
+[2026-10-13T20:17:09.120+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team nLBV5Axg not in teams
+[2026-10-13T20:17:09.124+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team YeJ5rtW6 not in teams
+[2026-10-13T20:17:09.126+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team 6PbLEfbd not in teams
+[2026-10-13T20:17:09.129+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team zqa9ZINp not in teams
+[2026-10-13T20:17:09.131+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team 2yAFxbj3 not in teams
+[2026-10-13T20:17:09.134+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team EPlozI1G not in teams
+[2026-10-13T20:17:09.140+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team CrNQ8wjF not in teams
+[2026-10-13T20:17:09.144+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team ppDypUPj not in teams
+[2026-10-13T20:17:09.147+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team h4Bab20o not in teams
+[2026-10-13T20:17:09.150+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team fF7FZEzp not in teams
+[2026-10-13T20:17:09.158+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team WfA3cMFi not in teams
+[2026-10-13T20:17:09.168+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team hri3qE7K not in teams
+[2026-10-13T20:17:09.176+0000] {inserts.py:70} INFO - inserting 20 rows
+[2026-10-13T20:17:09.187+0000] {inserts.py:70} INFO - inserting 22 rows
+[2026-10-13T20:17:09.195+0000] {inserts.py:74} ERROR - execute_insert failed: len_data=22, error: insert or update on table "season_team_relations" violates foreign key constraint "season_team_relations_season_id_fkey"
+DETAIL:  Key (season_id)=(817) is not present in table "seasons".
+Traceback (most recent call last):
+  File "/opt/airflow/src/database/inserts.py", line 68, in execute_insert
+    execute_values(cur, query, list(data))
+  File "/home/airflow/.local/lib/python3.12/site-packages/psycopg2/extras.py", line 1299, in execute_values
+    cur.execute(b''.join(parts))
+psycopg2.errors.ForeignKeyViolation: insert or update on table "season_team_relations" violates foreign key constraint "season_team_relations_season_id_fkey"
+DETAIL:  Key (season_id)=(817) is not present in table "seasons".
+
+[2026-10-13T20:17:09.203+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team vFEtMx6M not in teams
+[2026-10-13T20:17:09.209+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team fF7FZEzp not in teams
+[2026-10-13T20:17:09.211+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team 2yAFxbj3 not in teams
+[2026-10-13T20:17:09.213+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team zqa9ZINp not in teams
+[2026-10-13T20:17:09.215+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team lMtfAfk0 not in teams
+[2026-10-13T20:17:09.218+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team rBwuCq38 not in teams
+[2026-10-13T20:17:09.221+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team CrNQ8wjF not in teams
+[2026-10-13T20:17:09.223+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team hOiG83Vs not in teams
+[2026-10-13T20:17:09.225+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team YeJ5rtW6 not in teams
+[2026-10-13T20:17:09.227+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team 27bLOvM3 not in teams
+[2026-10-13T20:17:09.229+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team hMfHFzqj not in teams
+[2026-10-13T20:17:09.231+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team ppDypUPj not in teams
+[2026-10-13T20:17:09.239+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team 6PbLEfbd not in teams
+[2026-10-13T20:17:09.241+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team G20lDqNQ not in teams
+[2026-10-13T20:17:09.243+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team vyV9H5b5 not in teams
+[2026-10-13T20:17:09.245+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team 8AZDGPDB not in teams
+[2026-10-13T20:17:09.254+0000] {inserts.py:70} INFO - inserting 22 rows
+[2026-10-13T20:17:09.268+0000] {inserts.py:70} INFO - inserting 22 rows
+[2026-10-13T20:17:09.278+0000] {inserts.py:70} INFO - inserting 22 rows
+[2026-10-13T20:17:09.290+0000] {inserts.py:74} ERROR - execute_insert failed: len_data=22, error: insert or update on table "season_team_relations" violates foreign key constraint "season_team_relations_season_id_fkey"
+DETAIL:  Key (season_id)=(826) is not present in table "seasons".
+Traceback (most recent call last):
+  File "/opt/airflow/src/database/inserts.py", line 68, in execute_insert
+    execute_values(cur, query, list(data))
+  File "/home/airflow/.local/lib/python3.12/site-packages/psycopg2/extras.py", line 1299, in execute_values
+    cur.execute(b''.join(parts))
+psycopg2.errors.ForeignKeyViolation: insert or update on table "season_team_relations" violates foreign key constraint "season_team_relations_season_id_fkey"
+DETAIL:  Key (season_id)=(826) is not present in table "seasons".
+
+[2026-10-13T20:17:09.299+0000] {inserts.py:74} ERROR - execute_insert failed: len_data=22, error: insert or update on table "season_team_relations" violates foreign key constraint "season_team_relations_season_id_fkey"
+DETAIL:  Key (season_id)=(804) is not present in table "seasons".
+Traceback (most recent call last):
+  File "/opt/airflow/src/database/inserts.py", line 68, in execute_insert
+    execute_values(cur, query, list(data))
+  File "/home/airflow/.local/lib/python3.12/site-packages/psycopg2/extras.py", line 1299, in execute_values
+    cur.execute(b''.join(parts))
+psycopg2.errors.ForeignKeyViolation: insert or update on table "season_team_relations" violates foreign key constraint "season_team_relations_season_id_fkey"
+DETAIL:  Key (season_id)=(804) is not present in table "seasons".
+
+[2026-10-13T20:17:09.306+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team 2yAFxbj3 not in teams
+[2026-10-13T20:17:09.309+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team lMtfAfk0 not in teams
+[2026-10-13T20:17:09.311+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team hri3qE7K not in teams
+[2026-10-13T20:17:09.313+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team hMfHFzqj not in teams
+[2026-10-13T20:17:09.316+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team fF7FZEzp not in teams
+[2026-10-13T20:17:09.318+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team YeJ5rtW6 not in teams
+[2026-10-13T20:17:09.320+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team CrNQ8wjF not in teams
+[2026-10-13T20:17:09.322+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team OpBBwvyc not in teams
+[2026-10-13T20:17:09.324+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team fJ2gXwzh not in teams
+[2026-10-13T20:17:09.328+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team vsvcjXbp not in teams
+[2026-10-13T20:17:09.332+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team vFEtMx6M not in teams
+[2026-10-13T20:17:09.334+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team ppDypUPj not in teams
+[2026-10-13T20:17:09.338+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team IT8vablI not in teams
+[2026-10-13T20:17:09.341+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team ryF7QBt9 not in teams
+[2026-10-13T20:17:09.344+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team A35W0KJ5 not in teams
+[2026-10-13T20:17:09.346+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team vwAz0vZB not in teams
+[2026-10-13T20:17:09.352+0000] {inserts.py:74} ERROR - execute_insert failed: len_data=20, error: insert or update on table "season_team_relations" violates foreign key constraint "season_team_relations_season_id_fkey"
+DETAIL:  Key (season_id)=(803) is not present in table "seasons".
+Traceback (most recent call last):
+  File "/opt/airflow/src/database/inserts.py", line 68, in execute_insert
+    execute_values(cur, query, list(data))
+  File "/home/airflow/.local/lib/python3.12/site-packages/psycopg2/extras.py", line 1299, in execute_values
+    cur.execute(b''.join(parts))
+psycopg2.errors.ForeignKeyViolation: insert or update on table "season_team_relations" violates foreign key constraint "season_team_relations_season_id_fkey"
+DETAIL:  Key (season_id)=(803) is not present in table "seasons".
+
+[2026-10-13T20:17:09.359+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team 27bLOvM3 not in teams
+[2026-10-13T20:17:09.362+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team 2yAFxbj3 not in teams
+[2026-10-13T20:17:09.364+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team zqa9ZINp not in teams
+[2026-10-13T20:17:09.366+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team YeJ5rtW6 not in teams
+[2026-10-13T20:17:09.368+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team hMfHFzqj not in teams
+[2026-10-13T20:17:09.375+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team 6PbLEfbd not in teams
+[2026-10-13T20:17:09.377+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team Ac5CGGTq not in teams
+[2026-10-13T20:17:09.379+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team hOiG83Vs not in teams
+[2026-10-13T20:17:09.381+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team lMtfAfk0 not in teams
+[2026-10-13T20:17:09.384+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team fF7FZEzp not in teams
+[2026-10-13T20:17:09.386+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team vFEtMx6M not in teams
+[2026-10-13T20:17:09.388+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team vsvcjXbp not in teams
+[2026-10-13T20:17:09.392+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team ppDypUPj not in teams
+[2026-10-13T20:17:09.394+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team rBwuCq38 not in teams
+[2026-10-13T20:17:09.396+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team 00ZuwKHc not in teams
+[2026-10-13T20:17:09.399+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team CrNQ8wjF not in teams
+[2026-10-13T20:17:09.401+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team h4Bab20o not in teams
+[2026-10-13T20:17:09.404+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team EPlozI1G not in teams
+[2026-10-13T20:17:09.406+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team G20lDqNQ not in teams
+[2026-10-13T20:17:09.413+0000] {inserts.py:70} INFO - inserting 22 rows
+[2026-10-13T20:17:09.423+0000] {inserts.py:74} ERROR - execute_insert failed: len_data=22, error: insert or update on table "season_team_relations" violates foreign key constraint "season_team_relations_season_id_fkey"
+DETAIL:  Key (season_id)=(811) is not present in table "seasons".
+Traceback (most recent call last):
+  File "/opt/airflow/src/database/inserts.py", line 68, in execute_insert
+    execute_values(cur, query, list(data))
+  File "/home/airflow/.local/lib/python3.12/site-packages/psycopg2/extras.py", line 1299, in execute_values
+    cur.execute(b''.join(parts))
+psycopg2.errors.ForeignKeyViolation: insert or update on table "season_team_relations" violates foreign key constraint "season_team_relations_season_id_fkey"
+DETAIL:  Key (season_id)=(811) is not present in table "seasons".
+
+[2026-10-13T20:17:09.441+0000] {inserts.py:74} ERROR - execute_insert failed: len_data=22, error: insert or update on table "season_team_relations" violates foreign key constraint "season_team_relations_season_id_fkey"
+DETAIL:  Key (season_id)=(754) is not present in table "seasons".
+Traceback (most recent call last):
+  File "/opt/airflow/src/database/inserts.py", line 68, in execute_insert
+    execute_values(cur, query, list(data))
+  File "/home/airflow/.local/lib/python3.12/site-packages/psycopg2/extras.py", line 1299, in execute_values
+    cur.execute(b''.join(parts))
+psycopg2.errors.ForeignKeyViolation: insert or update on table "season_team_relations" violates foreign key constraint "season_team_relations_season_id_fkey"
+DETAIL:  Key (season_id)=(754) is not present in table "seasons".
+
+[2026-10-13T20:17:09.453+0000] {inserts.py:70} INFO - inserting 22 rows
+[2026-10-13T20:17:09.462+0000] {inserts.py:70} INFO - inserting 22 rows
+[2026-10-13T20:17:09.474+0000] {inserts.py:70} INFO - inserting 22 rows
+[2026-10-13T20:17:09.481+0000] {inserts.py:74} ERROR - execute_insert failed: len_data=22, error: insert or update on table "season_team_relations" violates foreign key constraint "season_team_relations_season_id_fkey"
+DETAIL:  Key (season_id)=(805) is not present in table "seasons".
+Traceback (most recent call last):
+  File "/opt/airflow/src/database/inserts.py", line 68, in execute_insert
+    execute_values(cur, query, list(data))
+  File "/home/airflow/.local/lib/python3.12/site-packages/psycopg2/extras.py", line 1299, in execute_values
+    cur.execute(b''.join(parts))
+psycopg2.errors.ForeignKeyViolation: insert or update on table "season_team_relations" violates foreign key constraint "season_team_relations_season_id_fkey"
+DETAIL:  Key (season_id)=(805) is not present in table "seasons".
+
+[2026-10-13T20:17:09.487+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team 27bLOvM3 not in teams
+[2026-10-13T20:17:09.489+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team fF7FZEzp not in teams
+[2026-10-13T20:17:09.491+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team vFEtMx6M not in teams
+[2026-10-13T20:17:09.493+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team CrNQ8wjF not in teams
+[2026-10-13T20:17:09.496+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team zqa9ZINp not in teams
+[2026-10-13T20:17:09.500+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team GOnVBIr9 not in teams
+[2026-10-13T20:17:09.501+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team lMtfAfk0 not in teams
+[2026-10-13T20:17:09.506+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team EPlozI1G not in teams
+[2026-10-13T20:17:09.514+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team zBn5J3oB not in teams
+[2026-10-13T20:17:09.518+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team Ig4eUKaT not in teams
+[2026-10-13T20:17:09.520+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team 6PbLEfbd not in teams
+[2026-10-13T20:17:09.522+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team rBwuCq38 not in teams
+[2026-10-13T20:17:09.528+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team YeJ5rtW6 not in teams
+[2026-10-13T20:17:09.530+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team vsvcjXbp not in teams
+[2026-10-13T20:17:09.532+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team hMfHFzqj not in teams
+[2026-10-13T20:17:09.536+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team 2yAFxbj3 not in teams
+[2026-10-13T20:17:09.538+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team hOiG83Vs not in teams
+[2026-10-13T20:17:09.540+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team 6HukNonn not in teams
+[2026-10-13T20:17:09.547+0000] {inserts.py:74} ERROR - execute_insert failed: len_data=20, error: insert or update on table "season_team_relations" violates foreign key constraint "season_team_relations_season_id_fkey"
+DETAIL:  Key (season_id)=(820) is not present in table "seasons".
+Traceback (most recent call last):
+  File "/opt/airflow/src/database/inserts.py", line 68, in execute_insert
+    execute_values(cur, query, list(data))
+  File "/home/airflow/.local/lib/python3.12/site-packages/psycopg2/extras.py", line 1299, in execute_values
+    cur.execute(b''.join(parts))
+psycopg2.errors.ForeignKeyViolation: insert or update on table "season_team_relations" violates foreign key constraint "season_team_relations_season_id_fkey"
+DETAIL:  Key (season_id)=(820) is not present in table "seasons".
+
+[2026-10-13T20:17:09.562+0000] {inserts.py:70} INFO - inserting 20 rows
+[2026-10-13T20:17:09.571+0000] {inserts.py:74} ERROR - execute_insert failed: len_data=22, error: insert or update on table "season_team_relations" violates foreign key constraint "season_team_relations_season_id_fkey"
+DETAIL:  Key (season_id)=(716) is not present in table "seasons".
+Traceback (most recent call last):
+  File "/opt/airflow/src/database/inserts.py", line 68, in execute_insert
+    execute_values(cur, query, list(data))
+  File "/home/airflow/.local/lib/python3.12/site-packages/psycopg2/extras.py", line 1299, in execute_values
+    cur.execute(b''.join(parts))
+psycopg2.errors.ForeignKeyViolation: insert or update on table "season_team_relations" violates foreign key constraint "season_team_relations_season_id_fkey"
+DETAIL:  Key (season_id)=(716) is not present in table "seasons".
+
+[2026-10-13T20:17:09.581+0000] {inserts.py:74} ERROR - execute_insert failed: len_data=22, error: insert or update on table "season_team_relations" violates foreign key constraint "season_team_relations_season_id_fkey"
+DETAIL:  Key (season_id)=(796) is not present in table "seasons".
+Traceback (most recent call last):
+  File "/opt/airflow/src/database/inserts.py", line 68, in execute_insert
+    execute_values(cur, query, list(data))
+  File "/home/airflow/.local/lib/python3.12/site-packages/psycopg2/extras.py", line 1299, in execute_values
+    cur.execute(b''.join(parts))
+psycopg2.errors.ForeignKeyViolation: insert or update on table "season_team_relations" violates foreign key constraint "season_team_relations_season_id_fkey"
+DETAIL:  Key (season_id)=(796) is not present in table "seasons".
+
+[2026-10-13T20:17:09.595+0000] {inserts.py:70} INFO - inserting 20 rows
+[2026-10-13T20:17:09.617+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team QXT4avNR not in teams
+[2026-10-13T20:17:09.627+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team SfIqHZmh not in teams
+[2026-10-13T20:17:09.629+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team faOJUw6P not in teams
+[2026-10-13T20:17:09.634+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team nc3bNeba not in teams
+[2026-10-13T20:17:09.637+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team QB65eHhq not in teams
+[2026-10-13T20:17:09.639+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team pEhWRr2Q not in teams
+[2026-10-13T20:17:09.642+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team hz4fOyqg not in teams
+[2026-10-13T20:17:09.646+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team Eq5jPHTn not in teams
+[2026-10-13T20:17:09.651+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team 4pEp8C02 not in teams
+[2026-10-13T20:17:09.653+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team IFSWQxwr not in teams
+[2026-10-13T20:17:09.661+0000] {inserts.py:74} ERROR - execute_insert failed: len_data=22, error: insert or update on table "season_team_relations" violates foreign key constraint "season_team_relations_season_id_fkey"
+DETAIL:  Key (season_id)=(807) is not present in table "seasons".
+Traceback (most recent call last):
+  File "/opt/airflow/src/database/inserts.py", line 68, in execute_insert
+    execute_values(cur, query, list(data))
+  File "/home/airflow/.local/lib/python3.12/site-packages/psycopg2/extras.py", line 1299, in execute_values
+    cur.execute(b''.join(parts))
+psycopg2.errors.ForeignKeyViolation: insert or update on table "season_team_relations" violates foreign key constraint "season_team_relations_season_id_fkey"
+DETAIL:  Key (season_id)=(807) is not present in table "seasons".
+
+[2026-10-13T20:17:09.669+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team zPi2ABQ1 not in teams
+[2026-10-13T20:17:09.672+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team vouS5j6r not in teams
+[2026-10-13T20:17:09.675+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team KWzLBhEq not in teams
+[2026-10-13T20:17:09.678+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team rPhWvCcE not in teams
+[2026-10-13T20:17:09.681+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team 4CIh5uRh not in teams
+[2026-10-13T20:17:09.683+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team bctNAhTE not in teams
+[2026-10-13T20:17:09.686+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team bNZOACTk not in teams
+[2026-10-13T20:17:09.689+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team zaL44fyG not in teams
+[2026-10-13T20:17:09.691+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team IPgeDw38 not in teams
+[2026-10-13T20:17:09.694+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team EkbhGY5S not in teams
+[2026-10-13T20:17:09.696+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team nFG30cQH not in teams
+[2026-10-13T20:17:09.700+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team GErEllh9 not in teams
+[2026-10-13T20:17:09.702+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team 4QLusDEd not in teams
+[2026-10-13T20:17:09.705+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team vinuwjSQ not in teams
+[2026-10-13T20:17:09.708+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team n5q7wXwi not in teams
+[2026-10-13T20:17:09.710+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team vqORPXj2 not in teams
+[2026-10-13T20:17:09.713+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team UHbVkIde not in teams
+[2026-10-13T20:17:09.716+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team h6Llka5D not in teams
+[2026-10-13T20:17:09.718+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team 8Sq6TnGq not in teams
+[2026-10-13T20:17:09.721+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team MusLmn5f not in teams
+[2026-10-13T20:17:09.723+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team tGIU5Y1p not in teams
+[2026-10-13T20:17:09.726+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team j7dIT8hd not in teams
+[2026-10-13T20:17:09.728+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team Y5sGF857 not in teams
+[2026-10-13T20:17:09.731+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team QmryvWCK not in teams
+[2026-10-13T20:17:09.733+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team MVRtbjb2 not in teams
+[2026-10-13T20:17:09.736+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team S6Xv3lj1 not in teams
+[2026-10-13T20:17:09.738+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team vudJXTkl not in teams
+[2026-10-13T20:17:09.741+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team CdbzZ8hM not in teams
+[2026-10-13T20:17:09.743+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team jq9ih1dt not in teams
+[2026-10-13T20:17:09.745+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team fyWNZlwG not in teams
+[2026-10-13T20:17:09.748+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team x2TUpVYK not in teams
+[2026-10-13T20:17:09.750+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team rRJNXvtn not in teams
+[2026-10-13T20:17:09.753+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team rJHaVYqp not in teams
+[2026-10-13T20:17:09.755+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team SK2VYVvc not in teams
+[2026-10-13T20:17:09.758+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team jBZSsVrc not in teams
+[2026-10-13T20:17:09.760+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team Qk9SWbeh not in teams
+[2026-10-13T20:17:09.763+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team xSVobYD8 not in teams
+[2026-10-13T20:17:09.766+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team bamj5M2T not in teams
+[2026-10-13T20:17:09.768+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team Q3vBS6Vk not in teams
+[2026-10-13T20:17:09.770+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team CCtJzVN9 not in teams
+[2026-10-13T20:17:09.776+0000] {inserts.py:70} INFO - inserting 22 rows
+[2026-10-13T20:17:09.782+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team lMtfAfk0 not in teams
+[2026-10-13T20:17:09.785+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team hri3qE7K not in teams
+[2026-10-13T20:17:09.787+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team vsvcjXbp not in teams
+[2026-10-13T20:17:09.791+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team fJ2gXwzh not in teams
+[2026-10-13T20:17:09.793+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team 2yAFxbj3 not in teams
+[2026-10-13T20:17:09.795+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team vFEtMx6M not in teams
+[2026-10-13T20:17:09.797+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team OpBBwvyc not in teams
+[2026-10-13T20:17:09.799+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team hMfHFzqj not in teams
+[2026-10-13T20:17:09.802+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team fF7FZEzp not in teams
+[2026-10-13T20:17:09.804+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team Ac5CGGTq not in teams
+[2026-10-13T20:17:09.807+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team YeJ5rtW6 not in teams
+[2026-10-13T20:17:09.810+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team CrNQ8wjF not in teams
+[2026-10-13T20:17:09.812+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team ppDypUPj not in teams
+[2026-10-13T20:17:09.814+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team KGymMUkE not in teams
+[2026-10-13T20:17:09.821+0000] {inserts.py:74} ERROR - execute_insert failed: len_data=18, error: insert or update on table "season_team_relations" violates foreign key constraint "season_team_relations_season_id_fkey"
+DETAIL:  Key (season_id)=(810) is not present in table "seasons".
+Traceback (most recent call last):
+  File "/opt/airflow/src/database/inserts.py", line 68, in execute_insert
+    execute_values(cur, query, list(data))
+  File "/home/airflow/.local/lib/python3.12/site-packages/psycopg2/extras.py", line 1299, in execute_values
+    cur.execute(b''.join(parts))
+psycopg2.errors.ForeignKeyViolation: insert or update on table "season_team_relations" violates foreign key constraint "season_team_relations_season_id_fkey"
+DETAIL:  Key (season_id)=(810) is not present in table "seasons".
+
+[2026-10-13T20:17:09.833+0000] {inserts.py:74} ERROR - execute_insert failed: len_data=20, error: insert or update on table "season_team_relations" violates foreign key constraint "season_team_relations_season_id_fkey"
+DETAIL:  Key (season_id)=(799) is not present in table "seasons".
+Traceback (most recent call last):
+  File "/opt/airflow/src/database/inserts.py", line 68, in execute_insert
+    execute_values(cur, query, list(data))
+  File "/home/airflow/.local/lib/python3.12/site-packages/psycopg2/extras.py", line 1299, in execute_values
+    cur.execute(b''.join(parts))
+psycopg2.errors.ForeignKeyViolation: insert or update on table "season_team_relations" violates foreign key constraint "season_team_relations_season_id_fkey"
+DETAIL:  Key (season_id)=(799) is not present in table "seasons".
+
+[2026-10-13T20:17:09.840+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team lMtfAfk0 not in teams
+[2026-10-13T20:17:09.842+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team 2yAFxbj3 not in teams
+[2026-10-13T20:17:09.845+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team CrNQ8wjF not in teams
+[2026-10-13T20:17:09.847+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team hri3qE7K not in teams
+[2026-10-13T20:17:09.850+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team hMfHFzqj not in teams
+[2026-10-13T20:17:09.852+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team vFEtMx6M not in teams
+[2026-10-13T20:17:09.854+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team YeJ5rtW6 not in teams
+[2026-10-13T20:17:09.856+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team 6PbLEfbd not in teams
+[2026-10-13T20:17:09.860+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team Ac5CGGTq not in teams
+[2026-10-13T20:17:09.863+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team fF7FZEzp not in teams
+[2026-10-13T20:17:09.867+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team ppDypUPj not in teams
+[2026-10-13T20:17:09.873+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team vsvcjXbp not in teams
+[2026-10-13T20:17:09.877+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team 8lJpLdLS not in teams
+[2026-10-13T20:17:09.879+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team bXIz7iX3 not in teams
+[2026-10-13T20:17:09.886+0000] {inserts.py:74} ERROR - execute_insert failed: len_data=22, error: insert or update on table "season_team_relations" violates foreign key constraint "season_team_relations_season_id_fkey"
+DETAIL:  Key (season_id)=(734) is not present in table "seasons".
+Traceback (most recent call last):
+  File "/opt/airflow/src/database/inserts.py", line 68, in execute_insert
+    execute_values(cur, query, list(data))
+  File "/home/airflow/.local/lib/python3.12/site-packages/psycopg2/extras.py", line 1299, in execute_values
+    cur.execute(b''.join(parts))
+psycopg2.errors.ForeignKeyViolation: insert or update on table "season_team_relations" violates foreign key constraint "season_team_relations_season_id_fkey"
+DETAIL:  Key (season_id)=(734) is not present in table "seasons".
+
+[2026-10-13T20:17:09.895+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team SfIqHZmh not in teams
+[2026-10-13T20:17:09.897+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team QXT4avNR not in teams
+[2026-10-13T20:17:09.900+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team QB65eHhq not in teams
+[2026-10-13T20:17:09.903+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team faOJUw6P not in teams
+[2026-10-13T20:17:09.905+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team pEhWRr2Q not in teams
+[2026-10-13T20:17:09.912+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team nc3bNeba not in teams
+[2026-10-13T20:17:09.916+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team 2wF435De not in teams
+[2026-10-13T20:17:09.924+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team vLxHtfto not in teams
+[2026-10-13T20:17:09.929+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team Qq6xgOe1 not in teams
+[2026-10-13T20:17:09.939+0000] {inserts.py:70} INFO - inserting 22 rows
+[2026-10-13T20:17:09.949+0000] {inserts.py:70} INFO - inserting 22 rows
+[2026-10-13T20:17:09.960+0000] {inserts.py:70} INFO - inserting 20 rows
+[2026-10-13T20:17:09.970+0000] {inserts.py:74} ERROR - execute_insert failed: len_data=22, error: insert or update on table "season_team_relations" violates foreign key constraint "season_team_relations_season_id_fkey"
+DETAIL:  Key (season_id)=(809) is not present in table "seasons".
+Traceback (most recent call last):
+  File "/opt/airflow/src/database/inserts.py", line 68, in execute_insert
+    execute_values(cur, query, list(data))
+  File "/home/airflow/.local/lib/python3.12/site-packages/psycopg2/extras.py", line 1299, in execute_values
+    cur.execute(b''.join(parts))
+psycopg2.errors.ForeignKeyViolation: insert or update on table "season_team_relations" violates foreign key constraint "season_team_relations_season_id_fkey"
+DETAIL:  Key (season_id)=(809) is not present in table "seasons".
+
+[2026-10-13T20:17:09.985+0000] {inserts.py:70} INFO - inserting 20 rows
+[2026-10-13T20:17:09.990+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team rBwuCq38 not in teams
+[2026-10-13T20:17:09.992+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team 2yAFxbj3 not in teams
+[2026-10-13T20:17:09.994+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team lMtfAfk0 not in teams
+[2026-10-13T20:17:09.997+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team hOiG83Vs not in teams
+[2026-10-13T20:17:10.000+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team ryF7QBt9 not in teams
+[2026-10-13T20:17:10.006+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team YeJ5rtW6 not in teams
+[2026-10-13T20:17:10.008+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team zqa9ZINp not in teams
+[2026-10-13T20:17:10.010+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team 6PbLEfbd not in teams
+[2026-10-13T20:17:10.012+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team hMfHFzqj not in teams
+[2026-10-13T20:17:10.015+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team ppDypUPj not in teams
+[2026-10-13T20:17:10.017+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team G20lDqNQ not in teams
+[2026-10-13T20:17:10.019+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team nLBV5Axg not in teams
+[2026-10-13T20:17:10.021+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team CrNQ8wjF not in teams
+[2026-10-13T20:17:10.027+0000] {inserts.py:70} INFO - inserting 22 rows
+[2026-10-13T20:17:10.033+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team niHl9Mje not in teams
+[2026-10-13T20:17:10.035+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team tlBWJw5D not in teams
+[2026-10-13T20:17:10.038+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team M9X9G4bL not in teams
+[2026-10-13T20:17:10.042+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team KvW5YxK6 not in teams
+[2026-10-13T20:17:10.045+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team ldZ1IQT8 not in teams
+[2026-10-13T20:17:10.047+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team 2aHz25qS not in teams
+[2026-10-13T20:17:10.050+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team 865c70L7 not in teams
+[2026-10-13T20:17:10.052+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team SAxONL5l not in teams
+[2026-10-13T20:17:10.054+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team 6LRpVG4c not in teams
+[2026-10-13T20:17:10.056+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team MqlJsscK not in teams
+[2026-10-13T20:17:10.060+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team YN7OLaz1 not in teams
+[2026-10-13T20:17:10.063+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team nRXczakf not in teams
+[2026-10-13T20:17:10.067+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team YmiFfNy2 not in teams
+[2026-10-13T20:17:10.071+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team hSvkxLKs not in teams
+[2026-10-13T20:17:10.074+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team zDcqV3DE not in teams
+[2026-10-13T20:17:10.078+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team nXh7dq7k not in teams
+[2026-10-13T20:17:10.081+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team G6PEWGlJ not in teams
+[2026-10-13T20:17:10.083+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team tfEtBrMr not in teams
+[2026-10-13T20:17:10.086+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team QB65eHhq not in teams
+[2026-10-13T20:17:10.089+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team SfIqHZmh not in teams
+[2026-10-13T20:17:10.093+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team WvnQQbv8 not in teams
+[2026-10-13T20:17:10.095+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team Qq6xgOe1 not in teams
+[2026-10-13T20:17:10.098+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team 8O9qWgLK not in teams
+[2026-10-13T20:17:10.102+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team lWRHb1sB not in teams
+[2026-10-13T20:17:10.104+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team QXT4avNR not in teams
+[2026-10-13T20:17:10.106+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team AuTDasS4 not in teams
+[2026-10-13T20:17:10.113+0000] {inserts.py:70} INFO - inserting 20 rows
+[2026-10-13T20:17:10.122+0000] {inserts.py:70} INFO - inserting 22 rows
+[2026-10-13T20:17:10.131+0000] {inserts.py:74} ERROR - execute_insert failed: len_data=22, error: insert or update on table "season_team_relations" violates foreign key constraint "season_team_relations_season_id_fkey"
+DETAIL:  Key (season_id)=(801) is not present in table "seasons".
+Traceback (most recent call last):
+  File "/opt/airflow/src/database/inserts.py", line 68, in execute_insert
+    execute_values(cur, query, list(data))
+  File "/home/airflow/.local/lib/python3.12/site-packages/psycopg2/extras.py", line 1299, in execute_values
+    cur.execute(b''.join(parts))
+psycopg2.errors.ForeignKeyViolation: insert or update on table "season_team_relations" violates foreign key constraint "season_team_relations_season_id_fkey"
+DETAIL:  Key (season_id)=(801) is not present in table "seasons".
+
+[2026-10-13T20:17:10.141+0000] {inserts.py:74} ERROR - execute_insert failed: len_data=22, error: insert or update on table "season_team_relations" violates foreign key constraint "season_team_relations_season_id_fkey"
+DETAIL:  Key (season_id)=(825) is not present in table "seasons".
+Traceback (most recent call last):
+  File "/opt/airflow/src/database/inserts.py", line 68, in execute_insert
+    execute_values(cur, query, list(data))
+  File "/home/airflow/.local/lib/python3.12/site-packages/psycopg2/extras.py", line 1299, in execute_values
+    cur.execute(b''.join(parts))
+psycopg2.errors.ForeignKeyViolation: insert or update on table "season_team_relations" violates foreign key constraint "season_team_relations_season_id_fkey"
+DETAIL:  Key (season_id)=(825) is not present in table "seasons".
+
+[2026-10-13T20:17:10.148+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team 0ImETQmG not in teams
+[2026-10-13T20:17:10.150+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team KCzFp0OB not in teams
+[2026-10-13T20:17:10.153+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team Qk0VR4IS not in teams
+[2026-10-13T20:17:10.157+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team EHDG5a4M not in teams
+[2026-10-13T20:17:10.159+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team t6WUYDaO not in teams
+[2026-10-13T20:17:10.162+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team Gx9ImdAm not in teams
+[2026-10-13T20:17:10.167+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team ATasWtPS not in teams
+[2026-10-13T20:17:10.170+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team WYauVS3c not in teams
+[2026-10-13T20:17:10.174+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team 4b8hBolT not in teams
+[2026-10-13T20:17:10.178+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team SxS0BA1C not in teams
+[2026-10-13T20:17:10.187+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team rRAQSp3M not in teams
+[2026-10-13T20:17:10.190+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team 2wpo7PBj not in teams
+[2026-10-13T20:17:10.195+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team UP8rEKaA not in teams
+[2026-10-13T20:17:10.197+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team EPsYDm4A not in teams
+[2026-10-13T20:17:10.201+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team EckpUnJ3 not in teams
+[2026-10-13T20:17:10.203+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team Q79lCRYM not in teams
+[2026-10-13T20:17:10.206+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team zyHMiDZ6 not in teams
+[2026-10-13T20:17:10.212+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team WpApD7JG not in teams
+[2026-10-13T20:17:10.220+0000] {inserts.py:70} INFO - inserting 20 rows
+[2026-10-13T20:17:10.230+0000] {inserts.py:70} INFO - inserting 20 rows
+[2026-10-13T20:17:10.241+0000] {inserts.py:74} ERROR - execute_insert failed: len_data=20, error: insert or update on table "season_team_relations" violates foreign key constraint "season_team_relations_season_id_fkey"
+DETAIL:  Key (season_id)=(793) is not present in table "seasons".
+Traceback (most recent call last):
+  File "/opt/airflow/src/database/inserts.py", line 68, in execute_insert
+    execute_values(cur, query, list(data))
+  File "/home/airflow/.local/lib/python3.12/site-packages/psycopg2/extras.py", line 1299, in execute_values
+    cur.execute(b''.join(parts))
+psycopg2.errors.ForeignKeyViolation: insert or update on table "season_team_relations" violates foreign key constraint "season_team_relations_season_id_fkey"
+DETAIL:  Key (season_id)=(793) is not present in table "seasons".
+
+[2026-10-13T20:17:10.256+0000] {inserts.py:70} INFO - inserting 21 rows
+[2026-10-13T20:17:10.262+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team hMfHFzqj not in teams
+[2026-10-13T20:17:10.266+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team Ig4eUKaT not in teams
+[2026-10-13T20:17:10.272+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team fF7FZEzp not in teams
+[2026-10-13T20:17:10.275+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team rBwuCq38 not in teams
+[2026-10-13T20:17:10.277+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team vsvcjXbp not in teams
+[2026-10-13T20:17:10.285+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team lMtfAfk0 not in teams
+[2026-10-13T20:17:10.290+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team 6PbLEfbd not in teams
+[2026-10-13T20:17:10.294+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team 2yAFxbj3 not in teams
+[2026-10-13T20:17:10.296+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team YeJ5rtW6 not in teams
+[2026-10-13T20:17:10.298+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team GOnVBIr9 not in teams
+[2026-10-13T20:17:10.302+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team zqa9ZINp not in teams
+[2026-10-13T20:17:10.308+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team hOiG83Vs not in teams
+[2026-10-13T20:17:10.310+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team vFEtMx6M not in teams
+[2026-10-13T20:17:10.316+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team 27bLOvM3 not in teams
+[2026-10-13T20:17:10.318+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team CrNQ8wjF not in teams
+[2026-10-13T20:17:10.320+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team EPlozI1G not in teams
+[2026-10-13T20:17:10.324+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team h4Bab20o not in teams
+[2026-10-13T20:17:10.326+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team ppDypUPj not in teams
+[2026-10-13T20:17:10.333+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team 00ZuwKHc not in teams
+[2026-10-13T20:17:10.335+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team Ac5CGGTq not in teams
+[2026-10-13T20:17:10.343+0000] {inserts.py:74} ERROR - execute_insert failed: len_data=20, error: insert or update on table "season_team_relations" violates foreign key constraint "season_team_relations_season_id_fkey"
+DETAIL:  Key (season_id)=(747) is not present in table "seasons".
+Traceback (most recent call last):
+  File "/opt/airflow/src/database/inserts.py", line 68, in execute_insert
+    execute_values(cur, query, list(data))
+  File "/home/airflow/.local/lib/python3.12/site-packages/psycopg2/extras.py", line 1299, in execute_values
+    cur.execute(b''.join(parts))
+psycopg2.errors.ForeignKeyViolation: insert or update on table "season_team_relations" violates foreign key constraint "season_team_relations_season_id_fkey"
+DETAIL:  Key (season_id)=(747) is not present in table "seasons".
+
+[2026-10-13T20:17:10.352+0000] {inserts.py:70} INFO - inserting 20 rows
+[2026-10-13T20:17:10.361+0000] {inserts.py:74} ERROR - execute_insert failed: len_data=22, error: insert or update on table "season_team_relations" violates foreign key constraint "season_team_relations_season_id_fkey"
+DETAIL:  Key (season_id)=(818) is not present in table "seasons".
+Traceback (most recent call last):
+  File "/opt/airflow/src/database/inserts.py", line 68, in execute_insert
+    execute_values(cur, query, list(data))
+  File "/home/airflow/.local/lib/python3.12/site-packages/psycopg2/extras.py", line 1299, in execute_values
+    cur.execute(b''.join(parts))
+psycopg2.errors.ForeignKeyViolation: insert or update on table "season_team_relations" violates foreign key constraint "season_team_relations_season_id_fkey"
+DETAIL:  Key (season_id)=(818) is not present in table "seasons".
+
+[2026-10-13T20:17:10.370+0000] {inserts.py:70} INFO - inserting 22 rows
+[2026-10-13T20:17:10.379+0000] {inserts.py:70} INFO - inserting 20 rows
+[2026-10-13T20:17:10.384+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team SfIqHZmh not in teams
+[2026-10-13T20:17:10.387+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team QXT4avNR not in teams
+[2026-10-13T20:17:10.389+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team QB65eHhq not in teams
+[2026-10-13T20:17:10.391+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team faOJUw6P not in teams
+[2026-10-13T20:17:10.394+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team nc3bNeba not in teams
+[2026-10-13T20:17:10.396+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team hz4fOyqg not in teams
+[2026-10-13T20:17:10.399+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team pEhWRr2Q not in teams
+[2026-10-13T20:17:10.402+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team Eq5jPHTn not in teams
+[2026-10-13T20:17:10.405+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team Qq6xgOe1 not in teams
+[2026-10-13T20:17:10.407+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team 2wF435De not in teams
+[2026-10-13T20:17:10.413+0000] {inserts.py:70} INFO - inserting 22 rows
+[2026-10-13T20:17:10.423+0000] {inserts.py:70} INFO - inserting 20 rows
+[2026-10-13T20:17:10.433+0000] {inserts.py:70} INFO - inserting 22 rows
+[2026-10-13T20:17:10.443+0000] {inserts.py:70} INFO - inserting 22 rows
+[2026-10-13T20:17:10.451+0000] {inserts.py:70} INFO - inserting 20 rows
+[2026-10-13T20:17:10.457+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team lMtfAfk0 not in teams
+[2026-10-13T20:17:10.459+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team hri3qE7K not in teams
+[2026-10-13T20:17:10.463+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team CrNQ8wjF not in teams
+[2026-10-13T20:17:10.471+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team hMfHFzqj not in teams
+[2026-10-13T20:17:10.473+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team 2yAFxbj3 not in teams
+[2026-10-13T20:17:10.476+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team rBwuCq38 not in teams
+[2026-10-13T20:17:10.479+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team M7Zq4bcj not in teams
+[2026-10-13T20:17:10.481+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team fF7FZEzp not in teams
+[2026-10-13T20:17:10.484+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team 6PbLEfbd not in teams
+[2026-10-13T20:17:10.486+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team YeJ5rtW6 not in teams
+[2026-10-13T20:17:10.488+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team ppDypUPj not in teams
+[2026-10-13T20:17:10.491+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team Ac5CGGTq not in teams
+[2026-10-13T20:17:10.493+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team vsvcjXbp not in teams
+[2026-10-13T20:17:10.496+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team xlylm0Q7 not in teams
+[2026-10-13T20:17:10.499+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team vFEtMx6M not in teams
+[2026-10-13T20:17:10.503+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team dEsqB3IE not in teams
+[2026-10-13T20:17:10.510+0000] {inserts.py:70} INFO - inserting 22 rows
+[2026-10-13T20:17:10.515+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team QB65eHhq not in teams
+[2026-10-13T20:17:10.518+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team 2wF435De not in teams
+[2026-10-13T20:17:10.520+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team 8O9qWgLK not in teams
+[2026-10-13T20:17:10.523+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team WvnQQbv8 not in teams
+[2026-10-13T20:17:10.525+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team SfIqHZmh not in teams
+[2026-10-13T20:17:10.527+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team lWRHb1sB not in teams
+[2026-10-13T20:17:10.529+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team Qq6xgOe1 not in teams
+[2026-10-13T20:17:10.531+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team QXT4avNR not in teams
+[2026-10-13T20:17:10.536+0000] {inserts.py:70} INFO - inserting 20 rows
+[2026-10-13T20:17:10.544+0000] {inserts.py:70} INFO - inserting 20 rows
+[2026-10-13T20:17:10.548+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team hri3qE7K not in teams
+[2026-10-13T20:17:10.550+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team lMtfAfk0 not in teams
+[2026-10-13T20:17:10.553+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team 2yAFxbj3 not in teams
+[2026-10-13T20:17:10.555+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team fF7FZEzp not in teams
+[2026-10-13T20:17:10.557+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team YeJ5rtW6 not in teams
+[2026-10-13T20:17:10.559+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team vsvcjXbp not in teams
+[2026-10-13T20:17:10.561+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team Ac5CGGTq not in teams
+[2026-10-13T20:17:10.563+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team 27bLOvM3 not in teams
+[2026-10-13T20:17:10.565+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team hMfHFzqj not in teams
+[2026-10-13T20:17:10.571+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team vFEtMx6M not in teams
+[2026-10-13T20:17:10.574+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team OpBBwvyc not in teams
+[2026-10-13T20:17:10.576+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team fJ2gXwzh not in teams
+[2026-10-13T20:17:10.578+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team rVQ88BLE not in teams
+[2026-10-13T20:17:10.580+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team CrNQ8wjF not in teams
+[2026-10-13T20:17:10.585+0000] {inserts.py:70} INFO - inserting 22 rows
+[2026-10-13T20:17:10.590+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team SxS0BA1C not in teams
+[2026-10-13T20:17:10.592+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team 8hYMzzVB not in teams
+[2026-10-13T20:17:10.594+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team rRAQSp3M not in teams
+[2026-10-13T20:17:10.596+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team WpApD7JG not in teams
+[2026-10-13T20:17:10.598+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team Qk0VR4IS not in teams
+[2026-10-13T20:17:10.600+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team KCzFp0OB not in teams
+[2026-10-13T20:17:10.602+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team zyHMiDZ6 not in teams
+[2026-10-13T20:17:10.604+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team t6WUYDaO not in teams
+[2026-10-13T20:17:10.606+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team nL7hY2js not in teams
+[2026-10-13T20:17:10.609+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team Gx9ImdAm not in teams
+[2026-10-13T20:17:10.611+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team EPsYDm4A not in teams
+[2026-10-13T20:17:10.614+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team hAgPF9Zc not in teams
+[2026-10-13T20:17:10.616+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team 2wpo7PBj not in teams
+[2026-10-13T20:17:10.618+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team EHDG5a4M not in teams
+[2026-10-13T20:17:10.623+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team W0hTETl4 not in teams
+[2026-10-13T20:17:10.626+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team 4b8hBolT not in teams
+[2026-10-13T20:17:10.628+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team WYauVS3c not in teams
+[2026-10-13T20:17:10.632+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team 0jGgnDRP not in teams
+[2026-10-13T20:17:10.636+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team 0ImETQmG not in teams
+[2026-10-13T20:17:10.638+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team ATasWtPS not in teams
+[2026-10-13T20:17:10.644+0000] {inserts.py:70} INFO - inserting 22 rows
+[2026-10-13T20:17:10.652+0000] {inserts.py:70} INFO - inserting 20 rows
+[2026-10-13T20:17:10.664+0000] {inserts.py:70} INFO - inserting 22 rows
+[2026-10-13T20:17:10.672+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team QXT4avNR not in teams
+[2026-10-13T20:17:10.676+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team SfIqHZmh not in teams
+[2026-10-13T20:17:10.678+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team QB65eHhq not in teams
+[2026-10-13T20:17:10.681+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team pEhWRr2Q not in teams
+[2026-10-13T20:17:10.683+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team faOJUw6P not in teams
+[2026-10-13T20:17:10.685+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team hz4fOyqg not in teams
+[2026-10-13T20:17:10.687+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team nc3bNeba not in teams
+[2026-10-13T20:17:10.689+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team 2wF435De not in teams
+[2026-10-13T20:17:10.690+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team Eq5jPHTn not in teams
+[2026-10-13T20:17:10.695+0000] {inserts.py:74} ERROR - execute_insert failed: len_data=22, error: insert or update on table "season_team_relations" violates foreign key constraint "season_team_relations_season_id_fkey"
+DETAIL:  Key (season_id)=(808) is not present in table "seasons".
+Traceback (most recent call last):
+  File "/opt/airflow/src/database/inserts.py", line 68, in execute_insert
+    execute_values(cur, query, list(data))
+  File "/home/airflow/.local/lib/python3.12/site-packages/psycopg2/extras.py", line 1299, in execute_values
+    cur.execute(b''.join(parts))
+psycopg2.errors.ForeignKeyViolation: insert or update on table "season_team_relations" violates foreign key constraint "season_team_relations_season_id_fkey"
+DETAIL:  Key (season_id)=(808) is not present in table "seasons".
+
+[2026-10-13T20:17:10.705+0000] {inserts.py:70} INFO - inserting 22 rows
+[2026-10-13T20:17:10.715+0000] {inserts.py:74} ERROR - execute_insert failed: len_data=20, error: insert or update on table "season_team_relations" violates foreign key constraint "season_team_relations_season_id_fkey"
+DETAIL:  Key (season_id)=(806) is not present in table "seasons".
+Traceback (most recent call last):
+  File "/opt/airflow/src/database/inserts.py", line 68, in execute_insert
+    execute_values(cur, query, list(data))
+  File "/home/airflow/.local/lib/python3.12/site-packages/psycopg2/extras.py", line 1299, in execute_values
+    cur.execute(b''.join(parts))
+psycopg2.errors.ForeignKeyViolation: insert or update on table "season_team_relations" violates foreign key constraint "season_team_relations_season_id_fkey"
+DETAIL:  Key (season_id)=(806) is not present in table "seasons".
+
+[2026-10-13T20:17:10.724+0000] {inserts.py:70} INFO - inserting 20 rows
+[2026-10-13T20:17:10.733+0000] {inserts.py:70} INFO - inserting 22 rows
+[2026-10-13T20:17:10.738+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team KCzFp0OB not in teams
+[2026-10-13T20:17:10.740+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team WpApD7JG not in teams
+[2026-10-13T20:17:10.742+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team nqXQZgpI not in teams
+[2026-10-13T20:17:10.744+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team zyHMiDZ6 not in teams
+[2026-10-13T20:17:10.746+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team 4b8hBolT not in teams
+[2026-10-13T20:17:10.749+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team QgZz8o07 not in teams
+[2026-10-13T20:17:10.751+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team Q79lCRYM not in teams
+[2026-10-13T20:17:10.753+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team hAgPF9Zc not in teams
+[2026-10-13T20:17:10.755+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team t6WUYDaO not in teams
+[2026-10-13T20:17:10.757+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team EHDG5a4M not in teams
+[2026-10-13T20:17:10.760+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team Gx9ImdAm not in teams
+[2026-10-13T20:17:10.762+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team EPsYDm4A not in teams
+[2026-10-13T20:17:10.764+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team WYauVS3c not in teams
+[2026-10-13T20:17:10.766+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team 2wpo7PBj not in teams
+[2026-10-13T20:17:10.771+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team rRAQSp3M not in teams
+[2026-10-13T20:17:10.773+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team ATasWtPS not in teams
+[2026-10-13T20:17:10.775+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team UP8rEKaA not in teams
+[2026-10-13T20:17:10.777+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team Qk0VR4IS not in teams
+[2026-10-13T20:17:10.779+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team 2wpo7PBj not in teams
+[2026-10-13T20:17:10.781+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team WpApD7JG not in teams
+[2026-10-13T20:17:10.783+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team hAgPF9Zc not in teams
+[2026-10-13T20:17:10.786+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team QB65eHhq not in teams
+[2026-10-13T20:17:10.788+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team SfIqHZmh not in teams
+[2026-10-13T20:17:10.790+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team QXT4avNR not in teams
+[2026-10-13T20:17:10.795+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team 8O9qWgLK not in teams
+[2026-10-13T20:17:10.797+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team AuTDasS4 not in teams
+[2026-10-13T20:17:10.799+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team Qq6xgOe1 not in teams
+[2026-10-13T20:17:10.801+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team lWRHb1sB not in teams
+[2026-10-13T20:17:10.803+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team faOJUw6P not in teams
+[2026-10-13T20:17:10.809+0000] {inserts.py:74} ERROR - execute_insert failed: len_data=20, error: insert or update on table "season_team_relations" violates foreign key constraint "season_team_relations_season_id_fkey"
+DETAIL:  Key (season_id)=(797) is not present in table "seasons".
+Traceback (most recent call last):
+  File "/opt/airflow/src/database/inserts.py", line 68, in execute_insert
+    execute_values(cur, query, list(data))
+  File "/home/airflow/.local/lib/python3.12/site-packages/psycopg2/extras.py", line 1299, in execute_values
+    cur.execute(b''.join(parts))
+psycopg2.errors.ForeignKeyViolation: insert or update on table "season_team_relations" violates foreign key constraint "season_team_relations_season_id_fkey"
+DETAIL:  Key (season_id)=(797) is not present in table "seasons".
+
+[2026-10-13T20:17:10.815+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team lMtfAfk0 not in teams
+[2026-10-13T20:17:10.817+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team 2yAFxbj3 not in teams
+[2026-10-13T20:17:10.820+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team fF7FZEzp not in teams
+[2026-10-13T20:17:10.823+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team vFEtMx6M not in teams
+[2026-10-13T20:17:10.825+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team 6PbLEfbd not in teams
+[2026-10-13T20:17:10.827+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team hMfHFzqj not in teams
+[2026-10-13T20:17:10.829+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team Ac5CGGTq not in teams
+[2026-10-13T20:17:10.831+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team YeJ5rtW6 not in teams
+[2026-10-13T20:17:10.834+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team hri3qE7K not in teams
+[2026-10-13T20:17:10.836+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team d6iUMIjG not in teams
+[2026-10-13T20:17:10.839+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team 8lJpLdLS not in teams
+[2026-10-13T20:17:10.842+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team vsvcjXbp not in teams
+[2026-10-13T20:17:10.844+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team OpBBwvyc not in teams
+[2026-10-13T20:17:10.846+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team 27bLOvM3 not in teams
+[2026-10-13T20:17:10.850+0000] {inserts.py:74} ERROR - execute_insert failed: len_data=22, error: insert or update on table "season_team_relations" violates foreign key constraint "season_team_relations_season_id_fkey"
+DETAIL:  Key (season_id)=(800) is not present in table "seasons".
+Traceback (most recent call last):
+  File "/opt/airflow/src/database/inserts.py", line 68, in execute_insert
+    execute_values(cur, query, list(data))
+  File "/home/airflow/.local/lib/python3.12/site-packages/psycopg2/extras.py", line 1299, in execute_values
+    cur.execute(b''.join(parts))
+psycopg2.errors.ForeignKeyViolation: insert or update on table "season_team_relations" violates foreign key constraint "season_team_relations_season_id_fkey"
+DETAIL:  Key (season_id)=(800) is not present in table "seasons".
+
+[2026-10-13T20:17:10.860+0000] {inserts.py:74} ERROR - execute_insert failed: len_data=22, error: insert or update on table "season_team_relations" violates foreign key constraint "season_team_relations_season_id_fkey"
+DETAIL:  Key (season_id)=(794) is not present in table "seasons".
+Traceback (most recent call last):
+  File "/opt/airflow/src/database/inserts.py", line 68, in execute_insert
+    execute_values(cur, query, list(data))
+  File "/home/airflow/.local/lib/python3.12/site-packages/psycopg2/extras.py", line 1299, in execute_values
+    cur.execute(b''.join(parts))
+psycopg2.errors.ForeignKeyViolation: insert or update on table "season_team_relations" violates foreign key constraint "season_team_relations_season_id_fkey"
+DETAIL:  Key (season_id)=(794) is not present in table "seasons".
+
+[2026-10-13T20:17:10.870+0000] {inserts.py:74} ERROR - execute_insert failed: len_data=20, error: insert or update on table "season_team_relations" violates foreign key constraint "season_team_relations_season_id_fkey"
+DETAIL:  Key (season_id)=(812) is not present in table "seasons".
+Traceback (most recent call last):
+  File "/opt/airflow/src/database/inserts.py", line 68, in execute_insert
+    execute_values(cur, query, list(data))
+  File "/home/airflow/.local/lib/python3.12/site-packages/psycopg2/extras.py", line 1299, in execute_values
+    cur.execute(b''.join(parts))
+psycopg2.errors.ForeignKeyViolation: insert or update on table "season_team_relations" violates foreign key constraint "season_team_relations_season_id_fkey"
+DETAIL:  Key (season_id)=(812) is not present in table "seasons".
+
+[2026-10-13T20:17:10.879+0000] {inserts.py:74} ERROR - execute_insert failed: len_data=22, error: insert or update on table "season_team_relations" violates foreign key constraint "season_team_relations_season_id_fkey"
+DETAIL:  Key (season_id)=(746) is not present in table "seasons".
+Traceback (most recent call last):
+  File "/opt/airflow/src/database/inserts.py", line 68, in execute_insert
+    execute_values(cur, query, list(data))
+  File "/home/airflow/.local/lib/python3.12/site-packages/psycopg2/extras.py", line 1299, in execute_values
+    cur.execute(b''.join(parts))
+psycopg2.errors.ForeignKeyViolation: insert or update on table "season_team_relations" violates foreign key constraint "season_team_relations_season_id_fkey"
+DETAIL:  Key (season_id)=(746) is not present in table "seasons".
+
+[2026-10-13T20:17:10.892+0000] {inserts.py:74} ERROR - execute_insert failed: len_data=20, error: insert or update on table "season_team_relations" violates foreign key constraint "season_team_relations_season_id_fkey"
+DETAIL:  Key (season_id)=(743) is not present in table "seasons".
+Traceback (most recent call last):
+  File "/opt/airflow/src/database/inserts.py", line 68, in execute_insert
+    execute_values(cur, query, list(data))
+  File "/home/airflow/.local/lib/python3.12/site-packages/psycopg2/extras.py", line 1299, in execute_values
+    cur.execute(b''.join(parts))
+psycopg2.errors.ForeignKeyViolation: insert or update on table "season_team_relations" violates foreign key constraint "season_team_relations_season_id_fkey"
+DETAIL:  Key (season_id)=(743) is not present in table "seasons".
+
+[2026-10-13T20:17:10.909+0000] {inserts.py:70} INFO - inserting 22 rows
+[2026-10-13T20:17:10.917+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team rRAQSp3M not in teams
+[2026-10-13T20:17:10.920+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team hAgPF9Zc not in teams
+[2026-10-13T20:17:10.924+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team 2wpo7PBj not in teams
+[2026-10-13T20:17:10.929+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team UP8rEKaA not in teams
+[2026-10-13T20:17:10.932+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team WYauVS3c not in teams
+[2026-10-13T20:17:10.939+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team EPsYDm4A not in teams
+[2026-10-13T20:17:10.941+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team ATasWtPS not in teams
+[2026-10-13T20:17:10.945+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team 0ImETQmG not in teams
+[2026-10-13T20:17:10.948+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team EHDG5a4M not in teams
+[2026-10-13T20:17:10.951+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team 8hYMzzVB not in teams
+[2026-10-13T20:17:10.958+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team Gx9ImdAm not in teams
+[2026-10-13T20:17:10.960+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team Q79lCRYM not in teams
+[2026-10-13T20:17:10.963+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team KCzFp0OB not in teams
+[2026-10-13T20:17:10.966+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team zyHMiDZ6 not in teams
+[2026-10-13T20:17:10.970+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team 4b8hBolT not in teams
+[2026-10-13T20:17:10.972+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team SxS0BA1C not in teams
+[2026-10-13T20:17:10.974+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team WpApD7JG not in teams
+[2026-10-13T20:17:10.977+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team lxEn765o not in teams
+[2026-10-13T20:17:10.979+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team t6WUYDaO not in teams
+[2026-10-13T20:17:10.982+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team Qk0VR4IS not in teams
+[2026-10-13T20:17:10.986+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team EckpUnJ3 not in teams
+[2026-10-13T20:17:10.989+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team 8hYMzzVB not in teams
+[2026-10-13T20:17:10.992+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team 2wpo7PBj not in teams
+[2026-10-13T20:17:10.994+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team WpApD7JG not in teams
+[2026-10-13T20:17:11.005+0000] {inserts.py:74} ERROR - execute_insert failed: len_data=22, error: insert or update on table "season_team_relations" violates foreign key constraint "season_team_relations_season_id_fkey"
+DETAIL:  Key (season_id)=(821) is not present in table "seasons".
+Traceback (most recent call last):
+  File "/opt/airflow/src/database/inserts.py", line 68, in execute_insert
+    execute_values(cur, query, list(data))
+  File "/home/airflow/.local/lib/python3.12/site-packages/psycopg2/extras.py", line 1299, in execute_values
+    cur.execute(b''.join(parts))
+psycopg2.errors.ForeignKeyViolation: insert or update on table "season_team_relations" violates foreign key constraint "season_team_relations_season_id_fkey"
+DETAIL:  Key (season_id)=(821) is not present in table "seasons".
+
+[2026-10-13T20:17:11.013+0000] {inserts.py:70} INFO - inserting 22 rows
+[2026-10-13T20:17:11.027+0000] {inserts.py:74} ERROR - execute_insert failed: len_data=22, error: insert or update on table "season_team_relations" violates foreign key constraint "season_team_relations_season_id_fkey"
+DETAIL:  Key (season_id)=(775) is not present in table "seasons".
+Traceback (most recent call last):
+  File "/opt/airflow/src/database/inserts.py", line 68, in execute_insert
+    execute_values(cur, query, list(data))
+  File "/home/airflow/.local/lib/python3.12/site-packages/psycopg2/extras.py", line 1299, in execute_values
+    cur.execute(b''.join(parts))
+psycopg2.errors.ForeignKeyViolation: insert or update on table "season_team_relations" violates foreign key constraint "season_team_relations_season_id_fkey"
+DETAIL:  Key (season_id)=(775) is not present in table "seasons".
+
+[2026-10-13T20:17:11.039+0000] {inserts.py:70} INFO - inserting 22 rows
+[2026-10-13T20:17:11.047+0000] {inserts.py:70} INFO - inserting 20 rows
+[2026-10-13T20:17:11.057+0000] {inserts.py:70} INFO - inserting 20 rows
+[2026-10-13T20:17:11.064+0000] {inserts.py:70} INFO - inserting 20 rows
+[2026-10-13T20:17:11.072+0000] {inserts.py:70} INFO - inserting 20 rows
+[2026-10-13T20:17:11.078+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team G6PEWGlJ not in teams
+[2026-10-13T20:17:11.081+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team hSvkxLKs not in teams
+[2026-10-13T20:17:11.083+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team SAxONL5l not in teams
+[2026-10-13T20:17:11.086+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team zDcqV3DE not in teams
+[2026-10-13T20:17:11.088+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team niHl9Mje not in teams
+[2026-10-13T20:17:11.090+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team YmiFfNy2 not in teams
+[2026-10-13T20:17:11.092+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team YN7OLaz1 not in teams
+[2026-10-13T20:17:11.094+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team M9X9G4bL not in teams
+[2026-10-13T20:17:11.096+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team KvW5YxK6 not in teams
+[2026-10-13T20:17:11.098+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team 2aHz25qS not in teams
+[2026-10-13T20:17:11.104+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team tlBWJw5D not in teams
+[2026-10-13T20:17:11.106+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team 865c70L7 not in teams
+[2026-10-13T20:17:11.108+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team ldZ1IQT8 not in teams
+[2026-10-13T20:17:11.111+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team nRXczakf not in teams
+[2026-10-13T20:17:11.114+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team WvihTsrR not in teams
+[2026-10-13T20:17:11.116+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team MqlJsscK not in teams
+[2026-10-13T20:17:11.118+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team nXh7dq7k not in teams
+[2026-10-13T20:17:11.121+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team tfEtBrMr not in teams
+[2026-10-13T20:17:11.127+0000] {inserts.py:70} INFO - inserting 20 rows
+[2026-10-13T20:17:11.136+0000] {inserts.py:70} INFO - inserting 22 rows
+[2026-10-13T20:17:11.141+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team SfIqHZmh not in teams
+[2026-10-13T20:17:11.144+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team QXT4avNR not in teams
+[2026-10-13T20:17:11.148+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team QB65eHhq not in teams
+[2026-10-13T20:17:11.151+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team Qq6xgOe1 not in teams
+[2026-10-13T20:17:11.153+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team AuTDasS4 not in teams
+[2026-10-13T20:17:11.155+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team lWRHb1sB not in teams
+[2026-10-13T20:17:11.161+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team pEhWRr2Q not in teams
+[2026-10-13T20:17:11.163+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team 8O9qWgLK not in teams
+[2026-10-13T20:17:11.170+0000] {inserts.py:70} INFO - inserting 20 rows
+[2026-10-13T20:17:11.178+0000] {inserts.py:70} INFO - inserting 22 rows
+[2026-10-13T20:17:11.185+0000] {inserts.py:70} INFO - inserting 20 rows
+[2026-10-13T20:17:11.192+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team lMtfAfk0 not in teams
+[2026-10-13T20:17:11.194+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team hri3qE7K not in teams
+[2026-10-13T20:17:11.197+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team CrNQ8wjF not in teams
+[2026-10-13T20:17:11.199+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team hMfHFzqj not in teams
+[2026-10-13T20:17:11.202+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team vFEtMx6M not in teams
+[2026-10-13T20:17:11.204+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team 2yAFxbj3 not in teams
+[2026-10-13T20:17:11.206+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team Ac5CGGTq not in teams
+[2026-10-13T20:17:11.208+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team fF7FZEzp not in teams
+[2026-10-13T20:17:11.210+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team 6PbLEfbd not in teams
+[2026-10-13T20:17:11.212+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team YeJ5rtW6 not in teams
+[2026-10-13T20:17:11.214+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team vsvcjXbp not in teams
+[2026-10-13T20:17:11.215+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team 8lJpLdLS not in teams
+[2026-10-13T20:17:11.218+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team d6iUMIjG not in teams
+[2026-10-13T20:17:11.220+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team M7Zq4bcj not in teams
+[2026-10-13T20:17:11.224+0000] {inserts.py:70} INFO - inserting 18 rows
+[2026-10-13T20:17:11.231+0000] {inserts.py:70} INFO - inserting 20 rows
+[2026-10-13T20:17:11.239+0000] {inserts.py:70} INFO - inserting 22 rows
+[2026-10-13T20:17:11.243+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team SfIqHZmh not in teams
+[2026-10-13T20:17:11.245+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team QXT4avNR not in teams
+[2026-10-13T20:17:11.247+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team QB65eHhq not in teams
+[2026-10-13T20:17:11.249+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team pEhWRr2Q not in teams
+[2026-10-13T20:17:11.251+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team nc3bNeba not in teams
+[2026-10-13T20:17:11.253+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team 2wF435De not in teams
+[2026-10-13T20:17:11.255+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team faOJUw6P not in teams
+[2026-10-13T20:17:11.257+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team Qq6xgOe1 not in teams
+[2026-10-13T20:17:11.263+0000] {inserts.py:70} INFO - inserting 20 rows
+[2026-10-13T20:17:11.271+0000] {inserts.py:74} ERROR - execute_insert failed: len_data=22, error: insert or update on table "season_team_relations" violates foreign key constraint "season_team_relations_season_id_fkey"
+DETAIL:  Key (season_id)=(815) is not present in table "seasons".
+Traceback (most recent call last):
+  File "/opt/airflow/src/database/inserts.py", line 68, in execute_insert
+    execute_values(cur, query, list(data))
+  File "/home/airflow/.local/lib/python3.12/site-packages/psycopg2/extras.py", line 1299, in execute_values
+    cur.execute(b''.join(parts))
+psycopg2.errors.ForeignKeyViolation: insert or update on table "season_team_relations" violates foreign key constraint "season_team_relations_season_id_fkey"
+DETAIL:  Key (season_id)=(815) is not present in table "seasons".
+
+[2026-10-13T20:17:11.278+0000] {inserts.py:70} INFO - inserting 20 rows
+[2026-10-13T20:17:11.284+0000] {inserts.py:70} INFO - inserting 22 rows
+[2026-10-13T20:17:11.292+0000] {inserts.py:70} INFO - inserting 20 rows
+[2026-10-13T20:17:11.299+0000] {inserts.py:74} ERROR - execute_insert failed: len_data=20, error: insert or update on table "season_team_relations" violates foreign key constraint "season_team_relations_season_id_fkey"
+DETAIL:  Key (season_id)=(814) is not present in table "seasons".
+Traceback (most recent call last):
+  File "/opt/airflow/src/database/inserts.py", line 68, in execute_insert
+    execute_values(cur, query, list(data))
+  File "/home/airflow/.local/lib/python3.12/site-packages/psycopg2/extras.py", line 1299, in execute_values
+    cur.execute(b''.join(parts))
+psycopg2.errors.ForeignKeyViolation: insert or update on table "season_team_relations" violates foreign key constraint "season_team_relations_season_id_fkey"
+DETAIL:  Key (season_id)=(814) is not present in table "seasons".
+
+[2026-10-13T20:17:11.306+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team nLBV5Axg not in teams
+[2026-10-13T20:17:11.308+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team lMtfAfk0 not in teams
+[2026-10-13T20:17:11.310+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team 2yAFxbj3 not in teams
+[2026-10-13T20:17:11.312+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team 00ZuwKHc not in teams
+[2026-10-13T20:17:11.314+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team CrNQ8wjF not in teams
+[2026-10-13T20:17:11.316+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team hri3qE7K not in teams
+[2026-10-13T20:17:11.320+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team rBwuCq38 not in teams
+[2026-10-13T20:17:11.322+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team hMfHFzqj not in teams
+[2026-10-13T20:17:11.324+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team YeJ5rtW6 not in teams
+[2026-10-13T20:17:11.326+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team ppDypUPj not in teams
+[2026-10-13T20:17:11.328+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team 6PbLEfbd not in teams
+[2026-10-13T20:17:11.330+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team fF7FZEzp not in teams
+[2026-10-13T20:17:11.332+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team EPlozI1G not in teams
+[2026-10-13T20:17:11.334+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team vsvcjXbp not in teams
+[2026-10-13T20:17:11.337+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team Ac5CGGTq not in teams
+[2026-10-13T20:17:11.339+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team M7Zq4bcj not in teams
+[2026-10-13T20:17:11.341+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team lMtfAfk0 not in teams
+[2026-10-13T20:17:11.344+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team rBwuCq38 not in teams
+[2026-10-13T20:17:11.346+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team hMfHFzqj not in teams
+[2026-10-13T20:17:11.348+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team YeJ5rtW6 not in teams
+[2026-10-13T20:17:11.351+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team 6PbLEfbd not in teams
+[2026-10-13T20:17:11.354+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team 2yAFxbj3 not in teams
+[2026-10-13T20:17:11.356+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team Ac5CGGTq not in teams
+[2026-10-13T20:17:11.358+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team G20lDqNQ not in teams
+[2026-10-13T20:17:11.361+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team fF7FZEzp not in teams
+[2026-10-13T20:17:11.363+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team hOiG83Vs not in teams
+[2026-10-13T20:17:11.365+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team CrNQ8wjF not in teams
+[2026-10-13T20:17:11.368+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team zqa9ZINp not in teams
+[2026-10-13T20:17:11.370+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team ppDypUPj not in teams
+[2026-10-13T20:17:11.372+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team dEsqB3IE not in teams
+[2026-10-13T20:17:11.374+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team ryF7QBt9 not in teams
+[2026-10-13T20:17:11.376+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team nLBV5Axg not in teams
+[2026-10-13T20:17:11.381+0000] {inserts.py:70} INFO - inserting 20 rows
+[2026-10-13T20:17:11.389+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team WpApD7JG not in teams
+[2026-10-13T20:17:11.391+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team t6WUYDaO not in teams
+[2026-10-13T20:17:11.395+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team KCzFp0OB not in teams
+[2026-10-13T20:17:11.397+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team 4t3wxbUl not in teams
+[2026-10-13T20:17:11.398+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team rRAQSp3M not in teams
+[2026-10-13T20:17:11.401+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team zyHMiDZ6 not in teams
+[2026-10-13T20:17:11.404+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team SxS0BA1C not in teams
+[2026-10-13T20:17:11.406+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team UP8rEKaA not in teams
+[2026-10-13T20:17:11.411+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team ATasWtPS not in teams
+[2026-10-13T20:17:11.415+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team 2wpo7PBj not in teams
+[2026-10-13T20:17:11.418+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team fTu5lbuj not in teams
+[2026-10-13T20:17:11.420+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team Q79lCRYM not in teams
+[2026-10-13T20:17:11.422+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team 4b8hBolT not in teams
+[2026-10-13T20:17:11.425+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team EHDG5a4M not in teams
+[2026-10-13T20:17:11.427+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team Gx9ImdAm not in teams
+[2026-10-13T20:17:11.428+0000] {build_season_team_relations.py:32} WARNING - prepare_relations: team hAgPF9Zc not in teams
+[2026-10-13T20:17:11.433+0000] {inserts.py:70} INFO - inserting 22 rows
+[2026-10-13T20:17:11.448+0000] {python.py:237} INFO - Done. Returned value was: None
+[2026-10-13T20:17:11.452+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-10-13T20:17:11.473+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=refresh_matadata, task_id=build_season_team_relations, run_id=manual__2026-10-13T20:11:53.021656+00:00, execution_date=20261013T201153, start_date=20261013T201705, end_date=20261013T201711
+[2026-10-13T20:17:11.550+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 0
+[2026-10-13T20:17:11.578+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-10-13T20:17:11.582+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

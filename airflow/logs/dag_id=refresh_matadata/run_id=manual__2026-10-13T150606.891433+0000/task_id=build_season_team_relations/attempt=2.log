@@ -1,0 +1,198 @@
+[2026-10-13T15:21:20.330+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-10-13T15:21:20.388+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: refresh_matadata.build_season_team_relations manual__2026-10-13T15:06:06.891433+00:00 [queued]>
+[2026-10-13T15:21:20.412+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: refresh_matadata.build_season_team_relations manual__2026-10-13T15:06:06.891433+00:00 [queued]>
+[2026-10-13T15:21:20.418+0000] {taskinstance.py:2306} INFO - Starting attempt 2 of 4
+[2026-10-13T15:21:20.453+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): build_season_team_relations> on 2026-10-13 15:06:06.891433+00:00
+[2026-10-13T15:21:20.490+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:62: DeprecationWarning: This process (pid=505) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2026-10-13T15:21:20.492+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'refresh_matadata', 'build_season_team_relations', 'manual__2026-10-13T15:06:06.891433+00:00', '--job-id', '442', '--raw', '--subdir', 'DAGS_FOLDER/dag_refresh_metadata.py', '--cfg-path', '/tmp/tmpa_hd5snt']
+[2026-10-13T15:21:20.499+0000] {standard_task_runner.py:64} INFO - Started process 507 to run task
+[2026-10-13T15:21:20.501+0000] {standard_task_runner.py:91} INFO - Job 442: Subtask build_season_team_relations
+[2026-10-13T15:21:20.608+0000] {task_command.py:426} INFO - Running <TaskInstance: refresh_matadata.build_season_team_relations manual__2026-10-13T15:06:06.891433+00:00 [running]> on host 15573e95703f
+[2026-10-13T15:21:20.814+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='refresh_matadata' AIRFLOW_CTX_TASK_ID='build_season_team_relations' AIRFLOW_CTX_EXECUTION_DATE='2026-10-13T15:06:06.891433+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-10-13T15:06:06.891433+00:00'
+[2026-10-13T15:21:20.821+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-10-13T15:21:23.863+0000] {build_season_team_relations.py:79} ERROR - buil_seasons_team_relations: dict teams is empty, league_id: 14
+[2026-10-13T15:21:23.867+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team None not in teams
+[2026-10-13T15:21:23.870+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team None not in teams
+[2026-10-13T15:21:23.872+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team None not in teams
+[2026-10-13T15:21:23.874+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team None not in teams
+[2026-10-13T15:21:23.876+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team None not in teams
+[2026-10-13T15:21:23.878+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team None not in teams
+[2026-10-13T15:21:23.879+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team j3Azpf5d not in teams
+[2026-10-13T15:21:23.882+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team None not in teams
+[2026-10-13T15:21:23.885+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team None not in teams
+[2026-10-13T15:21:23.887+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team None not in teams
+[2026-10-13T15:21:23.889+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team None not in teams
+[2026-10-13T15:21:23.892+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team None not in teams
+[2026-10-13T15:21:23.895+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team x8IDVcbi not in teams
+[2026-10-13T15:21:23.898+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team None not in teams
+[2026-10-13T15:21:23.901+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team None not in teams
+[2026-10-13T15:21:23.903+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team None not in teams
+[2026-10-13T15:21:23.905+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team None not in teams
+[2026-10-13T15:21:23.909+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team None not in teams
+[2026-10-13T15:21:23.912+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team UDg08Ohm not in teams
+[2026-10-13T15:21:23.914+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team None not in teams
+[2026-10-13T15:21:23.917+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team None not in teams
+[2026-10-13T15:21:23.919+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team None not in teams
+[2026-10-13T15:21:23.921+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team None not in teams
+[2026-10-13T15:21:23.923+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team None not in teams
+[2026-10-13T15:21:23.925+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team CCBWpzjj not in teams
+[2026-10-13T15:21:23.926+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team None not in teams
+[2026-10-13T15:21:23.928+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team None not in teams
+[2026-10-13T15:21:23.930+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team None not in teams
+[2026-10-13T15:21:23.932+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team None not in teams
+[2026-10-13T15:21:23.934+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team None not in teams
+[2026-10-13T15:21:23.936+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team Wtn9Stg0 not in teams
+[2026-10-13T15:21:23.938+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team None not in teams
+[2026-10-13T15:21:23.939+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team None not in teams
+[2026-10-13T15:21:23.941+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team None not in teams
+[2026-10-13T15:21:23.943+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team None not in teams
+[2026-10-13T15:21:23.945+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team None not in teams
+[2026-10-13T15:21:23.947+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team z3dmTMMO not in teams
+[2026-10-13T15:21:23.950+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team None not in teams
+[2026-10-13T15:21:23.952+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team None not in teams
+[2026-10-13T15:21:23.954+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team None not in teams
+[2026-10-13T15:21:23.956+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team None not in teams
+[2026-10-13T15:21:23.958+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team None not in teams
+[2026-10-13T15:21:23.962+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team 8EFIJthC not in teams
+[2026-10-13T15:21:23.965+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team None not in teams
+[2026-10-13T15:21:23.968+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team None not in teams
+[2026-10-13T15:21:23.970+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team None not in teams
+[2026-10-13T15:21:23.972+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team None not in teams
+[2026-10-13T15:21:23.973+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team None not in teams
+[2026-10-13T15:21:23.975+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team SlybbadF not in teams
+[2026-10-13T15:21:23.977+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team None not in teams
+[2026-10-13T15:21:23.979+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team None not in teams
+[2026-10-13T15:21:23.981+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team None not in teams
+[2026-10-13T15:21:23.983+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team None not in teams
+[2026-10-13T15:21:23.985+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team None not in teams
+[2026-10-13T15:21:23.987+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team ppjDR086 not in teams
+[2026-10-13T15:21:23.988+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team None not in teams
+[2026-10-13T15:21:23.990+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team None not in teams
+[2026-10-13T15:21:23.992+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team None not in teams
+[2026-10-13T15:21:23.994+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team None not in teams
+[2026-10-13T15:21:23.996+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team None not in teams
+[2026-10-13T15:21:23.999+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team UsushcZr not in teams
+[2026-10-13T15:21:24.001+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team None not in teams
+[2026-10-13T15:21:24.003+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team None not in teams
+[2026-10-13T15:21:24.005+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team None not in teams
+[2026-10-13T15:21:24.007+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team None not in teams
+[2026-10-13T15:21:24.009+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team None not in teams
+[2026-10-13T15:21:24.011+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team 4fGZN2oK not in teams
+[2026-10-13T15:21:24.014+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team None not in teams
+[2026-10-13T15:21:24.016+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team None not in teams
+[2026-10-13T15:21:24.018+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team None not in teams
+[2026-10-13T15:21:24.020+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team None not in teams
+[2026-10-13T15:21:24.022+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team None not in teams
+[2026-10-13T15:21:24.024+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team hA1Zm19f not in teams
+[2026-10-13T15:21:24.026+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team None not in teams
+[2026-10-13T15:21:24.028+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team None not in teams
+[2026-10-13T15:21:24.031+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team None not in teams
+[2026-10-13T15:21:24.032+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team None not in teams
+[2026-10-13T15:21:24.034+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team None not in teams
+[2026-10-13T15:21:24.036+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team SWk4muv7 not in teams
+[2026-10-13T15:21:24.039+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team None not in teams
+[2026-10-13T15:21:24.040+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team None not in teams
+[2026-10-13T15:21:24.042+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team None not in teams
+[2026-10-13T15:21:24.044+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team None not in teams
+[2026-10-13T15:21:24.045+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team None not in teams
+[2026-10-13T15:21:24.048+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team W00wmLO0 not in teams
+[2026-10-13T15:21:24.050+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team None not in teams
+[2026-10-13T15:21:24.053+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team None not in teams
+[2026-10-13T15:21:24.054+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team None not in teams
+[2026-10-13T15:21:24.056+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team None not in teams
+[2026-10-13T15:21:24.060+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team None not in teams
+[2026-10-13T15:21:24.061+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team Or1bBrWD not in teams
+[2026-10-13T15:21:24.064+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team None not in teams
+[2026-10-13T15:21:24.066+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team None not in teams
+[2026-10-13T15:21:24.068+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team None not in teams
+[2026-10-13T15:21:24.070+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team None not in teams
+[2026-10-13T15:21:24.072+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team None not in teams
+[2026-10-13T15:21:24.074+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team KluSTr9s not in teams
+[2026-10-13T15:21:24.077+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team None not in teams
+[2026-10-13T15:21:24.079+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team None not in teams
+[2026-10-13T15:21:24.081+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team None not in teams
+[2026-10-13T15:21:24.084+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team None not in teams
+[2026-10-13T15:21:24.086+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team None not in teams
+[2026-10-13T15:21:24.088+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team tUxUbLR2 not in teams
+[2026-10-13T15:21:24.090+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team None not in teams
+[2026-10-13T15:21:24.092+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team None not in teams
+[2026-10-13T15:21:24.094+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team None not in teams
+[2026-10-13T15:21:24.096+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team None not in teams
+[2026-10-13T15:21:24.099+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team None not in teams
+[2026-10-13T15:21:24.101+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team KrrdAMyI not in teams
+[2026-10-13T15:21:24.102+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team None not in teams
+[2026-10-13T15:21:24.104+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team None not in teams
+[2026-10-13T15:21:24.106+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team None not in teams
+[2026-10-13T15:21:24.108+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team None not in teams
+[2026-10-13T15:21:24.110+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team None not in teams
+[2026-10-13T15:21:24.112+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team p6ahwuwJ not in teams
+[2026-10-13T15:21:24.114+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team None not in teams
+[2026-10-13T15:21:24.116+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team None not in teams
+[2026-10-13T15:21:24.119+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team None not in teams
+[2026-10-13T15:21:24.121+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team None not in teams
+[2026-10-13T15:21:24.123+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team None not in teams
+[2026-10-13T15:21:24.125+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team zckREQFJ not in teams
+[2026-10-13T15:21:24.126+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team None not in teams
+[2026-10-13T15:21:24.128+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team None not in teams
+[2026-10-13T15:21:24.130+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team None not in teams
+[2026-10-13T15:21:24.133+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team None not in teams
+[2026-10-13T15:21:24.135+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team None not in teams
+[2026-10-13T15:21:24.137+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team WSzc94ws not in teams
+[2026-10-13T15:21:24.139+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team None not in teams
+[2026-10-13T15:21:24.141+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team None not in teams
+[2026-10-13T15:21:24.143+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team None not in teams
+[2026-10-13T15:21:24.145+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team None not in teams
+[2026-10-13T15:21:24.147+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team None not in teams
+[2026-10-13T15:21:24.149+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team llcCvIcG not in teams
+[2026-10-13T15:21:24.152+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team None not in teams
+[2026-10-13T15:21:24.154+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team None not in teams
+[2026-10-13T15:21:24.155+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team None not in teams
+[2026-10-13T15:21:24.158+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team None not in teams
+[2026-10-13T15:21:24.160+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team None not in teams
+[2026-10-13T15:21:24.162+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team None not in teams
+[2026-10-13T15:21:24.164+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team None not in teams
+[2026-10-13T15:21:24.166+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team None not in teams
+[2026-10-13T15:21:24.168+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team None not in teams
+[2026-10-13T15:21:24.170+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team None not in teams
+[2026-10-13T15:21:24.171+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team None not in teams
+[2026-10-13T15:21:24.174+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team None not in teams
+[2026-10-13T15:21:24.176+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team None not in teams
+[2026-10-13T15:21:24.177+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team None not in teams
+[2026-10-13T15:21:24.179+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team None not in teams
+[2026-10-13T15:21:24.182+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team None not in teams
+[2026-10-13T15:21:24.184+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team None not in teams
+[2026-10-13T15:21:24.186+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team None not in teams
+[2026-10-13T15:21:24.188+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team None not in teams
+[2026-10-13T15:21:24.190+0000] {build_season_team_relations.py:33} WARNING - prepare_relations: team None not in teams
+[2026-10-13T15:21:24.201+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-10-13T15:21:24.204+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 401, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/src/consumers/postgres/build_season_team_relations.py", line 82, in build_season_team_relations
+    relations = prepare_relations(payload, old_season_tournaments, teams)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/src/consumers/postgres/build_season_team_relations.py", line 42, in prepare_relations
+    return [row]
+            ^^^
+UnboundLocalError: cannot access local variable 'row' where it is not associated with a value
+[2026-10-13T15:21:24.241+0000] {taskinstance.py:1206} INFO - Marking task as UP_FOR_RETRY. dag_id=refresh_matadata, task_id=build_season_team_relations, run_id=manual__2026-10-13T15:06:06.891433+00:00, execution_date=20261013T150606, start_date=20261013T152120, end_date=20261013T152124
+[2026-10-13T15:21:24.278+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 442 for task build_season_team_relations (cannot access local variable 'row' where it is not associated with a value; 507)
+[2026-10-13T15:21:24.339+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 1
+[2026-10-13T15:21:24.383+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-10-13T15:21:24.389+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

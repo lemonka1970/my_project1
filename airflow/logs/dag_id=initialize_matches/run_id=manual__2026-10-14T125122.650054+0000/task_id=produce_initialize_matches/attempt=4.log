@@ -1,0 +1,41 @@
+[2026-10-14T12:55:03.599+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-10-14T12:55:03.651+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: initialize_matches.produce_initialize_matches manual__2026-10-14T12:51:22.650054+00:00 [queued]>
+[2026-10-14T12:55:03.671+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: initialize_matches.produce_initialize_matches manual__2026-10-14T12:51:22.650054+00:00 [queued]>
+[2026-10-14T12:55:03.673+0000] {taskinstance.py:2306} INFO - Starting attempt 4 of 4
+[2026-10-14T12:55:03.712+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): produce_initialize_matches> on 2026-10-14 12:51:22.650054+00:00
+[2026-10-14T12:55:03.747+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:62: DeprecationWarning: This process (pid=882) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2026-10-14T12:55:03.749+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'initialize_matches', 'produce_initialize_matches', 'manual__2026-10-14T12:51:22.650054+00:00', '--job-id', '555', '--raw', '--subdir', 'DAGS_FOLDER/dag_initialize_matches.py', '--cfg-path', '/tmp/tmpx4wi52or']
+[2026-10-14T12:55:03.754+0000] {standard_task_runner.py:64} INFO - Started process 884 to run task
+[2026-10-14T12:55:03.757+0000] {standard_task_runner.py:91} INFO - Job 555: Subtask produce_initialize_matches
+[2026-10-14T12:55:03.887+0000] {task_command.py:426} INFO - Running <TaskInstance: initialize_matches.produce_initialize_matches manual__2026-10-14T12:51:22.650054+00:00 [running]> on host efff5f4fd129
+[2026-10-14T12:55:04.157+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='initialize_matches' AIRFLOW_CTX_TASK_ID='produce_initialize_matches' AIRFLOW_CTX_EXECUTION_DATE='2026-10-14T12:51:22.650054+00:00' AIRFLOW_CTX_TRY_NUMBER='4' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-10-14T12:51:22.650054+00:00'
+[2026-10-14T12:55:04.164+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-10-14T12:55:04.182+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-10-14T12:55:04.184+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 401, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/src/producers_matches.py", line 34, in produce_initializetion_matches
+    """, (current_leagues,))
+          ^^^^^^^^^^^^^^^
+NameError: name 'current_leagues' is not defined. Did you mean: 'current_league_urls'?
+[2026-10-14T12:55:04.218+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=initialize_matches, task_id=produce_initialize_matches, run_id=manual__2026-10-14T12:51:22.650054+00:00, execution_date=20261014T125122, start_date=20261014T125503, end_date=20261014T125504
+[2026-10-14T12:55:04.261+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 555 for task produce_initialize_matches (name 'current_leagues' is not defined; 884)
+[2026-10-14T12:55:04.341+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 1
+[2026-10-14T12:55:04.394+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-10-14T12:55:04.403+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

@@ -1,0 +1,26 @@
+[2026-10-14T14:06:47.669+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-10-14T14:06:47.707+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: initialize_matches.fetch_seasons manual__2026-10-14T14:06:25.345668+00:00 [queued]>
+[2026-10-14T14:06:47.722+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: initialize_matches.fetch_seasons manual__2026-10-14T14:06:25.345668+00:00 [queued]>
+[2026-10-14T14:06:47.724+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 4
+[2026-10-14T14:06:47.748+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): fetch_seasons> on 2026-10-14 14:06:25.345668+00:00
+[2026-10-14T14:06:47.768+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:62: DeprecationWarning: This process (pid=119) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2026-10-14T14:06:47.773+0000] {standard_task_runner.py:64} INFO - Started process 121 to run task
+[2026-10-14T14:06:47.770+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'initialize_matches', 'fetch_seasons', 'manual__2026-10-14T14:06:25.345668+00:00', '--job-id', '582', '--raw', '--subdir', 'DAGS_FOLDER/dag_initialize_matches.py', '--cfg-path', '/tmp/tmpyuji3svg']
+[2026-10-14T14:06:47.775+0000] {standard_task_runner.py:91} INFO - Job 582: Subtask fetch_seasons
+[2026-10-14T14:06:47.850+0000] {task_command.py:426} INFO - Running <TaskInstance: initialize_matches.fetch_seasons manual__2026-10-14T14:06:25.345668+00:00 [running]> on host f346526f8000
+[2026-10-14T14:06:48.001+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='initialize_matches' AIRFLOW_CTX_TASK_ID='fetch_seasons' AIRFLOW_CTX_EXECUTION_DATE='2026-10-14T14:06:25.345668+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-10-14T14:06:25.345668+00:00'
+[2026-10-14T14:06:48.005+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-10-14T14:06:51.154+0000] {inserts.py:70} INFO - inserting 96 rows
+[2026-10-14T14:06:51.165+0000] {inserts.py:70} INFO - inserting 115 rows
+[2026-10-14T14:06:51.174+0000] {inserts.py:70} INFO - inserting 96 rows
+[2026-10-14T14:06:51.181+0000] {inserts.py:70} INFO - inserting 8 rows
+[2026-10-14T14:06:51.190+0000] {inserts.py:70} INFO - inserting 89 rows
+[2026-10-14T14:06:51.199+0000] {inserts.py:70} INFO - inserting 64 rows
+[2026-10-14T14:06:51.246+0000] {python.py:237} INFO - Done. Returned value was: None
+[2026-10-14T14:06:51.249+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-10-14T14:06:51.266+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=initialize_matches, task_id=fetch_seasons, run_id=manual__2026-10-14T14:06:25.345668+00:00, execution_date=20261014T140625, start_date=20261014T140647, end_date=20261014T140651
+[2026-10-14T14:06:51.326+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 0
+[2026-10-14T14:06:51.371+0000] {taskinstance.py:3503} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-10-14T14:06:51.375+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

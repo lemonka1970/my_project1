@@ -1,0 +1,526 @@
+[2026-10-15T16:43:21.277+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-10-15T16:43:21.477+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: initialize_matches.fetch_initializetion_matches manual__2026-10-15T16:35:37.857615+00:00 [queued]>
+[2026-10-15T16:43:21.525+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: initialize_matches.fetch_initializetion_matches manual__2026-10-15T16:35:37.857615+00:00 [queued]>
+[2026-10-15T16:43:21.538+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 4
+[2026-10-15T16:43:21.625+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): fetch_initializetion_matches> on 2026-10-15 16:35:37.857615+00:00
+[2026-10-15T16:43:21.711+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:62: DeprecationWarning: This process (pid=647) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2026-10-15T16:43:21.723+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'initialize_matches', 'fetch_initializetion_matches', 'manual__2026-10-15T16:35:37.857615+00:00', '--job-id', '603', '--raw', '--subdir', 'DAGS_FOLDER/dag_initialize_matches.py', '--cfg-path', '/tmp/tmpyhlmkrs4']
+[2026-10-15T16:43:21.732+0000] {standard_task_runner.py:64} INFO - Started process 650 to run task
+[2026-10-15T16:43:21.734+0000] {standard_task_runner.py:91} INFO - Job 603: Subtask fetch_initializetion_matches
+[2026-10-15T16:43:22.082+0000] {task_command.py:426} INFO - Running <TaskInstance: initialize_matches.fetch_initializetion_matches manual__2026-10-15T16:35:37.857615+00:00 [running]> on host 34acf2e980db
+[2026-10-15T16:43:22.479+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='initialize_matches' AIRFLOW_CTX_TASK_ID='fetch_initializetion_matches' AIRFLOW_CTX_EXECUTION_DATE='2026-10-15T16:35:37.857615+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-10-15T16:35:37.857615+00:00'
+[2026-10-15T16:43:22.491+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-10-15T16:43:25.870+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match fNFUp0yI is not loading
+[2026-10-15T16:43:25.873+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match KWBg2hm9 is not loading
+[2026-10-15T16:43:25.912+0000] {inserts.py:70} INFO - inserting 8 rows
+[2026-10-15T16:43:25.934+0000] {inserts.py:70} INFO - inserting 1 rows
+[2026-10-15T16:43:25.943+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match zP8pfvV2 is not loading
+[2026-10-15T16:43:25.956+0000] {inserts.py:70} INFO - inserting 5 rows
+[2026-10-15T16:43:25.965+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match None is not loading
+[2026-10-15T16:43:25.986+0000] {inserts.py:70} INFO - inserting 10 rows
+[2026-10-15T16:43:25.999+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match h6qjUxZP is not loading
+[2026-10-15T16:43:26.003+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match Y92EDyWe is not loading
+[2026-10-15T16:43:26.017+0000] {inserts.py:70} INFO - inserting 10 rows
+[2026-10-15T16:43:26.034+0000] {inserts.py:70} INFO - inserting 12 rows
+[2026-10-15T16:43:26.054+0000] {inserts.py:70} INFO - inserting 10 rows
+[2026-10-15T16:43:26.064+0000] {inserts.py:70} INFO - inserting 2 rows
+[2026-10-15T16:43:26.076+0000] {inserts.py:70} INFO - inserting 4 rows
+[2026-10-15T16:43:26.097+0000] {inserts.py:70} INFO - inserting 6 rows
+[2026-10-15T16:43:26.107+0000] {inserts.py:70} INFO - inserting 4 rows
+[2026-10-15T16:43:26.115+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match jgEhYfsb is not loading
+[2026-10-15T16:43:26.118+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match EiRiDgmS is not loading
+[2026-10-15T16:43:26.125+0000] {inserts.py:70} INFO - inserting 6 rows
+[2026-10-15T16:43:26.137+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match jJSqBurf is not loading
+[2026-10-15T16:43:26.139+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match MPuJt3cb is not loading
+[2026-10-15T16:43:26.145+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match x6aaIJec is not loading
+[2026-10-15T16:43:26.149+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match M1ayY7Mf is not loading
+[2026-10-15T16:43:26.157+0000] {inserts.py:70} INFO - inserting 2 rows
+[2026-10-15T16:43:26.168+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match h4i6VhRG is not loading
+[2026-10-15T16:43:26.173+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match Sb7S6iQe is not loading
+[2026-10-15T16:43:26.189+0000] {inserts.py:70} INFO - inserting 14 rows
+[2026-10-15T16:43:26.201+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match EFU8Z08L is not loading
+[2026-10-15T16:43:26.204+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match KrxfRTdI is not loading
+[2026-10-15T16:43:26.208+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match hKxKR5Ck is not loading
+[2026-10-15T16:43:26.210+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match U7A8dl4J is not loading
+[2026-10-15T16:43:26.221+0000] {inserts.py:70} INFO - inserting 4 rows
+[2026-10-15T16:43:26.238+0000] {inserts.py:70} INFO - inserting 9 rows
+[2026-10-15T16:43:26.250+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match 6XBrAVnA is not loading
+[2026-10-15T16:43:26.266+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match QNBlSfkC is not loading
+[2026-10-15T16:43:26.271+0000] {inserts.py:70} INFO - inserting 2 rows
+[2026-10-15T16:43:26.282+0000] {inserts.py:70} INFO - inserting 2 rows
+[2026-10-15T16:43:26.288+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match 0MBlhcRO is not loading
+[2026-10-15T16:43:26.291+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match xSOcJa6s is not loading
+[2026-10-15T16:43:26.298+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match n9BMk4G6 is not loading
+[2026-10-15T16:43:26.303+0000] {inserts.py:70} INFO - inserting 6 rows
+[2026-10-15T16:43:26.315+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match vNVoWDM3 is not loading
+[2026-10-15T16:43:26.317+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match joD9EHGk is not loading
+[2026-10-15T16:43:26.319+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match Sj20bJ5H is not loading
+[2026-10-15T16:43:26.321+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match fkQyFVWE is not loading
+[2026-10-15T16:43:26.326+0000] {inserts.py:70} INFO - inserting 10 rows
+[2026-10-15T16:43:26.336+0000] {inserts.py:70} INFO - inserting 6 rows
+[2026-10-15T16:43:26.349+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match xxGrT4An is not loading
+[2026-10-15T16:43:26.353+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match faTj1Lok is not loading
+[2026-10-15T16:43:26.358+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match 8WzM0hPA is not loading
+[2026-10-15T16:43:26.362+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match CzvrfYlC is not loading
+[2026-10-15T16:43:26.366+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match MR28RHZ3 is not loading
+[2026-10-15T16:43:26.376+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match tvSoTLiP is not loading
+[2026-10-15T16:43:26.381+0000] {inserts.py:70} INFO - inserting 4 rows
+[2026-10-15T16:43:26.390+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match 8GyHK4Mm is not loading
+[2026-10-15T16:43:26.393+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match b7yBoHlT is not loading
+[2026-10-15T16:43:26.396+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match vyiYFUTL is not loading
+[2026-10-15T16:43:26.399+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match 21pBD4TB is not loading
+[2026-10-15T16:43:26.403+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match Sv4FPPvc is not loading
+[2026-10-15T16:43:26.409+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match Oh42yEKP is not loading
+[2026-10-15T16:43:26.411+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match l6MMoR3L is not loading
+[2026-10-15T16:43:26.414+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match IXKH4odt is not loading
+[2026-10-15T16:43:26.423+0000] {inserts.py:70} INFO - inserting 4 rows
+[2026-10-15T16:43:26.437+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match xxfZga44 is not loading
+[2026-10-15T16:43:26.439+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match 4OeReLZi is not loading
+[2026-10-15T16:43:26.444+0000] {inserts.py:70} INFO - inserting 6 rows
+[2026-10-15T16:43:26.451+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match Uile9jFj is not loading
+[2026-10-15T16:43:26.462+0000] {inserts.py:70} INFO - inserting 8 rows
+[2026-10-15T16:43:26.471+0000] {inserts.py:70} INFO - inserting 4 rows
+[2026-10-15T16:43:26.487+0000] {inserts.py:70} INFO - inserting 2 rows
+[2026-10-15T16:43:26.496+0000] {inserts.py:70} INFO - inserting 4 rows
+[2026-10-15T16:43:26.510+0000] {inserts.py:70} INFO - inserting 2 rows
+[2026-10-15T16:43:26.525+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match fNFUp0yI is not loading
+[2026-10-15T16:43:26.530+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match KWBg2hm9 is not loading
+[2026-10-15T16:43:26.535+0000] {inserts.py:70} INFO - inserting 8 rows
+[2026-10-15T16:43:26.551+0000] {inserts.py:70} INFO - inserting 1 rows
+[2026-10-15T16:43:26.557+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match zP8pfvV2 is not loading
+[2026-10-15T16:43:26.568+0000] {inserts.py:70} INFO - inserting 5 rows
+[2026-10-15T16:43:26.572+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match None is not loading
+[2026-10-15T16:43:26.586+0000] {inserts.py:70} INFO - inserting 10 rows
+[2026-10-15T16:43:26.592+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match h6qjUxZP is not loading
+[2026-10-15T16:43:26.599+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match Y92EDyWe is not loading
+[2026-10-15T16:43:26.603+0000] {inserts.py:70} INFO - inserting 10 rows
+[2026-10-15T16:43:26.624+0000] {inserts.py:70} INFO - inserting 12 rows
+[2026-10-15T16:43:26.639+0000] {inserts.py:70} INFO - inserting 10 rows
+[2026-10-15T16:43:26.647+0000] {inserts.py:70} INFO - inserting 2 rows
+[2026-10-15T16:43:26.662+0000] {inserts.py:70} INFO - inserting 4 rows
+[2026-10-15T16:43:26.678+0000] {inserts.py:70} INFO - inserting 6 rows
+[2026-10-15T16:43:26.704+0000] {inserts.py:70} INFO - inserting 4 rows
+[2026-10-15T16:43:26.715+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match jgEhYfsb is not loading
+[2026-10-15T16:43:26.717+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match EiRiDgmS is not loading
+[2026-10-15T16:43:26.726+0000] {inserts.py:70} INFO - inserting 6 rows
+[2026-10-15T16:43:26.738+0000] {inserts.py:70} INFO - inserting 12 rows
+[2026-10-15T16:43:26.755+0000] {inserts.py:70} INFO - inserting 8 rows
+[2026-10-15T16:43:26.769+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match xn5Muimo is not loading
+[2026-10-15T16:43:26.774+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match CASmpcLm is not loading
+[2026-10-15T16:43:26.776+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match hYZMFKzh is not loading
+[2026-10-15T16:43:26.781+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match 0lh9dNGm is not loading
+[2026-10-15T16:43:26.798+0000] {inserts.py:70} INFO - inserting 4 rows
+[2026-10-15T16:43:26.813+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match nPrvJK0H is not loading
+[2026-10-15T16:43:26.816+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match EBpWKtW4 is not loading
+[2026-10-15T16:43:26.830+0000] {inserts.py:70} INFO - inserting 6 rows
+[2026-10-15T16:43:26.851+0000] {inserts.py:70} INFO - inserting 12 rows
+[2026-10-15T16:43:26.869+0000] {inserts.py:70} INFO - inserting 2 rows
+[2026-10-15T16:43:26.883+0000] {inserts.py:70} INFO - inserting 2 rows
+[2026-10-15T16:43:26.899+0000] {inserts.py:70} INFO - inserting 10 rows
+[2026-10-15T16:43:26.907+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match W0hhR8uL is not loading
+[2026-10-15T16:43:26.910+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match vF7MMJUh is not loading
+[2026-10-15T16:43:26.923+0000] {inserts.py:70} INFO - inserting 6 rows
+[2026-10-15T16:43:26.931+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match jJSqBurf is not loading
+[2026-10-15T16:43:26.935+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match MPuJt3cb is not loading
+[2026-10-15T16:43:26.939+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match x6aaIJec is not loading
+[2026-10-15T16:43:26.941+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match M1ayY7Mf is not loading
+[2026-10-15T16:43:26.945+0000] {inserts.py:70} INFO - inserting 2 rows
+[2026-10-15T16:43:26.951+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match h4i6VhRG is not loading
+[2026-10-15T16:43:26.954+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match Sb7S6iQe is not loading
+[2026-10-15T16:43:26.965+0000] {inserts.py:70} INFO - inserting 14 rows
+[2026-10-15T16:43:26.976+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match EFU8Z08L is not loading
+[2026-10-15T16:43:26.979+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match KrxfRTdI is not loading
+[2026-10-15T16:43:26.982+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match hKxKR5Ck is not loading
+[2026-10-15T16:43:26.984+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match U7A8dl4J is not loading
+[2026-10-15T16:43:26.989+0000] {inserts.py:70} INFO - inserting 4 rows
+[2026-10-15T16:43:26.997+0000] {inserts.py:70} INFO - inserting 9 rows
+[2026-10-15T16:43:27.004+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match 6XBrAVnA is not loading
+[2026-10-15T16:43:27.007+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match QNBlSfkC is not loading
+[2026-10-15T16:43:27.012+0000] {inserts.py:70} INFO - inserting 2 rows
+[2026-10-15T16:43:27.023+0000] {inserts.py:70} INFO - inserting 2 rows
+[2026-10-15T16:43:27.029+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match 0MBlhcRO is not loading
+[2026-10-15T16:43:27.033+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match xSOcJa6s is not loading
+[2026-10-15T16:43:27.035+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match n9BMk4G6 is not loading
+[2026-10-15T16:43:27.043+0000] {inserts.py:70} INFO - inserting 6 rows
+[2026-10-15T16:43:27.048+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match vNVoWDM3 is not loading
+[2026-10-15T16:43:27.050+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match joD9EHGk is not loading
+[2026-10-15T16:43:27.053+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match Sj20bJ5H is not loading
+[2026-10-15T16:43:27.056+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match fkQyFVWE is not loading
+[2026-10-15T16:43:27.070+0000] {inserts.py:70} INFO - inserting 10 rows
+[2026-10-15T16:43:27.079+0000] {inserts.py:70} INFO - inserting 2 rows
+[2026-10-15T16:43:27.099+0000] {inserts.py:70} INFO - inserting 6 rows
+[2026-10-15T16:43:27.114+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match xxGrT4An is not loading
+[2026-10-15T16:43:27.124+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match faTj1Lok is not loading
+[2026-10-15T16:43:27.128+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match 8WzM0hPA is not loading
+[2026-10-15T16:43:27.132+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match CzvrfYlC is not loading
+[2026-10-15T16:43:27.141+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match MR28RHZ3 is not loading
+[2026-10-15T16:43:27.145+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match tvSoTLiP is not loading
+[2026-10-15T16:43:27.154+0000] {inserts.py:70} INFO - inserting 4 rows
+[2026-10-15T16:43:27.162+0000] {inserts.py:70} INFO - inserting 2 rows
+[2026-10-15T16:43:27.175+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match 8GyHK4Mm is not loading
+[2026-10-15T16:43:27.178+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match b7yBoHlT is not loading
+[2026-10-15T16:43:27.183+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match vyiYFUTL is not loading
+[2026-10-15T16:43:27.188+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match 21pBD4TB is not loading
+[2026-10-15T16:43:27.206+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match pKCwweWA is not loading
+[2026-10-15T16:43:27.209+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match Kpkh1zvk is not loading
+[2026-10-15T16:43:27.228+0000] {inserts.py:70} INFO - inserting 4 rows
+[2026-10-15T16:43:27.250+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match Sv4FPPvc is not loading
+[2026-10-15T16:43:27.252+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match Oh42yEKP is not loading
+[2026-10-15T16:43:27.258+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match l6MMoR3L is not loading
+[2026-10-15T16:43:27.261+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match IXKH4odt is not loading
+[2026-10-15T16:43:27.269+0000] {inserts.py:70} INFO - inserting 4 rows
+[2026-10-15T16:43:27.282+0000] {inserts.py:70} INFO - inserting 14 rows
+[2026-10-15T16:43:27.292+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match xxfZga44 is not loading
+[2026-10-15T16:43:27.295+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match 4OeReLZi is not loading
+[2026-10-15T16:43:27.300+0000] {inserts.py:70} INFO - inserting 6 rows
+[2026-10-15T16:43:27.307+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match UNj1gVYs is not loading
+[2026-10-15T16:43:27.309+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match I5EVPYYu is not loading
+[2026-10-15T16:43:27.311+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match YXxpKK9m is not loading
+[2026-10-15T16:43:27.313+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match 8K2iDXpS is not loading
+[2026-10-15T16:43:27.320+0000] {inserts.py:70} INFO - inserting 10 rows
+[2026-10-15T16:43:27.330+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match Uile9jFj is not loading
+[2026-10-15T16:43:27.335+0000] {inserts.py:70} INFO - inserting 8 rows
+[2026-10-15T16:43:27.340+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match vwtI0w7K is not loading
+[2026-10-15T16:43:27.341+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match Kt7moOmi is not loading
+[2026-10-15T16:43:27.345+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match tIxWgOer is not loading
+[2026-10-15T16:43:27.347+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match xlGiHOun is not loading
+[2026-10-15T16:43:27.357+0000] {inserts.py:70} INFO - inserting 4 rows
+[2026-10-15T16:43:27.371+0000] {inserts.py:70} INFO - inserting 10 rows
+[2026-10-15T16:43:27.381+0000] {inserts.py:70} INFO - inserting 2 rows
+[2026-10-15T16:43:27.390+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match OC3POtkd is not loading
+[2026-10-15T16:43:27.393+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match SxYFMSB0 is not loading
+[2026-10-15T16:43:27.404+0000] {inserts.py:70} INFO - inserting 4 rows
+[2026-10-15T16:43:27.415+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match 2R9P3ZOp is not loading
+[2026-10-15T16:43:27.419+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match t2rDlTqg is not loading
+[2026-10-15T16:43:27.423+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match IHg992Wc is not loading
+[2026-10-15T16:43:27.435+0000] {inserts.py:70} INFO - inserting 8 rows
+[2026-10-15T16:43:27.448+0000] {inserts.py:70} INFO - inserting 2 rows
+[2026-10-15T16:43:27.462+0000] {inserts.py:70} INFO - inserting 6 rows
+[2026-10-15T16:43:27.486+0000] {inserts.py:70} INFO - inserting 6 rows
+[2026-10-15T16:43:27.513+0000] {inserts.py:70} INFO - inserting 6 rows
+[2026-10-15T16:43:27.528+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match jTuApzUu is not loading
+[2026-10-15T16:43:27.531+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match b9cPECiT is not loading
+[2026-10-15T16:43:27.541+0000] {inserts.py:70} INFO - inserting 8 rows
+[2026-10-15T16:43:27.560+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match neZoHqa1 is not loading
+[2026-10-15T16:43:27.564+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match l2bQEPcb is not loading
+[2026-10-15T16:43:27.604+0000] {inserts.py:70} INFO - inserting 2 rows
+[2026-10-15T16:43:27.631+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match EqowkbwD is not loading
+[2026-10-15T16:43:27.647+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match p43QlMan is not loading
+[2026-10-15T16:43:27.666+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match ObXWJQXf is not loading
+[2026-10-15T16:43:27.669+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match xlSOUYST is not loading
+[2026-10-15T16:43:27.684+0000] {inserts.py:70} INFO - inserting 1 rows
+[2026-10-15T16:43:27.719+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match vwbHXYX0 is not loading
+[2026-10-15T16:43:27.724+0000] {inserts.py:70} INFO - inserting 10 rows
+[2026-10-15T16:43:27.741+0000] {inserts.py:70} INFO - inserting 6 rows
+[2026-10-15T16:43:27.763+0000] {inserts.py:70} INFO - inserting 4 rows
+[2026-10-15T16:43:27.785+0000] {inserts.py:70} INFO - inserting 12 rows
+[2026-10-15T16:43:27.799+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match 2ighxItg is not loading
+[2026-10-15T16:43:27.816+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match zDkrT4pd is not loading
+[2026-10-15T16:43:27.822+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match 2DU0Gx9C is not loading
+[2026-10-15T16:43:27.834+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match YyRmsCa8 is not loading
+[2026-10-15T16:43:27.856+0000] {inserts.py:70} INFO - inserting 10 rows
+[2026-10-15T16:43:27.891+0000] {inserts.py:70} INFO - inserting 4 rows
+[2026-10-15T16:43:27.900+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match Wba0B8L1 is not loading
+[2026-10-15T16:43:27.915+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match 2RHXRogh is not loading
+[2026-10-15T16:43:27.917+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match MNJCV3uP is not loading
+[2026-10-15T16:43:27.920+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match vs1x7d6d is not loading
+[2026-10-15T16:43:27.922+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match Q1RGMJZD is not loading
+[2026-10-15T16:43:27.927+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match OQAHCVtp is not loading
+[2026-10-15T16:43:27.930+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match W6bJgKw8 is not loading
+[2026-10-15T16:43:27.942+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match WvnV7AZH is not loading
+[2026-10-15T16:43:27.952+0000] {inserts.py:70} INFO - inserting 4 rows
+[2026-10-15T16:43:27.972+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match 6ynfRyBj is not loading
+[2026-10-15T16:43:27.980+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match EsYj2dX0 is not loading
+[2026-10-15T16:43:27.982+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match jP21Y5e6 is not loading
+[2026-10-15T16:43:27.999+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match GUUIYPZl is not loading
+[2026-10-15T16:43:28.002+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match hItQN8ib is not loading
+[2026-10-15T16:43:28.005+0000] {inserts.py:70} INFO - inserting 2 rows
+[2026-10-15T16:43:28.037+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match Wv3SKXmF is not loading
+[2026-10-15T16:43:28.057+0000] {inserts.py:70} INFO - inserting 6 rows
+[2026-10-15T16:43:28.094+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match Qa3O1rrp is not loading
+[2026-10-15T16:43:28.100+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match tpeeINMi is not loading
+[2026-10-15T16:43:28.113+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match Grmk4tTi is not loading
+[2026-10-15T16:43:28.133+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match vXsmnPlr is not loading
+[2026-10-15T16:43:28.136+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match 46H2y86i is not loading
+[2026-10-15T16:43:28.140+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match AgtYSPw3 is not loading
+[2026-10-15T16:43:28.168+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match f532Du0t is not loading
+[2026-10-15T16:43:28.175+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match YVO2BBf7 is not loading
+[2026-10-15T16:43:28.181+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match G2rHCFCS is not loading
+[2026-10-15T16:43:28.187+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match j5WVajKL is not loading
+[2026-10-15T16:43:28.198+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match 6VqIBPY4 is not loading
+[2026-10-15T16:43:28.206+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match fLVZRDmT is not loading
+[2026-10-15T16:43:28.213+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match MuJ1tkIg is not loading
+[2026-10-15T16:43:28.284+0000] {inserts.py:70} INFO - inserting 3 rows
+[2026-10-15T16:43:28.308+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match CpE0UBLH is not loading
+[2026-10-15T16:43:28.310+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match CxML89s1 is not loading
+[2026-10-15T16:43:28.315+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match hhH2RTqC is not loading
+[2026-10-15T16:43:28.320+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match 6oQaagFc is not loading
+[2026-10-15T16:43:28.337+0000] {inserts.py:70} INFO - inserting 10 rows
+[2026-10-15T16:43:28.348+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match t2gdkj00 is not loading
+[2026-10-15T16:43:28.350+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match U94diz3F is not loading
+[2026-10-15T16:43:28.352+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match 6yACw8yn is not loading
+[2026-10-15T16:43:28.355+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match GfZKK1wb is not loading
+[2026-10-15T16:43:28.367+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match nFIEKfqd is not loading
+[2026-10-15T16:43:28.369+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match xloAot95 is not loading
+[2026-10-15T16:43:28.375+0000] {inserts.py:70} INFO - inserting 10 rows
+[2026-10-15T16:43:28.390+0000] {inserts.py:70} INFO - inserting 12 rows
+[2026-10-15T16:43:28.411+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match zDXj2Xtn is not loading
+[2026-10-15T16:43:28.420+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match 6L9cIdTk is not loading
+[2026-10-15T16:43:28.429+0000] {inserts.py:70} INFO - inserting 7 rows
+[2026-10-15T16:43:28.478+0000] {inserts.py:70} INFO - inserting 8 rows
+[2026-10-15T16:43:28.485+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match WfgH7Wel is not loading
+[2026-10-15T16:43:28.495+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match jyYsgXte is not loading
+[2026-10-15T16:43:28.505+0000] {inserts.py:70} INFO - inserting 14 rows
+[2026-10-15T16:43:28.520+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match xn5Muimo is not loading
+[2026-10-15T16:43:28.523+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match CASmpcLm is not loading
+[2026-10-15T16:43:28.534+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match hYZMFKzh is not loading
+[2026-10-15T16:43:28.537+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match 0lh9dNGm is not loading
+[2026-10-15T16:43:28.543+0000] {inserts.py:70} INFO - inserting 4 rows
+[2026-10-15T16:43:28.570+0000] {inserts.py:70} INFO - inserting 11 rows
+[2026-10-15T16:43:28.590+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match nPrvJK0H is not loading
+[2026-10-15T16:43:28.596+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match EBpWKtW4 is not loading
+[2026-10-15T16:43:28.604+0000] {inserts.py:70} INFO - inserting 6 rows
+[2026-10-15T16:43:28.621+0000] {inserts.py:70} INFO - inserting 12 rows
+[2026-10-15T16:43:28.648+0000] {inserts.py:70} INFO - inserting 3 rows
+[2026-10-15T16:43:28.687+0000] {inserts.py:70} INFO - inserting 2 rows
+[2026-10-15T16:43:28.703+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match hYjnapiI is not loading
+[2026-10-15T16:43:28.707+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match SCmVI4cm is not loading
+[2026-10-15T16:43:28.716+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match vmbyYgMh is not loading
+[2026-10-15T16:43:28.723+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match Y150BBcr is not loading
+[2026-10-15T16:43:28.737+0000] {inserts.py:70} INFO - inserting 2 rows
+[2026-10-15T16:43:28.764+0000] {inserts.py:70} INFO - inserting 2 rows
+[2026-10-15T16:43:28.772+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match KIS7woMN is not loading
+[2026-10-15T16:43:28.797+0000] {inserts.py:70} INFO - inserting 6 rows
+[2026-10-15T16:43:28.809+0000] {inserts.py:70} INFO - inserting 10 rows
+[2026-10-15T16:43:28.816+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match tGyHOv2E is not loading
+[2026-10-15T16:43:28.819+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match xWMT2T4E is not loading
+[2026-10-15T16:43:28.824+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match Ya38u80e is not loading
+[2026-10-15T16:43:28.827+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match ELTsrh3A is not loading
+[2026-10-15T16:43:28.830+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match SQlE9XhM is not loading
+[2026-10-15T16:43:28.832+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match AeBDO8Nn is not loading
+[2026-10-15T16:43:28.835+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match jX416ol0 is not loading
+[2026-10-15T16:43:28.838+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match ImGdQre3 is not loading
+[2026-10-15T16:43:28.843+0000] {inserts.py:70} INFO - inserting 2 rows
+[2026-10-15T16:43:28.851+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match W0hhR8uL is not loading
+[2026-10-15T16:43:28.853+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match vF7MMJUh is not loading
+[2026-10-15T16:43:28.859+0000] {inserts.py:70} INFO - inserting 6 rows
+[2026-10-15T16:43:28.868+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match Qiyzt9m9 is not loading
+[2026-10-15T16:43:28.870+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match 6ebaA9Xs is not loading
+[2026-10-15T16:43:28.873+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match AHbgOo46 is not loading
+[2026-10-15T16:43:28.876+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match dYXGNfwK is not loading
+[2026-10-15T16:43:28.879+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match 4UkpWE0H is not loading
+[2026-10-15T16:43:28.881+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match 02AxK2qF is not loading
+[2026-10-15T16:43:28.884+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match YomJq4Mt is not loading
+[2026-10-15T16:43:28.886+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match KvoaGJqg is not loading
+[2026-10-15T16:43:28.888+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match nRSLf0f1 is not loading
+[2026-10-15T16:43:28.891+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match CODsVdu3 is not loading
+[2026-10-15T16:43:28.896+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match Mcqzg9bK is not loading
+[2026-10-15T16:43:28.917+0000] {inserts.py:70} INFO - inserting 5 rows
+[2026-10-15T16:43:28.931+0000] {inserts.py:70} INFO - inserting 2 rows
+[2026-10-15T16:43:28.937+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match IDlMpTbO is not loading
+[2026-10-15T16:43:28.939+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match O2B10auS is not loading
+[2026-10-15T16:43:28.943+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match I9RkSag3 is not loading
+[2026-10-15T16:43:28.945+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match 4bPD4KYN is not loading
+[2026-10-15T16:43:28.960+0000] {inserts.py:70} INFO - inserting 2 rows
+[2026-10-15T16:43:28.971+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match QLqOTly7 is not loading
+[2026-10-15T16:43:28.976+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match WbpKUUL0 is not loading
+[2026-10-15T16:43:28.983+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match lnXbGAkA is not loading
+[2026-10-15T16:43:28.985+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match 6cfH6cgD is not loading
+[2026-10-15T16:43:28.990+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match nNHpDhYQ is not loading
+[2026-10-15T16:43:28.998+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match vcExFE3E is not loading
+[2026-10-15T16:43:29.017+0000] {inserts.py:70} INFO - inserting 12 rows
+[2026-10-15T16:43:29.028+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match pKCwweWA is not loading
+[2026-10-15T16:43:29.031+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match Kpkh1zvk is not loading
+[2026-10-15T16:43:29.038+0000] {inserts.py:70} INFO - inserting 4 rows
+[2026-10-15T16:43:29.044+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match 0vUn3xIf is not loading
+[2026-10-15T16:43:29.046+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match x0VOUj4K is not loading
+[2026-10-15T16:43:29.049+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match AgNUKcna is not loading
+[2026-10-15T16:43:29.051+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match GWNQLwXh is not loading
+[2026-10-15T16:43:29.056+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match 6ZZ3mY3C is not loading
+[2026-10-15T16:43:29.061+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match nsgJjI6R is not loading
+[2026-10-15T16:43:29.063+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match GziE61ul is not loading
+[2026-10-15T16:43:29.066+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match CSZueYOq is not loading
+[2026-10-15T16:43:29.071+0000] {inserts.py:70} INFO - inserting 8 rows
+[2026-10-15T16:43:29.081+0000] {inserts.py:70} INFO - inserting 14 rows
+[2026-10-15T16:43:29.089+0000] {inserts.py:70} INFO - inserting 8 rows
+[2026-10-15T16:43:29.096+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match UNj1gVYs is not loading
+[2026-10-15T16:43:29.098+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match I5EVPYYu is not loading
+[2026-10-15T16:43:29.106+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match YXxpKK9m is not loading
+[2026-10-15T16:43:29.108+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match 8K2iDXpS is not loading
+[2026-10-15T16:43:29.113+0000] {inserts.py:70} INFO - inserting 10 rows
+[2026-10-15T16:43:29.120+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match lnfikvBe is not loading
+[2026-10-15T16:43:29.123+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match A52dTSDe is not loading
+[2026-10-15T16:43:29.132+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match MNl0ll34 is not loading
+[2026-10-15T16:43:29.134+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match 6HUr4I2l is not loading
+[2026-10-15T16:43:29.136+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match QPRKVWlE is not loading
+[2026-10-15T16:43:29.140+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match 4E1WOx0K is not loading
+[2026-10-15T16:43:29.142+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match CEoYA3Rp is not loading
+[2026-10-15T16:43:29.144+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match zTpr4F3G is not loading
+[2026-10-15T16:43:29.146+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match INvQa6T9 is not loading
+[2026-10-15T16:43:29.151+0000] {inserts.py:70} INFO - inserting 6 rows
+[2026-10-15T16:43:29.159+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match vwtI0w7K is not loading
+[2026-10-15T16:43:29.161+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match Kt7moOmi is not loading
+[2026-10-15T16:43:29.164+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match tIxWgOer is not loading
+[2026-10-15T16:43:29.166+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match xlGiHOun is not loading
+[2026-10-15T16:43:29.170+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match Ie3SFIPs is not loading
+[2026-10-15T16:43:29.175+0000] {inserts.py:70} INFO - inserting 7 rows
+[2026-10-15T16:43:29.188+0000] {inserts.py:70} INFO - inserting 10 rows
+[2026-10-15T16:43:29.198+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match Kv3B9vuR is not loading
+[2026-10-15T16:43:29.200+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match tCQP7Td7 is not loading
+[2026-10-15T16:43:29.209+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match OC3POtkd is not loading
+[2026-10-15T16:43:29.213+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match SxYFMSB0 is not loading
+[2026-10-15T16:43:29.220+0000] {inserts.py:70} INFO - inserting 4 rows
+[2026-10-15T16:43:29.228+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match 2R9P3ZOp is not loading
+[2026-10-15T16:43:29.230+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match t2rDlTqg is not loading
+[2026-10-15T16:43:29.233+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match IHg992Wc is not loading
+[2026-10-15T16:43:29.237+0000] {inserts.py:70} INFO - inserting 8 rows
+[2026-10-15T16:43:29.246+0000] {inserts.py:70} INFO - inserting 6 rows
+[2026-10-15T16:43:29.251+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match zyb3j69o is not loading
+[2026-10-15T16:43:29.254+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match plQPNfjQ is not loading
+[2026-10-15T16:43:29.256+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match 6kR3ZdEb is not loading
+[2026-10-15T16:43:29.259+0000] {inserts.py:70} INFO - inserting 2 rows
+[2026-10-15T16:43:29.270+0000] {inserts.py:70} INFO - inserting 6 rows
+[2026-10-15T16:43:29.283+0000] {inserts.py:70} INFO - inserting 8 rows
+[2026-10-15T16:43:29.296+0000] {inserts.py:70} INFO - inserting 6 rows
+[2026-10-15T16:43:29.301+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match 8OM018JH is not loading
+[2026-10-15T16:43:29.305+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match Ox19WqQI is not loading
+[2026-10-15T16:43:29.321+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match UNgoFKbG is not loading
+[2026-10-15T16:43:29.334+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match zFVVruqo is not loading
+[2026-10-15T16:43:29.350+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match KO0hrWP1 is not loading
+[2026-10-15T16:43:29.366+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match js7bSvnr is not loading
+[2026-10-15T16:43:29.384+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match ppGPo275 is not loading
+[2026-10-15T16:43:29.395+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match ObB14oY7 is not loading
+[2026-10-15T16:43:29.401+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match fBcoHFbU is not loading
+[2026-10-15T16:43:29.417+0000] {inserts.py:70} INFO - inserting 9 rows
+[2026-10-15T16:43:29.432+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match jTuApzUu is not loading
+[2026-10-15T16:43:29.440+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match b9cPECiT is not loading
+[2026-10-15T16:43:29.445+0000] {inserts.py:70} INFO - inserting 8 rows
+[2026-10-15T16:43:29.451+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match MZWxxYZC is not loading
+[2026-10-15T16:43:29.460+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match SUMNj64j is not loading
+[2026-10-15T16:43:29.462+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match zq63oshU is not loading
+[2026-10-15T16:43:29.465+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match YLQZZQ2d is not loading
+[2026-10-15T16:43:29.467+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match KpB7kcq0 is not loading
+[2026-10-15T16:43:29.474+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match WIz6IdcG is not loading
+[2026-10-15T16:43:29.502+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match UNk3FkLK is not loading
+[2026-10-15T16:43:29.504+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match jVC6AiWA is not loading
+[2026-10-15T16:43:29.507+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match vX9r8Zps is not loading
+[2026-10-15T16:43:29.512+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match 8CDiHhGm is not loading
+[2026-10-15T16:43:29.515+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match hIYYtCaT is not loading
+[2026-10-15T16:43:29.522+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match ruuw3bo9 is not loading
+[2026-10-15T16:43:29.530+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match Cd4RaMBo is not loading
+[2026-10-15T16:43:29.538+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match 0jIjO4ne is not loading
+[2026-10-15T16:43:29.541+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match 8Kqef8ng is not loading
+[2026-10-15T16:43:29.545+0000] {inserts.py:70} INFO - inserting 5 rows
+[2026-10-15T16:43:29.559+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match neZoHqa1 is not loading
+[2026-10-15T16:43:29.562+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match l2bQEPcb is not loading
+[2026-10-15T16:43:29.566+0000] {inserts.py:70} INFO - inserting 2 rows
+[2026-10-15T16:43:29.576+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match 2Z8gD8Ac is not loading
+[2026-10-15T16:43:29.580+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match Kz5jArAm is not loading
+[2026-10-15T16:43:29.584+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match 6FBzzrW0 is not loading
+[2026-10-15T16:43:29.586+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match OtkPkp1O is not loading
+[2026-10-15T16:43:29.592+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match 636xldTi is not loading
+[2026-10-15T16:43:29.598+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match xEarjnsm is not loading
+[2026-10-15T16:43:29.602+0000] {inserts.py:70} INFO - inserting 4 rows
+[2026-10-15T16:43:29.613+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match EqowkbwD is not loading
+[2026-10-15T16:43:29.618+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match p43QlMan is not loading
+[2026-10-15T16:43:29.620+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match ObXWJQXf is not loading
+[2026-10-15T16:43:29.623+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match xlSOUYST is not loading
+[2026-10-15T16:43:29.627+0000] {inserts.py:70} INFO - inserting 1 rows
+[2026-10-15T16:43:29.633+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match pjblBaXa is not loading
+[2026-10-15T16:43:29.636+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match riXfX4xK is not loading
+[2026-10-15T16:43:29.648+0000] {inserts.py:70} INFO - inserting 4 rows
+[2026-10-15T16:43:29.664+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match vwbHXYX0 is not loading
+[2026-10-15T16:43:29.673+0000] {inserts.py:70} INFO - inserting 10 rows
+[2026-10-15T16:43:29.694+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match j5kUpH5I is not loading
+[2026-10-15T16:43:29.698+0000] {inserts.py:70} INFO - inserting 2 rows
+[2026-10-15T16:43:29.714+0000] {inserts.py:70} INFO - inserting 6 rows
+[2026-10-15T16:43:29.727+0000] {inserts.py:70} INFO - inserting 4 rows
+[2026-10-15T16:43:29.735+0000] {inserts.py:70} INFO - inserting 5 rows
+[2026-10-15T16:43:29.750+0000] {inserts.py:70} INFO - inserting 12 rows
+[2026-10-15T16:43:29.757+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match IP0PO8uq is not loading
+[2026-10-15T16:43:29.769+0000] {inserts.py:70} INFO - inserting 7 rows
+[2026-10-15T16:43:29.778+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match 2ighxItg is not loading
+[2026-10-15T16:43:29.780+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match zDkrT4pd is not loading
+[2026-10-15T16:43:29.787+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match 2DU0Gx9C is not loading
+[2026-10-15T16:43:29.790+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match YyRmsCa8 is not loading
+[2026-10-15T16:43:29.803+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match UufnSDPO is not loading
+[2026-10-15T16:43:29.807+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match t6z4jozO is not loading
+[2026-10-15T16:43:29.819+0000] {inserts.py:70} INFO - inserting 6 rows
+[2026-10-15T16:43:29.849+0000] {inserts.py:70} INFO - inserting 10 rows
+[2026-10-15T16:43:29.872+0000] {inserts.py:70} INFO - inserting 9 rows
+[2026-10-15T16:43:29.894+0000] {inserts.py:70} INFO - inserting 4 rows
+[2026-10-15T16:43:29.899+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match Wba0B8L1 is not loading
+[2026-10-15T16:43:29.929+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match 2RHXRogh is not loading
+[2026-10-15T16:43:29.932+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match MNJCV3uP is not loading
+[2026-10-15T16:43:29.934+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match vs1x7d6d is not loading
+[2026-10-15T16:43:29.936+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match Q1RGMJZD is not loading
+[2026-10-15T16:43:29.939+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match OQAHCVtp is not loading
+[2026-10-15T16:43:29.942+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match W6bJgKw8 is not loading
+[2026-10-15T16:43:29.944+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match WvnV7AZH is not loading
+[2026-10-15T16:43:29.948+0000] {inserts.py:70} INFO - inserting 4 rows
+[2026-10-15T16:43:29.960+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match 6ynfRyBj is not loading
+[2026-10-15T16:43:29.966+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match EsYj2dX0 is not loading
+[2026-10-15T16:43:29.969+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match jP21Y5e6 is not loading
+[2026-10-15T16:43:29.972+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match GUUIYPZl is not loading
+[2026-10-15T16:43:29.977+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match hItQN8ib is not loading
+[2026-10-15T16:43:29.981+0000] {inserts.py:70} INFO - inserting 2 rows
+[2026-10-15T16:43:29.990+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match Wv3SKXmF is not loading
+[2026-10-15T16:43:29.999+0000] {inserts.py:70} INFO - inserting 6 rows
+[2026-10-15T16:43:30.010+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match Qa3O1rrp is not loading
+[2026-10-15T16:43:30.013+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match tpeeINMi is not loading
+[2026-10-15T16:43:30.016+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match Grmk4tTi is not loading
+[2026-10-15T16:43:30.018+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match vXsmnPlr is not loading
+[2026-10-15T16:43:30.021+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match 46H2y86i is not loading
+[2026-10-15T16:43:30.027+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match AgtYSPw3 is not loading
+[2026-10-15T16:43:30.029+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match f532Du0t is not loading
+[2026-10-15T16:43:30.034+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match YVO2BBf7 is not loading
+[2026-10-15T16:43:30.085+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match G2rHCFCS is not loading
+[2026-10-15T16:43:30.096+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match j5WVajKL is not loading
+[2026-10-15T16:43:30.098+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match 6VqIBPY4 is not loading
+[2026-10-15T16:43:30.100+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match fLVZRDmT is not loading
+[2026-10-15T16:43:30.103+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match MuJ1tkIg is not loading
+[2026-10-15T16:43:30.117+0000] {inserts.py:70} INFO - inserting 3 rows
+[2026-10-15T16:43:30.126+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match CpE0UBLH is not loading
+[2026-10-15T16:43:30.128+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match CxML89s1 is not loading
+[2026-10-15T16:43:30.134+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match hhH2RTqC is not loading
+[2026-10-15T16:43:30.140+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match 6oQaagFc is not loading
+[2026-10-15T16:43:30.149+0000] {inserts.py:70} INFO - inserting 10 rows
+[2026-10-15T16:43:30.164+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match t2gdkj00 is not loading
+[2026-10-15T16:43:30.167+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match U94diz3F is not loading
+[2026-10-15T16:43:30.179+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match 6yACw8yn is not loading
+[2026-10-15T16:43:30.188+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match GfZKK1wb is not loading
+[2026-10-15T16:43:30.200+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match nFIEKfqd is not loading
+[2026-10-15T16:43:30.203+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match xloAot95 is not loading
+[2026-10-15T16:43:30.209+0000] {inserts.py:70} INFO - inserting 10 rows
+[2026-10-15T16:43:30.220+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match zDXj2Xtn is not loading
+[2026-10-15T16:43:30.229+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match 6L9cIdTk is not loading
+[2026-10-15T16:43:30.237+0000] {inserts.py:70} INFO - inserting 7 rows
+[2026-10-15T16:43:30.243+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match WfgH7Wel is not loading
+[2026-10-15T16:43:30.248+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match jyYsgXte is not loading
+[2026-10-15T16:43:30.257+0000] {inserts.py:70} INFO - inserting 14 rows
+[2026-10-15T16:43:30.266+0000] {inserts.py:70} INFO - inserting 11 rows
+[2026-10-15T16:43:30.289+0000] {inserts.py:70} INFO - inserting 3 rows
+[2026-10-15T16:43:30.300+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match hYjnapiI is not loading
+[2026-10-15T16:43:30.303+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match SCmVI4cm is not loading
+[2026-10-15T16:43:30.305+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match vmbyYgMh is not loading
+[2026-10-15T16:43:30.317+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match Y150BBcr is not loading
+[2026-10-15T16:43:30.325+0000] {inserts.py:70} INFO - inserting 2 rows
+[2026-10-15T16:43:30.334+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match KIS7woMN is not loading
+[2026-10-15T16:43:30.341+0000] {inserts.py:70} INFO - inserting 6 rows
+[2026-10-15T16:43:30.352+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match tGyHOv2E is not loading
+[2026-10-15T16:43:30.368+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match xWMT2T4E is not loading
+[2026-10-15T16:43:30.381+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match Ya38u80e is not loading
+[2026-10-15T16:43:30.392+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match ELTsrh3A is not loading
+[2026-10-15T16:43:30.397+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match SQlE9XhM is not loading
+[2026-10-15T16:43:30.405+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match AeBDO8Nn is not loading
+[2026-10-15T16:43:30.410+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match jX416ol0 is not loading
+[2026-10-15T16:43:30.413+0000] {fetch_initializetion_matches.py:58} ERROR - initializetion_matches: match ImGdQre3 is not loading
+[2026-10-15T16:43:30.423+0000] {inserts.py:70} INFO - inserting 2 rows
+[2026-10-15T16:43:31.530+0000] {python.py:237} INFO - Done. Returned value was: None
+[2026-10-15T16:43:31.548+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-10-15T16:43:31.637+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=initialize_matches, task_id=fetch_initializetion_matches, run_id=manual__2026-10-15T16:35:37.857615+00:00, execution_date=20261015T163537, start_date=20261015T164321, end_date=20261015T164331
+[2026-10-15T16:43:31.784+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 0
+[2026-10-15T16:43:31.873+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-10-15T16:43:31.906+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

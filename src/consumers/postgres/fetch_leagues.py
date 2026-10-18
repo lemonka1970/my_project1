@@ -48,6 +48,8 @@ def prepare_leagues(payload, regions):
         if region_id is None:
             logger.warning("prepare_leagues: region %s not in regions", row[6])
             return None
+        
+        row[6] = region_id
 
 
     return row

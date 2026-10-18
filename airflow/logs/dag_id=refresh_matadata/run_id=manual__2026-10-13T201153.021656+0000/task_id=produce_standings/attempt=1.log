@@ -1,0 +1,101 @@
+[2026-10-13T20:14:06.183+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-10-13T20:14:06.227+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: refresh_matadata.produce_standings manual__2026-10-13T20:11:53.021656+00:00 [queued]>
+[2026-10-13T20:14:06.244+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: refresh_matadata.produce_standings manual__2026-10-13T20:11:53.021656+00:00 [queued]>
+[2026-10-13T20:14:06.246+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 4
+[2026-10-13T20:14:06.272+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): produce_standings> on 2026-10-13 20:11:53.021656+00:00
+[2026-10-13T20:14:06.296+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:62: DeprecationWarning: This process (pid=182) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2026-10-13T20:14:06.300+0000] {standard_task_runner.py:64} INFO - Started process 184 to run task
+[2026-10-13T20:14:06.301+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'refresh_matadata', 'produce_standings', 'manual__2026-10-13T20:11:53.021656+00:00', '--job-id', '529', '--raw', '--subdir', 'DAGS_FOLDER/dag_refresh_metadata.py', '--cfg-path', '/tmp/tmpuq87a3lm']
+[2026-10-13T20:14:06.307+0000] {standard_task_runner.py:91} INFO - Job 529: Subtask produce_standings
+[2026-10-13T20:14:06.395+0000] {task_command.py:426} INFO - Running <TaskInstance: refresh_matadata.produce_standings manual__2026-10-13T20:11:53.021656+00:00 [running]> on host 15573e95703f
+[2026-10-13T20:14:06.543+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='refresh_matadata' AIRFLOW_CTX_TASK_ID='produce_standings' AIRFLOW_CTX_EXECUTION_DATE='2026-10-13T20:11:53.021656+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-10-13T20:11:53.021656+00:00'
+[2026-10-13T20:14:06.547+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-10-13T20:14:06.558+0000] {producers_metadata.py:165} INFO - season_id: (161,)
+[2026-10-13T20:14:08.223+0000] {producers_metadata.py:165} INFO - season_id: (711,)
+[2026-10-13T20:14:09.899+0000] {producers_metadata.py:165} INFO - season_id: (712,)
+[2026-10-13T20:14:11.669+0000] {producers_metadata.py:165} INFO - season_id: (713,)
+[2026-10-13T20:14:13.296+0000] {producers_metadata.py:165} INFO - season_id: (714,)
+[2026-10-13T20:14:14.937+0000] {producers_metadata.py:165} INFO - season_id: (715,)
+[2026-10-13T20:14:16.585+0000] {producers_metadata.py:165} INFO - season_id: (717,)
+[2026-10-13T20:14:18.242+0000] {producers_metadata.py:165} INFO - season_id: (718,)
+[2026-10-13T20:14:19.931+0000] {producers_metadata.py:165} INFO - season_id: (719,)
+[2026-10-13T20:14:21.585+0000] {producers_metadata.py:165} INFO - season_id: (720,)
+[2026-10-13T20:14:23.231+0000] {producers_metadata.py:165} INFO - season_id: (721,)
+[2026-10-13T20:14:24.943+0000] {producers_metadata.py:165} INFO - season_id: (722,)
+[2026-10-13T20:14:26.574+0000] {producers_metadata.py:165} INFO - season_id: (723,)
+[2026-10-13T20:14:28.257+0000] {producers_metadata.py:165} INFO - season_id: (724,)
+[2026-10-13T20:14:29.926+0000] {producers_metadata.py:165} INFO - season_id: (725,)
+[2026-10-13T20:14:31.646+0000] {producers_metadata.py:165} INFO - season_id: (591,)
+[2026-10-13T20:14:33.296+0000] {producers_metadata.py:165} INFO - season_id: (726,)
+[2026-10-13T20:14:34.938+0000] {producers_metadata.py:165} INFO - season_id: (727,)
+[2026-10-13T20:14:36.637+0000] {producers_metadata.py:165} INFO - season_id: (728,)
+[2026-10-13T20:14:38.335+0000] {producers_metadata.py:165} INFO - season_id: (729,)
+[2026-10-13T20:14:40.014+0000] {producers_metadata.py:165} INFO - season_id: (730,)
+[2026-10-13T20:14:41.670+0000] {producers_metadata.py:165} INFO - season_id: (731,)
+[2026-10-13T20:14:43.599+0000] {producers_metadata.py:165} INFO - season_id: (732,)
+[2026-10-13T20:14:45.751+0000] {producers_metadata.py:165} INFO - season_id: (733,)
+[2026-10-13T20:14:47.434+0000] {producers_metadata.py:165} INFO - season_id: (735,)
+[2026-10-13T20:14:49.078+0000] {producers_metadata.py:165} INFO - season_id: (736,)
+[2026-10-13T20:14:50.794+0000] {producers_metadata.py:165} INFO - season_id: (737,)
+[2026-10-13T20:14:52.491+0000] {producers_metadata.py:165} INFO - season_id: (738,)
+[2026-10-13T20:14:54.212+0000] {producers_metadata.py:165} INFO - season_id: (739,)
+[2026-10-13T20:14:55.828+0000] {producers_metadata.py:165} INFO - season_id: (740,)
+[2026-10-13T20:14:57.549+0000] {producers_metadata.py:165} INFO - season_id: (741,)
+[2026-10-13T20:15:00.885+0000] {producers_metadata.py:165} INFO - season_id: (355,)
+[2026-10-13T20:15:02.649+0000] {producers_metadata.py:165} INFO - season_id: (578,)
+[2026-10-13T20:15:04.604+0000] {producers_metadata.py:165} INFO - season_id: (742,)
+[2026-10-13T20:15:06.965+0000] {producers_metadata.py:165} INFO - season_id: (744,)
+[2026-10-13T20:15:08.691+0000] {producers_metadata.py:165} INFO - season_id: (745,)
+[2026-10-13T20:15:11.316+0000] {producers_metadata.py:165} INFO - season_id: (149,)
+[2026-10-13T20:15:13.459+0000] {producers_metadata.py:165} INFO - season_id: (748,)
+[2026-10-13T20:15:15.202+0000] {producers_metadata.py:165} INFO - season_id: (749,)
+[2026-10-13T20:15:17.414+0000] {producers_metadata.py:165} INFO - season_id: (750,)
+[2026-10-13T20:15:19.135+0000] {producers_metadata.py:165} INFO - season_id: (751,)
+[2026-10-13T20:15:20.878+0000] {producers_metadata.py:165} INFO - season_id: (752,)
+[2026-10-13T20:15:22.551+0000] {producers_metadata.py:165} INFO - season_id: (753,)
+[2026-10-13T20:15:25.683+0000] {producers_metadata.py:165} INFO - season_id: (755,)
+[2026-10-13T20:15:28.159+0000] {producers_metadata.py:165} INFO - season_id: (756,)
+[2026-10-13T20:15:30.811+0000] {producers_metadata.py:165} INFO - season_id: (757,)
+[2026-10-13T20:15:32.468+0000] {producers_metadata.py:165} INFO - season_id: (758,)
+[2026-10-13T20:15:34.502+0000] {producers_metadata.py:165} INFO - season_id: (759,)
+[2026-10-13T20:15:36.416+0000] {producers_metadata.py:165} INFO - season_id: (760,)
+[2026-10-13T20:15:38.988+0000] {producers_metadata.py:165} INFO - season_id: (761,)
+[2026-10-13T20:15:40.692+0000] {producers_metadata.py:165} INFO - season_id: (762,)
+[2026-10-13T20:15:42.374+0000] {producers_metadata.py:165} INFO - season_id: (763,)
+[2026-10-13T20:15:45.395+0000] {producers_metadata.py:165} INFO - season_id: (764,)
+[2026-10-13T20:15:47.216+0000] {producers_metadata.py:165} INFO - season_id: (765,)
+[2026-10-13T20:15:48.886+0000] {producers_metadata.py:165} INFO - season_id: (766,)
+[2026-10-13T20:15:50.580+0000] {producers_metadata.py:165} INFO - season_id: (767,)
+[2026-10-13T20:15:53.487+0000] {producers_metadata.py:165} INFO - season_id: (392,)
+[2026-10-13T20:15:55.592+0000] {producers_metadata.py:165} INFO - season_id: (768,)
+[2026-10-13T20:15:58.279+0000] {producers_metadata.py:165} INFO - season_id: (769,)
+[2026-10-13T20:15:59.946+0000] {producers_metadata.py:165} INFO - season_id: (770,)
+[2026-10-13T20:16:01.676+0000] {producers_metadata.py:165} INFO - season_id: (771,)
+[2026-10-13T20:16:03.813+0000] {producers_metadata.py:165} INFO - season_id: (772,)
+[2026-10-13T20:16:06.250+0000] {producers_metadata.py:165} INFO - season_id: (773,)
+[2026-10-13T20:16:08.957+0000] {producers_metadata.py:165} INFO - season_id: (774,)
+[2026-10-13T20:16:11.870+0000] {producers_metadata.py:165} INFO - season_id: (776,)
+[2026-10-13T20:16:14.205+0000] {producers_metadata.py:165} INFO - season_id: (777,)
+[2026-10-13T20:16:15.950+0000] {producers_metadata.py:165} INFO - season_id: (778,)
+[2026-10-13T20:16:18.506+0000] {producers_metadata.py:165} INFO - season_id: (779,)
+[2026-10-13T20:16:20.546+0000] {producers_metadata.py:165} INFO - season_id: (780,)
+[2026-10-13T20:16:22.779+0000] {producers_metadata.py:165} INFO - season_id: (781,)
+[2026-10-13T20:16:24.729+0000] {producers_metadata.py:165} INFO - season_id: (782,)
+[2026-10-13T20:16:26.428+0000] {producers_metadata.py:165} INFO - season_id: (783,)
+[2026-10-13T20:16:28.510+0000] {producers_metadata.py:165} INFO - season_id: (784,)
+[2026-10-13T20:16:31.585+0000] {producers_metadata.py:165} INFO - season_id: (785,)
+[2026-10-13T20:16:34.674+0000] {producers_metadata.py:165} INFO - season_id: (786,)
+[2026-10-13T20:16:37.364+0000] {producers_metadata.py:165} INFO - season_id: (787,)
+[2026-10-13T20:16:39.471+0000] {producers_metadata.py:165} INFO - season_id: (788,)
+[2026-10-13T20:16:41.834+0000] {producers_metadata.py:165} INFO - season_id: (789,)
+[2026-10-13T20:16:44.275+0000] {producers_metadata.py:165} INFO - season_id: (709,)
+[2026-10-13T20:16:46.008+0000] {producers_metadata.py:165} INFO - season_id: (791,)
+[2026-10-13T20:16:48.517+0000] {producers_metadata.py:165} INFO - season_id: (792,)
+[2026-10-13T20:16:50.248+0000] {python.py:237} INFO - Done. Returned value was: None
+[2026-10-13T20:16:50.252+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-10-13T20:16:50.290+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=refresh_matadata, task_id=produce_standings, run_id=manual__2026-10-13T20:11:53.021656+00:00, execution_date=20261013T201153, start_date=20261013T201406, end_date=20261013T201650
+[2026-10-13T20:16:50.419+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 0
+[2026-10-13T20:16:50.490+0000] {taskinstance.py:3503} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-10-13T20:16:50.495+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

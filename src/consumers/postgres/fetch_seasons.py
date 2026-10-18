@@ -71,8 +71,8 @@ def fetch_seasons():
     consumer.subscribe(['past_seasons'])
 
     try:
-        # league_ids возвращает id лиги по (tournament_id, tournament_stage_id) текущего сезона
-        league_ids = get_league_id_by_tournaments(with_dates_resolved=False) 
+        # league_ids возвращает id текущих сезонов по (tournament_id, tournament_stage_id) 
+        league_ids = get_league_id_by_tournaments()  
         if not league_ids:
             logger.error("fetch_seasons: dict league_ids is empty") 
             raise

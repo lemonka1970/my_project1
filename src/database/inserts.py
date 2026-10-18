@@ -66,7 +66,8 @@ def execute_insert(query, data):
     try:
         with conn.cursor() as cur:
             execute_values(cur, query, list(data))
-
+            
+        logger.info('inserting %s rows', len(data))
         conn.commit()
     except Exception as e:
         conn.rollback()
@@ -77,6 +78,7 @@ def execute_insert(query, data):
 
     finally:
         db_pool.putconn(conn)
+        
 
 
 

@@ -1,0 +1,46 @@
+[2026-10-06T14:14:23.670+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-10-06T14:14:23.736+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: refresh_matadata.create_topics manual__2026-10-06T14:14:18.487422+00:00 [queued]>
+[2026-10-06T14:14:23.758+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: refresh_matadata.create_topics manual__2026-10-06T14:14:18.487422+00:00 [queued]>
+[2026-10-06T14:14:23.761+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 4
+[2026-10-06T14:14:23.793+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): create_topics> on 2026-10-06 14:14:18.487422+00:00
+[2026-10-06T14:14:23.816+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:62: DeprecationWarning: This process (pid=785) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2026-10-06T14:14:23.821+0000] {standard_task_runner.py:64} INFO - Started process 787 to run task
+[2026-10-06T14:14:23.820+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'refresh_matadata', 'create_topics', 'manual__2026-10-06T14:14:18.487422+00:00', '--job-id', '348', '--raw', '--subdir', 'DAGS_FOLDER/dag_refresh_metadata.py', '--cfg-path', '/tmp/tmp9qofb6g_']
+[2026-10-06T14:14:23.827+0000] {standard_task_runner.py:91} INFO - Job 348: Subtask create_topics
+[2026-10-06T14:14:23.925+0000] {task_command.py:426} INFO - Running <TaskInstance: refresh_matadata.create_topics manual__2026-10-06T14:14:18.487422+00:00 [running]> on host 5ee58e140597
+[2026-10-06T14:14:24.134+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='refresh_matadata' AIRFLOW_CTX_TASK_ID='create_topics' AIRFLOW_CTX_EXECUTION_DATE='2026-10-06T14:14:18.487422+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-10-06T14:14:18.487422+00:00'
+[2026-10-06T14:14:24.140+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-10-06T14:14:24.223+0000] {kafka_fn.py:36} ERROR - create_topics: error creating topic 'standings': KafkaError{code=TOPIC_ALREADY_EXISTS,val=36,str="Topic 'standings' already exists."}
+[2026-10-06T14:14:24.226+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-10-06T14:14:24.229+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 401, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/src/kafka_fn.py", line 34, in create_topics
+    future.result()
+  File "/usr/local/lib/python3.12/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+cimpl.KafkaException: KafkaError{code=TOPIC_ALREADY_EXISTS,val=36,str="Topic 'standings' already exists."}
+[2026-10-06T14:14:24.278+0000] {taskinstance.py:1206} INFO - Marking task as UP_FOR_RETRY. dag_id=refresh_matadata, task_id=create_topics, run_id=manual__2026-10-06T14:14:18.487422+00:00, execution_date=20261006T141418, start_date=20261006T141423, end_date=20261006T141424
+[2026-10-06T14:14:24.325+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 348 for task create_topics (KafkaError{code=TOPIC_ALREADY_EXISTS,val=36,str="Topic 'standings' already exists."}; 787)
+[2026-10-06T14:14:24.366+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 1
+[2026-10-06T14:14:24.418+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-10-06T14:14:24.422+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

@@ -1,0 +1,152 @@
+[2026-10-15T16:55:57.854+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-10-15T16:55:57.935+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: initialize_matches.produce_initialize_matches manual__2026-10-15T16:55:39.940919+00:00 [queued]>
+[2026-10-15T16:55:57.976+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: initialize_matches.produce_initialize_matches manual__2026-10-15T16:55:39.940919+00:00 [queued]>
+[2026-10-15T16:55:57.981+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 4
+[2026-10-15T16:55:58.024+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): produce_initialize_matches> on 2026-10-15 16:55:39.940919+00:00
+[2026-10-15T16:55:58.059+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:62: DeprecationWarning: This process (pid=954) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2026-10-15T16:55:58.066+0000] {standard_task_runner.py:64} INFO - Started process 956 to run task
+[2026-10-15T16:55:58.068+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'initialize_matches', 'produce_initialize_matches', 'manual__2026-10-15T16:55:39.940919+00:00', '--job-id', '608', '--raw', '--subdir', 'DAGS_FOLDER/dag_initialize_matches.py', '--cfg-path', '/tmp/tmp5ao2dts1']
+[2026-10-15T16:55:58.075+0000] {standard_task_runner.py:91} INFO - Job 608: Subtask produce_initialize_matches
+[2026-10-15T16:55:58.221+0000] {task_command.py:426} INFO - Running <TaskInstance: initialize_matches.produce_initialize_matches manual__2026-10-15T16:55:39.940919+00:00 [running]> on host 34acf2e980db
+[2026-10-15T16:55:58.496+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='initialize_matches' AIRFLOW_CTX_TASK_ID='produce_initialize_matches' AIRFLOW_CTX_EXECUTION_DATE='2026-10-15T16:55:39.940919+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-10-15T16:55:39.940919+00:00'
+[2026-10-15T16:55:58.502+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-10-15T16:55:58.520+0000] {producers_matches.py:51} INFO - len team_urls: 69
+[2026-10-15T16:55:58.522+0000] {producers_matches.py:57} INFO - Processing pair: /team/treviso/Qucu3NNG/ and /team/monza/4YSMlwj7/
+[2026-10-15T16:56:02.046+0000] {producers_matches.py:57} INFO - Processing pair: /team/treviso/Qucu3NNG/ and /team/pro-vercelli/KjGeTD9G/
+[2026-10-15T16:56:05.819+0000] {producers_matches.py:57} INFO - Processing pair: /team/treviso/Qucu3NNG/ and /team/benevento/rZhSxrse/
+[2026-10-15T16:56:09.518+0000] {producers_matches.py:57} INFO - Processing pair: /team/treviso/Qucu3NNG/ and /team/fiorentina/Q3A3IbXH/
+[2026-10-15T16:56:13.175+0000] {producers_matches.py:57} INFO - Processing pair: /team/treviso/Qucu3NNG/ and /team/novara/rPRQmc5D/
+[2026-10-15T16:56:16.868+0000] {producers_matches.py:57} INFO - Processing pair: /team/treviso/Qucu3NNG/ and /team/ternana/zVUNUKkf/
+[2026-10-15T16:56:20.481+0000] {producers_matches.py:57} INFO - Processing pair: /team/treviso/Qucu3NNG/ and /team/verona/rJVAIaHo/
+[2026-10-15T16:56:24.061+0000] {producers_matches.py:57} INFO - Processing pair: /team/treviso/Qucu3NNG/ and /team/piacenza/MLgfe3Oi/
+[2026-10-15T16:56:27.593+0000] {producers_matches.py:57} INFO - Processing pair: /team/treviso/Qucu3NNG/ and /team/empoli/0ESCnI1H/
+[2026-10-15T16:56:31.194+0000] {producers_matches.py:57} INFO - Processing pair: /team/treviso/Qucu3NNG/ and /team/ac-milan/8Sa8HInO/
+[2026-10-15T16:56:34.908+0000] {producers_matches.py:57} INFO - Processing pair: /team/treviso/Qucu3NNG/ and /team/palermo/n38Nktmn/
+[2026-10-15T16:56:38.592+0000] {producers_matches.py:57} INFO - Processing pair: /team/treviso/Qucu3NNG/ and /team/avellino/A332L1f5/
+[2026-10-15T16:56:42.231+0000] {producers_matches.py:57} INFO - Processing pair: /team/treviso/Qucu3NNG/ and /team/bologna/0M9xNN8N/
+[2026-10-15T16:56:45.949+0000] {producers_matches.py:57} INFO - Processing pair: /team/treviso/Qucu3NNG/ and /team/mantova/z7WK5Pwb/
+[2026-10-15T16:56:49.593+0000] {producers_matches.py:57} INFO - Processing pair: /team/treviso/Qucu3NNG/ and /team/sampierdarenese/n9pAVBFt/
+[2026-10-15T16:56:51.248+0000] {flahscore.py:81} WARNING - get_response: попытка 1/20 для url=https://www.flashscore.com/match/football/treviso-Qucu3NNG/sampierdarenese-n9pAVBFt/? не удалась
+[2026-10-15T16:56:52.797+0000] {flahscore.py:81} WARNING - get_response: попытка 2/20 для url=https://www.flashscore.com/match/football/treviso-Qucu3NNG/sampierdarenese-n9pAVBFt/? не удалась
+[2026-10-15T16:56:54.357+0000] {flahscore.py:81} WARNING - get_response: попытка 3/20 для url=https://www.flashscore.com/match/football/treviso-Qucu3NNG/sampierdarenese-n9pAVBFt/? не удалась
+[2026-10-15T16:56:55.831+0000] {flahscore.py:81} WARNING - get_response: попытка 4/20 для url=https://www.flashscore.com/match/football/treviso-Qucu3NNG/sampierdarenese-n9pAVBFt/? не удалась
+[2026-10-15T16:56:58.358+0000] {flahscore.py:81} WARNING - get_response: попытка 5/20 для url=https://www.flashscore.com/match/football/treviso-Qucu3NNG/sampierdarenese-n9pAVBFt/? не удалась
+[2026-10-15T16:57:00.833+0000] {flahscore.py:81} WARNING - get_response: попытка 6/20 для url=https://www.flashscore.com/match/football/treviso-Qucu3NNG/sampierdarenese-n9pAVBFt/? не удалась
+[2026-10-15T16:57:03.472+0000] {flahscore.py:81} WARNING - get_response: попытка 7/20 для url=https://www.flashscore.com/match/football/treviso-Qucu3NNG/sampierdarenese-n9pAVBFt/? не удалась
+[2026-10-15T16:57:05.996+0000] {flahscore.py:81} WARNING - get_response: попытка 8/20 для url=https://www.flashscore.com/match/football/treviso-Qucu3NNG/sampierdarenese-n9pAVBFt/? не удалась
+[2026-10-15T16:57:09.577+0000] {flahscore.py:81} WARNING - get_response: попытка 9/20 для url=https://www.flashscore.com/match/football/treviso-Qucu3NNG/sampierdarenese-n9pAVBFt/? не удалась
+[2026-10-15T16:57:13.073+0000] {flahscore.py:81} WARNING - get_response: попытка 10/20 для url=https://www.flashscore.com/match/football/treviso-Qucu3NNG/sampierdarenese-n9pAVBFt/? не удалась
+[2026-10-15T16:57:16.579+0000] {flahscore.py:81} WARNING - get_response: попытка 11/20 для url=https://www.flashscore.com/match/football/treviso-Qucu3NNG/sampierdarenese-n9pAVBFt/? не удалась
+[2026-10-15T16:57:20.195+0000] {flahscore.py:81} WARNING - get_response: попытка 12/20 для url=https://www.flashscore.com/match/football/treviso-Qucu3NNG/sampierdarenese-n9pAVBFt/? не удалась
+[2026-10-15T16:57:24.774+0000] {flahscore.py:81} WARNING - get_response: попытка 13/20 для url=https://www.flashscore.com/match/football/treviso-Qucu3NNG/sampierdarenese-n9pAVBFt/? не удалась
+[2026-10-15T16:57:29.328+0000] {flahscore.py:81} WARNING - get_response: попытка 14/20 для url=https://www.flashscore.com/match/football/treviso-Qucu3NNG/sampierdarenese-n9pAVBFt/? не удалась
+[2026-10-15T16:57:33.908+0000] {flahscore.py:81} WARNING - get_response: попытка 15/20 для url=https://www.flashscore.com/match/football/treviso-Qucu3NNG/sampierdarenese-n9pAVBFt/? не удалась
+[2026-10-15T16:57:38.487+0000] {flahscore.py:81} WARNING - get_response: попытка 16/20 для url=https://www.flashscore.com/match/football/treviso-Qucu3NNG/sampierdarenese-n9pAVBFt/? не удалась
+[2026-10-15T16:57:44.007+0000] {flahscore.py:81} WARNING - get_response: попытка 17/20 для url=https://www.flashscore.com/match/football/treviso-Qucu3NNG/sampierdarenese-n9pAVBFt/? не удалась
+[2026-10-15T16:57:49.600+0000] {flahscore.py:81} WARNING - get_response: попытка 18/20 для url=https://www.flashscore.com/match/football/treviso-Qucu3NNG/sampierdarenese-n9pAVBFt/? не удалась
+[2026-10-15T16:57:55.339+0000] {flahscore.py:81} WARNING - get_response: попытка 19/20 для url=https://www.flashscore.com/match/football/treviso-Qucu3NNG/sampierdarenese-n9pAVBFt/? не удалась
+[2026-10-15T16:58:00.882+0000] {flahscore.py:81} WARNING - get_response: попытка 20/20 для url=https://www.flashscore.com/match/football/treviso-Qucu3NNG/sampierdarenese-n9pAVBFt/? не удалась
+[2026-10-15T16:58:07.401+0000] {flahscore.py:81} WARNING - get_response: попытка 21/20 для url=https://www.flashscore.com/match/football/treviso-Qucu3NNG/sampierdarenese-n9pAVBFt/? не удалась
+[2026-10-15T16:58:07.406+0000] {flahscore.py:83} ERROR - get_response: url:https://www.flashscore.com/match/football/treviso-Qucu3NNG/sampierdarenese-n9pAVBFt/? не доступен 404 Client Error: Not Found for url: https://www.flashscore.com/match/football/sampierdarenese-n9pAVBFt/treviso-Qucu3NNG/
+[2026-10-15T16:58:07.413+0000] {flahscore.py:96} ERROR - get_feed_last_match: страница для https://www.flashscore.com/match/football/treviso-Qucu3NNG/sampierdarenese-n9pAVBFt/? не была получена
+[2026-10-15T16:58:07.418+0000] {producers_matches.py:57} INFO - Processing pair: /team/treviso/Qucu3NNG/ and /team/padova/2gUwEtrE/
+[2026-10-15T16:58:11.126+0000] {producers_matches.py:57} INFO - Processing pair: /team/treviso/Qucu3NNG/ and /team/casale/lxmUwHhh/
+[2026-10-15T16:58:14.835+0000] {producers_matches.py:57} INFO - Processing pair: /team/treviso/Qucu3NNG/ and /team/genoa/d0PJxeie/
+[2026-10-15T16:58:18.617+0000] {producers_matches.py:57} INFO - Processing pair: /team/treviso/Qucu3NNG/ and /team/pisa/roasMsOT/
+[2026-10-15T16:58:22.601+0000] {producers_matches.py:57} INFO - Processing pair: /team/treviso/Qucu3NNG/ and /team/cagliari/SCGVmKHb/
+[2026-10-15T16:58:26.282+0000] {producers_matches.py:57} INFO - Processing pair: /team/treviso/Qucu3NNG/ and /team/como/ttyLthOA/
+[2026-10-15T16:58:30.052+0000] {producers_matches.py:57} INFO - Processing pair: /team/treviso/Qucu3NNG/ and /team/lazio/URcSl02h/
+[2026-10-15T16:58:34.132+0000] {producers_matches.py:57} INFO - Processing pair: /team/treviso/Qucu3NNG/ and /team/carpi/4Mj4hjbN/
+[2026-10-15T16:58:37.918+0000] {producers_matches.py:57} INFO - Processing pair: /team/treviso/Qucu3NNG/ and /team/ancona/pjq9BL0p/
+[2026-10-15T16:58:41.553+0000] {producers_matches.py:57} INFO - Processing pair: /team/treviso/Qucu3NNG/ and /team/triestina/nJ5YN3gH/
+[2026-10-15T16:58:45.012+0000] {producers_matches.py:57} INFO - Processing pair: /team/treviso/Qucu3NNG/ and /team/sampdoria/nJbCGx2U/
+[2026-10-15T16:58:48.961+0000] {producers_matches.py:57} INFO - Processing pair: /team/treviso/Qucu3NNG/ and /team/reggiana/6ulJbMCe/
+[2026-10-15T16:58:52.682+0000] {producers_matches.py:57} INFO - Processing pair: /team/treviso/Qucu3NNG/ and /team/pro-patria/z7SoCKCQ/
+[2026-10-15T16:58:56.400+0000] {producers_matches.py:57} INFO - Processing pair: /team/treviso/Qucu3NNG/ and /team/spezia/re6VD39b/
+[2026-10-15T16:59:00.092+0000] {producers_matches.py:57} INFO - Processing pair: /team/treviso/Qucu3NNG/ and /team/perugia/ht2m7Kl6/
+[2026-10-15T16:59:03.788+0000] {producers_matches.py:57} INFO - Processing pair: /team/treviso/Qucu3NNG/ and /team/modena/MBn63swN/
+[2026-10-15T16:59:07.529+0000] {producers_matches.py:57} INFO - Processing pair: /team/treviso/Qucu3NNG/ and /team/parma/6DxlaxHN/
+[2026-10-15T16:59:11.352+0000] {producers_matches.py:57} INFO - Processing pair: /team/treviso/Qucu3NNG/ and /team/udinese/rXw8YKDE/
+[2026-10-15T16:59:14.982+0000] {producers_matches.py:57} INFO - Processing pair: /team/treviso/Qucu3NNG/ and /team/juventus/C06aJvIB/
+[2026-10-15T16:59:18.848+0000] {producers_matches.py:57} INFO - Processing pair: /team/treviso/Qucu3NNG/ and /team/inter/Iw7eKK25/
+[2026-10-15T16:59:22.943+0000] {producers_matches.py:57} INFO - Processing pair: /team/treviso/Qucu3NNG/ and /team/andrea-doria/IgA0B8UO/
+[2026-10-15T16:59:24.608+0000] {flahscore.py:81} WARNING - get_response: попытка 1/20 для url=https://www.flashscore.com/match/football/treviso-Qucu3NNG/andrea-doria-IgA0B8UO/? не удалась
+[2026-10-15T16:59:26.405+0000] {flahscore.py:81} WARNING - get_response: попытка 2/20 для url=https://www.flashscore.com/match/football/treviso-Qucu3NNG/andrea-doria-IgA0B8UO/? не удалась
+[2026-10-15T16:59:27.994+0000] {flahscore.py:81} WARNING - get_response: попытка 3/20 для url=https://www.flashscore.com/match/football/treviso-Qucu3NNG/andrea-doria-IgA0B8UO/? не удалась
+[2026-10-15T16:59:29.546+0000] {flahscore.py:81} WARNING - get_response: попытка 4/20 для url=https://www.flashscore.com/match/football/treviso-Qucu3NNG/andrea-doria-IgA0B8UO/? не удалась
+[2026-10-15T16:59:32.059+0000] {flahscore.py:81} WARNING - get_response: попытка 5/20 для url=https://www.flashscore.com/match/football/treviso-Qucu3NNG/andrea-doria-IgA0B8UO/? не удалась
+[2026-10-15T16:59:34.835+0000] {flahscore.py:81} WARNING - get_response: попытка 6/20 для url=https://www.flashscore.com/match/football/treviso-Qucu3NNG/andrea-doria-IgA0B8UO/? не удалась
+[2026-10-15T16:59:37.333+0000] {flahscore.py:81} WARNING - get_response: попытка 7/20 для url=https://www.flashscore.com/match/football/treviso-Qucu3NNG/andrea-doria-IgA0B8UO/? не удалась
+[2026-10-15T16:59:40.240+0000] {flahscore.py:81} WARNING - get_response: попытка 8/20 для url=https://www.flashscore.com/match/football/treviso-Qucu3NNG/andrea-doria-IgA0B8UO/? не удалась
+[2026-10-15T16:59:43.795+0000] {flahscore.py:81} WARNING - get_response: попытка 9/20 для url=https://www.flashscore.com/match/football/treviso-Qucu3NNG/andrea-doria-IgA0B8UO/? не удалась
+[2026-10-15T16:59:47.373+0000] {flahscore.py:81} WARNING - get_response: попытка 10/20 для url=https://www.flashscore.com/match/football/treviso-Qucu3NNG/andrea-doria-IgA0B8UO/? не удалась
+[2026-10-15T16:59:51.152+0000] {flahscore.py:81} WARNING - get_response: попытка 11/20 для url=https://www.flashscore.com/match/football/treviso-Qucu3NNG/andrea-doria-IgA0B8UO/? не удалась
+[2026-10-15T16:59:54.681+0000] {flahscore.py:81} WARNING - get_response: попытка 12/20 для url=https://www.flashscore.com/match/football/treviso-Qucu3NNG/andrea-doria-IgA0B8UO/? не удалась
+[2026-10-15T16:59:59.571+0000] {flahscore.py:81} WARNING - get_response: попытка 13/20 для url=https://www.flashscore.com/match/football/treviso-Qucu3NNG/andrea-doria-IgA0B8UO/? не удалась
+[2026-10-15T17:00:04.083+0000] {flahscore.py:81} WARNING - get_response: попытка 14/20 для url=https://www.flashscore.com/match/football/treviso-Qucu3NNG/andrea-doria-IgA0B8UO/? не удалась
+[2026-10-15T17:00:08.606+0000] {flahscore.py:81} WARNING - get_response: попытка 15/20 для url=https://www.flashscore.com/match/football/treviso-Qucu3NNG/andrea-doria-IgA0B8UO/? не удалась
+[2026-10-15T17:00:13.157+0000] {flahscore.py:81} WARNING - get_response: попытка 16/20 для url=https://www.flashscore.com/match/football/treviso-Qucu3NNG/andrea-doria-IgA0B8UO/? не удалась
+[2026-10-15T17:00:18.697+0000] {flahscore.py:81} WARNING - get_response: попытка 17/20 для url=https://www.flashscore.com/match/football/treviso-Qucu3NNG/andrea-doria-IgA0B8UO/? не удалась
+[2026-10-15T17:00:24.385+0000] {flahscore.py:81} WARNING - get_response: попытка 18/20 для url=https://www.flashscore.com/match/football/treviso-Qucu3NNG/andrea-doria-IgA0B8UO/? не удалась
+[2026-10-15T17:00:29.924+0000] {flahscore.py:81} WARNING - get_response: попытка 19/20 для url=https://www.flashscore.com/match/football/treviso-Qucu3NNG/andrea-doria-IgA0B8UO/? не удалась
+[2026-10-15T17:00:35.499+0000] {flahscore.py:81} WARNING - get_response: попытка 20/20 для url=https://www.flashscore.com/match/football/treviso-Qucu3NNG/andrea-doria-IgA0B8UO/? не удалась
+[2026-10-15T17:00:42.092+0000] {flahscore.py:81} WARNING - get_response: попытка 21/20 для url=https://www.flashscore.com/match/football/treviso-Qucu3NNG/andrea-doria-IgA0B8UO/? не удалась
+[2026-10-15T17:00:42.095+0000] {flahscore.py:83} ERROR - get_response: url:https://www.flashscore.com/match/football/treviso-Qucu3NNG/andrea-doria-IgA0B8UO/? не доступен 404 Client Error: Not Found for url: https://www.flashscore.com/match/football/andrea-doria-IgA0B8UO/treviso-Qucu3NNG/
+[2026-10-15T17:00:42.100+0000] {flahscore.py:96} ERROR - get_feed_last_match: страница для https://www.flashscore.com/match/football/treviso-Qucu3NNG/andrea-doria-IgA0B8UO/? не была получена
+[2026-10-15T17:00:42.103+0000] {producers_matches.py:57} INFO - Processing pair: /team/treviso/Qucu3NNG/ and /team/vicenza/plvm35Pu/
+[2026-10-15T17:00:45.778+0000] {producers_matches.py:57} INFO - Processing pair: /team/treviso/Qucu3NNG/ and /team/napoli/69Dxbc61/
+[2026-10-15T17:00:49.442+0000] {producers_matches.py:57} INFO - Processing pair: /team/treviso/Qucu3NNG/ and /team/lucchese/lU2tBM4m/
+[2026-10-15T17:00:53.380+0000] {producers_matches.py:57} INFO - Processing pair: /team/treviso/Qucu3NNG/ and /team/reggina/p0CtcHL7/
+[2026-10-15T17:00:57.445+0000] {producers_matches.py:57} INFO - Processing pair: /team/treviso/Qucu3NNG/ and /team/chievo/xdTJgGvo/
+[2026-10-15T17:01:01.146+0000] {producers_matches.py:57} INFO - Processing pair: /team/treviso/Qucu3NNG/ and /team/foggia/4nSGWbrR/
+[2026-10-15T17:01:04.988+0000] {producers_matches.py:57} INFO - Processing pair: /team/treviso/Qucu3NNG/ and /team/catanzaro/GnizyMB7/
+[2026-10-15T17:01:08.704+0000] {producers_matches.py:57} INFO - Processing pair: /team/treviso/Qucu3NNG/ and /team/bari/xIkUr2vO/
+[2026-10-15T17:01:12.378+0000] {producers_matches.py:57} INFO - Processing pair: /team/treviso/Qucu3NNG/ and /team/livorno/0zxhbdWT/
+[2026-10-15T17:01:16.393+0000] {producers_matches.py:57} INFO - Processing pair: /team/treviso/Qucu3NNG/ and /team/legnano/WSEswaLf/
+[2026-10-15T17:01:18.298+0000] {flahscore.py:81} WARNING - get_response: попытка 1/20 для url=https://www.flashscore.com/match/football/treviso-Qucu3NNG/legnano-WSEswaLf/? не удалась
+[2026-10-15T17:01:19.873+0000] {flahscore.py:81} WARNING - get_response: попытка 2/20 для url=https://www.flashscore.com/match/football/treviso-Qucu3NNG/legnano-WSEswaLf/? не удалась
+[2026-10-15T17:01:21.460+0000] {flahscore.py:81} WARNING - get_response: попытка 3/20 для url=https://www.flashscore.com/match/football/treviso-Qucu3NNG/legnano-WSEswaLf/? не удалась
+[2026-10-15T17:01:23.061+0000] {flahscore.py:81} WARNING - get_response: попытка 4/20 для url=https://www.flashscore.com/match/football/treviso-Qucu3NNG/legnano-WSEswaLf/? не удалась
+[2026-10-15T17:01:25.554+0000] {flahscore.py:81} WARNING - get_response: попытка 5/20 для url=https://www.flashscore.com/match/football/treviso-Qucu3NNG/legnano-WSEswaLf/? не удалась
+[2026-10-15T17:01:28.134+0000] {flahscore.py:81} WARNING - get_response: попытка 6/20 для url=https://www.flashscore.com/match/football/treviso-Qucu3NNG/legnano-WSEswaLf/? не удалась
+[2026-10-15T17:01:30.653+0000] {flahscore.py:81} WARNING - get_response: попытка 7/20 для url=https://www.flashscore.com/match/football/treviso-Qucu3NNG/legnano-WSEswaLf/? не удалась
+[2026-10-15T17:01:33.276+0000] {flahscore.py:81} WARNING - get_response: попытка 8/20 для url=https://www.flashscore.com/match/football/treviso-Qucu3NNG/legnano-WSEswaLf/? не удалась
+[2026-10-15T17:01:36.836+0000] {flahscore.py:81} WARNING - get_response: попытка 9/20 для url=https://www.flashscore.com/match/football/treviso-Qucu3NNG/legnano-WSEswaLf/? не удалась
+[2026-10-15T17:01:40.363+0000] {flahscore.py:81} WARNING - get_response: попытка 10/20 для url=https://www.flashscore.com/match/football/treviso-Qucu3NNG/legnano-WSEswaLf/? не удалась
+[2026-10-15T17:01:43.921+0000] {flahscore.py:81} WARNING - get_response: попытка 11/20 для url=https://www.flashscore.com/match/football/treviso-Qucu3NNG/legnano-WSEswaLf/? не удалась
+[2026-10-15T17:01:47.447+0000] {flahscore.py:81} WARNING - get_response: попытка 12/20 для url=https://www.flashscore.com/match/football/treviso-Qucu3NNG/legnano-WSEswaLf/? не удалась
+[2026-10-15T17:01:52.084+0000] {flahscore.py:81} WARNING - get_response: попытка 13/20 для url=https://www.flashscore.com/match/football/treviso-Qucu3NNG/legnano-WSEswaLf/? не удалась
+[2026-10-15T17:01:56.590+0000] {flahscore.py:81} WARNING - get_response: попытка 14/20 для url=https://www.flashscore.com/match/football/treviso-Qucu3NNG/legnano-WSEswaLf/? не удалась
+[2026-10-15T17:02:01.150+0000] {flahscore.py:81} WARNING - get_response: попытка 15/20 для url=https://www.flashscore.com/match/football/treviso-Qucu3NNG/legnano-WSEswaLf/? не удалась
+[2026-10-15T17:02:05.669+0000] {flahscore.py:81} WARNING - get_response: попытка 16/20 для url=https://www.flashscore.com/match/football/treviso-Qucu3NNG/legnano-WSEswaLf/? не удалась
+[2026-10-15T17:02:11.254+0000] {flahscore.py:81} WARNING - get_response: попытка 17/20 для url=https://www.flashscore.com/match/football/treviso-Qucu3NNG/legnano-WSEswaLf/? не удалась
+[2026-10-15T17:02:16.784+0000] {flahscore.py:81} WARNING - get_response: попытка 18/20 для url=https://www.flashscore.com/match/football/treviso-Qucu3NNG/legnano-WSEswaLf/? не удалась
+[2026-10-15T17:02:22.448+0000] {flahscore.py:81} WARNING - get_response: попытка 19/20 для url=https://www.flashscore.com/match/football/treviso-Qucu3NNG/legnano-WSEswaLf/? не удалась
+[2026-10-15T17:02:27.995+0000] {flahscore.py:81} WARNING - get_response: попытка 20/20 для url=https://www.flashscore.com/match/football/treviso-Qucu3NNG/legnano-WSEswaLf/? не удалась
+[2026-10-15T17:02:34.546+0000] {flahscore.py:81} WARNING - get_response: попытка 21/20 для url=https://www.flashscore.com/match/football/treviso-Qucu3NNG/legnano-WSEswaLf/? не удалась
+[2026-10-15T17:02:34.548+0000] {flahscore.py:83} ERROR - get_response: url:https://www.flashscore.com/match/football/treviso-Qucu3NNG/legnano-WSEswaLf/? не доступен 404 Client Error: Not Found for url: https://www.flashscore.com/match/football/legnano-WSEswaLf/treviso-Qucu3NNG/
+[2026-10-15T17:02:34.550+0000] {flahscore.py:96} ERROR - get_feed_last_match: страница для https://www.flashscore.com/match/football/treviso-Qucu3NNG/legnano-WSEswaLf/? не была получена
+[2026-10-15T17:02:34.552+0000] {producers_matches.py:57} INFO - Processing pair: /team/treviso/Qucu3NNG/ and /team/sassuolo/QDdvI0zl/
+[2026-10-15T17:02:38.177+0000] {producers_matches.py:57} INFO - Processing pair: /team/treviso/Qucu3NNG/ and /team/as-roma/zVqqL0ma/
+[2026-10-15T17:02:42.624+0000] {producers_matches.py:57} INFO - Processing pair: /team/treviso/Qucu3NNG/ and /team/pistoiese/v10H6bJI/
+[2026-10-15T17:02:46.381+0000] {producers_matches.py:57} INFO - Processing pair: /team/treviso/Qucu3NNG/ and /team/pescara/WW0i6v4C/
+[2026-10-15T17:02:50.275+0000] {producers_matches.py:57} INFO - Processing pair: /team/treviso/Qucu3NNG/ and /team/cesena/xddf1qfh/
+[2026-10-15T17:02:53.847+0000] {producers_matches.py:57} INFO - Processing pair: /team/treviso/Qucu3NNG/ and /team/varese/vR5UXiHd/
+[2026-10-15T17:02:57.431+0000] {producers_matches.py:57} INFO - Processing pair: /team/treviso/Qucu3NNG/ and /team/ascoli/hd6UOqvB/
+[2026-10-15T17:03:01.178+0000] {producers_matches.py:57} INFO - Processing pair: /team/treviso/Qucu3NNG/ and /team/alessandria/Cdmnrfvh/
+[2026-10-15T17:03:05.058+0000] {producers_matches.py:57} INFO - Processing pair: /team/treviso/Qucu3NNG/ and /team/lecce/G8lYsMgU/
+[2026-10-15T17:03:08.811+0000] {producers_matches.py:57} INFO - Processing pair: /team/treviso/Qucu3NNG/ and /team/atalanta/8C9JjMXu/
+[2026-10-15T17:03:12.489+0000] {producers_matches.py:57} INFO - Processing pair: /team/treviso/Qucu3NNG/ and /team/crotone/d8H0SxkJ/
+[2026-10-15T17:03:16.222+0000] {producers_matches.py:57} INFO - Processing pair: /team/treviso/Qucu3NNG/ and /team/frosinone/pfo9H1Wp/
+[2026-10-15T17:03:19.805+0000] {producers_matches.py:57} INFO - Processing pair: /team/treviso/Qucu3NNG/ and /team/venezia/MkPmVv50/
+[2026-10-15T17:03:23.509+0000] {producers_matches.py:57} INFO - Processing pair: /team/treviso/Qucu3NNG/ and /team/cremonese/KUzfp5N3/
+[2026-10-15T17:03:27.299+0000] {producers_matches.py:57} INFO - Processing pair: /team/treviso/Qucu3NNG/ and /team/lecco/IsxHSx6l/
+[2026-10-15T17:03:30.947+0000] {local_task_job_runner.py:313} WARNING - State of this instance has been externally set to failed. Terminating instance.
+[2026-10-15T17:03:30.952+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2026-10-15T17:03:30.959+0000] {process_utils.py:132} INFO - Sending 15 to group 956. PIDs of all processes in the group: [956]
+[2026-10-15T17:03:30.961+0000] {process_utils.py:87} INFO - Sending the signal 15 to group 956
+[2026-10-15T17:03:30.964+0000] {taskinstance.py:2611} ERROR - Received SIGTERM. Terminating subprocesses.
+[2026-10-15T17:03:30.967+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-10-15T17:03:31.063+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=956, status='terminated', exitcode=0, started='16:55:57') (956) terminated with exit code 0

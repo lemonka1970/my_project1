@@ -1,14 +1,11 @@
 from src.kafka_fn import get_consumer
 from src.database.queries import get_old_seasons_in_relations, get_team_id_by_feed
-from src.database.queries import get_season_id_by_tournamnts, get_league_id_by_tournaments
 from src.database.inserts import insert_relations
 
 
 import json
 import logging
 logger = logging.getLogger(__name__)
-
-
 
 
 def prepare_relations(payload, old_season_tournaments, teams):
@@ -23,23 +20,24 @@ def prepare_relations(payload, old_season_tournaments, teams):
     if tournaments in old_season_tournaments:
         return None
 
-    
+    relations = set()
 
     for el in standings: 
         team_feed = el.get('TI')
         team_id = teams.get(team_feed)
         
         if team_id is None:
-            logger.warning("prepare_relations: team %s not in teams", team_feed)
+            if team_feed is not None:
+                logger.warning("prepare_relations: team %s not in teams", team_feed)
             continue
 
-        row = (
+        relations.add((
             season_id,
             team_id,
             el.get('TP')
-            )
+            ))
 
-    return [row]
+    return relations
 
 
 
@@ -50,11 +48,14 @@ def build_season_team_relations():
     consumer = get_consumer('build_relations')
     consumer.subscribe(['standings'])
 
+    
+
     try:
         old_season_tournaments = get_old_seasons_in_relations()
-        current_league_id = None
-        teams = None 
-
+        teams = get_team_id_by_feed()
+        if not teams:
+            logger.error('build_season_team_relations: table teams is empty')
+            raise
 
         while True:
             msg = consumer.poll(1.0)
@@ -68,16 +69,6 @@ def build_season_team_relations():
             payload = json.loads(msg.value().decode('utf-8'))
             if payload == 'message_finally':
                 break
-
-            # держим словарь teams актуальным для текущей лиги
-            league_id = payload.get('league_id')
-            if league_id != current_league_id:
-                current_league_id = league_id
-                teams = get_team_id_by_feed(current_league_id)
-
-                if not teams:
-                    logger.error("buil_seasons_team_relations: dict teams is empty, league_id: %s", league_id)
-                    continue
 
             relations = prepare_relations(payload, old_season_tournaments, teams)
 

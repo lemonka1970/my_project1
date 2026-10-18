@@ -1,0 +1,435 @@
+[2026-10-15T17:34:57.005+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-10-15T17:34:57.069+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: initialize_matches.produce_initialize_matches manual__2026-10-15T17:34:41.062055+00:00 [queued]>
+[2026-10-15T17:34:57.092+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: initialize_matches.produce_initialize_matches manual__2026-10-15T17:34:41.062055+00:00 [queued]>
+[2026-10-15T17:34:57.095+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 4
+[2026-10-15T17:34:57.134+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): produce_initialize_matches> on 2026-10-15 17:34:41.062055+00:00
+[2026-10-15T17:34:57.161+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:62: DeprecationWarning: This process (pid=156) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2026-10-15T17:34:57.166+0000] {standard_task_runner.py:64} INFO - Started process 158 to run task
+[2026-10-15T17:34:57.165+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'initialize_matches', 'produce_initialize_matches', 'manual__2026-10-15T17:34:41.062055+00:00', '--job-id', '617', '--raw', '--subdir', 'DAGS_FOLDER/dag_initialize_matches.py', '--cfg-path', '/tmp/tmpuquuhwm4']
+[2026-10-15T17:34:57.171+0000] {standard_task_runner.py:91} INFO - Job 617: Subtask produce_initialize_matches
+[2026-10-15T17:34:57.258+0000] {task_command.py:426} INFO - Running <TaskInstance: initialize_matches.produce_initialize_matches manual__2026-10-15T17:34:41.062055+00:00 [running]> on host 1d24fb6d0793
+[2026-10-15T17:34:57.443+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='initialize_matches' AIRFLOW_CTX_TASK_ID='produce_initialize_matches' AIRFLOW_CTX_EXECUTION_DATE='2026-10-15T17:34:41.062055+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-10-15T17:34:41.062055+00:00'
+[2026-10-15T17:34:57.448+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-10-15T17:34:57.513+0000] {producers_matches.py:51} INFO - len team_urls: 69
+[2026-10-15T17:34:57.515+0000] {producers_matches.py:57} INFO - Processing pair: /team/treviso/Qucu3NNG/ and /team/monza/4YSMlwj7/
+[2026-10-15T17:35:01.696+0000] {producers_matches.py:57} INFO - Processing pair: /team/treviso/Qucu3NNG/ and /team/pro-vercelli/KjGeTD9G/
+[2026-10-15T17:35:05.706+0000] {producers_matches.py:57} INFO - Processing pair: /team/treviso/Qucu3NNG/ and /team/benevento/rZhSxrse/
+[2026-10-15T17:35:09.591+0000] {producers_matches.py:57} INFO - Processing pair: /team/treviso/Qucu3NNG/ and /team/fiorentina/Q3A3IbXH/
+[2026-10-15T17:35:13.693+0000] {producers_matches.py:57} INFO - Processing pair: /team/treviso/Qucu3NNG/ and /team/novara/rPRQmc5D/
+[2026-10-15T17:35:17.529+0000] {producers_matches.py:57} INFO - Processing pair: /team/treviso/Qucu3NNG/ and /team/ternana/zVUNUKkf/
+[2026-10-15T17:35:21.453+0000] {producers_matches.py:57} INFO - Processing pair: /team/treviso/Qucu3NNG/ and /team/verona/rJVAIaHo/
+[2026-10-15T17:35:25.287+0000] {producers_matches.py:57} INFO - Processing pair: /team/treviso/Qucu3NNG/ and /team/piacenza/MLgfe3Oi/
+[2026-10-15T17:35:29.138+0000] {producers_matches.py:57} INFO - Processing pair: /team/treviso/Qucu3NNG/ and /team/empoli/0ESCnI1H/
+[2026-10-15T17:35:33.036+0000] {producers_matches.py:57} INFO - Processing pair: /team/treviso/Qucu3NNG/ and /team/ac-milan/8Sa8HInO/
+[2026-10-15T17:35:37.144+0000] {producers_matches.py:57} INFO - Processing pair: /team/treviso/Qucu3NNG/ and /team/palermo/n38Nktmn/
+[2026-10-15T17:35:41.098+0000] {producers_matches.py:57} INFO - Processing pair: /team/treviso/Qucu3NNG/ and /team/avellino/A332L1f5/
+[2026-10-15T17:35:45.006+0000] {producers_matches.py:57} INFO - Processing pair: /team/treviso/Qucu3NNG/ and /team/bologna/0M9xNN8N/
+[2026-10-15T17:35:49.068+0000] {producers_matches.py:57} INFO - Processing pair: /team/treviso/Qucu3NNG/ and /team/mantova/z7WK5Pwb/
+[2026-10-15T17:35:53.374+0000] {producers_matches.py:57} INFO - Processing pair: /team/treviso/Qucu3NNG/ and /team/sampierdarenese/n9pAVBFt/
+[2026-10-15T17:35:55.016+0000] {flahscore.py:81} WARNING - get_response: попытка 1/20 для url=https://www.flashscore.com/match/football/treviso-Qucu3NNG/sampierdarenese-n9pAVBFt/? не удалась
+[2026-10-15T17:35:56.602+0000] {flahscore.py:81} WARNING - get_response: попытка 2/20 для url=https://www.flashscore.com/match/football/treviso-Qucu3NNG/sampierdarenese-n9pAVBFt/? не удалась
+[2026-10-15T17:35:58.135+0000] {flahscore.py:81} WARNING - get_response: попытка 3/20 для url=https://www.flashscore.com/match/football/treviso-Qucu3NNG/sampierdarenese-n9pAVBFt/? не удалась
+[2026-10-15T17:35:59.675+0000] {flahscore.py:81} WARNING - get_response: попытка 4/20 для url=https://www.flashscore.com/match/football/treviso-Qucu3NNG/sampierdarenese-n9pAVBFt/? не удалась
+[2026-10-15T17:36:02.221+0000] {flahscore.py:81} WARNING - get_response: попытка 5/20 для url=https://www.flashscore.com/match/football/treviso-Qucu3NNG/sampierdarenese-n9pAVBFt/? не удалась
+[2026-10-15T17:36:04.739+0000] {flahscore.py:81} WARNING - get_response: попытка 6/20 для url=https://www.flashscore.com/match/football/treviso-Qucu3NNG/sampierdarenese-n9pAVBFt/? не удалась
+[2026-10-15T17:36:07.246+0000] {flahscore.py:81} WARNING - get_response: попытка 7/20 для url=https://www.flashscore.com/match/football/treviso-Qucu3NNG/sampierdarenese-n9pAVBFt/? не удалась
+[2026-10-15T17:36:09.761+0000] {flahscore.py:81} WARNING - get_response: попытка 8/20 для url=https://www.flashscore.com/match/football/treviso-Qucu3NNG/sampierdarenese-n9pAVBFt/? не удалась
+[2026-10-15T17:36:13.300+0000] {flahscore.py:81} WARNING - get_response: попытка 9/20 для url=https://www.flashscore.com/match/football/treviso-Qucu3NNG/sampierdarenese-n9pAVBFt/? не удалась
+[2026-10-15T17:36:16.894+0000] {flahscore.py:81} WARNING - get_response: попытка 10/20 для url=https://www.flashscore.com/match/football/treviso-Qucu3NNG/sampierdarenese-n9pAVBFt/? не удалась
+[2026-10-15T17:36:20.477+0000] {flahscore.py:81} WARNING - get_response: попытка 11/20 для url=https://www.flashscore.com/match/football/treviso-Qucu3NNG/sampierdarenese-n9pAVBFt/? не удалась
+[2026-10-15T17:36:24.032+0000] {flahscore.py:81} WARNING - get_response: попытка 12/20 для url=https://www.flashscore.com/match/football/treviso-Qucu3NNG/sampierdarenese-n9pAVBFt/? не удалась
+[2026-10-15T17:36:28.719+0000] {flahscore.py:81} WARNING - get_response: попытка 13/20 для url=https://www.flashscore.com/match/football/treviso-Qucu3NNG/sampierdarenese-n9pAVBFt/? не удалась
+[2026-10-15T17:36:33.267+0000] {flahscore.py:81} WARNING - get_response: попытка 14/20 для url=https://www.flashscore.com/match/football/treviso-Qucu3NNG/sampierdarenese-n9pAVBFt/? не удалась
+[2026-10-15T17:36:37.836+0000] {flahscore.py:81} WARNING - get_response: попытка 15/20 для url=https://www.flashscore.com/match/football/treviso-Qucu3NNG/sampierdarenese-n9pAVBFt/? не удалась
+[2026-10-15T17:36:42.345+0000] {flahscore.py:81} WARNING - get_response: попытка 16/20 для url=https://www.flashscore.com/match/football/treviso-Qucu3NNG/sampierdarenese-n9pAVBFt/? не удалась
+[2026-10-15T17:36:48.236+0000] {flahscore.py:81} WARNING - get_response: попытка 17/20 для url=https://www.flashscore.com/match/football/treviso-Qucu3NNG/sampierdarenese-n9pAVBFt/? не удалась
+[2026-10-15T17:36:53.802+0000] {flahscore.py:81} WARNING - get_response: попытка 18/20 для url=https://www.flashscore.com/match/football/treviso-Qucu3NNG/sampierdarenese-n9pAVBFt/? не удалась
+[2026-10-15T17:36:59.361+0000] {flahscore.py:81} WARNING - get_response: попытка 19/20 для url=https://www.flashscore.com/match/football/treviso-Qucu3NNG/sampierdarenese-n9pAVBFt/? не удалась
+[2026-10-15T17:37:04.852+0000] {flahscore.py:81} WARNING - get_response: попытка 20/20 для url=https://www.flashscore.com/match/football/treviso-Qucu3NNG/sampierdarenese-n9pAVBFt/? не удалась
+[2026-10-15T17:37:11.371+0000] {flahscore.py:81} WARNING - get_response: попытка 21/20 для url=https://www.flashscore.com/match/football/treviso-Qucu3NNG/sampierdarenese-n9pAVBFt/? не удалась
+[2026-10-15T17:37:11.373+0000] {flahscore.py:83} ERROR - get_response: url:https://www.flashscore.com/match/football/treviso-Qucu3NNG/sampierdarenese-n9pAVBFt/? не доступен 404 Client Error: Not Found for url: https://www.flashscore.com/match/football/sampierdarenese-n9pAVBFt/treviso-Qucu3NNG/
+[2026-10-15T17:37:11.374+0000] {flahscore.py:96} ERROR - get_feed_last_match: страница для https://www.flashscore.com/match/football/treviso-Qucu3NNG/sampierdarenese-n9pAVBFt/? не была получена
+[2026-10-15T17:37:11.376+0000] {producers_matches.py:57} INFO - Processing pair: /team/treviso/Qucu3NNG/ and /team/padova/2gUwEtrE/
+[2026-10-15T17:37:15.174+0000] {producers_matches.py:57} INFO - Processing pair: /team/treviso/Qucu3NNG/ and /team/casale/lxmUwHhh/
+[2026-10-15T17:37:19.150+0000] {producers_matches.py:57} INFO - Processing pair: /team/treviso/Qucu3NNG/ and /team/genoa/d0PJxeie/
+[2026-10-15T17:37:23.218+0000] {producers_matches.py:57} INFO - Processing pair: /team/treviso/Qucu3NNG/ and /team/pisa/roasMsOT/
+[2026-10-15T17:37:27.118+0000] {producers_matches.py:57} INFO - Processing pair: /team/treviso/Qucu3NNG/ and /team/cagliari/SCGVmKHb/
+[2026-10-15T17:37:31.058+0000] {producers_matches.py:57} INFO - Processing pair: /team/treviso/Qucu3NNG/ and /team/como/ttyLthOA/
+[2026-10-15T17:37:34.986+0000] {producers_matches.py:57} INFO - Processing pair: /team/treviso/Qucu3NNG/ and /team/lazio/URcSl02h/
+[2026-10-15T17:37:39.102+0000] {producers_matches.py:57} INFO - Processing pair: /team/treviso/Qucu3NNG/ and /team/carpi/4Mj4hjbN/
+[2026-10-15T17:37:42.770+0000] {producers_matches.py:57} INFO - Processing pair: /team/treviso/Qucu3NNG/ and /team/ancona/pjq9BL0p/
+[2026-10-15T17:37:46.691+0000] {producers_matches.py:57} INFO - Processing pair: /team/treviso/Qucu3NNG/ and /team/triestina/nJ5YN3gH/
+[2026-10-15T17:37:50.563+0000] {producers_matches.py:57} INFO - Processing pair: /team/treviso/Qucu3NNG/ and /team/sampdoria/nJbCGx2U/
+[2026-10-15T17:37:54.676+0000] {producers_matches.py:57} INFO - Processing pair: /team/treviso/Qucu3NNG/ and /team/reggiana/6ulJbMCe/
+[2026-10-15T17:37:58.605+0000] {producers_matches.py:57} INFO - Processing pair: /team/treviso/Qucu3NNG/ and /team/pro-patria/z7SoCKCQ/
+[2026-10-15T17:38:02.580+0000] {producers_matches.py:57} INFO - Processing pair: /team/treviso/Qucu3NNG/ and /team/spezia/re6VD39b/
+[2026-10-15T17:38:06.496+0000] {producers_matches.py:57} INFO - Processing pair: /team/treviso/Qucu3NNG/ and /team/perugia/ht2m7Kl6/
+[2026-10-15T17:38:10.433+0000] {producers_matches.py:57} INFO - Processing pair: /team/treviso/Qucu3NNG/ and /team/modena/MBn63swN/
+[2026-10-15T17:38:14.307+0000] {producers_matches.py:57} INFO - Processing pair: /team/treviso/Qucu3NNG/ and /team/parma/6DxlaxHN/
+[2026-10-15T17:38:18.295+0000] {producers_matches.py:57} INFO - Processing pair: /team/treviso/Qucu3NNG/ and /team/udinese/rXw8YKDE/
+[2026-10-15T17:38:22.059+0000] {producers_matches.py:57} INFO - Processing pair: /team/treviso/Qucu3NNG/ and /team/juventus/C06aJvIB/
+[2026-10-15T17:38:26.199+0000] {producers_matches.py:57} INFO - Processing pair: /team/treviso/Qucu3NNG/ and /team/inter/Iw7eKK25/
+[2026-10-15T17:38:30.318+0000] {producers_matches.py:57} INFO - Processing pair: /team/treviso/Qucu3NNG/ and /team/andrea-doria/IgA0B8UO/
+[2026-10-15T17:38:31.948+0000] {flahscore.py:81} WARNING - get_response: попытка 1/20 для url=https://www.flashscore.com/match/football/treviso-Qucu3NNG/andrea-doria-IgA0B8UO/? не удалась
+[2026-10-15T17:38:33.452+0000] {flahscore.py:81} WARNING - get_response: попытка 2/20 для url=https://www.flashscore.com/match/football/treviso-Qucu3NNG/andrea-doria-IgA0B8UO/? не удалась
+[2026-10-15T17:38:34.916+0000] {flahscore.py:81} WARNING - get_response: попытка 3/20 для url=https://www.flashscore.com/match/football/treviso-Qucu3NNG/andrea-doria-IgA0B8UO/? не удалась
+[2026-10-15T17:38:36.494+0000] {flahscore.py:81} WARNING - get_response: попытка 4/20 для url=https://www.flashscore.com/match/football/treviso-Qucu3NNG/andrea-doria-IgA0B8UO/? не удалась
+[2026-10-15T17:38:38.982+0000] {flahscore.py:81} WARNING - get_response: попытка 5/20 для url=https://www.flashscore.com/match/football/treviso-Qucu3NNG/andrea-doria-IgA0B8UO/? не удалась
+[2026-10-15T17:38:41.533+0000] {flahscore.py:81} WARNING - get_response: попытка 6/20 для url=https://www.flashscore.com/match/football/treviso-Qucu3NNG/andrea-doria-IgA0B8UO/? не удалась
+[2026-10-15T17:38:44.054+0000] {flahscore.py:81} WARNING - get_response: попытка 7/20 для url=https://www.flashscore.com/match/football/treviso-Qucu3NNG/andrea-doria-IgA0B8UO/? не удалась
+[2026-10-15T17:38:46.540+0000] {flahscore.py:81} WARNING - get_response: попытка 8/20 для url=https://www.flashscore.com/match/football/treviso-Qucu3NNG/andrea-doria-IgA0B8UO/? не удалась
+[2026-10-15T17:38:50.015+0000] {flahscore.py:81} WARNING - get_response: попытка 9/20 для url=https://www.flashscore.com/match/football/treviso-Qucu3NNG/andrea-doria-IgA0B8UO/? не удалась
+[2026-10-15T17:38:53.529+0000] {flahscore.py:81} WARNING - get_response: попытка 10/20 для url=https://www.flashscore.com/match/football/treviso-Qucu3NNG/andrea-doria-IgA0B8UO/? не удалась
+[2026-10-15T17:38:57.117+0000] {flahscore.py:81} WARNING - get_response: попытка 11/20 для url=https://www.flashscore.com/match/football/treviso-Qucu3NNG/andrea-doria-IgA0B8UO/? не удалась
+[2026-10-15T17:39:00.627+0000] {flahscore.py:81} WARNING - get_response: попытка 12/20 для url=https://www.flashscore.com/match/football/treviso-Qucu3NNG/andrea-doria-IgA0B8UO/? не удалась
+[2026-10-15T17:39:05.169+0000] {flahscore.py:81} WARNING - get_response: попытка 13/20 для url=https://www.flashscore.com/match/football/treviso-Qucu3NNG/andrea-doria-IgA0B8UO/? не удалась
+[2026-10-15T17:39:09.682+0000] {flahscore.py:81} WARNING - get_response: попытка 14/20 для url=https://www.flashscore.com/match/football/treviso-Qucu3NNG/andrea-doria-IgA0B8UO/? не удалась
+[2026-10-15T17:39:14.243+0000] {flahscore.py:81} WARNING - get_response: попытка 15/20 для url=https://www.flashscore.com/match/football/treviso-Qucu3NNG/andrea-doria-IgA0B8UO/? не удалась
+[2026-10-15T17:39:18.864+0000] {flahscore.py:81} WARNING - get_response: попытка 16/20 для url=https://www.flashscore.com/match/football/treviso-Qucu3NNG/andrea-doria-IgA0B8UO/? не удалась
+[2026-10-15T17:39:24.423+0000] {flahscore.py:81} WARNING - get_response: попытка 17/20 для url=https://www.flashscore.com/match/football/treviso-Qucu3NNG/andrea-doria-IgA0B8UO/? не удалась
+[2026-10-15T17:39:29.957+0000] {flahscore.py:81} WARNING - get_response: попытка 18/20 для url=https://www.flashscore.com/match/football/treviso-Qucu3NNG/andrea-doria-IgA0B8UO/? не удалась
+[2026-10-15T17:39:35.495+0000] {flahscore.py:81} WARNING - get_response: попытка 19/20 для url=https://www.flashscore.com/match/football/treviso-Qucu3NNG/andrea-doria-IgA0B8UO/? не удалась
+[2026-10-15T17:39:41.071+0000] {flahscore.py:81} WARNING - get_response: попытка 20/20 для url=https://www.flashscore.com/match/football/treviso-Qucu3NNG/andrea-doria-IgA0B8UO/? не удалась
+[2026-10-15T17:39:47.579+0000] {flahscore.py:81} WARNING - get_response: попытка 21/20 для url=https://www.flashscore.com/match/football/treviso-Qucu3NNG/andrea-doria-IgA0B8UO/? не удалась
+[2026-10-15T17:39:47.581+0000] {flahscore.py:83} ERROR - get_response: url:https://www.flashscore.com/match/football/treviso-Qucu3NNG/andrea-doria-IgA0B8UO/? не доступен 404 Client Error: Not Found for url: https://www.flashscore.com/match/football/andrea-doria-IgA0B8UO/treviso-Qucu3NNG/
+[2026-10-15T17:39:47.583+0000] {flahscore.py:96} ERROR - get_feed_last_match: страница для https://www.flashscore.com/match/football/treviso-Qucu3NNG/andrea-doria-IgA0B8UO/? не была получена
+[2026-10-15T17:39:47.586+0000] {producers_matches.py:57} INFO - Processing pair: /team/treviso/Qucu3NNG/ and /team/vicenza/plvm35Pu/
+[2026-10-15T17:39:51.483+0000] {producers_matches.py:57} INFO - Processing pair: /team/treviso/Qucu3NNG/ and /team/napoli/69Dxbc61/
+[2026-10-15T17:39:55.821+0000] {producers_matches.py:57} INFO - Processing pair: /team/treviso/Qucu3NNG/ and /team/lucchese/lU2tBM4m/
+[2026-10-15T17:39:59.742+0000] {producers_matches.py:57} INFO - Processing pair: /team/treviso/Qucu3NNG/ and /team/reggina/p0CtcHL7/
+[2026-10-15T17:40:03.840+0000] {producers_matches.py:57} INFO - Processing pair: /team/treviso/Qucu3NNG/ and /team/chievo/xdTJgGvo/
+[2026-10-15T17:40:07.638+0000] {producers_matches.py:57} INFO - Processing pair: /team/treviso/Qucu3NNG/ and /team/foggia/4nSGWbrR/
+[2026-10-15T17:40:11.565+0000] {producers_matches.py:57} INFO - Processing pair: /team/treviso/Qucu3NNG/ and /team/catanzaro/GnizyMB7/
+[2026-10-15T17:40:15.362+0000] {producers_matches.py:57} INFO - Processing pair: /team/treviso/Qucu3NNG/ and /team/bari/xIkUr2vO/
+[2026-10-15T17:40:19.272+0000] {producers_matches.py:57} INFO - Processing pair: /team/treviso/Qucu3NNG/ and /team/livorno/0zxhbdWT/
+[2026-10-15T17:40:23.225+0000] {producers_matches.py:57} INFO - Processing pair: /team/treviso/Qucu3NNG/ and /team/legnano/WSEswaLf/
+[2026-10-15T17:40:24.853+0000] {flahscore.py:81} WARNING - get_response: попытка 1/20 для url=https://www.flashscore.com/match/football/treviso-Qucu3NNG/legnano-WSEswaLf/? не удалась
+[2026-10-15T17:40:26.425+0000] {flahscore.py:81} WARNING - get_response: попытка 2/20 для url=https://www.flashscore.com/match/football/treviso-Qucu3NNG/legnano-WSEswaLf/? не удалась
+[2026-10-15T17:40:27.976+0000] {flahscore.py:81} WARNING - get_response: попытка 3/20 для url=https://www.flashscore.com/match/football/treviso-Qucu3NNG/legnano-WSEswaLf/? не удалась
+[2026-10-15T17:40:29.584+0000] {flahscore.py:81} WARNING - get_response: попытка 4/20 для url=https://www.flashscore.com/match/football/treviso-Qucu3NNG/legnano-WSEswaLf/? не удалась
+[2026-10-15T17:40:32.260+0000] {flahscore.py:81} WARNING - get_response: попытка 5/20 для url=https://www.flashscore.com/match/football/treviso-Qucu3NNG/legnano-WSEswaLf/? не удалась
+[2026-10-15T17:40:35.031+0000] {flahscore.py:81} WARNING - get_response: попытка 6/20 для url=https://www.flashscore.com/match/football/treviso-Qucu3NNG/legnano-WSEswaLf/? не удалась
+[2026-10-15T17:40:37.634+0000] {flahscore.py:81} WARNING - get_response: попытка 7/20 для url=https://www.flashscore.com/match/football/treviso-Qucu3NNG/legnano-WSEswaLf/? не удалась
+[2026-10-15T17:40:40.269+0000] {flahscore.py:81} WARNING - get_response: попытка 8/20 для url=https://www.flashscore.com/match/football/treviso-Qucu3NNG/legnano-WSEswaLf/? не удалась
+[2026-10-15T17:40:43.798+0000] {flahscore.py:81} WARNING - get_response: попытка 9/20 для url=https://www.flashscore.com/match/football/treviso-Qucu3NNG/legnano-WSEswaLf/? не удалась
+[2026-10-15T17:40:47.376+0000] {flahscore.py:81} WARNING - get_response: попытка 10/20 для url=https://www.flashscore.com/match/football/treviso-Qucu3NNG/legnano-WSEswaLf/? не удалась
+[2026-10-15T17:40:50.956+0000] {flahscore.py:81} WARNING - get_response: попытка 11/20 для url=https://www.flashscore.com/match/football/treviso-Qucu3NNG/legnano-WSEswaLf/? не удалась
+[2026-10-15T17:40:54.550+0000] {flahscore.py:81} WARNING - get_response: попытка 12/20 для url=https://www.flashscore.com/match/football/treviso-Qucu3NNG/legnano-WSEswaLf/? не удалась
+[2026-10-15T17:40:59.135+0000] {flahscore.py:81} WARNING - get_response: попытка 13/20 для url=https://www.flashscore.com/match/football/treviso-Qucu3NNG/legnano-WSEswaLf/? не удалась
+[2026-10-15T17:41:03.657+0000] {flahscore.py:81} WARNING - get_response: попытка 14/20 для url=https://www.flashscore.com/match/football/treviso-Qucu3NNG/legnano-WSEswaLf/? не удалась
+[2026-10-15T17:41:08.195+0000] {flahscore.py:81} WARNING - get_response: попытка 15/20 для url=https://www.flashscore.com/match/football/treviso-Qucu3NNG/legnano-WSEswaLf/? не удалась
+[2026-10-15T17:41:12.671+0000] {flahscore.py:81} WARNING - get_response: попытка 16/20 для url=https://www.flashscore.com/match/football/treviso-Qucu3NNG/legnano-WSEswaLf/? не удалась
+[2026-10-15T17:41:18.171+0000] {flahscore.py:81} WARNING - get_response: попытка 17/20 для url=https://www.flashscore.com/match/football/treviso-Qucu3NNG/legnano-WSEswaLf/? не удалась
+[2026-10-15T17:41:23.713+0000] {flahscore.py:81} WARNING - get_response: попытка 18/20 для url=https://www.flashscore.com/match/football/treviso-Qucu3NNG/legnano-WSEswaLf/? не удалась
+[2026-10-15T17:41:29.362+0000] {flahscore.py:81} WARNING - get_response: попытка 19/20 для url=https://www.flashscore.com/match/football/treviso-Qucu3NNG/legnano-WSEswaLf/? не удалась
+[2026-10-15T17:41:34.933+0000] {flahscore.py:81} WARNING - get_response: попытка 20/20 для url=https://www.flashscore.com/match/football/treviso-Qucu3NNG/legnano-WSEswaLf/? не удалась
+[2026-10-15T17:41:41.516+0000] {flahscore.py:81} WARNING - get_response: попытка 21/20 для url=https://www.flashscore.com/match/football/treviso-Qucu3NNG/legnano-WSEswaLf/? не удалась
+[2026-10-15T17:41:41.537+0000] {flahscore.py:83} ERROR - get_response: url:https://www.flashscore.com/match/football/treviso-Qucu3NNG/legnano-WSEswaLf/? не доступен 404 Client Error: Not Found for url: https://www.flashscore.com/match/football/legnano-WSEswaLf/treviso-Qucu3NNG/
+[2026-10-15T17:41:41.544+0000] {flahscore.py:96} ERROR - get_feed_last_match: страница для https://www.flashscore.com/match/football/treviso-Qucu3NNG/legnano-WSEswaLf/? не была получена
+[2026-10-15T17:41:41.547+0000] {producers_matches.py:57} INFO - Processing pair: /team/treviso/Qucu3NNG/ and /team/sassuolo/QDdvI0zl/
+[2026-10-15T17:41:45.395+0000] {producers_matches.py:57} INFO - Processing pair: /team/treviso/Qucu3NNG/ and /team/as-roma/zVqqL0ma/
+[2026-10-15T17:41:49.715+0000] {producers_matches.py:57} INFO - Processing pair: /team/treviso/Qucu3NNG/ and /team/pistoiese/v10H6bJI/
+[2026-10-15T17:41:53.538+0000] {producers_matches.py:57} INFO - Processing pair: /team/treviso/Qucu3NNG/ and /team/pescara/WW0i6v4C/
+[2026-10-15T17:41:57.575+0000] {producers_matches.py:57} INFO - Processing pair: /team/treviso/Qucu3NNG/ and /team/cesena/xddf1qfh/
+[2026-10-15T17:42:01.576+0000] {producers_matches.py:57} INFO - Processing pair: /team/treviso/Qucu3NNG/ and /team/varese/vR5UXiHd/
+[2026-10-15T17:42:05.209+0000] {producers_matches.py:57} INFO - Processing pair: /team/treviso/Qucu3NNG/ and /team/ascoli/hd6UOqvB/
+[2026-10-15T17:42:09.132+0000] {producers_matches.py:57} INFO - Processing pair: /team/treviso/Qucu3NNG/ and /team/alessandria/Cdmnrfvh/
+[2026-10-15T17:42:13.241+0000] {producers_matches.py:57} INFO - Processing pair: /team/treviso/Qucu3NNG/ and /team/lecce/G8lYsMgU/
+[2026-10-15T17:42:17.024+0000] {producers_matches.py:57} INFO - Processing pair: /team/treviso/Qucu3NNG/ and /team/atalanta/8C9JjMXu/
+[2026-10-15T17:42:20.926+0000] {producers_matches.py:57} INFO - Processing pair: /team/treviso/Qucu3NNG/ and /team/crotone/d8H0SxkJ/
+[2026-10-15T17:42:24.851+0000] {producers_matches.py:57} INFO - Processing pair: /team/treviso/Qucu3NNG/ and /team/frosinone/pfo9H1Wp/
+[2026-10-15T17:42:28.679+0000] {producers_matches.py:57} INFO - Processing pair: /team/treviso/Qucu3NNG/ and /team/venezia/MkPmVv50/
+[2026-10-15T17:42:32.395+0000] {producers_matches.py:57} INFO - Processing pair: /team/treviso/Qucu3NNG/ and /team/cremonese/KUzfp5N3/
+[2026-10-15T17:42:36.296+0000] {producers_matches.py:57} INFO - Processing pair: /team/treviso/Qucu3NNG/ and /team/lecco/IsxHSx6l/
+[2026-10-15T17:42:40.147+0000] {producers_matches.py:57} INFO - Processing pair: /team/treviso/Qucu3NNG/ and /team/brescia/jci0qO9B/
+[2026-10-15T17:42:44.005+0000] {producers_matches.py:57} INFO - Processing pair: /team/treviso/Qucu3NNG/ and /team/acr-messina/rXZS338A/
+[2026-10-15T17:42:47.793+0000] {producers_matches.py:57} INFO - Processing pair: /team/treviso/Qucu3NNG/ and /team/catania/4rwnnbnB/
+[2026-10-15T17:42:51.848+0000] {producers_matches.py:57} INFO - Processing pair: /team/treviso/Qucu3NNG/ and /team/salernitana/Mq05g4BP/
+[2026-10-15T17:42:55.762+0000] {producers_matches.py:57} INFO - Processing pair: /team/treviso/Qucu3NNG/ and /team/spal/SCurW5ZE/
+[2026-10-15T17:42:59.604+0000] {producers_matches.py:57} INFO - Processing pair: /team/treviso/Qucu3NNG/ and /team/torino/MZFZnvX4/
+[2026-10-15T17:43:03.672+0000] {producers_matches.py:57} INFO - Processing pair: /team/treviso/Qucu3NNG/ and /team/siena/2LOWL0b8/
+[2026-10-15T17:43:07.564+0000] {producers_matches.py:57} INFO - Processing pair: /team/monza/4YSMlwj7/ and /team/pro-vercelli/KjGeTD9G/
+[2026-10-15T17:43:11.451+0000] {producers_matches.py:57} INFO - Processing pair: /team/monza/4YSMlwj7/ and /team/benevento/rZhSxrse/
+[2026-10-15T17:43:15.445+0000] {producers_matches.py:57} INFO - Processing pair: /team/monza/4YSMlwj7/ and /team/fiorentina/Q3A3IbXH/
+[2026-10-15T17:43:19.054+0000] {producers_matches.py:57} INFO - Processing pair: /team/monza/4YSMlwj7/ and /team/novara/rPRQmc5D/
+[2026-10-15T17:43:22.777+0000] {producers_matches.py:57} INFO - Processing pair: /team/monza/4YSMlwj7/ and /team/ternana/zVUNUKkf/
+[2026-10-15T17:43:26.520+0000] {producers_matches.py:57} INFO - Processing pair: /team/monza/4YSMlwj7/ and /team/verona/rJVAIaHo/
+[2026-10-15T17:43:30.960+0000] {producers_matches.py:57} INFO - Processing pair: /team/monza/4YSMlwj7/ and /team/piacenza/MLgfe3Oi/
+[2026-10-15T17:43:34.862+0000] {producers_matches.py:57} INFO - Processing pair: /team/monza/4YSMlwj7/ and /team/empoli/0ESCnI1H/
+[2026-10-15T17:43:38.727+0000] {producers_matches.py:57} INFO - Processing pair: /team/monza/4YSMlwj7/ and /team/ac-milan/8Sa8HInO/
+[2026-10-15T17:43:42.957+0000] {producers_matches.py:57} INFO - Processing pair: /team/monza/4YSMlwj7/ and /team/palermo/n38Nktmn/
+[2026-10-15T17:43:46.812+0000] {producers_matches.py:57} INFO - Processing pair: /team/monza/4YSMlwj7/ and /team/avellino/A332L1f5/
+[2026-10-15T17:43:51.219+0000] {producers_matches.py:57} INFO - Processing pair: /team/monza/4YSMlwj7/ and /team/bologna/0M9xNN8N/
+[2026-10-15T17:43:55.017+0000] {producers_matches.py:57} INFO - Processing pair: /team/monza/4YSMlwj7/ and /team/mantova/z7WK5Pwb/
+[2026-10-15T17:43:58.989+0000] {producers_matches.py:57} INFO - Processing pair: /team/monza/4YSMlwj7/ and /team/sampierdarenese/n9pAVBFt/
+[2026-10-15T17:44:00.497+0000] {flahscore.py:81} WARNING - get_response: попытка 1/20 для url=https://www.flashscore.com/match/football/monza-4YSMlwj7/sampierdarenese-n9pAVBFt/? не удалась
+[2026-10-15T17:44:01.996+0000] {flahscore.py:81} WARNING - get_response: попытка 2/20 для url=https://www.flashscore.com/match/football/monza-4YSMlwj7/sampierdarenese-n9pAVBFt/? не удалась
+[2026-10-15T17:44:03.438+0000] {flahscore.py:81} WARNING - get_response: попытка 3/20 для url=https://www.flashscore.com/match/football/monza-4YSMlwj7/sampierdarenese-n9pAVBFt/? не удалась
+[2026-10-15T17:44:04.991+0000] {flahscore.py:81} WARNING - get_response: попытка 4/20 для url=https://www.flashscore.com/match/football/monza-4YSMlwj7/sampierdarenese-n9pAVBFt/? не удалась
+[2026-10-15T17:44:07.488+0000] {flahscore.py:81} WARNING - get_response: попытка 5/20 для url=https://www.flashscore.com/match/football/monza-4YSMlwj7/sampierdarenese-n9pAVBFt/? не удалась
+[2026-10-15T17:44:09.954+0000] {flahscore.py:81} WARNING - get_response: попытка 6/20 для url=https://www.flashscore.com/match/football/monza-4YSMlwj7/sampierdarenese-n9pAVBFt/? не удалась
+[2026-10-15T17:44:12.422+0000] {flahscore.py:81} WARNING - get_response: попытка 7/20 для url=https://www.flashscore.com/match/football/monza-4YSMlwj7/sampierdarenese-n9pAVBFt/? не удалась
+[2026-10-15T17:44:14.828+0000] {flahscore.py:81} WARNING - get_response: попытка 8/20 для url=https://www.flashscore.com/match/football/monza-4YSMlwj7/sampierdarenese-n9pAVBFt/? не удалась
+[2026-10-15T17:44:18.270+0000] {flahscore.py:81} WARNING - get_response: попытка 9/20 для url=https://www.flashscore.com/match/football/monza-4YSMlwj7/sampierdarenese-n9pAVBFt/? не удалась
+[2026-10-15T17:44:21.759+0000] {flahscore.py:81} WARNING - get_response: попытка 10/20 для url=https://www.flashscore.com/match/football/monza-4YSMlwj7/sampierdarenese-n9pAVBFt/? не удалась
+[2026-10-15T17:44:25.188+0000] {flahscore.py:81} WARNING - get_response: попытка 11/20 для url=https://www.flashscore.com/match/football/monza-4YSMlwj7/sampierdarenese-n9pAVBFt/? не удалась
+[2026-10-15T17:44:28.576+0000] {flahscore.py:81} WARNING - get_response: попытка 12/20 для url=https://www.flashscore.com/match/football/monza-4YSMlwj7/sampierdarenese-n9pAVBFt/? не удалась
+[2026-10-15T17:44:33.021+0000] {flahscore.py:81} WARNING - get_response: попытка 13/20 для url=https://www.flashscore.com/match/football/monza-4YSMlwj7/sampierdarenese-n9pAVBFt/? не удалась
+[2026-10-15T17:44:37.442+0000] {flahscore.py:81} WARNING - get_response: попытка 14/20 для url=https://www.flashscore.com/match/football/monza-4YSMlwj7/sampierdarenese-n9pAVBFt/? не удалась
+[2026-10-15T17:44:41.966+0000] {flahscore.py:81} WARNING - get_response: попытка 15/20 для url=https://www.flashscore.com/match/football/monza-4YSMlwj7/sampierdarenese-n9pAVBFt/? не удалась
+[2026-10-15T17:44:46.430+0000] {flahscore.py:81} WARNING - get_response: попытка 16/20 для url=https://www.flashscore.com/match/football/monza-4YSMlwj7/sampierdarenese-n9pAVBFt/? не удалась
+[2026-10-15T17:44:51.870+0000] {flahscore.py:81} WARNING - get_response: попытка 17/20 для url=https://www.flashscore.com/match/football/monza-4YSMlwj7/sampierdarenese-n9pAVBFt/? не удалась
+[2026-10-15T17:44:57.286+0000] {flahscore.py:81} WARNING - get_response: попытка 18/20 для url=https://www.flashscore.com/match/football/monza-4YSMlwj7/sampierdarenese-n9pAVBFt/? не удалась
+[2026-10-15T17:45:02.688+0000] {flahscore.py:81} WARNING - get_response: попытка 19/20 для url=https://www.flashscore.com/match/football/monza-4YSMlwj7/sampierdarenese-n9pAVBFt/? не удалась
+[2026-10-15T17:45:08.041+0000] {flahscore.py:81} WARNING - get_response: попытка 20/20 для url=https://www.flashscore.com/match/football/monza-4YSMlwj7/sampierdarenese-n9pAVBFt/? не удалась
+[2026-10-15T17:45:14.483+0000] {flahscore.py:81} WARNING - get_response: попытка 21/20 для url=https://www.flashscore.com/match/football/monza-4YSMlwj7/sampierdarenese-n9pAVBFt/? не удалась
+[2026-10-15T17:45:14.484+0000] {flahscore.py:83} ERROR - get_response: url:https://www.flashscore.com/match/football/monza-4YSMlwj7/sampierdarenese-n9pAVBFt/? не доступен 404 Client Error: Not Found for url: https://www.flashscore.com/match/football/monza-4YSMlwj7/sampierdarenese-n9pAVBFt/
+[2026-10-15T17:45:14.486+0000] {flahscore.py:96} ERROR - get_feed_last_match: страница для https://www.flashscore.com/match/football/monza-4YSMlwj7/sampierdarenese-n9pAVBFt/? не была получена
+[2026-10-15T17:45:14.490+0000] {producers_matches.py:57} INFO - Processing pair: /team/monza/4YSMlwj7/ and /team/padova/2gUwEtrE/
+[2026-10-15T17:45:18.303+0000] {producers_matches.py:57} INFO - Processing pair: /team/monza/4YSMlwj7/ and /team/casale/lxmUwHhh/
+[2026-10-15T17:45:22.171+0000] {producers_matches.py:57} INFO - Processing pair: /team/monza/4YSMlwj7/ and /team/genoa/d0PJxeie/
+[2026-10-15T17:45:26.227+0000] {producers_matches.py:57} INFO - Processing pair: /team/monza/4YSMlwj7/ and /team/pisa/roasMsOT/
+[2026-10-15T17:45:30.035+0000] {producers_matches.py:57} INFO - Processing pair: /team/monza/4YSMlwj7/ and /team/cagliari/SCGVmKHb/
+[2026-10-15T17:45:33.553+0000] {producers_matches.py:57} INFO - Processing pair: /team/monza/4YSMlwj7/ and /team/como/ttyLthOA/
+[2026-10-15T17:45:37.666+0000] {producers_matches.py:57} INFO - Processing pair: /team/monza/4YSMlwj7/ and /team/lazio/URcSl02h/
+[2026-10-15T17:45:41.323+0000] {producers_matches.py:57} INFO - Processing pair: /team/monza/4YSMlwj7/ and /team/carpi/4Mj4hjbN/
+[2026-10-15T17:45:45.287+0000] {producers_matches.py:57} INFO - Processing pair: /team/monza/4YSMlwj7/ and /team/ancona/pjq9BL0p/
+[2026-10-15T17:45:49.177+0000] {producers_matches.py:57} INFO - Processing pair: /team/monza/4YSMlwj7/ and /team/triestina/nJ5YN3gH/
+[2026-10-15T17:45:53.335+0000] {producers_matches.py:57} INFO - Processing pair: /team/monza/4YSMlwj7/ and /team/sampdoria/nJbCGx2U/
+[2026-10-15T17:45:57.293+0000] {producers_matches.py:57} INFO - Processing pair: /team/monza/4YSMlwj7/ and /team/reggiana/6ulJbMCe/
+[2026-10-15T17:46:01.109+0000] {producers_matches.py:57} INFO - Processing pair: /team/monza/4YSMlwj7/ and /team/pro-patria/z7SoCKCQ/
+[2026-10-15T17:46:04.904+0000] {producers_matches.py:57} INFO - Processing pair: /team/monza/4YSMlwj7/ and /team/spezia/re6VD39b/
+[2026-10-15T17:46:08.842+0000] {producers_matches.py:57} INFO - Processing pair: /team/monza/4YSMlwj7/ and /team/perugia/ht2m7Kl6/
+[2026-10-15T17:46:12.740+0000] {producers_matches.py:57} INFO - Processing pair: /team/monza/4YSMlwj7/ and /team/modena/MBn63swN/
+[2026-10-15T17:46:17.042+0000] {producers_matches.py:57} INFO - Processing pair: /team/monza/4YSMlwj7/ and /team/parma/6DxlaxHN/
+[2026-10-15T17:46:20.859+0000] {producers_matches.py:57} INFO - Processing pair: /team/monza/4YSMlwj7/ and /team/udinese/rXw8YKDE/
+[2026-10-15T17:46:24.918+0000] {producers_matches.py:57} INFO - Processing pair: /team/monza/4YSMlwj7/ and /team/juventus/C06aJvIB/
+[2026-10-15T17:46:29.690+0000] {producers_matches.py:57} INFO - Processing pair: /team/monza/4YSMlwj7/ and /team/inter/Iw7eKK25/
+[2026-10-15T17:46:33.504+0000] {producers_matches.py:57} INFO - Processing pair: /team/monza/4YSMlwj7/ and /team/andrea-doria/IgA0B8UO/
+[2026-10-15T17:46:35.168+0000] {flahscore.py:81} WARNING - get_response: попытка 1/20 для url=https://www.flashscore.com/match/football/monza-4YSMlwj7/andrea-doria-IgA0B8UO/? не удалась
+[2026-10-15T17:46:36.670+0000] {flahscore.py:81} WARNING - get_response: попытка 2/20 для url=https://www.flashscore.com/match/football/monza-4YSMlwj7/andrea-doria-IgA0B8UO/? не удалась
+[2026-10-15T17:46:38.126+0000] {flahscore.py:81} WARNING - get_response: попытка 3/20 для url=https://www.flashscore.com/match/football/monza-4YSMlwj7/andrea-doria-IgA0B8UO/? не удалась
+[2026-10-15T17:46:39.659+0000] {flahscore.py:81} WARNING - get_response: попытка 4/20 для url=https://www.flashscore.com/match/football/monza-4YSMlwj7/andrea-doria-IgA0B8UO/? не удалась
+[2026-10-15T17:46:42.199+0000] {flahscore.py:81} WARNING - get_response: попытка 5/20 для url=https://www.flashscore.com/match/football/monza-4YSMlwj7/andrea-doria-IgA0B8UO/? не удалась
+[2026-10-15T17:46:44.693+0000] {flahscore.py:81} WARNING - get_response: попытка 6/20 для url=https://www.flashscore.com/match/football/monza-4YSMlwj7/andrea-doria-IgA0B8UO/? не удалась
+[2026-10-15T17:46:47.207+0000] {flahscore.py:81} WARNING - get_response: попытка 7/20 для url=https://www.flashscore.com/match/football/monza-4YSMlwj7/andrea-doria-IgA0B8UO/? не удалась
+[2026-10-15T17:46:49.724+0000] {flahscore.py:81} WARNING - get_response: попытка 8/20 для url=https://www.flashscore.com/match/football/monza-4YSMlwj7/andrea-doria-IgA0B8UO/? не удалась
+[2026-10-15T17:46:53.182+0000] {flahscore.py:81} WARNING - get_response: попытка 9/20 для url=https://www.flashscore.com/match/football/monza-4YSMlwj7/andrea-doria-IgA0B8UO/? не удалась
+[2026-10-15T17:46:56.673+0000] {flahscore.py:81} WARNING - get_response: попытка 10/20 для url=https://www.flashscore.com/match/football/monza-4YSMlwj7/andrea-doria-IgA0B8UO/? не удалась
+[2026-10-15T17:47:00.217+0000] {flahscore.py:81} WARNING - get_response: попытка 11/20 для url=https://www.flashscore.com/match/football/monza-4YSMlwj7/andrea-doria-IgA0B8UO/? не удалась
+[2026-10-15T17:47:03.764+0000] {flahscore.py:81} WARNING - get_response: попытка 12/20 для url=https://www.flashscore.com/match/football/monza-4YSMlwj7/andrea-doria-IgA0B8UO/? не удалась
+[2026-10-15T17:47:08.298+0000] {flahscore.py:81} WARNING - get_response: попытка 13/20 для url=https://www.flashscore.com/match/football/monza-4YSMlwj7/andrea-doria-IgA0B8UO/? не удалась
+[2026-10-15T17:47:12.801+0000] {flahscore.py:81} WARNING - get_response: попытка 14/20 для url=https://www.flashscore.com/match/football/monza-4YSMlwj7/andrea-doria-IgA0B8UO/? не удалась
+[2026-10-15T17:47:17.287+0000] {flahscore.py:81} WARNING - get_response: попытка 15/20 для url=https://www.flashscore.com/match/football/monza-4YSMlwj7/andrea-doria-IgA0B8UO/? не удалась
+[2026-10-15T17:47:21.857+0000] {flahscore.py:81} WARNING - get_response: попытка 16/20 для url=https://www.flashscore.com/match/football/monza-4YSMlwj7/andrea-doria-IgA0B8UO/? не удалась
+[2026-10-15T17:47:27.359+0000] {flahscore.py:81} WARNING - get_response: попытка 17/20 для url=https://www.flashscore.com/match/football/monza-4YSMlwj7/andrea-doria-IgA0B8UO/? не удалась
+[2026-10-15T17:47:32.884+0000] {flahscore.py:81} WARNING - get_response: попытка 18/20 для url=https://www.flashscore.com/match/football/monza-4YSMlwj7/andrea-doria-IgA0B8UO/? не удалась
+[2026-10-15T17:47:38.528+0000] {flahscore.py:81} WARNING - get_response: попытка 19/20 для url=https://www.flashscore.com/match/football/monza-4YSMlwj7/andrea-doria-IgA0B8UO/? не удалась
+[2026-10-15T17:47:44.125+0000] {flahscore.py:81} WARNING - get_response: попытка 20/20 для url=https://www.flashscore.com/match/football/monza-4YSMlwj7/andrea-doria-IgA0B8UO/? не удалась
+[2026-10-15T17:47:50.687+0000] {flahscore.py:81} WARNING - get_response: попытка 21/20 для url=https://www.flashscore.com/match/football/monza-4YSMlwj7/andrea-doria-IgA0B8UO/? не удалась
+[2026-10-15T17:47:50.689+0000] {flahscore.py:83} ERROR - get_response: url:https://www.flashscore.com/match/football/monza-4YSMlwj7/andrea-doria-IgA0B8UO/? не доступен 404 Client Error: Not Found for url: https://www.flashscore.com/match/football/andrea-doria-IgA0B8UO/monza-4YSMlwj7/
+[2026-10-15T17:47:50.692+0000] {flahscore.py:96} ERROR - get_feed_last_match: страница для https://www.flashscore.com/match/football/monza-4YSMlwj7/andrea-doria-IgA0B8UO/? не была получена
+[2026-10-15T17:47:50.694+0000] {producers_matches.py:57} INFO - Processing pair: /team/monza/4YSMlwj7/ and /team/vicenza/plvm35Pu/
+[2026-10-15T17:47:54.594+0000] {producers_matches.py:57} INFO - Processing pair: /team/monza/4YSMlwj7/ and /team/napoli/69Dxbc61/
+[2026-10-15T17:47:58.235+0000] {producers_matches.py:57} INFO - Processing pair: /team/monza/4YSMlwj7/ and /team/lucchese/lU2tBM4m/
+[2026-10-15T17:48:02.159+0000] {producers_matches.py:57} INFO - Processing pair: /team/monza/4YSMlwj7/ and /team/reggina/p0CtcHL7/
+[2026-10-15T17:48:06.292+0000] {producers_matches.py:57} INFO - Processing pair: /team/monza/4YSMlwj7/ and /team/chievo/xdTJgGvo/
+[2026-10-15T17:48:10.140+0000] {producers_matches.py:57} INFO - Processing pair: /team/monza/4YSMlwj7/ and /team/foggia/4nSGWbrR/
+[2026-10-15T17:48:14.647+0000] {producers_matches.py:57} INFO - Processing pair: /team/monza/4YSMlwj7/ and /team/catanzaro/GnizyMB7/
+[2026-10-15T17:48:18.806+0000] {producers_matches.py:57} INFO - Processing pair: /team/monza/4YSMlwj7/ and /team/bari/xIkUr2vO/
+[2026-10-15T17:48:23.241+0000] {producers_matches.py:57} INFO - Processing pair: /team/monza/4YSMlwj7/ and /team/livorno/0zxhbdWT/
+[2026-10-15T17:48:27.345+0000] {producers_matches.py:57} INFO - Processing pair: /team/monza/4YSMlwj7/ and /team/legnano/WSEswaLf/
+[2026-10-15T17:48:31.384+0000] {producers_matches.py:57} INFO - Processing pair: /team/monza/4YSMlwj7/ and /team/sassuolo/QDdvI0zl/
+[2026-10-15T17:48:35.389+0000] {producers_matches.py:57} INFO - Processing pair: /team/monza/4YSMlwj7/ and /team/as-roma/zVqqL0ma/
+[2026-10-15T17:48:39.899+0000] {producers_matches.py:57} INFO - Processing pair: /team/monza/4YSMlwj7/ and /team/pistoiese/v10H6bJI/
+[2026-10-15T17:48:44.157+0000] {producers_matches.py:57} INFO - Processing pair: /team/monza/4YSMlwj7/ and /team/pescara/WW0i6v4C/
+[2026-10-15T17:48:48.708+0000] {producers_matches.py:57} INFO - Processing pair: /team/monza/4YSMlwj7/ and /team/cesena/xddf1qfh/
+[2026-10-15T17:48:52.653+0000] {producers_matches.py:57} INFO - Processing pair: /team/monza/4YSMlwj7/ and /team/varese/vR5UXiHd/
+[2026-10-15T17:48:56.990+0000] {producers_matches.py:57} INFO - Processing pair: /team/monza/4YSMlwj7/ and /team/ascoli/hd6UOqvB/
+[2026-10-15T17:49:01.156+0000] {producers_matches.py:57} INFO - Processing pair: /team/monza/4YSMlwj7/ and /team/alessandria/Cdmnrfvh/
+[2026-10-15T17:49:05.714+0000] {producers_matches.py:57} INFO - Processing pair: /team/monza/4YSMlwj7/ and /team/lecce/G8lYsMgU/
+[2026-10-15T17:49:09.756+0000] {producers_matches.py:57} INFO - Processing pair: /team/monza/4YSMlwj7/ and /team/atalanta/8C9JjMXu/
+[2026-10-15T17:49:15.561+0000] {producers_matches.py:57} INFO - Processing pair: /team/monza/4YSMlwj7/ and /team/crotone/d8H0SxkJ/
+[2026-10-15T17:49:19.882+0000] {producers_matches.py:57} INFO - Processing pair: /team/monza/4YSMlwj7/ and /team/frosinone/pfo9H1Wp/
+[2026-10-15T17:49:24.006+0000] {producers_matches.py:57} INFO - Processing pair: /team/monza/4YSMlwj7/ and /team/venezia/MkPmVv50/
+[2026-10-15T17:49:27.940+0000] {producers_matches.py:57} INFO - Processing pair: /team/monza/4YSMlwj7/ and /team/cremonese/KUzfp5N3/
+[2026-10-15T17:49:31.961+0000] {producers_matches.py:57} INFO - Processing pair: /team/monza/4YSMlwj7/ and /team/lecco/IsxHSx6l/
+[2026-10-15T17:49:36.071+0000] {producers_matches.py:57} INFO - Processing pair: /team/monza/4YSMlwj7/ and /team/brescia/jci0qO9B/
+[2026-10-15T17:49:40.670+0000] {producers_matches.py:57} INFO - Processing pair: /team/monza/4YSMlwj7/ and /team/acr-messina/rXZS338A/
+[2026-10-15T17:49:42.414+0000] {flahscore.py:81} WARNING - get_response: попытка 1/20 для url=https://www.flashscore.com/match/football/monza-4YSMlwj7/acr-messina-rXZS338A/? не удалась
+[2026-10-15T17:49:43.895+0000] {flahscore.py:81} WARNING - get_response: попытка 2/20 для url=https://www.flashscore.com/match/football/monza-4YSMlwj7/acr-messina-rXZS338A/? не удалась
+[2026-10-15T17:49:45.501+0000] {flahscore.py:81} WARNING - get_response: попытка 3/20 для url=https://www.flashscore.com/match/football/monza-4YSMlwj7/acr-messina-rXZS338A/? не удалась
+[2026-10-15T17:49:46.995+0000] {flahscore.py:81} WARNING - get_response: попытка 4/20 для url=https://www.flashscore.com/match/football/monza-4YSMlwj7/acr-messina-rXZS338A/? не удалась
+[2026-10-15T17:49:49.486+0000] {flahscore.py:81} WARNING - get_response: попытка 5/20 для url=https://www.flashscore.com/match/football/monza-4YSMlwj7/acr-messina-rXZS338A/? не удалась
+[2026-10-15T17:49:52.018+0000] {flahscore.py:81} WARNING - get_response: попытка 6/20 для url=https://www.flashscore.com/match/football/monza-4YSMlwj7/acr-messina-rXZS338A/? не удалась
+[2026-10-15T17:49:54.557+0000] {flahscore.py:81} WARNING - get_response: попытка 7/20 для url=https://www.flashscore.com/match/football/monza-4YSMlwj7/acr-messina-rXZS338A/? не удалась
+[2026-10-15T17:49:57.093+0000] {flahscore.py:81} WARNING - get_response: попытка 8/20 для url=https://www.flashscore.com/match/football/monza-4YSMlwj7/acr-messina-rXZS338A/? не удалась
+[2026-10-15T17:50:00.626+0000] {flahscore.py:81} WARNING - get_response: попытка 9/20 для url=https://www.flashscore.com/match/football/monza-4YSMlwj7/acr-messina-rXZS338A/? не удалась
+[2026-10-15T17:50:04.219+0000] {flahscore.py:81} WARNING - get_response: попытка 10/20 для url=https://www.flashscore.com/match/football/monza-4YSMlwj7/acr-messina-rXZS338A/? не удалась
+[2026-10-15T17:50:07.770+0000] {flahscore.py:81} WARNING - get_response: попытка 11/20 для url=https://www.flashscore.com/match/football/monza-4YSMlwj7/acr-messina-rXZS338A/? не удалась
+[2026-10-15T17:50:11.334+0000] {flahscore.py:81} WARNING - get_response: попытка 12/20 для url=https://www.flashscore.com/match/football/monza-4YSMlwj7/acr-messina-rXZS338A/? не удалась
+[2026-10-15T17:50:15.893+0000] {flahscore.py:81} WARNING - get_response: попытка 13/20 для url=https://www.flashscore.com/match/football/monza-4YSMlwj7/acr-messina-rXZS338A/? не удалась
+[2026-10-15T17:50:20.368+0000] {flahscore.py:81} WARNING - get_response: попытка 14/20 для url=https://www.flashscore.com/match/football/monza-4YSMlwj7/acr-messina-rXZS338A/? не удалась
+[2026-10-15T17:50:24.841+0000] {flahscore.py:81} WARNING - get_response: попытка 15/20 для url=https://www.flashscore.com/match/football/monza-4YSMlwj7/acr-messina-rXZS338A/? не удалась
+[2026-10-15T17:50:29.405+0000] {flahscore.py:81} WARNING - get_response: попытка 16/20 для url=https://www.flashscore.com/match/football/monza-4YSMlwj7/acr-messina-rXZS338A/? не удалась
+[2026-10-15T17:50:34.881+0000] {flahscore.py:81} WARNING - get_response: попытка 17/20 для url=https://www.flashscore.com/match/football/monza-4YSMlwj7/acr-messina-rXZS338A/? не удалась
+[2026-10-15T17:50:40.383+0000] {flahscore.py:81} WARNING - get_response: попытка 18/20 для url=https://www.flashscore.com/match/football/monza-4YSMlwj7/acr-messina-rXZS338A/? не удалась
+[2026-10-15T17:50:46.073+0000] {flahscore.py:81} WARNING - get_response: попытка 19/20 для url=https://www.flashscore.com/match/football/monza-4YSMlwj7/acr-messina-rXZS338A/? не удалась
+[2026-10-15T17:50:51.607+0000] {flahscore.py:81} WARNING - get_response: попытка 20/20 для url=https://www.flashscore.com/match/football/monza-4YSMlwj7/acr-messina-rXZS338A/? не удалась
+[2026-10-15T17:50:58.158+0000] {flahscore.py:81} WARNING - get_response: попытка 21/20 для url=https://www.flashscore.com/match/football/monza-4YSMlwj7/acr-messina-rXZS338A/? не удалась
+[2026-10-15T17:50:58.159+0000] {flahscore.py:83} ERROR - get_response: url:https://www.flashscore.com/match/football/monza-4YSMlwj7/acr-messina-rXZS338A/? не доступен 404 Client Error: Not Found for url: https://www.flashscore.com/match/football/acr-messina-rXZS338A/monza-4YSMlwj7/
+[2026-10-15T17:50:58.161+0000] {flahscore.py:96} ERROR - get_feed_last_match: страница для https://www.flashscore.com/match/football/monza-4YSMlwj7/acr-messina-rXZS338A/? не была получена
+[2026-10-15T17:50:58.163+0000] {producers_matches.py:57} INFO - Processing pair: /team/monza/4YSMlwj7/ and /team/catania/4rwnnbnB/
+[2026-10-15T17:50:59.836+0000] {flahscore.py:81} WARNING - get_response: попытка 1/20 для url=https://www.flashscore.com/match/football/monza-4YSMlwj7/catania-4rwnnbnB/? не удалась
+[2026-10-15T17:51:01.332+0000] {flahscore.py:81} WARNING - get_response: попытка 2/20 для url=https://www.flashscore.com/match/football/monza-4YSMlwj7/catania-4rwnnbnB/? не удалась
+[2026-10-15T17:51:03.037+0000] {flahscore.py:81} WARNING - get_response: попытка 3/20 для url=https://www.flashscore.com/match/football/monza-4YSMlwj7/catania-4rwnnbnB/? не удалась
+[2026-10-15T17:51:04.629+0000] {flahscore.py:81} WARNING - get_response: попытка 4/20 для url=https://www.flashscore.com/match/football/monza-4YSMlwj7/catania-4rwnnbnB/? не удалась
+[2026-10-15T17:51:07.154+0000] {flahscore.py:81} WARNING - get_response: попытка 5/20 для url=https://www.flashscore.com/match/football/monza-4YSMlwj7/catania-4rwnnbnB/? не удалась
+[2026-10-15T17:51:09.706+0000] {flahscore.py:81} WARNING - get_response: попытка 6/20 для url=https://www.flashscore.com/match/football/monza-4YSMlwj7/catania-4rwnnbnB/? не удалась
+[2026-10-15T17:51:12.238+0000] {flahscore.py:81} WARNING - get_response: попытка 7/20 для url=https://www.flashscore.com/match/football/monza-4YSMlwj7/catania-4rwnnbnB/? не удалась
+[2026-10-15T17:51:14.773+0000] {flahscore.py:81} WARNING - get_response: попытка 8/20 для url=https://www.flashscore.com/match/football/monza-4YSMlwj7/catania-4rwnnbnB/? не удалась
+[2026-10-15T17:51:18.228+0000] {flahscore.py:81} WARNING - get_response: попытка 9/20 для url=https://www.flashscore.com/match/football/monza-4YSMlwj7/catania-4rwnnbnB/? не удалась
+[2026-10-15T17:51:21.775+0000] {flahscore.py:81} WARNING - get_response: попытка 10/20 для url=https://www.flashscore.com/match/football/monza-4YSMlwj7/catania-4rwnnbnB/? не удалась
+[2026-10-15T17:51:25.322+0000] {flahscore.py:81} WARNING - get_response: попытка 11/20 для url=https://www.flashscore.com/match/football/monza-4YSMlwj7/catania-4rwnnbnB/? не удалась
+[2026-10-15T17:51:28.854+0000] {flahscore.py:81} WARNING - get_response: попытка 12/20 для url=https://www.flashscore.com/match/football/monza-4YSMlwj7/catania-4rwnnbnB/? не удалась
+[2026-10-15T17:51:33.349+0000] {flahscore.py:81} WARNING - get_response: попытка 13/20 для url=https://www.flashscore.com/match/football/monza-4YSMlwj7/catania-4rwnnbnB/? не удалась
+[2026-10-15T17:51:37.904+0000] {flahscore.py:81} WARNING - get_response: попытка 14/20 для url=https://www.flashscore.com/match/football/monza-4YSMlwj7/catania-4rwnnbnB/? не удалась
+[2026-10-15T17:51:43.317+0000] {flahscore.py:81} WARNING - get_response: попытка 15/20 для url=https://www.flashscore.com/match/football/monza-4YSMlwj7/catania-4rwnnbnB/? не удалась
+[2026-10-15T17:51:47.893+0000] {flahscore.py:81} WARNING - get_response: попытка 16/20 для url=https://www.flashscore.com/match/football/monza-4YSMlwj7/catania-4rwnnbnB/? не удалась
+[2026-10-15T17:51:53.441+0000] {flahscore.py:81} WARNING - get_response: попытка 17/20 для url=https://www.flashscore.com/match/football/monza-4YSMlwj7/catania-4rwnnbnB/? не удалась
+[2026-10-15T17:51:59.181+0000] {flahscore.py:81} WARNING - get_response: попытка 18/20 для url=https://www.flashscore.com/match/football/monza-4YSMlwj7/catania-4rwnnbnB/? не удалась
+[2026-10-15T17:52:04.773+0000] {flahscore.py:81} WARNING - get_response: попытка 19/20 для url=https://www.flashscore.com/match/football/monza-4YSMlwj7/catania-4rwnnbnB/? не удалась
+[2026-10-15T17:52:10.686+0000] {flahscore.py:81} WARNING - get_response: попытка 20/20 для url=https://www.flashscore.com/match/football/monza-4YSMlwj7/catania-4rwnnbnB/? не удалась
+[2026-10-15T17:52:17.670+0000] {flahscore.py:81} WARNING - get_response: попытка 21/20 для url=https://www.flashscore.com/match/football/monza-4YSMlwj7/catania-4rwnnbnB/? не удалась
+[2026-10-15T17:52:17.673+0000] {flahscore.py:83} ERROR - get_response: url:https://www.flashscore.com/match/football/monza-4YSMlwj7/catania-4rwnnbnB/? не доступен 404 Client Error: Not Found for url: https://www.flashscore.com/match/football/catania-4rwnnbnB/monza-4YSMlwj7/
+[2026-10-15T17:52:17.677+0000] {flahscore.py:96} ERROR - get_feed_last_match: страница для https://www.flashscore.com/match/football/monza-4YSMlwj7/catania-4rwnnbnB/? не была получена
+[2026-10-15T17:52:17.679+0000] {producers_matches.py:57} INFO - Processing pair: /team/monza/4YSMlwj7/ and /team/salernitana/Mq05g4BP/
+[2026-10-15T17:52:22.690+0000] {producers_matches.py:57} INFO - Processing pair: /team/monza/4YSMlwj7/ and /team/spal/SCurW5ZE/
+[2026-10-15T17:52:27.279+0000] {producers_matches.py:57} INFO - Processing pair: /team/monza/4YSMlwj7/ and /team/torino/MZFZnvX4/
+[2026-10-15T17:52:30.809+0000] {producers_matches.py:57} INFO - Processing pair: /team/monza/4YSMlwj7/ and /team/siena/2LOWL0b8/
+[2026-10-15T17:52:34.956+0000] {producers_matches.py:57} INFO - Processing pair: /team/pro-vercelli/KjGeTD9G/ and /team/benevento/rZhSxrse/
+[2026-10-15T17:52:39.335+0000] {producers_matches.py:57} INFO - Processing pair: /team/pro-vercelli/KjGeTD9G/ and /team/fiorentina/Q3A3IbXH/
+[2026-10-15T17:52:43.878+0000] {producers_matches.py:57} INFO - Processing pair: /team/pro-vercelli/KjGeTD9G/ and /team/novara/rPRQmc5D/
+[2026-10-15T17:52:48.090+0000] {producers_matches.py:57} INFO - Processing pair: /team/pro-vercelli/KjGeTD9G/ and /team/ternana/zVUNUKkf/
+[2026-10-15T17:52:52.433+0000] {producers_matches.py:57} INFO - Processing pair: /team/pro-vercelli/KjGeTD9G/ and /team/verona/rJVAIaHo/
+[2026-10-15T17:52:57.470+0000] {producers_matches.py:57} INFO - Processing pair: /team/pro-vercelli/KjGeTD9G/ and /team/piacenza/MLgfe3Oi/
+[2026-10-15T17:53:01.932+0000] {producers_matches.py:57} INFO - Processing pair: /team/pro-vercelli/KjGeTD9G/ and /team/empoli/0ESCnI1H/
+[2026-10-15T17:53:06.253+0000] {producers_matches.py:57} INFO - Processing pair: /team/pro-vercelli/KjGeTD9G/ and /team/ac-milan/8Sa8HInO/
+[2026-10-15T17:53:10.422+0000] {producers_matches.py:57} INFO - Processing pair: /team/pro-vercelli/KjGeTD9G/ and /team/palermo/n38Nktmn/
+[2026-10-15T17:53:15.059+0000] {producers_matches.py:57} INFO - Processing pair: /team/pro-vercelli/KjGeTD9G/ and /team/avellino/A332L1f5/
+[2026-10-15T17:53:19.156+0000] {producers_matches.py:57} INFO - Processing pair: /team/pro-vercelli/KjGeTD9G/ and /team/bologna/0M9xNN8N/
+[2026-10-15T17:53:23.684+0000] {producers_matches.py:57} INFO - Processing pair: /team/pro-vercelli/KjGeTD9G/ and /team/mantova/z7WK5Pwb/
+[2026-10-15T17:53:27.855+0000] {producers_matches.py:57} INFO - Processing pair: /team/pro-vercelli/KjGeTD9G/ and /team/sampierdarenese/n9pAVBFt/
+[2026-10-15T17:53:31.897+0000] {producers_matches.py:57} INFO - Processing pair: /team/pro-vercelli/KjGeTD9G/ and /team/padova/2gUwEtrE/
+[2026-10-15T17:53:36.709+0000] {producers_matches.py:57} INFO - Processing pair: /team/pro-vercelli/KjGeTD9G/ and /team/casale/lxmUwHhh/
+[2026-10-15T17:53:40.755+0000] {producers_matches.py:57} INFO - Processing pair: /team/pro-vercelli/KjGeTD9G/ and /team/genoa/d0PJxeie/
+[2026-10-15T17:53:45.214+0000] {producers_matches.py:57} INFO - Processing pair: /team/pro-vercelli/KjGeTD9G/ and /team/pisa/roasMsOT/
+[2026-10-15T17:53:49.261+0000] {producers_matches.py:57} INFO - Processing pair: /team/pro-vercelli/KjGeTD9G/ and /team/cagliari/SCGVmKHb/
+[2026-10-15T17:53:53.513+0000] {producers_matches.py:57} INFO - Processing pair: /team/pro-vercelli/KjGeTD9G/ and /team/como/ttyLthOA/
+[2026-10-15T17:53:57.839+0000] {producers_matches.py:57} INFO - Processing pair: /team/pro-vercelli/KjGeTD9G/ and /team/lazio/URcSl02h/
+[2026-10-15T17:54:02.162+0000] {producers_matches.py:57} INFO - Processing pair: /team/pro-vercelli/KjGeTD9G/ and /team/carpi/4Mj4hjbN/
+[2026-10-15T17:54:06.286+0000] {producers_matches.py:57} INFO - Processing pair: /team/pro-vercelli/KjGeTD9G/ and /team/ancona/pjq9BL0p/
+[2026-10-15T17:54:07.960+0000] {flahscore.py:81} WARNING - get_response: попытка 1/20 для url=https://www.flashscore.com/match/football/pro-vercelli-KjGeTD9G/ancona-pjq9BL0p/? не удалась
+[2026-10-15T17:54:09.552+0000] {flahscore.py:81} WARNING - get_response: попытка 2/20 для url=https://www.flashscore.com/match/football/pro-vercelli-KjGeTD9G/ancona-pjq9BL0p/? не удалась
+[2026-10-15T17:54:11.120+0000] {flahscore.py:81} WARNING - get_response: попытка 3/20 для url=https://www.flashscore.com/match/football/pro-vercelli-KjGeTD9G/ancona-pjq9BL0p/? не удалась
+[2026-10-15T17:54:12.833+0000] {flahscore.py:81} WARNING - get_response: попытка 4/20 для url=https://www.flashscore.com/match/football/pro-vercelli-KjGeTD9G/ancona-pjq9BL0p/? не удалась
+[2026-10-15T17:54:15.334+0000] {flahscore.py:81} WARNING - get_response: попытка 5/20 для url=https://www.flashscore.com/match/football/pro-vercelli-KjGeTD9G/ancona-pjq9BL0p/? не удалась
+[2026-10-15T17:54:17.808+0000] {flahscore.py:81} WARNING - get_response: попытка 6/20 для url=https://www.flashscore.com/match/football/pro-vercelli-KjGeTD9G/ancona-pjq9BL0p/? не удалась
+[2026-10-15T17:54:20.405+0000] {flahscore.py:81} WARNING - get_response: попытка 7/20 для url=https://www.flashscore.com/match/football/pro-vercelli-KjGeTD9G/ancona-pjq9BL0p/? не удалась
+[2026-10-15T17:54:22.974+0000] {flahscore.py:81} WARNING - get_response: попытка 8/20 для url=https://www.flashscore.com/match/football/pro-vercelli-KjGeTD9G/ancona-pjq9BL0p/? не удалась
+[2026-10-15T17:54:26.581+0000] {flahscore.py:81} WARNING - get_response: попытка 9/20 для url=https://www.flashscore.com/match/football/pro-vercelli-KjGeTD9G/ancona-pjq9BL0p/? не удалась
+[2026-10-15T17:54:30.092+0000] {flahscore.py:81} WARNING - get_response: попытка 10/20 для url=https://www.flashscore.com/match/football/pro-vercelli-KjGeTD9G/ancona-pjq9BL0p/? не удалась
+[2026-10-15T17:54:33.589+0000] {flahscore.py:81} WARNING - get_response: попытка 11/20 для url=https://www.flashscore.com/match/football/pro-vercelli-KjGeTD9G/ancona-pjq9BL0p/? не удалась
+[2026-10-15T17:54:37.498+0000] {flahscore.py:81} WARNING - get_response: попытка 12/20 для url=https://www.flashscore.com/match/football/pro-vercelli-KjGeTD9G/ancona-pjq9BL0p/? не удалась
+[2026-10-15T17:54:42.037+0000] {flahscore.py:81} WARNING - get_response: попытка 13/20 для url=https://www.flashscore.com/match/football/pro-vercelli-KjGeTD9G/ancona-pjq9BL0p/? не удалась
+[2026-10-15T17:54:46.585+0000] {flahscore.py:81} WARNING - get_response: попытка 14/20 для url=https://www.flashscore.com/match/football/pro-vercelli-KjGeTD9G/ancona-pjq9BL0p/? не удалась
+[2026-10-15T17:54:51.282+0000] {flahscore.py:81} WARNING - get_response: попытка 15/20 для url=https://www.flashscore.com/match/football/pro-vercelli-KjGeTD9G/ancona-pjq9BL0p/? не удалась
+[2026-10-15T17:54:55.743+0000] {flahscore.py:81} WARNING - get_response: попытка 16/20 для url=https://www.flashscore.com/match/football/pro-vercelli-KjGeTD9G/ancona-pjq9BL0p/? не удалась
+[2026-10-15T17:55:01.324+0000] {flahscore.py:81} WARNING - get_response: попытка 17/20 для url=https://www.flashscore.com/match/football/pro-vercelli-KjGeTD9G/ancona-pjq9BL0p/? не удалась
+[2026-10-15T17:55:06.856+0000] {flahscore.py:81} WARNING - get_response: попытка 18/20 для url=https://www.flashscore.com/match/football/pro-vercelli-KjGeTD9G/ancona-pjq9BL0p/? не удалась
+[2026-10-15T17:55:12.466+0000] {flahscore.py:81} WARNING - get_response: попытка 19/20 для url=https://www.flashscore.com/match/football/pro-vercelli-KjGeTD9G/ancona-pjq9BL0p/? не удалась
+[2026-10-15T17:55:18.165+0000] {flahscore.py:81} WARNING - get_response: попытка 20/20 для url=https://www.flashscore.com/match/football/pro-vercelli-KjGeTD9G/ancona-pjq9BL0p/? не удалась
+[2026-10-15T17:55:24.692+0000] {flahscore.py:81} WARNING - get_response: попытка 21/20 для url=https://www.flashscore.com/match/football/pro-vercelli-KjGeTD9G/ancona-pjq9BL0p/? не удалась
+[2026-10-15T17:55:24.694+0000] {flahscore.py:83} ERROR - get_response: url:https://www.flashscore.com/match/football/pro-vercelli-KjGeTD9G/ancona-pjq9BL0p/? не доступен 404 Client Error: Not Found for url: https://www.flashscore.com/match/football/ancona-pjq9BL0p/pro-vercelli-KjGeTD9G/
+[2026-10-15T17:55:24.697+0000] {flahscore.py:96} ERROR - get_feed_last_match: страница для https://www.flashscore.com/match/football/pro-vercelli-KjGeTD9G/ancona-pjq9BL0p/? не была получена
+[2026-10-15T17:55:24.699+0000] {producers_matches.py:57} INFO - Processing pair: /team/pro-vercelli/KjGeTD9G/ and /team/triestina/nJ5YN3gH/
+[2026-10-15T17:55:28.746+0000] {producers_matches.py:57} INFO - Processing pair: /team/pro-vercelli/KjGeTD9G/ and /team/sampdoria/nJbCGx2U/
+[2026-10-15T17:55:30.346+0000] {flahscore.py:81} WARNING - get_response: попытка 1/20 для url=https://www.flashscore.com/match/football/pro-vercelli-KjGeTD9G/sampdoria-nJbCGx2U/? не удалась
+[2026-10-15T17:55:31.797+0000] {flahscore.py:81} WARNING - get_response: попытка 2/20 для url=https://www.flashscore.com/match/football/pro-vercelli-KjGeTD9G/sampdoria-nJbCGx2U/? не удалась
+[2026-10-15T17:55:33.174+0000] {flahscore.py:81} WARNING - get_response: попытка 3/20 для url=https://www.flashscore.com/match/football/pro-vercelli-KjGeTD9G/sampdoria-nJbCGx2U/? не удалась
+[2026-10-15T17:55:34.569+0000] {flahscore.py:81} WARNING - get_response: попытка 4/20 для url=https://www.flashscore.com/match/football/pro-vercelli-KjGeTD9G/sampdoria-nJbCGx2U/? не удалась
+[2026-10-15T17:55:36.992+0000] {flahscore.py:81} WARNING - get_response: попытка 5/20 для url=https://www.flashscore.com/match/football/pro-vercelli-KjGeTD9G/sampdoria-nJbCGx2U/? не удалась
+[2026-10-15T17:55:39.422+0000] {flahscore.py:81} WARNING - get_response: попытка 6/20 для url=https://www.flashscore.com/match/football/pro-vercelli-KjGeTD9G/sampdoria-nJbCGx2U/? не удалась
+[2026-10-15T17:55:41.993+0000] {flahscore.py:81} WARNING - get_response: попытка 7/20 для url=https://www.flashscore.com/match/football/pro-vercelli-KjGeTD9G/sampdoria-nJbCGx2U/? не удалась
+[2026-10-15T17:55:44.448+0000] {flahscore.py:81} WARNING - get_response: попытка 8/20 для url=https://www.flashscore.com/match/football/pro-vercelli-KjGeTD9G/sampdoria-nJbCGx2U/? не удалась
+[2026-10-15T17:55:47.864+0000] {flahscore.py:81} WARNING - get_response: попытка 9/20 для url=https://www.flashscore.com/match/football/pro-vercelli-KjGeTD9G/sampdoria-nJbCGx2U/? не удалась
+[2026-10-15T17:55:51.311+0000] {flahscore.py:81} WARNING - get_response: попытка 10/20 для url=https://www.flashscore.com/match/football/pro-vercelli-KjGeTD9G/sampdoria-nJbCGx2U/? не удалась
+[2026-10-15T17:55:54.691+0000] {flahscore.py:81} WARNING - get_response: попытка 11/20 для url=https://www.flashscore.com/match/football/pro-vercelli-KjGeTD9G/sampdoria-nJbCGx2U/? не удалась
+[2026-10-15T17:55:58.139+0000] {flahscore.py:81} WARNING - get_response: попытка 12/20 для url=https://www.flashscore.com/match/football/pro-vercelli-KjGeTD9G/sampdoria-nJbCGx2U/? не удалась
+[2026-10-15T17:56:02.657+0000] {flahscore.py:81} WARNING - get_response: попытка 13/20 для url=https://www.flashscore.com/match/football/pro-vercelli-KjGeTD9G/sampdoria-nJbCGx2U/? не удалась
+[2026-10-15T17:56:07.073+0000] {flahscore.py:81} WARNING - get_response: попытка 14/20 для url=https://www.flashscore.com/match/football/pro-vercelli-KjGeTD9G/sampdoria-nJbCGx2U/? не удалась
+[2026-10-15T17:56:11.485+0000] {flahscore.py:81} WARNING - get_response: попытка 15/20 для url=https://www.flashscore.com/match/football/pro-vercelli-KjGeTD9G/sampdoria-nJbCGx2U/? не удалась
+[2026-10-15T17:56:16.312+0000] {flahscore.py:81} WARNING - get_response: попытка 16/20 для url=https://www.flashscore.com/match/football/pro-vercelli-KjGeTD9G/sampdoria-nJbCGx2U/? не удалась
+[2026-10-15T17:56:21.815+0000] {flahscore.py:81} WARNING - get_response: попытка 17/20 для url=https://www.flashscore.com/match/football/pro-vercelli-KjGeTD9G/sampdoria-nJbCGx2U/? не удалась
+[2026-10-15T17:56:27.236+0000] {flahscore.py:81} WARNING - get_response: попытка 18/20 для url=https://www.flashscore.com/match/football/pro-vercelli-KjGeTD9G/sampdoria-nJbCGx2U/? не удалась
+[2026-10-15T17:56:32.701+0000] {flahscore.py:81} WARNING - get_response: попытка 19/20 для url=https://www.flashscore.com/match/football/pro-vercelli-KjGeTD9G/sampdoria-nJbCGx2U/? не удалась
+[2026-10-15T17:56:38.096+0000] {flahscore.py:81} WARNING - get_response: попытка 20/20 для url=https://www.flashscore.com/match/football/pro-vercelli-KjGeTD9G/sampdoria-nJbCGx2U/? не удалась
+[2026-10-15T17:56:44.551+0000] {flahscore.py:81} WARNING - get_response: попытка 21/20 для url=https://www.flashscore.com/match/football/pro-vercelli-KjGeTD9G/sampdoria-nJbCGx2U/? не удалась
+[2026-10-15T17:56:44.554+0000] {flahscore.py:83} ERROR - get_response: url:https://www.flashscore.com/match/football/pro-vercelli-KjGeTD9G/sampdoria-nJbCGx2U/? не доступен 404 Client Error: Not Found for url: https://www.flashscore.com/match/football/pro-vercelli-KjGeTD9G/sampdoria-nJbCGx2U/
+[2026-10-15T17:56:44.556+0000] {flahscore.py:96} ERROR - get_feed_last_match: страница для https://www.flashscore.com/match/football/pro-vercelli-KjGeTD9G/sampdoria-nJbCGx2U/? не была получена
+[2026-10-15T17:56:44.558+0000] {producers_matches.py:57} INFO - Processing pair: /team/pro-vercelli/KjGeTD9G/ and /team/reggiana/6ulJbMCe/
+[2026-10-15T17:56:52.025+0000] {producers_matches.py:57} INFO - Processing pair: /team/pro-vercelli/KjGeTD9G/ and /team/pro-patria/z7SoCKCQ/
+[2026-10-15T17:56:56.259+0000] {producers_matches.py:57} INFO - Processing pair: /team/pro-vercelli/KjGeTD9G/ and /team/spezia/re6VD39b/
+[2026-10-15T17:57:00.899+0000] {producers_matches.py:57} INFO - Processing pair: /team/pro-vercelli/KjGeTD9G/ and /team/perugia/ht2m7Kl6/
+[2026-10-15T17:57:05.443+0000] {producers_matches.py:57} INFO - Processing pair: /team/pro-vercelli/KjGeTD9G/ and /team/modena/MBn63swN/
+[2026-10-15T17:57:09.871+0000] {producers_matches.py:57} INFO - Processing pair: /team/pro-vercelli/KjGeTD9G/ and /team/parma/6DxlaxHN/
+[2026-10-15T17:57:14.426+0000] {producers_matches.py:57} INFO - Processing pair: /team/pro-vercelli/KjGeTD9G/ and /team/udinese/rXw8YKDE/
+[2026-10-15T17:57:16.027+0000] {flahscore.py:81} WARNING - get_response: попытка 1/20 для url=https://www.flashscore.com/match/football/pro-vercelli-KjGeTD9G/udinese-rXw8YKDE/? не удалась
+[2026-10-15T17:57:17.470+0000] {flahscore.py:81} WARNING - get_response: попытка 2/20 для url=https://www.flashscore.com/match/football/pro-vercelli-KjGeTD9G/udinese-rXw8YKDE/? не удалась
+[2026-10-15T17:57:18.920+0000] {flahscore.py:81} WARNING - get_response: попытка 3/20 для url=https://www.flashscore.com/match/football/pro-vercelli-KjGeTD9G/udinese-rXw8YKDE/? не удалась
+[2026-10-15T17:57:20.310+0000] {flahscore.py:81} WARNING - get_response: попытка 4/20 для url=https://www.flashscore.com/match/football/pro-vercelli-KjGeTD9G/udinese-rXw8YKDE/? не удалась
+[2026-10-15T17:57:22.737+0000] {flahscore.py:81} WARNING - get_response: попытка 5/20 для url=https://www.flashscore.com/match/football/pro-vercelli-KjGeTD9G/udinese-rXw8YKDE/? не удалась
+[2026-10-15T17:57:25.186+0000] {flahscore.py:81} WARNING - get_response: попытка 6/20 для url=https://www.flashscore.com/match/football/pro-vercelli-KjGeTD9G/udinese-rXw8YKDE/? не удалась
+[2026-10-15T17:57:27.674+0000] {flahscore.py:81} WARNING - get_response: попытка 7/20 для url=https://www.flashscore.com/match/football/pro-vercelli-KjGeTD9G/udinese-rXw8YKDE/? не удалась
+[2026-10-15T17:57:30.095+0000] {flahscore.py:81} WARNING - get_response: попытка 8/20 для url=https://www.flashscore.com/match/football/pro-vercelli-KjGeTD9G/udinese-rXw8YKDE/? не удалась
+[2026-10-15T17:57:33.536+0000] {flahscore.py:81} WARNING - get_response: попытка 9/20 для url=https://www.flashscore.com/match/football/pro-vercelli-KjGeTD9G/udinese-rXw8YKDE/? не удалась
+[2026-10-15T17:57:37.007+0000] {flahscore.py:81} WARNING - get_response: попытка 10/20 для url=https://www.flashscore.com/match/football/pro-vercelli-KjGeTD9G/udinese-rXw8YKDE/? не удалась
+[2026-10-15T17:57:40.420+0000] {flahscore.py:81} WARNING - get_response: попытка 11/20 для url=https://www.flashscore.com/match/football/pro-vercelli-KjGeTD9G/udinese-rXw8YKDE/? не удалась
+[2026-10-15T17:57:43.925+0000] {flahscore.py:81} WARNING - get_response: попытка 12/20 для url=https://www.flashscore.com/match/football/pro-vercelli-KjGeTD9G/udinese-rXw8YKDE/? не удалась
+[2026-10-15T17:57:48.376+0000] {flahscore.py:81} WARNING - get_response: попытка 13/20 для url=https://www.flashscore.com/match/football/pro-vercelli-KjGeTD9G/udinese-rXw8YKDE/? не удалась
+[2026-10-15T17:57:52.823+0000] {flahscore.py:81} WARNING - get_response: попытка 14/20 для url=https://www.flashscore.com/match/football/pro-vercelli-KjGeTD9G/udinese-rXw8YKDE/? не удалась
+[2026-10-15T17:57:57.276+0000] {flahscore.py:81} WARNING - get_response: попытка 15/20 для url=https://www.flashscore.com/match/football/pro-vercelli-KjGeTD9G/udinese-rXw8YKDE/? не удалась
+[2026-10-15T17:58:01.677+0000] {flahscore.py:81} WARNING - get_response: попытка 16/20 для url=https://www.flashscore.com/match/football/pro-vercelli-KjGeTD9G/udinese-rXw8YKDE/? не удалась
+[2026-10-15T17:58:07.386+0000] {flahscore.py:81} WARNING - get_response: попытка 17/20 для url=https://www.flashscore.com/match/football/pro-vercelli-KjGeTD9G/udinese-rXw8YKDE/? не удалась
+[2026-10-15T17:58:12.958+0000] {flahscore.py:81} WARNING - get_response: попытка 18/20 для url=https://www.flashscore.com/match/football/pro-vercelli-KjGeTD9G/udinese-rXw8YKDE/? не удалась
+[2026-10-15T17:58:18.590+0000] {flahscore.py:81} WARNING - get_response: попытка 19/20 для url=https://www.flashscore.com/match/football/pro-vercelli-KjGeTD9G/udinese-rXw8YKDE/? не удалась
+[2026-10-15T17:58:24.137+0000] {flahscore.py:81} WARNING - get_response: попытка 20/20 для url=https://www.flashscore.com/match/football/pro-vercelli-KjGeTD9G/udinese-rXw8YKDE/? не удалась
+[2026-10-15T17:58:30.635+0000] {flahscore.py:81} WARNING - get_response: попытка 21/20 для url=https://www.flashscore.com/match/football/pro-vercelli-KjGeTD9G/udinese-rXw8YKDE/? не удалась
+[2026-10-15T17:58:30.638+0000] {flahscore.py:83} ERROR - get_response: url:https://www.flashscore.com/match/football/pro-vercelli-KjGeTD9G/udinese-rXw8YKDE/? не доступен 404 Client Error: Not Found for url: https://www.flashscore.com/match/football/pro-vercelli-KjGeTD9G/udinese-rXw8YKDE/
+[2026-10-15T17:58:30.643+0000] {flahscore.py:96} ERROR - get_feed_last_match: страница для https://www.flashscore.com/match/football/pro-vercelli-KjGeTD9G/udinese-rXw8YKDE/? не была получена
+[2026-10-15T17:58:30.646+0000] {producers_matches.py:57} INFO - Processing pair: /team/pro-vercelli/KjGeTD9G/ and /team/juventus/C06aJvIB/
+[2026-10-15T17:58:35.201+0000] {producers_matches.py:57} INFO - Processing pair: /team/pro-vercelli/KjGeTD9G/ and /team/inter/Iw7eKK25/
+[2026-10-15T17:58:39.471+0000] {producers_matches.py:57} INFO - Processing pair: /team/pro-vercelli/KjGeTD9G/ and /team/andrea-doria/IgA0B8UO/
+[2026-10-15T17:58:41.167+0000] {flahscore.py:81} WARNING - get_response: попытка 1/20 для url=https://www.flashscore.com/match/football/pro-vercelli-KjGeTD9G/andrea-doria-IgA0B8UO/? не удалась
+[2026-10-15T17:58:42.914+0000] {flahscore.py:81} WARNING - get_response: попытка 2/20 для url=https://www.flashscore.com/match/football/pro-vercelli-KjGeTD9G/andrea-doria-IgA0B8UO/? не удалась
+[2026-10-15T17:58:44.429+0000] {flahscore.py:81} WARNING - get_response: попытка 3/20 для url=https://www.flashscore.com/match/football/pro-vercelli-KjGeTD9G/andrea-doria-IgA0B8UO/? не удалась
+[2026-10-15T17:58:45.956+0000] {flahscore.py:81} WARNING - get_response: попытка 4/20 для url=https://www.flashscore.com/match/football/pro-vercelli-KjGeTD9G/andrea-doria-IgA0B8UO/? не удалась
+[2026-10-15T17:58:48.470+0000] {flahscore.py:81} WARNING - get_response: попытка 5/20 для url=https://www.flashscore.com/match/football/pro-vercelli-KjGeTD9G/andrea-doria-IgA0B8UO/? не удалась
+[2026-10-15T17:58:51.068+0000] {flahscore.py:81} WARNING - get_response: попытка 6/20 для url=https://www.flashscore.com/match/football/pro-vercelli-KjGeTD9G/andrea-doria-IgA0B8UO/? не удалась
+[2026-10-15T17:58:55.195+0000] {flahscore.py:81} WARNING - get_response: попытка 7/20 для url=https://www.flashscore.com/match/football/pro-vercelli-KjGeTD9G/andrea-doria-IgA0B8UO/? не удалась
+[2026-10-15T17:58:57.677+0000] {flahscore.py:81} WARNING - get_response: попытка 8/20 для url=https://www.flashscore.com/match/football/pro-vercelli-KjGeTD9G/andrea-doria-IgA0B8UO/? не удалась
+[2026-10-15T17:59:01.225+0000] {flahscore.py:81} WARNING - get_response: попытка 9/20 для url=https://www.flashscore.com/match/football/pro-vercelli-KjGeTD9G/andrea-doria-IgA0B8UO/? не удалась
+[2026-10-15T17:59:04.733+0000] {flahscore.py:81} WARNING - get_response: попытка 10/20 для url=https://www.flashscore.com/match/football/pro-vercelli-KjGeTD9G/andrea-doria-IgA0B8UO/? не удалась
+[2026-10-15T17:59:08.440+0000] {flahscore.py:81} WARNING - get_response: попытка 11/20 для url=https://www.flashscore.com/match/football/pro-vercelli-KjGeTD9G/andrea-doria-IgA0B8UO/? не удалась
+[2026-10-15T17:59:11.999+0000] {flahscore.py:81} WARNING - get_response: попытка 12/20 для url=https://www.flashscore.com/match/football/pro-vercelli-KjGeTD9G/andrea-doria-IgA0B8UO/? не удалась
+[2026-10-15T17:59:16.571+0000] {flahscore.py:81} WARNING - get_response: попытка 13/20 для url=https://www.flashscore.com/match/football/pro-vercelli-KjGeTD9G/andrea-doria-IgA0B8UO/? не удалась
+[2026-10-15T17:59:21.309+0000] {flahscore.py:81} WARNING - get_response: попытка 14/20 для url=https://www.flashscore.com/match/football/pro-vercelli-KjGeTD9G/andrea-doria-IgA0B8UO/? не удалась
+[2026-10-15T17:59:22.005+0000] {local_task_job_runner.py:313} WARNING - State of this instance has been externally set to failed. Terminating instance.
+[2026-10-15T17:59:22.034+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2026-10-15T17:59:22.048+0000] {process_utils.py:132} INFO - Sending 15 to group 158. PIDs of all processes in the group: [158]
+[2026-10-15T17:59:22.052+0000] {process_utils.py:87} INFO - Sending the signal 15 to group 158
+[2026-10-15T17:59:22.057+0000] {taskinstance.py:2611} ERROR - Received SIGTERM. Terminating subprocesses.
+[2026-10-15T17:59:22.061+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-10-15T17:59:22.269+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=158, status='terminated', exitcode=0, started='17:34:56') (158) terminated with exit code 0

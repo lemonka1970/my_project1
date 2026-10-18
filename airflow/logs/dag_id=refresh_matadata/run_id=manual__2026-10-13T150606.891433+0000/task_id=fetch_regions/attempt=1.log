@@ -1,0 +1,20 @@
+[2026-10-13T15:07:14.251+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-10-13T15:07:14.361+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: refresh_matadata.fetch_regions manual__2026-10-13T15:06:06.891433+00:00 [queued]>
+[2026-10-13T15:07:14.396+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: refresh_matadata.fetch_regions manual__2026-10-13T15:06:06.891433+00:00 [queued]>
+[2026-10-13T15:07:14.399+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 4
+[2026-10-13T15:07:14.463+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): fetch_regions> on 2026-10-13 15:06:06.891433+00:00
+[2026-10-13T15:07:14.548+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:62: DeprecationWarning: This process (pid=118) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2026-10-13T15:07:14.571+0000] {standard_task_runner.py:64} INFO - Started process 127 to run task
+[2026-10-13T15:07:14.562+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'refresh_matadata', 'fetch_regions', 'manual__2026-10-13T15:06:06.891433+00:00', '--job-id', '434', '--raw', '--subdir', 'DAGS_FOLDER/dag_refresh_metadata.py', '--cfg-path', '/tmp/tmpnrjuvc9i']
+[2026-10-13T15:07:14.578+0000] {standard_task_runner.py:91} INFO - Job 434: Subtask fetch_regions
+[2026-10-13T15:07:14.785+0000] {task_command.py:426} INFO - Running <TaskInstance: refresh_matadata.fetch_regions manual__2026-10-13T15:06:06.891433+00:00 [running]> on host f92a22977573
+[2026-10-13T15:07:15.191+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='refresh_matadata' AIRFLOW_CTX_TASK_ID='fetch_regions' AIRFLOW_CTX_EXECUTION_DATE='2026-10-13T15:06:06.891433+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-10-13T15:06:06.891433+00:00'
+[2026-10-13T15:07:15.205+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-10-13T15:07:27.683+0000] {python.py:237} INFO - Done. Returned value was: None
+[2026-10-13T15:07:27.686+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-10-13T15:07:27.717+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=refresh_matadata, task_id=fetch_regions, run_id=manual__2026-10-13T15:06:06.891433+00:00, execution_date=20261013T150606, start_date=20261013T150714, end_date=20261013T150727
+[2026-10-13T15:07:27.844+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 0
+[2026-10-13T15:07:27.923+0000] {taskinstance.py:3503} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-10-13T15:07:27.928+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
