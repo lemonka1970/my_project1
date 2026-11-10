@@ -3,8 +3,8 @@ from airflow.operators.python import PythonOperator
 
 from datetime import datetime, timedelta
 from src.kafka_fn import create_topics
-from src.producers_matches import produce_initializetion_matches
-from src.consumers.postgres.fetch_initializetion_matches import fetch_initializetion_matches
+from src.producers.matches import produce_initializetion_matches
+from src.consumers.fetch_initializetion_matches import fetch_initializetion_matches
 
 default_args = {
     'start_date': datetime(2020, 1, 1),

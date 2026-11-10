@@ -1,0 +1,49 @@
+[2026-11-07T21:11:32.434+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-11-07T21:11:32.513+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: tests.sync_table manual__2026-11-07T21:10:49.790372+00:00 [queued]>
+[2026-11-07T21:11:32.539+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: tests.sync_table manual__2026-11-07T21:10:49.790372+00:00 [queued]>
+[2026-11-07T21:11:32.543+0000] {taskinstance.py:2306} INFO - Starting attempt 4 of 4
+[2026-11-07T21:11:32.594+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): sync_table> on 2026-11-07 21:10:49.790372+00:00
+[2026-11-07T21:11:32.647+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:62: DeprecationWarning: This process (pid=238) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2026-11-07T21:11:32.663+0000] {standard_task_runner.py:64} INFO - Started process 240 to run task
+[2026-11-07T21:11:32.656+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'tests', 'sync_table', 'manual__2026-11-07T21:10:49.790372+00:00', '--job-id', '639', '--raw', '--subdir', 'DAGS_FOLDER/dag_tests.py', '--cfg-path', '/tmp/tmp55u2jrbz']
+[2026-11-07T21:11:32.671+0000] {standard_task_runner.py:91} INFO - Job 639: Subtask sync_table
+[2026-11-07T21:11:32.825+0000] {task_command.py:426} INFO - Running <TaskInstance: tests.sync_table manual__2026-11-07T21:10:49.790372+00:00 [running]> on host 16e781c3db6d
+[2026-11-07T21:11:33.171+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='tests' AIRFLOW_CTX_TASK_ID='sync_table' AIRFLOW_CTX_EXECUTION_DATE='2026-11-07T21:10:49.790372+00:00' AIRFLOW_CTX_TRY_NUMBER='4' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-11-07T21:10:49.790372+00:00'
+[2026-11-07T21:11:33.178+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-11-07T21:11:33.224+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-11-07T21:11:33.226+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 401, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/src/sync_table_to_clickhouse.py", line 90, in sync_table_to_clichouse
+    max_id_postgres = get_max_id_from_postgres(db_table, id_column)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/src/sync_table_to_clickhouse.py", line 24, in get_max_id_from_postgres
+    cur.execute(query)
+psycopg2.errors.SyntaxError: syntax error at or near "{"
+LINE 2:         SELECT MAX({id_column})
+                           ^
+
+[2026-11-07T21:11:33.261+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=tests, task_id=sync_table, run_id=manual__2026-11-07T21:10:49.790372+00:00, execution_date=20261107T211049, start_date=20261107T211132, end_date=20261107T211133
+[2026-11-07T21:11:33.301+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 639 for task sync_table (syntax error at or near "{"
+LINE 2:         SELECT MAX({id_column})
+                           ^
+; 240)
+[2026-11-07T21:11:33.379+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 1
+[2026-11-07T21:11:33.421+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-11-07T21:11:33.426+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

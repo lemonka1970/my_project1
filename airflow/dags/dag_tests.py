@@ -3,9 +3,7 @@ from airflow.operators.python import PythonOperator
 
 from datetime import datetime, timedelta
 
-from src.kafka_fn import create_topics
-from src.producers_metadata import produce_standings
-from src.consumers.postgres.build_season_team_relations import build_season_team_relations
+from src.sync_table_to_clickhouse import sync_table_to_clichouse
 
 
 default_args = {
@@ -21,21 +19,16 @@ with DAG(
     default_args = default_args
 ) as dag:
 
-    topics = PythonOperator(
-        task_id = 'create_topics',
-        python_callable = create_topics
-    )
-    
-    standings = PythonOperator(
-        task_id = 'produce_standings',
-        python_callable = produce_standings
+    regions = PythonOperator(
+        task_id = 'sync_table_reigons',
+        python_callable = sync_table_to_clichouse,
+        op_args = ['regions', ['region_id', 'region_name'], 'region_id', 'initialize']
     )
 
-    relations = PythonOperator(
-        task_id = 'relations',
-        python_callable = build_season_team_relations
+    seasons = PythonOperator(
+        task_id = 'sync_table_seasons',
+        python_callable = sync_table_to_clichouse,
+        op_args = ['seasons', ['season_id', 'start_date', 'end_date', 'is_current', 'league_id'], 'season_id', 'initialize']
     )
 
-
-
-    topics >> standings >> relations
+    regions >> seasons

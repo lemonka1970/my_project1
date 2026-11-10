@@ -3,7 +3,7 @@ from airflow.operators.python import PythonOperator
 
 from datetime import datetime, timedelta
 from src.kafka_fn import create_topics
-from src.producers_matches import produce_updeting_matches
+from src.producers.matches import produce_updeting_matches
 
 
 default_args = {

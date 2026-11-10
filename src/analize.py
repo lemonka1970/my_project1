@@ -1,4 +1,4 @@
-from src.database.postgres_conn import db_pool
+from src.database.postgres.client import db_pool
 import pandas as pd
 
 def get_standings(season_id):

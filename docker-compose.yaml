@@ -187,7 +187,7 @@ services:
   warehouse-postgres:
     image: postgres:14
     environment:
-      POSTGRES_HOST: $(POSTGRES_HOST)
+      POSTGRES_HOST: ${POSTGRES_HOST}
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
       POSTGRES_DB: postgres
@@ -201,7 +201,33 @@ services:
       retries: 5
     restart: unless-stopped
 
-  # ─────────────────────────── Kafka (KRaft, официальный образ) ───────────────────────────
+  # ─────────────────────────── ClickHouse ───────────────────────────
+  clickhouse:
+    image: clickhouse/clickhouse-server:24.8
+    container_name: clickhouse
+    ports:
+      - "8123:8123"  
+      - "9004:9000"  
+    environment:
+      CLICKHOUSE_DB: ${CLICKHOUSE_DB}
+      CLICKHOUSE_USER: ${CLICKHOUSE_USER}
+      CLICKHOUSE_PASSWORD: ${CLICKHOUSE_PASSWORD}
+      CLICKHOUSE_DEFAULT_ACCESS_MANAGEMENT: 1
+    volumes:
+      - clickhouse-data:/var/lib/clickhouse
+      - clickhouse-logs:/var/log/clickhouse-server
+    ulimits:
+      nofile:
+        soft: 262144
+        hard: 262144
+    healthcheck:
+      test: ["CMD-SHELL", "wget --no-verbose --tries=1 --spider http://localhost:8123/ping || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+
+  # ─────────────────────────── Kafka ───────────────────────────
   kafka:
     image: apache/kafka:3.8.0
     container_name: kafka
@@ -237,37 +263,6 @@ services:
     depends_on:
       - kafka
 
-  # ─────────────────────────── MinIO (S3) ───────────────────────────
-  minio:
-    image: minio/minio:latest
-    container_name: minio
-    ports:
-      - "9000:9000"
-      - "9001:9001"
-    environment:
-      MINIO_ROOT_USER: minioadmin
-      MINIO_ROOT_PASSWORD: minioadmin123
-    command: server /data --console-address ":9001"
-    volumes:
-      - minio-data:/data
-    healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:9000/minio/health/live"]
-      interval: 10s
-      timeout: 5s
-      retries: 5
-    restart: unless-stopped
-
-  minio-init:
-    image: minio/mc:latest
-    depends_on:
-      minio:
-        condition: service_healthy
-    entrypoint: >
-      /bin/sh -c "
-      mc alias set local http://minio:9000 minioadmin minioadmin123;
-      mc mb -p local/football-raw;
-      exit 0;
-      "
 
   # ─────────────────────────── Consumers ───────────────────────────
 
@@ -287,8 +282,6 @@ services:
     depends_on:
       kafka:
         condition: service_healthy
-      minio:
-        condition: service_healthy
     restart: unless-stopped
 
   fetch_initializetion_matches:
@@ -307,82 +300,8 @@ services:
     depends_on:
       kafka:
         condition: service_healthy
-      minio:
-        condition: service_healthy
     restart: unless-stopped
 
-
-  # save-scoreboards:
-  #   build: .
-  #   container_name: save_scoreboards
-  #   command: python -m src.consumers.s3.save_scoreboards
-  #   environment:
-  #     KAFKA_BOOTSTRAP_SERVERS: ${KAFKA_BOOTSTRAP_SERVERS}
-  #     S3_ENDPOINT: ${S3_ENDPOINT}
-  #     S3_ACCESS_KEY: ${S3_ACCESS_KEY}
-  #     S3_SECRET_KEY: ${S3_SECRET_KEY}
-  #   volumes:
-  #     - ./src:/opt/airflow/src
-  #   depends_on:
-  #     kafka:
-  #       condition: service_healthy
-  #     minio:
-  #       condition: service_healthy
-  #   restart: unless-stopped
-
-  # save-past-seasons:
-  #   build: .
-  #   container_name: save_past_seasons
-  #   command: python -m src.consumers.s3.save_past_seasons
-  #   environment:
-  #     KAFKA_BOOTSTRAP_SERVERS: ${KAFKA_BOOTSTRAP_SERVERS}
-  #     S3_ENDPOINT: ${S3_ENDPOINT}
-  #     S3_ACCESS_KEY: ${S3_ACCESS_KEY}
-  #     S3_SECRET_KEY: ${S3_SECRET_KEY}
-  #   volumes:
-  #     - ./src:/opt/airflow/src
-  #   depends_on:
-  #     kafka:
-  #       condition: service_healthy
-  #     minio:
-  #       condition: service_healthy
-  #   restart: unless-stopped
-
-  # save-standings:
-  #   build: .
-  #   container_name: save_standings
-  #   command: python -m src.consumers.s3.save_standings
-  #   environment:
-  #     KAFKA_BOOTSTRAP_SERVERS: ${KAFKA_BOOTSTRAP_SERVERS}
-  #     S3_ENDPOINT: ${S3_ENDPOINT}
-  #     S3_ACCESS_KEY: ${S3_ACCESS_KEY}
-  #     S3_SECRET_KEY: ${S3_SECRET_KEY}
-  #   volumes:
-  #     - ./src:/opt/airflow/src
-  #   depends_on:
-  #     kafka:
-  #       condition: service_healthy
-  #     minio:
-  #       condition: service_healthy
-  #   restart: unless-stopped
-
-  # save-matches:
-  #   build: .
-  #   container_name: save_matches
-  #   command: python -m src.consumers.s3.save_matches
-  #   environment:
-  #     KAFKA_BOOTSTRAP_SERVERS: ${KAFKA_BOOTSTRAP_SERVERS}
-  #     S3_ENDPOINT: ${S3_ENDPOINT}
-  #     S3_ACCESS_KEY: ${S3_ACCESS_KEY}
-  #     S3_SECRET_KEY: ${S3_SECRET_KEY}
-  #   volumes:
-  #     - ./src:/opt/airflow/src
-  #   depends_on:
-  #     kafka:
-  #       condition: service_healthy
-  #     minio:
-  #       condition: service_healthy
-  #   restart: unless-stopped
 
 volumes:
   airflow-db-volume:
@@ -390,3 +309,5 @@ volumes:
   client-postgres-data:
   kafka-data:
   minio-data:
+  clickhouse-data:
+  clickhouse-logs:

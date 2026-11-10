@@ -3,13 +3,13 @@ from airflow.operators.python import PythonOperator
 
 from datetime import datetime, timedelta
 from src.kafka_fn import create_topics
-from src.producers_metadata import produce_scoreboards, produce_past_seasons, produce_standings
-from src.consumers.postgres.fetch_regions import fetch_regions
-from src.consumers.postgres.fetch_leagues import fetch_leagues
-from src.consumers.postgres.fetch_current_seasons import fetch_current_seasons
-from src.consumers.postgres.fetch_seasons import fetch_seasons
-from src.consumers.postgres.fetch_teams import fetch_teams
-from src.consumers.postgres.build_season_team_relations import build_season_team_relations
+from src.producers.metadata import produce_scoreboards, produce_past_seasons, produce_standings
+from src.consumers.fetch_regions import fetch_regions
+from src.consumers.fetch_leagues import fetch_leagues
+from src.consumers.fetch_current_seasons import fetch_current_seasons
+from src.consumers.fetch_seasons import fetch_seasons
+from src.consumers.fetch_teams import fetch_teams
+from src.consumers.build_season_team_relations import build_season_team_relations
 
 default_args = {
     'start_date': datetime(2026, 1, 1),
